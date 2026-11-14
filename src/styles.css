@@ -862,7 +862,7 @@ footer.foot { border-top-color: var(--line); }
 
 /* ---- Tipps, Mythen, Hintergrund ---- */
 .tips-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; justify-content: space-between; }
-.tips-top .combo-picks { margin: 0; flex: 1; min-width: 0; }
+.tips-top .combo-picks { margin: 0; flex: 1 1 100%; min-width: 0; }
 .tip-card { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); margin: 8px 0; box-shadow: var(--shadow-sm); transition: box-shadow .2s, background .3s; }
 .tip-card.done { background: var(--good-soft); border-color: transparent; }
 .tip-card summary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer; list-style: none; }
@@ -890,5 +890,3 @@ footer.foot { border-top-color: var(--line); }
 .bg-card .ch-ico { width: 38px; height: 38px; border-radius: 11px; flex: none; }
 .bg-card .ch-ico svg { width: 19px; height: 19px; }
 .bg-card[open] { box-shadow: var(--shadow); }
-.tips-top .combo-picks { flex: 1 1 100%; }
-.tips-top #tip-random { order: -1; }

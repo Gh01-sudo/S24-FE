@@ -167,25 +167,30 @@
   /* ======================= Tipps & Tricks ======================= */
   const tl = $('#tips-list');
   if (tl) {
-    let cat = '', tried = new Set(store.get('tips', []));
-    const cats = [...new Set(TIPS.map(t => t.cat))];
-    tl.innerHTML = `<div class="tips-top"><div class="combo-picks" id="tip-cats"><button type="button" data-c="" aria-pressed="true">Alle (${TIPS.length})</button>${cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('')}</div>
-      <button type="button" class="btn" id="tip-random">${icon('bulb')}Zufälliger Tipp</button></div><p class="caption" id="tip-count" style="text-align:left"></p><div id="tip-out"></div>`;
+    // Fortschritt per Tipp-Titel speichern, damit Umsortieren oder Einfügen von Tipps die Haken nicht verschiebt.
+    let cat = '', tried = new Set(store.get('tips', []).filter(x => TIPS.some(t => t.t === x)));
+    const cats = [...new Set(TIPS.map(t => t.cat))], all = [...TIPS.keys()];
+    tl.innerHTML = `<div class="tips-top"><button type="button" class="btn" id="tip-random">${icon('bulb')}Zufälliger Tipp</button>
+      <div class="combo-picks" id="tip-cats"><button type="button" data-c="" aria-pressed="true">Alle (${TIPS.length})</button>${cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('')}</div></div>
+      <p class="caption" id="tip-count" style="text-align:left"></p><div id="tip-out"></div>`;
+    const count = () => { $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`; };
     function render() {
-      const list = TIPS.map((t, i) => [t, i]).filter(([t]) => !cat || t.cat === cat);
-      $('#tip-out').innerHTML = list.map(([t, i]) => `<details class="tip-card${tried.has(i) ? ' done' : ''}" id="tip-${i}"><summary><span class="chip lvl-2">${esc(t.cat)}</span><b>${esc(t.t)}</b></summary>
+      $('#tip-out').innerHTML = all.filter(i => !cat || TIPS[i].cat === cat).map(i => {
+        const t = TIPS[i], on = tried.has(t.t);
+        return `<details class="tip-card${on ? ' done' : ''}" id="tip-${i}"><summary><span class="chip lvl-2">${esc(t.cat)}</span><b>${esc(t.t)}</b></summary>
         <div class="pp-body"><p><b>So geht’s:</b> ${t.how}</p><div class="why"><b>Warum es hilft:</b> ${t.why}</div>
-        <div class="tip-foot"><span class="tip-src">Belegt durch: <a href="${t.src[1]}" target="_blank" rel="noopener">${esc(t.src[0])}</a></span><label class="tip-try"><input type="checkbox" data-i="${i}" ${tried.has(i) ? 'checked' : ''}> Ausprobiert</label></div></div></details>`).join('');
-      $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`;
+        <div class="tip-foot"><span class="tip-src">Belegt durch: <a href="${t.src[1]}" target="_blank" rel="noopener">${esc(t.src[0])}</a></span><label class="tip-try"><input type="checkbox" data-i="${i}" ${on ? 'checked' : ''}> Ausprobiert</label></div></div></details>`;
+      }).join('');
+      count();
     }
     $('#tip-cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; $$('#tip-cats button').forEach(x => x.setAttribute('aria-pressed', x === b)); render(); });
     $('#tip-random').addEventListener('click', () => {
-      cat = ''; $$('#tip-cats button').forEach((x, k) => x.setAttribute('aria-pressed', k === 0)); render();
-      const open = TIPS.map((t, i) => i).filter(i => !tried.has(i)), pool = open.length ? open : TIPS.map((t, i) => i);
+      if (cat) { cat = ''; $$('#tip-cats button').forEach((x, k) => x.setAttribute('aria-pressed', k === 0)); render(); }
+      const open = all.filter(i => !tried.has(TIPS[i].t)), pool = open.length ? open : all;
       const i = pool[Math.floor(Math.random() * pool.length)], el = $('#tip-' + i);
       el.open = true; el.scrollIntoView({ block: 'center' }); el.classList.add('flash-card'); setTimeout(() => el.classList.remove('flash-card'), 1200);
     });
-    tl.addEventListener('change', e => { const i = +e.target.dataset.i; if (isNaN(i)) return; e.target.checked ? tried.add(i) : tried.delete(i); store.set('tips', [...tried]); e.target.closest('.tip-card').classList.toggle('done', e.target.checked); $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`; });
+    tl.addEventListener('change', e => { const t = TIPS[+e.target.dataset.i]; if (!t) return; e.target.checked ? tried.add(t.t) : tried.delete(t.t); store.set('tips', [...tried]); e.target.closest('.tip-card').classList.toggle('done', e.target.checked); count(); });
     render();
   }
 

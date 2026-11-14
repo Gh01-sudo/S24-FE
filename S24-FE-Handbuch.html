@@ -876,7 +876,7 @@ footer.foot { border-top-color: var(--line); }
 
 /* ---- Tipps, Mythen, Hintergrund ---- */
 .tips-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; justify-content: space-between; }
-.tips-top .combo-picks { margin: 0; flex: 1; min-width: 0; }
+.tips-top .combo-picks { margin: 0; flex: 1 1 100%; min-width: 0; }
 .tip-card { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); margin: 8px 0; box-shadow: var(--shadow-sm); transition: box-shadow .2s, background .3s; }
 .tip-card.done { background: var(--good-soft); border-color: transparent; }
 .tip-card summary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer; list-style: none; }
@@ -904,8 +904,6 @@ footer.foot { border-top-color: var(--line); }
 .bg-card .ch-ico { width: 38px; height: 38px; border-radius: 11px; flex: none; }
 .bg-card .ch-ico svg { width: 19px; height: 19px; }
 .bg-card[open] { box-shadow: var(--shadow); }
-.tips-top .combo-picks { flex: 1 1 100%; }
-.tips-top #tip-random { order: -1; }
 
 </style>
 </head>
@@ -1959,7 +1957,7 @@ footer.foot { border-top-color: var(--line); }
   </ol>
 
   <h3 id="quiz-profi">Kurz geprüft</h3>
-  <div class="quiz mini" data-mini-quiz="wissen2"></div>
+  <div class="quiz mini" data-mini-quiz="profi"></div>
 </section>
 
 <!-- ===================== 11 HILFE ===================== -->
@@ -2616,7 +2614,7 @@ const STEPPERS = {
   finger: {
     title: 'Fingerabdruck einrichten', icon: 'lock', steps: [
       { m: () => settingsHome(5), h: 'Einstellungen öffnen', p: 'Öffnen Sie die App <b>Einstellungen</b> (Zahnrad-Symbol) und tippen Sie auf <b>„Sicherheit und Datenschutz“</b>.', why: 'Die Einstellungen erreichen Sie auch über das Zahnrad oben rechts in den Schnelleinstellungen.' },
-      { m: () => listScreen({ title: 'Sicherheit und Datenschutz', back: true, items: [{ l: 'Sicherheitsstatus', s: 'Keine Probleme', c: 'c6' }, { l: 'Biometrische Daten', s: 'Gesicht, Fingerabdrücke', c: 'c1' }, { l: 'Samsung Account', c: 'c7' }, { l: 'Verlorene Geräte finden', c: 'c2' }, { l: 'Berechtigungsmanager', c: 'c3' }, { l: 'Weitere Sicherheitseinst.', c: 'c4' }], hl: 1, top: 84 }), h: 'Biometrische Daten wählen', p: 'Tippen Sie auf <b>„Biometrische Daten“</b>. Steht der Punkt bei Ihnen anders da, suchen Sie oben mit der Lupe nach „Fingerabdruck“.', why: 'Biometrie bedeutet: Körpermerkmale zur Erkennung, also Finger oder Gesicht.' },
+      { m: () => listScreen({ title: 'Sicherheit und Datenschutz', back: true, items: [{ l: 'Sicherheitsstatus', s: 'Keine Probleme', c: 'c6' }, { l: 'Biometrische Daten', s: 'Gesicht, Fingerabdrücke', c: 'c1' }, { l: 'Samsung Account', c: 'c7' }, { l: 'Schutz bei Geräteverlust', c: 'c2' }, { l: 'Berechtigungsmanager', c: 'c3' }, { l: 'Weitere Sicherheitseinst.', c: 'c4' }], hl: 1, top: 84 }), h: 'Biometrische Daten wählen', p: 'Tippen Sie auf <b>„Biometrische Daten“</b>. Steht der Punkt bei Ihnen anders da, suchen Sie oben mit der Lupe nach „Fingerabdruck“.', why: 'Biometrie bedeutet: Körpermerkmale zur Erkennung, also Finger oder Gesicht.' },
       { m: () => listScreen({ title: 'Biometrische Daten', back: true, items: [{ l: 'Gesichtserkennung', s: 'Nicht registriert' }, { l: 'Fingerabdrücke', s: 'Nicht registriert' }, { l: 'Weitere Einstellungen' }], hl: 1, top: 84 }), h: 'Fingerabdrücke antippen und PIN festlegen', p: 'Tippen Sie auf <b>„Fingerabdrücke“</b>. Haben Sie noch keine PIN, werden Sie jetzt aufgefordert, eine festzulegen. Bestätigen Sie sie zweimal.', why: 'Die PIN ist der Ersatzschlüssel: wenn der Finger nicht erkannt wird, nach jedem Neustart und alle 72 Stunden zur Sicherheit.' },
       { m: () => fingerprintScan(64), h: 'Finger mehrmals auflegen', p: 'Legen Sie den Finger auf den markierten Punkt. Nach jeder Vibration anheben und <b>leicht versetzt</b> wieder auflegen: mal Mitte, mal Spitze, mal Ränder. Bis 100 % sind etwa 10 bis 15 Berührungen nötig.', why: 'Je mehr Bereiche des Fingers gespeichert sind, desto zuverlässiger klappt es später, auch wenn Sie das Telefon schief greifen.' },
       { m: () => listScreen({ title: 'Fingerabdrücke', back: true, items: [{ l: 'Fingerabdruck 1', s: 'Registriert', sa: 1 }, { l: 'Fingerabdruck hinzufügen' }, { l: 'Fingerabdruck-Entsperrung', t: true }, { l: 'Symbol bei Bildschirm aus', t: true }], hl: 1, top: 84 }), h: 'Zweiten Finger hinzufügen', p: 'Fertig! Registrieren Sie direkt einen <b>zweiten Finger</b> (z. B. den anderen Daumen), über <b>„Fingerabdruck hinzufügen“</b>. Sie können bis zu vier Finger speichern.', why: '„Symbol bei Bildschirm aus“ zeigt Ihnen den Sensor auch bei dunklem Bildschirm, damit Sie ihn sofort finden.' }
@@ -3304,7 +3302,7 @@ const TIPS = [
   { cat: 'Bedienung', t: 'Lange Seiten komplett aufnehmen (Scroll-Screenshot)', how: 'Screenshot machen. In der Leiste, die kurz unten erscheint, auf das Symbol mit dem <b>Pfeil nach unten</b> tippen, so oft, bis alles erfasst ist.', why: 'Ein ganzer Chatverlauf oder eine Webseite landet in einem einzigen Bild.', src: ['Samsung Support', 'https://ushl.samsung.com/at/support/mobile-devices/wie-erstelle-ich-ein-screenshot'] },
   { cat: 'Bedienung', t: 'Versehentlich weggewischte Benachrichtigungen wiederfinden', how: '<b>Einstellungen › Benachrichtigungen › Erweiterte Einstellungen › Benachrichtigungsverlauf</b> einschalten. Ab dann sind alle Benachrichtigungen der letzten 24 Stunden dort abrufbar.', why: 'Wer eine wichtige Nachricht aus Versehen wegwischt, findet sie hier wieder.', src: ['Samsung Support', 'https://www.samsung.com/de/support/mobile-devices/galaxy-smartphone-benachrichtigungen-verwalten'] },
   { cat: 'Bedienung', t: 'Bildschirm per Anheben oder Doppeltippen einschalten', how: '<b>Erweiterte Funktionen › Bewegungen und Gesten</b>: „Zum Aktivieren anheben“ und „Zum Einschalten des Bildschirms doppeltippen“ (bzw. „…ausschalten“) einschalten.', why: 'Sie müssen nicht nach der Seitentaste tasten; das Telefon ist bereit, sobald Sie es in die Hand nehmen.', src: ['Samsung Support (US)', 'https://www.samsung.com/us/support/answer/ANS10003415'] },
-  { cat: 'Bedienung', t: 'Seitentaste doppelt drücken: eigene App starten', how: '<b>Einstellungen › Erweiterte Funktionen › Seitentaste › Zweimal drücken</b> › „App öffnen“ und z. B. Taschenlampe-App, Notizen oder Rechner wählen. Standard ist die Kamera.', why: 'Ihre wichtigste App ist dann aus jeder Situation mit zwei Klicks erreichbar.', src: ['Samsung Support', 'https://www.samsung.com/de/support/mobile-devices/so-passt-du-die-funktionstaste-mit-neuen-funktionen-auf-deinem-galaxy-telefon-und-tablet-an'] },
+  { cat: 'Bedienung', t: 'Seitentaste doppelt drücken: eigene App starten', how: '<b>Einstellungen › Erweiterte Funktionen › Seitentaste › Zweimal drücken</b> › „App öffnen“ und z. B. Notizen, Rechner oder WhatsApp wählen (die Taschenlampe ist keine App, sie liegt in den Schnelleinstellungen). Standard ist die Kamera.', why: 'Ihre wichtigste App ist dann aus jeder Situation mit zwei Klicks erreichbar.', src: ['Samsung Support', 'https://www.samsung.com/de/support/mobile-devices/so-passt-du-die-funktionstaste-mit-neuen-funktionen-auf-deinem-galaxy-telefon-und-tablet-an'] },
   { cat: 'Bedienung', t: 'Einstellungen in Alltagssprache suchen', how: 'In der Einstellungen-App oben auf die <b>Lupe</b> tippen und schreiben, was Sie wollen, z. B. „Klingelton ändern“ oder „Schrift größer“.', why: 'Sie müssen nicht wissen, in welchem Menü eine Option steckt.', src: ['Android Police', 'https://www.androidpolice.com/hidden-one-ui-7-features-you-probably-missed/'] },
   { cat: 'Bedienung', t: 'Mehr Optionen hinter Helligkeits- und Lautstärke-Regler', how: 'In den Schnelleinstellungen den <b>Helligkeitsregler gedrückt halten</b>: Es öffnet sich das erweiterte Menü mit adaptiver Helligkeit. Den Audio-Regler gedrückt halten öffnet Klangeinstellungen.', why: 'Spart den Umweg über die Einstellungen-App.', src: ['Sammy Fans', 'https://www.sammyfans.com/2025/07/20/samsung-one-ui-7-quick-panel-has-two-hidden-features/'] },
   { cat: 'Kamera & Galerie', t: 'Objekt aus einem Foto ausschneiden', how: 'In der Galerie ein Foto öffnen und das Motiv (Person, Tier, Gegenstand) etwa <b>eine Sekunde gedrückt halten</b>. Es wird freigestellt; dann <b>Kopieren</b>, <b>Teilen</b> oder <b>Als Bild speichern</b> (PNG mit transparentem Hintergrund).', why: 'Ideal für eigene Sticker in WhatsApp oder für Collagen, ganz ohne Bildbearbeitungs-App.', src: ['nextpit', 'https://www.nextpit.com/how-tos/how-to-use-image-clipper-samsung-galaxy-device'] },
@@ -3350,7 +3348,7 @@ const BACKGROUND = [
   { t: 'Warum Sicherheitsupdates so wichtig sind', icon: 'shield', d: 'Google und Samsung veröffentlichen regelmäßig Listen mit geschlossenen Sicherheitslücken. Sobald eine Lücke öffentlich ist, wissen auch Angreifer davon. Wer das Update nicht installiert, bleibt angreifbar. Den Stand Ihres Telefons sehen Sie unter Telefoninfo › Softwareinformationen › Sicherheitspatch-Stand.' },
   { t: 'Was passiert beim Zurücksetzen wirklich?', icon: 'reset', d: 'Alle Daten sind verschlüsselt gespeichert. Beim Zurücksetzen auf Werkseinstellungen wird der Schlüssel gelöscht. Ohne Schlüssel sind die verbliebenen Daten nur noch unlesbarer Zeichensalat. Darum dauert das Zurücksetzen nur wenige Minuten und ist trotzdem sicher, etwa vor einem Verkauf.' }
 ];
-MINI_QUIZ.wissen2 = [
+MINI_QUIZ.profi = [
   { q: 'Was ist der Unterschied zwischen RAM und Speicher?', o: ['Kein Unterschied', 'RAM = Arbeitsfläche (wird geleert), Speicher = dauerhafte Ablage', 'RAM ist nur für Fotos'], a: 1, e: 'RAM ist der Schreibtisch, der Speicher der Aktenschrank.' },
   { q: 'Wie holen Sie den ganzen Bildschirm in Daumenreichweite?', o: ['Einhandmodus', 'Dunkelmodus', 'Bildschirmzoom'], a: 0, e: 'Einstellungen › Erweiterte Funktionen › Einhändiger Modus.' },
   { q: 'Wie kopieren Sie eine Telefonnummer von einem Foto?', o: ['Abtippen', 'In der Galerie auf das „T“-Symbol tippen', 'Gar nicht möglich'], a: 1, e: 'Die Texterkennung macht Text in Bildern markierbar.' }
@@ -3482,7 +3480,7 @@ MINI_QUIZ.wissen2 = [
   const hs = $('#hero-stats');
   if (hs) {
     const mins = chapters.reduce((a, s) => a + (+s.dataset.time || 0), 0);
-    const inter = $$('.stepper, .explorer, .combo, .quiz, .ts, #settings-trainer, #key-trainer, #gesture-trainer, #call-sim, #expo-sim, #cam-lab, #cam-advisor, #charge-calc, #storage-calc, #protect-plan, #datasheet, #knox-layers').length;
+    const inter = $$('.stepper, .explorer, .combo, .quiz, .ts, #settings-trainer, #key-trainer, #gesture-trainer, #call-sim, #expo-sim, #cam-lab, #cam-advisor, #charge-calc, #storage-calc, #protect-plan, #datasheet, #knox-layers, #tips-list, #myth-check').length;
     hs.innerHTML = `<div><b>${chapters.length}</b><span>Kapitel</span></div><div><b>${inter}</b><span>interaktive Übungen</span></div><div><b>ca. ${Math.round(mins / 60)} Std.</b><span>Lesezeit gesamt</span></div><div><b>Offline</b><span>ohne Internet nutzbar</span></div>`;
   }
   function syncDone() {
@@ -3748,6 +3746,11 @@ MINI_QUIZ.wissen2 = [
   COMBOS.forEach(c => index.push({ id: 'tasten', title: c.l, ch: 'Tastenkombination', text: c.how.join(' ') + '. ' + c.d, nt: norm(c.l), nx: norm(c.how.join(' ') + ' ' + c.d) }));
   Object.entries(GLOSS).forEach(([k, [t, d]]) => index.push({ id: 'glossar', title: t, ch: 'Glossar', text: d, nt: norm(t), nx: norm(d) }));
   FAQ.forEach(([q, a]) => index.push({ id: 'faq', title: q, ch: 'Häufige Fragen', text: a, nt: norm(q), nx: norm(a) }));
+  // Tipps, Mythen und Hintergrundwissen rendert erst interactive2.js, daher fehlen sie im DOM-Index oben.
+  const strip = s => s.replace(/<[^>]+>/g, '');
+  TIPS.forEach(t => { const x = strip(t.how + ' ' + t.why); index.push({ id: 'tipps', title: t.t, ch: 'Tipps & Tricks', text: x, nt: norm(t.t), nx: norm(x) }); });
+  MYTHS.forEach(m => index.push({ id: 'mythen', title: m.q, ch: 'Mythen-Check', text: '', nt: norm(m.q), nx: '' }));
+  BACKGROUND.forEach(b => { const x = strip(b.d); index.push({ id: 'hintergrund-wissen', title: b.t, ch: 'Hintergrundwissen', text: x, nt: norm(b.t), nx: norm(x) }); });
 
   const qInput = $('#q'), results = $('#results');
   let hits = [], sel = -1;
@@ -4376,25 +4379,30 @@ MINI_QUIZ.wissen2 = [
   /* ======================= Tipps & Tricks ======================= */
   const tl = $('#tips-list');
   if (tl) {
-    let cat = '', tried = new Set(store.get('tips', []));
-    const cats = [...new Set(TIPS.map(t => t.cat))];
-    tl.innerHTML = `<div class="tips-top"><div class="combo-picks" id="tip-cats"><button type="button" data-c="" aria-pressed="true">Alle (${TIPS.length})</button>${cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('')}</div>
-      <button type="button" class="btn" id="tip-random">${icon('bulb')}Zufälliger Tipp</button></div><p class="caption" id="tip-count" style="text-align:left"></p><div id="tip-out"></div>`;
+    // Fortschritt per Tipp-Titel speichern, damit Umsortieren oder Einfügen von Tipps die Haken nicht verschiebt.
+    let cat = '', tried = new Set(store.get('tips', []).filter(x => TIPS.some(t => t.t === x)));
+    const cats = [...new Set(TIPS.map(t => t.cat))], all = [...TIPS.keys()];
+    tl.innerHTML = `<div class="tips-top"><button type="button" class="btn" id="tip-random">${icon('bulb')}Zufälliger Tipp</button>
+      <div class="combo-picks" id="tip-cats"><button type="button" data-c="" aria-pressed="true">Alle (${TIPS.length})</button>${cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('')}</div></div>
+      <p class="caption" id="tip-count" style="text-align:left"></p><div id="tip-out"></div>`;
+    const count = () => { $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`; };
     function render() {
-      const list = TIPS.map((t, i) => [t, i]).filter(([t]) => !cat || t.cat === cat);
-      $('#tip-out').innerHTML = list.map(([t, i]) => `<details class="tip-card${tried.has(i) ? ' done' : ''}" id="tip-${i}"><summary><span class="chip lvl-2">${esc(t.cat)}</span><b>${esc(t.t)}</b></summary>
+      $('#tip-out').innerHTML = all.filter(i => !cat || TIPS[i].cat === cat).map(i => {
+        const t = TIPS[i], on = tried.has(t.t);
+        return `<details class="tip-card${on ? ' done' : ''}" id="tip-${i}"><summary><span class="chip lvl-2">${esc(t.cat)}</span><b>${esc(t.t)}</b></summary>
         <div class="pp-body"><p><b>So geht’s:</b> ${t.how}</p><div class="why"><b>Warum es hilft:</b> ${t.why}</div>
-        <div class="tip-foot"><span class="tip-src">Belegt durch: <a href="${t.src[1]}" target="_blank" rel="noopener">${esc(t.src[0])}</a></span><label class="tip-try"><input type="checkbox" data-i="${i}" ${tried.has(i) ? 'checked' : ''}> Ausprobiert</label></div></div></details>`).join('');
-      $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`;
+        <div class="tip-foot"><span class="tip-src">Belegt durch: <a href="${t.src[1]}" target="_blank" rel="noopener">${esc(t.src[0])}</a></span><label class="tip-try"><input type="checkbox" data-i="${i}" ${on ? 'checked' : ''}> Ausprobiert</label></div></div></details>`;
+      }).join('');
+      count();
     }
     $('#tip-cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; $$('#tip-cats button').forEach(x => x.setAttribute('aria-pressed', x === b)); render(); });
     $('#tip-random').addEventListener('click', () => {
-      cat = ''; $$('#tip-cats button').forEach((x, k) => x.setAttribute('aria-pressed', k === 0)); render();
-      const open = TIPS.map((t, i) => i).filter(i => !tried.has(i)), pool = open.length ? open : TIPS.map((t, i) => i);
+      if (cat) { cat = ''; $$('#tip-cats button').forEach((x, k) => x.setAttribute('aria-pressed', k === 0)); render(); }
+      const open = all.filter(i => !tried.has(TIPS[i].t)), pool = open.length ? open : all;
       const i = pool[Math.floor(Math.random() * pool.length)], el = $('#tip-' + i);
       el.open = true; el.scrollIntoView({ block: 'center' }); el.classList.add('flash-card'); setTimeout(() => el.classList.remove('flash-card'), 1200);
     });
-    tl.addEventListener('change', e => { const i = +e.target.dataset.i; if (isNaN(i)) return; e.target.checked ? tried.add(i) : tried.delete(i); store.set('tips', [...tried]); e.target.closest('.tip-card').classList.toggle('done', e.target.checked); $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`; });
+    tl.addEventListener('change', e => { const t = TIPS[+e.target.dataset.i]; if (!t) return; e.target.checked ? tried.add(t.t) : tried.delete(t.t); store.set('tips', [...tried]); e.target.closest('.tip-card').classList.toggle('done', e.target.checked); count(); });
     render();
   }
 

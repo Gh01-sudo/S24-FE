@@ -124,7 +124,7 @@
   const hs = $('#hero-stats');
   if (hs) {
     const mins = chapters.reduce((a, s) => a + (+s.dataset.time || 0), 0);
-    const inter = $$('.stepper, .explorer, .combo, .quiz, .ts, #settings-trainer, #key-trainer, #gesture-trainer, #call-sim, #expo-sim, #cam-lab, #cam-advisor, #charge-calc, #storage-calc, #protect-plan, #datasheet, #knox-layers').length;
+    const inter = $$('.stepper, .explorer, .combo, .quiz, .ts, #settings-trainer, #key-trainer, #gesture-trainer, #call-sim, #expo-sim, #cam-lab, #cam-advisor, #charge-calc, #storage-calc, #protect-plan, #datasheet, #knox-layers, #tips-list, #myth-check').length;
     hs.innerHTML = `<div><b>${chapters.length}</b><span>Kapitel</span></div><div><b>${inter}</b><span>interaktive Übungen</span></div><div><b>ca. ${Math.round(mins / 60)} Std.</b><span>Lesezeit gesamt</span></div><div><b>Offline</b><span>ohne Internet nutzbar</span></div>`;
   }
   function syncDone() {
@@ -390,6 +390,11 @@
   COMBOS.forEach(c => index.push({ id: 'tasten', title: c.l, ch: 'Tastenkombination', text: c.how.join(' ') + '. ' + c.d, nt: norm(c.l), nx: norm(c.how.join(' ') + ' ' + c.d) }));
   Object.entries(GLOSS).forEach(([k, [t, d]]) => index.push({ id: 'glossar', title: t, ch: 'Glossar', text: d, nt: norm(t), nx: norm(d) }));
   FAQ.forEach(([q, a]) => index.push({ id: 'faq', title: q, ch: 'Häufige Fragen', text: a, nt: norm(q), nx: norm(a) }));
+  // Tipps, Mythen und Hintergrundwissen rendert erst interactive2.js, daher fehlen sie im DOM-Index oben.
+  const strip = s => s.replace(/<[^>]+>/g, '');
+  TIPS.forEach(t => { const x = strip(t.how + ' ' + t.why); index.push({ id: 'tipps', title: t.t, ch: 'Tipps & Tricks', text: x, nt: norm(t.t), nx: norm(x) }); });
+  MYTHS.forEach(m => index.push({ id: 'mythen', title: m.q, ch: 'Mythen-Check', text: '', nt: norm(m.q), nx: '' }));
+  BACKGROUND.forEach(b => { const x = strip(b.d); index.push({ id: 'hintergrund-wissen', title: b.t, ch: 'Hintergrundwissen', text: x, nt: norm(b.t), nx: norm(x) }); });
 
   const qInput = $('#q'), results = $('#results');
   let hits = [], sel = -1;
