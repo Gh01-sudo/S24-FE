@@ -155,7 +155,7 @@ main { min-width: 0; padding-block: 32px 80px; padding-left: max(16px, env(safe-
   .brand small, .brand .brand-text { display: none; }
   .progress-wrap { display: none; }
   .search { flex: 1; }
-  .tools .opt { display: none; }
+  .tools { display: none; }
   h2 { font-size: 1.55em; }
 }
 
@@ -435,3 +435,29 @@ mark { background: var(--warn-soft); color: inherit; border-radius: 3px; padding
 .m-person { fill: #384650; }
 .m-white-fill { fill: #ffffff; }
 .m-white-stroke { stroke: #ffffff; fill: none; }
+
+/* Sidebar view controls */
+.view-ctl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 10px; }
+.view-ctl .btn { justify-content: center; height: 46px; padding: 0 10px; font-size: .9rem; }
+.view-ctl .btn.wide { grid-column: 1 / -1; }
+.hs circle.hit { fill: transparent; }
+button, a, .hs { -webkit-tap-highlight-color: transparent; }
+/* Touch screens such as the S24 FE: larger tap targets */
+@media (pointer: coarse) {
+  .dots button { width: 34px; height: 34px; font-size: .82rem; }
+  .btn { min-height: 48px; }
+  .toc a { padding: 10px; }
+  .path .copy { padding: 8px 10px; }
+  .quiz-opts button, .ts-opts button { padding: 14px 16px; }
+  .hs-list button { padding: 8px 12px; }
+  .combo-picks button { padding: 10px 12px; }
+}
+@media (max-width: 640px) {
+  .stepper-head { padding: 12px 14px; }
+  .stepper-body { padding: 14px; gap: 14px; }
+  .stepper-foot { padding: 10px 14px; }
+  .explorer, .combo, .quiz, .ts { padding: 14px; }
+  .chapter-num { width: 44px; height: 44px; font-size: 1.1rem; }
+  .callout { padding: 12px 14px; gap: 10px; }
+  details.bg .inner { padding-left: 16px; }
+}

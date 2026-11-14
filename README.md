@@ -2,7 +2,12 @@
 
 Interaktives, inoffizielles Einsteiger-Handbuch für das Samsung Galaxy S24 FE (Deutsch).
 
-**Öffnen:** `index.html` im Browser öffnen (am PC oder Smartphone). Keine Installation nötig.
+**Öffnen:** `S24-FE-Handbuch.html` im Browser öffnen, am PC oder direkt auf dem Galaxy S24 FE
+(Samsung Internet oder Chrome). Keine Installation, kein Internet nötig.
+
+**Weitergeben:** Die Datei ist komplett eigenständig (ca. 0,3 MB, Schriften und Bilder eingebettet).
+Einfach per WhatsApp (als Dokument), E-Mail oder Quick Share verschicken. Auf dem Handy die Datei
+antippen und mit Samsung Internet oder Chrome öffnen.
 
 ## Inhalt
 12 Kapitel: Gerät kennenlernen, Einrichtung, Grundbedienung, Sicherheit, Kamera, Galaxy AI,

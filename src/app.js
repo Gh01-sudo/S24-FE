@@ -23,16 +23,17 @@
   const savedTheme = store.get('theme', null);
   if (savedTheme) root.setAttribute('data-theme', savedTheme);
   const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-  $('#theme-btn').addEventListener('click', () => {
+  $$('[data-act="theme"]').forEach(b => b.addEventListener('click', () => {
     const next = isDark() ? 'light' : 'dark';
     root.setAttribute('data-theme', next); store.set('theme', next);
     toast(next === 'dark' ? 'Dunkle Darstellung' : 'Helle Darstellung');
-  });
+  }));
   let fs = store.get('fs', 16);
   const applyFs = () => root.style.setProperty('--fs', fs + 'px');
   applyFs();
-  $('#font-up').addEventListener('click', () => { fs = Math.min(21, fs + 1); applyFs(); store.set('fs', fs); toast('Schriftgröße ' + fs + ' px'); });
-  $('#font-down').addEventListener('click', () => { fs = Math.max(14, fs - 1); applyFs(); store.set('fs', fs); toast('Schriftgröße ' + fs + ' px'); });
+  const setFs = d => { fs = Math.max(14, Math.min(22, fs + d)); applyFs(); store.set('fs', fs); toast('Schriftgröße ' + fs + ' px'); };
+  $$('[data-act="font-up"]').forEach(b => b.addEventListener('click', () => setFs(1)));
+  $$('[data-act="font-down"]').forEach(b => b.addEventListener('click', () => setFs(-1)));
 
   /* ---------- decorations ---------- */
   $$('[data-icon]').forEach(el => el.insertAdjacentHTML('afterbegin', icon(el.dataset.icon)));
@@ -163,7 +164,7 @@
   /* ---------- hotspot explorers ---------- */
   function hotspots(spots, active) {
     return spots.map((s, k) => `<g class="hs${k === active ? ' active' : ''}" data-i="${k}" tabindex="0" role="button" aria-label="${k + 1}: ${esc(s.t)}" transform="translate(${s.x} ${s.y})">
-      <circle class="pulse" r="11"/><circle class="dot" r="11"/><text>${k + 1}</text></g>`).join('');
+      <circle class="hit" r="22"/><circle class="pulse" r="11"/><circle class="dot" r="11"/><text>${k + 1}</text></g>`).join('');
   }
   function makeExplorer(cfg) {
     let view = cfg.initial, active = 0;
@@ -302,6 +303,19 @@
     pop.style.left = left + 'px'; pop.style.top = (r.bottom + scrollY + 8) + 'px';
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePop(); closeNav(); hideResults(); } });
+
+  /* ---------- sharing ---------- */
+  const shareBtn = $('#share-btn');
+  const isLocal = location.protocol === 'file:' || location.protocol === 'content:';
+  if (shareBtn && isLocal) shareBtn.parentElement.hidden = true;
+  if (shareBtn) shareBtn.addEventListener('click', async () => {
+    const local = isLocal;
+    if (local) { toast('Teilen Sie die Datei selbst, siehe Anleitung unten.'); return; }
+    const url = location.href.split('#')[0];
+    try { if (navigator.share) { await navigator.share({ title: document.title, url }); return; } }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+    copyText(url);
+  });
 
   /* ---------- search ---------- */
   const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
