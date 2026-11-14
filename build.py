@@ -15,7 +15,7 @@ shell = shell.replace('/*FONTS*/', '\n'.join(faces))
 body = (shell
         .replace('/*STYLES*/', (src / 'styles.css').read_text(encoding='utf-8'))
         .replace('<!--CONTENT-->', (src / 'content.html').read_text(encoding='utf-8'))
-        .replace('/*SCRIPTS*/', '\n'.join((src / f).read_text(encoding='utf-8') for f in ('mocks.js', 'data.js', 'data2.js', 'data3.js', 'data4.js', 'app.js', 'interactive.js', 'interactive2.js'))))
+        .replace('/*SCRIPTS*/', '\n'.join((src / f).read_text(encoding='utf-8') for f in ('mocks.js', 'data.js', 'data2.js', 'data3.js', 'data4.js', 'data5.js', 'app.js', 'interactive.js', 'interactive2.js', 'tooltips.js'))))
 standalone = ('<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n'
               '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
               + body.replace('<header class="topbar">', '</head>\n<body>\n<header class="topbar">', 1)

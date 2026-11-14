@@ -335,23 +335,8 @@
   $('#gloss-q').addEventListener('input', e => renderGloss(e.target.value));
   renderGloss();
 
-  // term popovers
-  let pop = null;
-  const closePop = () => { if (pop) { pop.remove(); pop = null; } };
-  document.addEventListener('click', e => {
-    const t = e.target.closest('.term');
-    if (!t) { if (pop && !e.target.closest('.popover')) closePop(); return; }
-    e.preventDefault();
-    closePop();
-    const g = GLOSS[t.dataset.term]; if (!g) return;
-    pop = document.createElement('div'); pop.className = 'popover'; pop.setAttribute('role', 'dialog');
-    pop.innerHTML = `<b>${esc(g[0])}</b>${esc(g[1])}`;
-    document.body.appendChild(pop);
-    const r = t.getBoundingClientRect();
-    const left = Math.max(16, Math.min(r.left + scrollX, scrollX + innerWidth - pop.offsetWidth - 16));
-    pop.style.left = left + 'px'; pop.style.top = (r.bottom + scrollY + 8) + 'px';
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePop(); closeNav(); hideResults(); } });
+  // term tooltips are handled in tooltips.js
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeNav(); hideResults(); } });
 
   /* ---------- sharing ---------- */
   const shareBtn = $('#share-btn');

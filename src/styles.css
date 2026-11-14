@@ -890,3 +890,17 @@ footer.foot { border-top-color: var(--line); }
 .bg-card .ch-ico { width: 38px; height: 38px; border-radius: 11px; flex: none; }
 .bg-card .ch-ico svg { width: 19px; height: 19px; }
 .bg-card[open] { box-shadow: var(--shadow); }
+
+/* ---- Fachbegriff-Tooltips ---- */
+.term { border: 0; background: none; padding: 0 1px; margin: 0; font: inherit; color: inherit; cursor: help; border-bottom: 1.5px dotted var(--accent); border-radius: 2px; line-height: inherit; text-align: inherit; }
+.term:hover, .term[aria-expanded="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+.term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tt { position: fixed; z-index: 95; max-width: min(320px, calc(100vw - 24px)); padding: 12px 14px; border-radius: 14px; background: var(--fg); color: var(--bg); box-shadow: var(--shadow-lg); font-size: .86rem; line-height: 1.5; pointer-events: auto; animation: ttIn .14s ease-out; }
+.tt::after { content: ""; position: absolute; left: var(--ax, 50%); width: 12px; height: 12px; background: var(--fg); transform: translateX(-50%) rotate(45deg); border-radius: 2px; }
+.tt[data-side="above"]::after { bottom: -5px; }
+.tt[data-side="below"]::after { top: -5px; }
+.tt b { display: block; font-family: var(--font-display); font-size: .92rem; margin-bottom: 3px; }
+.tt span { display: block; }
+.tt .tt-more { display: inline-block; margin-top: 8px; font-size: .78rem; font-weight: 600; color: var(--bg); opacity: .8; }
+.tt .tt-more:hover { opacity: 1; color: var(--bg); }
+@keyframes ttIn { from { opacity: 0; transform: translateY(4px); } }

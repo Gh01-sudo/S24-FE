@@ -18,10 +18,10 @@ Interaktiv: Einstellungs-Trainer (Übungs-Handy), Tasten- und Gesten-Trainer, An
 Belichtungs-Simulator, Kamera-Berater, Lade- und Speicher-Rechner, Kurzquiz pro Kapitel,
 Checkliste, Schritt-Assistenten mit Bildschirm-Illustrationen, klickbares Geräte-Modell,
 Tastenkombinations-Simulator, animierte Gesten, Hilfe-Assistent, Quiz, Volltextsuche,
-Fortschritt, Glossar-Popups, Hell/Dunkel und Schriftgröße.
+Fortschritt, Fachbegriff-Tooltips (über 100 Begriffe, automatisch im Text markiert), Hell/Dunkel und Schriftgröße.
 
 ## Bearbeiten
-Quelltexte liegen in `src/` (`content.html`, `styles.css`, `mocks.js`, `data.js`, `data2.js`, `data3.js`, `data4.js`, `app.js`, `interactive.js`, `interactive2.js`, `shell.html`, `fonts/`).
+Quelltexte liegen in `src/` (`content.html`, `styles.css`, `mocks.js`, `data.js`, `data2.js`, `data3.js`, `data4.js`, `data5.js`, `app.js`, `interactive.js`, `interactive2.js`, `tooltips.js`, `shell.html`, `fonts/`).
 Nach Änderungen neu bauen:
 
 ```
