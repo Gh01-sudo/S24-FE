@@ -80,10 +80,53 @@
     });
   });
 
+  /* ---------- chapter meta (icons & groups) ---------- */
+  const CH_META = {
+    geraet: ['phone', 'Erste Schritte'], einrichtung: ['steps', 'Erste Schritte'], bedienung: ['tap', 'Erste Schritte'], telefon: ['chat', 'Erste Schritte'],
+    sicherheit: ['shield', 'Sicherheit'], knox: ['lock', 'Sicherheit'], schutzplan: ['check', 'Sicherheit'],
+    kamera: ['lens', 'Kamera & KI'], ai: ['search', 'Kamera & KI'],
+    akku: ['battery', 'Alltag'], anpassen: ['contrast', 'Alltag'], verbindungen: ['wifi', 'Alltag'], apps: ['app', 'Alltag'],
+    hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
+  };
+  const metaOf = sec => CH_META[sec.id] || ['book', 'Weitere'];
+  chapters.forEach(sec => {
+    const [ic, grp] = metaOf(sec), head = $('.chapter-head', sec);
+    const num = $('.chapter-num', sec); if (num) { num.innerHTML = icon(ic); num.setAttribute('aria-hidden', 'true'); }
+    const txt = head && head.children[1];
+    if (txt) txt.insertAdjacentHTML('afterbegin', `<div class="ch-eyebrow">Kapitel ${sec.dataset.ch} · ${esc(grp)}</div>`);
+    const mr = head && head.nextElementSibling; if (txt && mr && mr.classList.contains('meta-row')) txt.appendChild(mr);
+    const subs = $$('h3[id]', sec).filter(h => !/^quiz-/.test(h.id));
+    if (subs.length > 2 && head) {
+      head.insertAdjacentHTML('afterend', `<nav class="in-chapter" aria-label="In diesem Kapitel"><b>In diesem Kapitel</b><ul>${subs.map(h => `<li><a href="#${h.id}">${esc(h.textContent.trim())}</a></li>`).join('')}</ul></nav>`);
+    }
+  });
+  chapters.forEach((sec, i) => {
+    const prev = chapters[i - 1], next = chapters[i + 1];
+    sec.insertAdjacentHTML('beforeend', `<nav class="ch-nav" aria-label="Kapitelnavigation">${prev ? `<a class="prev" href="#${prev.id}"><span>‹ Vorheriges Kapitel</span><b>${esc(prev.dataset.title)}</b></a>` : ''}${next ? `<a class="next" href="#${next.id}"><span>Nächstes Kapitel ›</span><b>${esc(next.dataset.title)}</b></a>` : ''}</nav>`);
+  });
+
   /* ---------- TOC ---------- */
   const toc = $('#toc');
-  toc.innerHTML = `<li><a href="#start" data-sec="start"><span class="num">★</span><span>Willkommen</span><span></span></a></li>` +
-    chapters.map(s => `<li><a href="#${s.id}" data-sec="${s.id}"><span class="num">${s.dataset.ch}</span><span>${esc(s.dataset.title)}</span>${icon('check', 'tick')}</a></li>`).join('');
+  let lastGroup = '';
+  toc.innerHTML = `<li><a href="#start" data-sec="start"><span class="num">${icon('home')}</span><span>Willkommen</span><span></span></a></li>` +
+    chapters.map(s => { const [ic, grp] = metaOf(s); const g = grp !== lastGroup ? `<li class="toc-group">${esc(grp)}</li>` : ''; lastGroup = grp; return g + `<li><a href="#${s.id}" data-sec="${s.id}" title="Kapitel ${s.dataset.ch}"><span class="num">${icon(ic)}</span><span>${esc(s.dataset.title)}</span>${icon('check', 'tick')}</a></li>`; }).join('');
+
+  /* ---------- start page: chapter grid & stats ---------- */
+  const grid = $('#chapter-grid');
+  if (grid) {
+    let g0 = '';
+    grid.innerHTML = chapters.map(s => {
+      const [ic, grp] = metaOf(s), desc = ($('.chapter-head p', s) || {}).textContent || '';
+      const gh = grp !== g0 ? `<div class="ch-group-title">${esc(grp)}</div>` : ''; g0 = grp;
+      return gh + `<a class="ch-tile" href="#${s.id}" data-sec="${s.id}"><span class="ch-ico">${icon(ic)}</span><span><b>${esc(s.dataset.title)}</b><p>${esc(desc)}</p><small>Kapitel ${s.dataset.ch} · ca. ${s.dataset.time} Min.</small></span></a>`;
+    }).join('');
+  }
+  const hs = $('#hero-stats');
+  if (hs) {
+    const mins = chapters.reduce((a, s) => a + (+s.dataset.time || 0), 0);
+    const inter = $$('.stepper, .explorer, .combo, .quiz, .ts, #settings-trainer, #key-trainer, #gesture-trainer, #call-sim, #expo-sim, #cam-lab, #cam-advisor, #charge-calc, #storage-calc, #protect-plan, #datasheet, #knox-layers').length;
+    hs.innerHTML = `<div><b>${chapters.length}</b><span>Kapitel</span></div><div><b>${inter}</b><span>interaktive Übungen</span></div><div><b>ca. ${Math.round(mins / 60)} Std.</b><span>Lesezeit gesamt</span></div><div><b>Offline</b><span>ohne Internet nutzbar</span></div>`;
+  }
   function syncDone() {
     chapters.forEach(sec => {
       const on = done.has(sec.id);
@@ -93,6 +136,8 @@
     const n = chapters.filter(s => done.has(s.id)).length;
     $('#pbar').style.width = (n / chapters.length * 100) + '%';
     $('#plabel').textContent = `${n} von ${chapters.length} Kapiteln`;
+    const spb = $('#sp-bar'); if (spb) { spb.style.width = (n / chapters.length * 100) + '%'; $('#sp-sub').textContent = `${n} von ${chapters.length} Kapiteln erledigt`; }
+    $$('.ch-tile').forEach(t => t.classList.toggle('done', done.has(t.dataset.sec)));
   }
   syncDone();
 
@@ -114,8 +159,10 @@
     }, { rootMargin: '-30% 0px -65% 0px' });
     allSecs.forEach(s => io.observe(s));
   }
-  const toTop = $('#totop');
-  addEventListener('scroll', () => { toTop.hidden = scrollY < 900; }, { passive: true });
+  syncDone();
+  const toTop = $('#totop'), rp = $('#read-progress');
+  const onScroll = () => { toTop.hidden = scrollY < 900; const h = document.documentElement.scrollHeight - innerHeight; if (rp) rp.style.width = (h > 0 ? scrollY / h * 100 : 0) + '%'; };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
   toTop.addEventListener('click', () => scrollTo({ top: 0 }));
 
   /* ---------- learning paths ---------- */

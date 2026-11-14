@@ -16,6 +16,7 @@
     <input id="q" type="search" placeholder="Suchen, z. B. Screenshot" aria-label="Im Handbuch suchen" autocomplete="off">
     <div class="search-results" id="results" hidden></div>
   </div>
+  <span class="read-progress" id="read-progress" aria-hidden="true"></span>
   <div class="tools">
     <button class="iconbtn opt" data-act="font-down" type="button" aria-label="Schrift verkleinern" title="Schrift verkleinern"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19l5-14h1l5 14M5 14h7M15 12h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     <button class="iconbtn opt" data-act="font-up" type="button" aria-label="Schrift vergrößern" title="Schrift vergrößern"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19l5-14h1l5 14M5 14h7M18 9v6M15 12h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -24,7 +25,7 @@
 </header>
 <div class="shell">
   <nav class="sidebar" id="sidebar" aria-label="Kapitel">
-    <div class="label">Kapitel</div>
+    <div class="side-progress"><b id="sp-title">Ihr Fortschritt</b><span id="sp-sub"></span><div class="bar"><i id="sp-bar"></i></div></div>
     <ul class="toc" id="toc"></ul>
     <div class="label" style="margin-top:20px">Ansicht</div>
     <div class="view-ctl">
