@@ -36,6 +36,17 @@ Stand: 14. November 2026. Geprüft wurden technische Daten, Hardware-Angaben, Me
 | Wartungsmodus unter Einstellungen › Gerätewartung | [Samsung Support](https://www.samsung.com/us/support/answer/ANS00091542/) |
 | Modellnummer SM-S721B (Europa) | [GSMArena](https://m.gsmarena.com/galaxy_s24_fe_support_pagegoes_up_onsamsung_france_launch_should_be_close-news-64019.php) |
 
+## Nachtrag: Erweiterung (neues Kapitel, Trainer, Rechner)
+
+Die neuen Inhalte beruhen auf allgemein dokumentiertem Android- und One-UI-Verhalten. Sie wurden nicht einzeln gegen Quellen geprüft wie die Angaben oben. Vorsichtig formuliert sind:
+
+- **Lade- und Speicher-Rechner:** Richtwerte. Die Ladezeit für 25 W (ca. 50 % in 30 Min., voll in gut einer Stunde) ist durch die GSMArena-Angabe gestützt. Die übrigen Ladegeräte und die Dateigrößen sind Schätzungen und im Handbuch als Richtwerte gekennzeichnet.
+- **Belichtungs-Simulator:** vereinfachtes Lehrmodell, kein Abbild der echten Kamera-Automatik.
+- **Nachrichten-App:** Ob Samsung Nachrichten oder Google Messages vorinstalliert ist, hängt vom Softwarestand ab. Das Handbuch nennt beide.
+- **Auto Blocker:** Der deutsche Menüname kann je nach Version abweichen. Das ist im Text vermerkt.
+- **Notruf ohne SIM:** In Deutschland seit 2009 nicht möglich (Angabe aus der Bundesnetzagentur-Regelung, allgemein bekannt).
+- **Übungs-Handys:** Die nachgebauten Menüs sind vereinfacht. Echte Menüs enthalten mehr Einträge.
+
 ## Bleibt zu beachten
 
 - **SIM-Fach:** Die Lage „links oben“ stammt aus US-Netzbetreiber-Anleitungen (SM-S721U). Für das EU-Modell ist sie sehr wahrscheinlich gleich, aber nicht aus einer Samsung-EU-Quelle belegt. Einmal am echten Gerät prüfen.

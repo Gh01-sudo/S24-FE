@@ -62,6 +62,8 @@
   /* ---------- chapter meta & done boxes ---------- */
   const LVL = { 1: 'Einsteiger', 2: 'Grundlagen+', 3: 'Bei Bedarf' };
   const chapters = $$('section[data-ch]').filter(s => +s.dataset.ch > 0);
+  chapters.forEach((sec, i) => { sec.dataset.ch = i + 1; const n = $('.chapter-num', sec); if (n) n.textContent = i + 1; });
+  $$('[data-chref]').forEach(a => { const sec = document.getElementById(a.dataset.chref); if (sec) a.textContent = 'Kapitel ' + sec.dataset.ch; });
   let done = new Set(store.get('done', []));
   chapters.forEach(sec => {
     const head = $('.chapter-head', sec);
@@ -316,6 +318,8 @@
     catch (e) { if (e && e.name === 'AbortError') return; }
     copyText(url);
   });
+
+  window.HB = { store, toast };
 
   /* ---------- search ---------- */
   const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');

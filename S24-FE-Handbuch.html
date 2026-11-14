@@ -476,13 +476,188 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   details.bg .inner { padding-left: 16px; }
 }
 
+/* ================= Interactive modules ================= */
+.trainer { display: grid; grid-template-columns: minmax(0, 270px) minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 700px) { .trainer { grid-template-columns: minmax(0, 1fr); } }
+.trainer-side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.trainer-side p { margin: 0; }
+.task-card { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.task-card h4 { margin: 4px 0 6px; font-size: 1.1em; }
+.task-card .cta-row { margin-top: 10px; }
+.trainer-fb { padding: 10px 12px; border-radius: 10px; background: var(--info-soft); font-size: .92rem; }
+.trainer-fb.ok { background: var(--good-soft); }
+.task-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.task-dots button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-weight: 700; font-size: .82rem; color: var(--muted); }
+.task-dots button.done { background: var(--good-soft); color: var(--good); border-color: transparent; }
+.task-dots button.cur { outline: 2px solid var(--accent); outline-offset: 1px; }
+.task-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.task-list li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: start; padding: 8px 10px; border-radius: 10px; background: var(--bg); font-size: .92rem; margin: 0; }
+.task-list li.done { background: var(--good-soft); }
+.task-list li svg { width: 20px; height: 20px; color: var(--good); }
+.task-list .tdot { width: 14px; height: 14px; margin: 4px; border-radius: 50%; border: 2px solid var(--muted); }
+
+/* --- simulated settings phone (HTML) --- */
+.sim-phone { --sim-fs: 1; position: relative; width: 100%; max-width: 270px; margin: 0 auto; aspect-ratio: 9 / 18.5; border-radius: 34px; border: 7px solid var(--frame); background: #f4f5f7; color: #1b1d20; display: flex; flex-direction: column; overflow: hidden; box-shadow: var(--shadow); }
+.sim-phone.dark { background: #0b0c0e; color: #eef0f2; }
+.sim-status { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px 4px; font-size: 11px; font-weight: 600; }
+.sim-dot { width: 9px; height: 9px; border-radius: 50%; background: #0b0f0e; }
+.sim-phone.dark .sim-dot { background: #444; }
+.sim-screen { flex: 1; overflow-y: auto; padding: 4px 10px 12px; font-size: calc(13px * var(--sim-fs)); overscroll-behavior: contain; }
+.sim-phone.bold .sim-screen { font-weight: 600; }
+.sim-handle { height: 4px; width: 70px; border-radius: 2px; background: currentColor; opacity: .5; margin: 4px auto 8px; }
+.sim-top { display: flex; align-items: center; gap: 4px; min-height: 44px; margin: 6px 0 4px; }
+.sim-title { font-family: var(--font-display); font-weight: 800; font-size: 1.45em; line-height: 1.15; }
+.sim-back { border: 0; background: none; font-size: 26px; line-height: 1; padding: 4px 8px 6px 2px; cursor: pointer; color: inherit; }
+.sim-note { font-size: .82em; opacity: .7; margin: 0 4px 8px; line-height: 1.35; }
+.sim-list { background: #ffffff; border-radius: 18px; padding: 4px; display: flex; flex-direction: column; }
+.sim-phone.dark .sim-list { background: #1d1f23; }
+.sim-head { font-size: .78em; font-weight: 700; opacity: .65; padding: 10px 10px 2px; }
+.sim-row { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 46px; text-align: left; background: none; border: 0; border-radius: 14px; padding: 8px 10px; cursor: pointer; color: inherit; font: inherit; font-size: 1em; }
+.sim-row:hover { background: rgba(127, 127, 127, .12); }
+.sim-row.info { cursor: default; }
+.sim-row.hint { outline: 2.5px dashed var(--warn); outline-offset: -2px; background: rgba(240, 138, 36, .12); animation: hintPulse 1.4s ease-in-out infinite; }
+@keyframes hintPulse { 50% { background: rgba(240, 138, 36, .25); } }
+.sim-lbl { flex: 1; min-width: 0; line-height: 1.25; }
+.sim-lbl small { display: block; font-size: .78em; opacity: .65; margin-top: 2px; }
+.sim-lbl small.acc { color: var(--accent); opacity: 1; font-weight: 600; }
+.sim-ic { width: 26px; height: 26px; border-radius: 50%; flex: none; }
+.sim-ic.m-c1 { background: #3b82f6; } .sim-ic.m-c2 { background: #14a198; } .sim-ic.m-c3 { background: #f08a24; } .sim-ic.m-c4 { background: #8b6cf0; } .sim-ic.m-c5 { background: #e5534b; } .sim-ic.m-c6 { background: #43a857; } .sim-ic.m-c7 { background: #6b7a86; }
+.sim-chev { opacity: .45; font-size: 1.3em; }
+.sim-tg { width: 38px; height: 22px; border-radius: 11px; background: #b9bec5; position: relative; flex: none; transition: background .2s; }
+.sim-tg::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.sim-tg.on { background: var(--accent); }
+.sim-tg.on::after { transform: translateX(16px); }
+.sim-rd { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #9aa0a8; flex: none; position: relative; }
+.sim-rd.on { border-color: var(--accent); }
+.sim-rd.on::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--accent); }
+
+/* --- key trainer --- */
+.kt-wrap { display: flex; flex-direction: column; align-items: center; }
+.kt-phone { position: relative; width: 190px; aspect-ratio: 9 / 18.5; border-radius: 30px; border: 7px solid var(--frame); background: #000; margin-right: 46px; touch-action: none; user-select: none; -webkit-user-select: none; }
+.kt-screen { position: absolute; inset: 0; border-radius: 23px; overflow: hidden; }
+.kt-key { position: absolute; right: -22px; width: 18px; border-radius: 0 6px 6px 0; border: 0; background: var(--frame); cursor: pointer; touch-action: none; }
+.kt-key::before { content: ""; position: absolute; inset: -8px -16px -8px -4px; }
+.kt-key.side { background: var(--accent); }
+.kt-key.down { background: var(--warn); transform: translateX(-4px); }
+.kt-lbl { position: absolute; left: calc(100% + 26px); font-size: .7rem; color: var(--muted); font-weight: 600; line-height: 1.1; width: 52px; }
+.kt-hold { margin-top: 8px; font-size: .85rem; font-weight: 600; color: var(--warn); min-height: 1.4em; text-align: center; font-variant-numeric: tabular-nums; }
+.kt-v { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #fff; text-align: center; padding: 12px; font-size: .82rem; }
+.kt-v.off { background: #000; color: #666; }
+.kt-v.lock { background: linear-gradient(160deg, #1f6e63, #0e2f3d); }
+.kt-v.lock b { font-size: 2.2rem; font-weight: 300; font-family: var(--font-display); }
+.kt-v.flash { animation: flash .5s ease-out; }
+@keyframes flash { from { filter: brightness(3); } }
+.kt-thumb { position: absolute; left: 10px; bottom: 14px; background: rgba(255,255,255,.9); color: #222; font-style: normal; font-size: .65rem; padding: 14px 6px; border-radius: 6px; }
+.kt-fp { position: absolute; bottom: 18%; width: 30px; height: 30px; border: 2px solid rgba(255,255,255,.7); border-radius: 50%; }
+.kt-v.cam { background: linear-gradient(#8cc8f0, #4f8f5b); }
+.kt-vf { width: 60%; height: 40%; border: 1.5px solid rgba(255,255,255,.8); }
+.kt-shutter { width: 42px; height: 42px; border-radius: 50%; background: #fff; border: 4px solid rgba(0,0,0,.2); }
+.kt-v.power { background: rgba(10, 12, 14, .92); }
+.kt-v .pm { background: #2a2d31; padding: 8px 14px; border-radius: 99px; width: 80%; }
+.kt-v .pm.red { background: #b3261e; }
+.kt-v small { opacity: .7; font-size: .7rem; }
+.kt-v.assist { background: linear-gradient(160deg, #1f3a6e, #0e2f3d); }
+.kt-v.sos { background: #8f1d16; }
+.kt-v.sos b { font-size: 1.8rem; }
+.kt-vol { position: absolute; right: 8px; top: 20%; width: 10px; height: 34%; border-radius: 6px; background: rgba(255,255,255,.3); display: flex; align-items: flex-end; overflow: hidden; }
+.kt-vol span { display: block; width: 100%; background: #fff; }
+
+/* --- gesture trainer --- */
+.gt-phone { width: 100%; max-width: 240px; margin: 0 auto; aspect-ratio: 9 / 18.5; border-radius: 32px; border: 7px solid var(--frame); background: #000; overflow: hidden; }
+.gt-screen { position: relative; width: 100%; height: 100%; touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; background: #f4f5f7; color: #1b1d20; }
+.gt-screen::before, .gt-screen::after { content: ""; position: absolute; left: 0; right: 0; height: 12%; pointer-events: none; }
+.gt-screen::before { top: 0; background: linear-gradient(rgba(240,138,36,.18), transparent); }
+.gt-screen::after { bottom: 0; background: linear-gradient(transparent, rgba(240,138,36,.18)); }
+.gt-handle { position: absolute; bottom: 8px; left: 50%; width: 70px; height: 4px; border-radius: 2px; background: #1b1d20; opacity: .6; transform: translateX(-50%); }
+.gt-dot { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: rgba(240,138,36,.45); border: 2px solid var(--warn); pointer-events: none; }
+.gv { position: absolute; inset: 0; padding: 28px 10px 10px; font-size: .8rem; }
+.gv b { display: block; font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 8px; }
+.gv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.gv-grid i { aspect-ratio: 1; background: #c9d6dc; border-radius: 4px; }
+.gv.home { background: linear-gradient(160deg, #1f6e63, #0e2f3d); color: #fff; }
+.gv.home b { font-size: 2rem; font-weight: 300; }
+.gv-icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 30%; }
+.gv-icons i { aspect-ratio: 1; border-radius: 30%; background: rgba(255,255,255,.35); }
+.gv.panel { background: #e9ecef; }
+.gv.panel p { background: #fff; border-radius: 12px; padding: 8px; margin: 0 0 6px; }
+.gv-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.gv-tiles i { font-style: normal; background: #fff; border-radius: 12px; padding: 10px 8px; font-size: .72rem; }
+.gv-tiles i.on { background: var(--accent); color: var(--accent-fg); }
+.gv.recent { background: #2a2d31; color: #fff; display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.gv.recent span { width: 42%; height: 46%; background: #f4f5f7; color: #222; border-radius: 12px; padding: 6px; font-size: .7rem; }
+.gv.recent small { width: 100%; text-align: center; opacity: .7; }
+.gv-circle { display: block; margin-top: 14px; font-style: normal; text-align: center; padding: 10px; border: 2px dashed var(--warn); border-radius: 40px; background: rgba(255,255,255,.8); }
+
+/* --- call simulator --- */
+.call-phone { width: 210px; aspect-ratio: 9 / 18.5; border-radius: 30px; border: 7px solid var(--frame); background: linear-gradient(170deg, #20323a, #0b1418); color: #fff; overflow: hidden; position: relative; touch-action: none; }
+.call-v { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; padding: 36px 12px 16px; gap: 4px; text-align: center; }
+.call-v small { opacity: .7; font-size: .72rem; }
+.call-v b { font-family: var(--font-display); font-size: 1.3rem; }
+.call-v span { font-size: .8rem; opacity: .8; }
+.call-v.ring b { animation: ringPulse 1.2s ease-in-out infinite; }
+.call-v.ring.muted b { animation: none; }
+@keyframes ringPulse { 50% { transform: scale(1.06); } }
+.call-drag { margin-top: auto; display: flex; justify-content: space-between; width: 100%; padding: 0 12px 40px; }
+.call-h { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; cursor: grab; touch-action: none; box-shadow: 0 0 0 8px rgba(255,255,255,.08); }
+.call-h.green { background: #2e9d4f; }
+.call-h.red { background: #d0342c; transform: rotate(135deg); }
+.call-msg { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); border: 0; background: rgba(255,255,255,.15); color: #fff; border-radius: 99px; padding: 6px 12px; font-size: .72rem; cursor: pointer; white-space: nowrap; }
+.call-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: auto; width: 100%; }
+.call-grid button { min-width: 0; overflow: hidden; aspect-ratio: 1; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: .6rem; cursor: pointer; padding: 2px; }
+.call-grid button.on { background: #fff; color: #111; }
+.call-end { margin: 14px 0 6px; border: 0; background: #d0342c; color: #fff; border-radius: 99px; padding: 10px 26px; cursor: pointer; font-weight: 700; }
+.call-v .btn { margin-top: 20px; }
+
+/* --- exposure simulator --- */
+.expo { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 700px) { .expo { grid-template-columns: minmax(0, 1fr); } }
+.expo-img { width: 100%; height: auto; border-radius: 12px; display: block; background: #000; }
+.expo-runner { animation: run 3s linear infinite; }
+@keyframes run { from { transform: translateX(0); } to { transform: translateX(200px); } }
+.expo-ctl { display: flex; flex-direction: column; gap: 8px; }
+.expo-ctl label { font-size: .9rem; }
+input[type="range"] { width: 100%; accent-color: var(--accent); height: 30px; }
+.expo-meter { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; font-size: .75rem; color: var(--muted); }
+.expo-meter div { position: relative; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #333, var(--good) 40%, var(--good) 60%, #f5f0d0); }
+.expo-meter i { position: absolute; top: -5px; width: 4px; height: 18px; border-radius: 2px; background: var(--fg); transform: translateX(-2px); transition: left .2s; }
+.expo-out { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; font-size: .88rem; }
+.expo-out li { padding: 6px 10px; border-radius: 8px; margin: 0; }
+.expo-out li.ok { background: var(--good-soft); }
+.expo-out li.bad { background: var(--warn-soft); }
+
+/* --- advisor & calculators & checklist --- */
+.ca-card { margin-top: 12px; padding: 14px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); }
+.ca-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.ca-card .why { padding: 10px 12px; border-left: 3px solid var(--info); background: var(--info-soft); border-radius: 0 10px 10px 0; font-size: .92em; }
+.calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 700px) { .calc { grid-template-columns: minmax(0, 1fr); } }
+.calc-in { display: flex; flex-direction: column; gap: 6px; }
+.calc-in label { font-size: .9rem; font-weight: 600; margin-top: 6px; }
+.calc select { height: 46px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); font: inherit; padding: 0 10px; }
+.batt { display: flex; height: 34px; border: 3px solid var(--fg); border-radius: 8px; padding: 2px; position: relative; margin-right: 8px; }
+.batt::after { content: ""; position: absolute; right: -9px; top: 8px; width: 5px; height: 12px; border-radius: 0 3px 3px 0; background: var(--fg); }
+.batt span:first-child { background: var(--muted); border-radius: 3px 0 0 3px; }
+.batt span:last-child { background: var(--accent); }
+.big-n { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--accent); margin: 10px 0 4px; font-variant-numeric: tabular-nums; }
+.cl-bar { height: 10px; border-radius: 5px; background: var(--surface-2); overflow: hidden; margin-bottom: 6px; }
+.cl-bar span { display: block; height: 100%; background: var(--accent); transition: width .3s; }
+.cl-item { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; padding: 10px 4px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.cl-item:last-child { border-bottom: 0; }
+.cl-item input { width: 22px; height: 22px; accent-color: var(--accent); }
+.cl-item a { font-size: .82rem; white-space: nowrap; }
+.quiz.mini .mq-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.quiz.mini .mq-head svg { width: 20px; height: 20px; color: var(--accent); }
+.quiz.mini .mq-head b { font-family: var(--font-display); flex: 1; }
+.mq-q { padding: 10px 0; border-top: 1px solid var(--line); }
+.mq-q:first-of-type { border-top: 0; }
+
 </style>
 </head>
 <body>
 <header class="topbar">
   <button class="iconbtn menu-btn" id="menu-btn" type="button" aria-label="Inhaltsverzeichnis öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
   <a class="brand" href="#start"><span class="brand-mark"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="5.5" r="1" fill="currentColor"/></svg></span><span class="brand-text">S24 FE Handbuch<small>Für Einsteigerinnen und Einsteiger</small></span></a>
-  <div class="progress-wrap"><div class="progress-bar" aria-hidden="true"><span id="pbar"></span></div><span class="progress-label" id="plabel">0 von 12 Kapiteln</span></div>
+  <div class="progress-wrap"><div class="progress-bar" aria-hidden="true"><span id="pbar"></span></div><span class="progress-label" id="plabel">Fortschritt</span></div>
   <div class="search">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
     <input id="q" type="search" placeholder="Suchen, z. B. Screenshot" aria-label="Im Handbuch suchen" autocomplete="off">
@@ -546,7 +721,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
 
 <!-- ===================== 1 GERÄT ===================== -->
 <section class="chapter" id="geraet" data-ch="1" data-title="Das Gerät kennenlernen" data-time="10" data-lvl="1">
-  <div class="chapter-head"><div class="chapter-num">1</div><div><h2>Das Gerät kennenlernen</h2><p>Was ist in der Schachtel, wo sitzen die Tasten und was bedeuten die technischen Daten?</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Das Gerät kennenlernen</h2><p>Was ist in der Schachtel, wo sitzen die Tasten und was bedeuten die technischen Daten?</p></div></div>
 
   <h3 id="lieferumfang">Was ist in der Schachtel?</h3>
   <div class="grid-2">
@@ -598,11 +773,26 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   <div class="callout tip" data-t="Tipp: Welches Modell habe ich?">
     <p>Unter <b>Einstellungen › Telefoninfo</b> sehen Sie Modellnummer (beim S24 FE <b>SM-S721B</b> in Europa), Speichergröße, Telefonnummer und die Seriennummer. Die Seriennummer und IMEI brauchen Sie bei Reparatur, Versicherung oder Diebstahlanzeige. Machen Sie davon am besten gleich ein Foto und bewahren Sie es außerhalb des Telefons auf.</p>
   </div>
+
+  <h3 id="pflege">Pflege und Schutz</h3>
+  <p>Das S24 FE ist robust gebaut, aber nicht unzerstörbar. Diese Punkte entscheiden darüber, ob es nach drei Jahren noch wie neu aussieht und funktioniert.</p>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="shield">Hülle und Displayschutz</h4><p><b>Gorilla Glass Victus+</b> ist sehr kratzfest, aber nicht bruchsicher. Die meisten Schäden entstehen durch Stürze auf eine <b>Ecke</b>. Eine Hülle mit erhöhtem Rand schützt Display und Kameras. Displayschutz nur mit dem Hinweis „kompatibel mit Fingerabdrucksensor“ kaufen und danach den Fingerabdruck neu registrieren.</p></div>
+    <div class="card"><h4 data-icon="eye">Reinigen</h4><p>Mit einem weichen, leicht angefeuchteten <b>Mikrofasertuch</b> abwischen. Für Desinfektion genügt ein Tuch mit wenig Isopropylalkohol (70 %). Keine Sprays, keine Scheuermittel und keine Flüssigkeit in Öffnungen. Kameralinsen gelegentlich mit einem Brillentuch reinigen.</p></div>
+    <div class="card"><h4 data-icon="cloud">Nach Kontakt mit Wasser</h4><ol><li>Telefon abtrocknen und mit den Öffnungen nach unten leicht abschütteln.</li><li>War es Salz-, Chlor- oder Seifenwasser: kurz mit sauberem Leitungswasser abspülen, dann trocknen.</li><li><b>Nicht laden</b>, solange „Feuchtigkeit erkannt“ angezeigt wird. Kabellos laden geht.</li><li>Keinen Föhn und keine Heizung verwenden, Hitze schadet den Dichtungen.</li></ol></div>
+    <div class="card"><h4 data-icon="flame">Temperatur</h4><p>Am wohlsten fühlt sich das Telefon bei Zimmertemperatur. Nicht im Sommer im Auto oder in der prallen Sonne liegen lassen. Bei starker Kälte entlädt sich der Akku schneller; in der Innentasche bleibt er warm. Wird es zu heiß, drosselt das Telefon von selbst Leistung und Ladetempo.</p></div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Warum hält die Wasserdichtigkeit nicht ewig?</summary><div class="inner">
+    <p>IP68 wird mit einem neuen Gerät im Labor geprüft. Dichtungen altern durch Stürze, Hitze, Reinigungsmittel und kleine Risse. Deshalb schließt Samsung Wasserschäden von der Garantie aus. Behandeln Sie IP68 als Schutz bei einem Unfall, nicht als Einladung zum Baden.</p>
+  </div></details>
+
+  <h3 id="quiz-geraet">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="geraet"></div>
 </section>
 
 <!-- ===================== 2 EINRICHTUNG ===================== -->
 <section class="chapter" id="einrichtung" data-ch="2" data-title="Erste Einrichtung" data-time="25" data-lvl="1">
-  <div class="chapter-head"><div class="chapter-num">2</div><div><h2>Erste Einrichtung</h2><p>SIM-Karte einlegen, laden, einschalten und den Einrichtungsassistenten durchlaufen.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Erste Einrichtung</h2><p>SIM-Karte einlegen, laden, einschalten und den Einrichtungsassistenten durchlaufen.</p></div></div>
 
   <h3 id="sim">SIM-Karte einlegen</h3>
   <div class="stepper" data-stepper="sim"></div>
@@ -652,11 +842,18 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   <div class="callout info" data-t="Umstieg vom iPhone: WhatsApp">
     <p>WhatsApp-Chats lassen sich vom iPhone übertragen, wenn Smart Switch das bei der Einrichtung anbietet (Übertragung per Kabel, QR-Code im iPhone scannen). Wichtig: Schalten Sie vorher <b>iMessage</b> auf dem iPhone aus (Einstellungen › Apps › Nachrichten), sonst kommen SMS von iPhone-Nutzern eventuell nicht an.</p>
   </div>
+
+  <h3 id="checkliste">Checkliste für die erste Woche</h3>
+  <p>Haken Sie ab, was erledigt ist. Ihr Stand wird gespeichert. Jeder Punkt verlinkt zur passenden Anleitung.</p>
+  <div class="card" id="checklist"></div>
+
+  <h3 id="quiz-einrichtung">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="einrichtung"></div>
 </section>
 
 <!-- ===================== 3 GRUNDBEDIENUNG ===================== -->
 <section class="chapter" id="bedienung" data-ch="3" data-title="Grundbedienung" data-time="30" data-lvl="1">
-  <div class="chapter-head"><div class="chapter-num">3</div><div><h2>Grundbedienung</h2><p>Tasten, Gesten, Startbildschirm, Benachrichtigungen und Tastatur.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Grundbedienung</h2><p>Tasten, Gesten, Startbildschirm, Benachrichtigungen und Tastatur.</p></div></div>
 
   <h3 id="tasten">Tasten und Tastenkombinationen</h3>
   <p>Das S24 FE hat nur drei Tasten, alle rechts. Durch <b>Kombinationen</b> lösen sie viele Funktionen aus. Wählen Sie eine Aktion, um zu sehen, welche Tasten Sie drücken.</p>
@@ -673,6 +870,10 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <p>Ab dann öffnet langes Drücken das Menü mit „Ausschalten“, „Neu starten“ und „Notfallmodus“. An derselben Stelle können Sie auch zwischen Gemini und Bixby wählen.</p>
   </div></details>
 
+  <h3 id="tasten-trainer">Üben: Tasten-Trainer</h3>
+  <p>Hier können Sie die Tastenkombinationen gefahrlos ausprobieren. Das Übungs-Handy reagiert wie das echte, auch auf die richtige <b>Haltedauer</b>.</p>
+  <div class="card" id="key-trainer"></div>
+
   <h3 id="gesten">Gesten oder Tasten unten am Bildschirm</h3>
   <p>Unten am Bildschirm steuern Sie das Telefon. Es gibt zwei Varianten: <b>Wischgesten</b> (Standard, ein schmaler Strich unten) oder drei <b>Navigationstasten</b>. Für Einsteiger sind Tasten oft leichter.</p>
   <div class="gestures" id="gestures"></div>
@@ -681,6 +882,12 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <div class="card"><h4 data-icon="grid">Tasten-Navigation</h4><ul><li><b>|||</b> Zuletzt verwendete Apps</li><li><b>▢</b> Startbildschirm</li><li><b>‹</b> Zurück</li></ul><p class="caption" style="text-align:left">Sie können die Reihenfolge unter „Tastenreihenfolge“ tauschen, z. B. „Zurück“ nach rechts für Einhandbedienung.</p></div>
     <div class="card"><h4 data-icon="swipe">Wischgesten</h4><ul><li>Von unten nach oben wischen: Startbildschirm</li><li>Von unten wischen und halten: Zuletzt verwendete Apps</li><li>Vom linken oder rechten Rand nach innen: Zurück</li></ul></div>
   </div>
+
+  <h3 id="gesten-trainer">Üben: Gesten-Trainer</h3>
+  <div class="card" id="gesten-trainer-box"><div id="gesture-trainer"></div></div>
+  <details class="bg"><summary><span class="tag">Genau erklärt</span>Warum muss die Geste am Rand beginnen?</summary><div class="inner">
+    <p>Die Mitte des Bildschirms gehört der geöffneten App: Dort scrollen Sie, wischen durch Fotos oder spielen. Damit sich App und System nicht in die Quere kommen, reagiert das System nur auf Bewegungen, die <b>ganz am Rand</b> beginnen. Ist Ihnen die „Zurück“-Geste zu empfindlich oder zu träge, ändern Sie unter <b>Anzeige › Navigationsleiste › Weitere Optionen</b> die Empfindlichkeit.</p>
+  </div></details>
 
   <h3 id="startbildschirm">Startbildschirm und Apps-Bildschirm</h3>
   <div class="grid-2">
@@ -721,6 +928,14 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <div class="path" data-path="Einstellungen|Benachrichtigungen|App-Benachrichtigungen"></div>
   </div></details>
 
+  <h4>Mit Benachrichtigungen umgehen</h4>
+  <ul>
+    <li><b>Antippen</b> öffnet die App an der richtigen Stelle, z. B. den Chat.</li>
+    <li><b>Zur Seite wischen</b> entfernt eine einzelne Benachrichtigung. „Alle löschen“ steht unten in der Liste.</li>
+    <li><b>Nach unten ziehen</b> (aufklappen) zeigt den ganzen Text und bei Messengern ein Antwortfeld.</li>
+    <li>Ein kleiner <b>Punkt oder eine Zahl am App-Symbol</b> zeigt ungelesene Benachrichtigungen dieser App an.</li>
+  </ul>
+
   <h3 id="sperrbildschirm">Sperrbildschirm und Always On Display</h3>
   <p>Der <b>Sperrbildschirm</b> erscheint, wenn Sie das Telefon aufwecken. Er schützt vor fremdem Zugriff und zeigt Uhrzeit und Benachrichtigungen. Mit dem <button class="term" data-term="aod">Always On Display</button> bleiben Uhrzeit und Symbole auch bei „ausgeschaltetem“ Bildschirm sichtbar.</p>
   <ul>
@@ -729,6 +944,17 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <li><b>Kamera direkt starten:</b> Seitentaste <b>zweimal schnell</b> drücken, auch aus dem Sperrbildschirm.</li>
   </ul>
   <div class="path" data-path="Einstellungen|Sperrbildschirm und AOD|Always On Display"></div>
+
+  <h3 id="einstellungen">Die Einstellungen-App verstehen und üben</h3>
+  <p>Fast alles, was in diesem Handbuch eingestellt wird, finden Sie in der App <b>Einstellungen</b> (Zahnrad-Symbol). So kommen Sie hin:</p>
+  <ul>
+    <li>App-Symbol <b>Einstellungen</b> im Apps-Bildschirm antippen, oder</li>
+    <li>Schnelleinstellungen öffnen und oben auf das <b>Zahnrad</b> tippen, oder</li>
+    <li>eine Kachel in den Schnelleinstellungen <b>gedrückt halten</b>: Das öffnet direkt die passende Einstellung.</li>
+  </ul>
+  <p>Die Einstellungen sind wie ein Baum aufgebaut: <b>Hauptmenü › Bereich › Unterseite › Schalter</b>. Ein <b>›</b> am Zeilenende bedeutet „hier geht es weiter“, ein Schieberegler schaltet direkt um, und mit dem Pfeil oben links (oder der Zurück-Geste) gehen Sie eine Ebene zurück. Finden Sie etwas nicht, tippen Sie oben auf die <b>Lupe</b> und suchen das Stichwort.</p>
+  <div class="callout tip" data-t="Übungs-Handy"><p>Das Übungs-Handy unten ist dem echten Einstellungsmenü nachgebaut. Lösen Sie die Aufgaben, indem Sie sich durch die Menüs tippen. Nichts davon verändert Ihr echtes Telefon. Kommen Sie nicht weiter, zeigt „Tipp zeigen“ den Weg.</p></div>
+  <div id="settings-trainer"></div>
 
   <h3 id="tastatur">Die Samsung-Tastatur</h3>
   <div class="grid-2">
@@ -747,11 +973,91 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
 
   <h3 id="multitasking">Mehrere Apps gleichzeitig</h3>
   <p>Öffnen Sie die <b>zuletzt verwendeten Apps</b> (Taste |||). Tippen Sie auf das App-Symbol über einer Vorschau und wählen Sie <b>„In geteilter Bildschirmansicht öffnen“</b>. Dann wählen Sie die zweite App. So schauen Sie z. B. oben ein Video und schreiben unten eine Nachricht. Mit „In Pop-up-Ansicht öffnen“ schwebt eine App als kleines Fenster über der anderen.</p>
+
+  <h3 id="quiz-bedienung">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="bedienung"></div>
+</section>
+
+<!-- ===================== TELEFON ===================== -->
+<section class="chapter" id="telefon" data-ch="1" data-title="Telefonieren & Nachrichten" data-time="25" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Telefonieren &amp; Nachrichten</h2><p>Anrufen, Anrufe annehmen, Kontakte, Mailbox, SMS und Chat, Töne und „Nicht stören“.</p></div></div>
+
+  <h3 id="anrufen">Jemanden anrufen</h3>
+  <ol class="steps">
+    <li>Öffnen Sie die App <b>Telefon</b> (grüner Hörer, meist unten im Dock).</li>
+    <li>Unten wählen Sie zwischen <b>Tastenfeld</b>, <b>Letzte</b> (Anrufliste) und <b>Kontakte</b>.</li>
+    <li>Nummer eintippen oder einen Kontakt antippen und auf den <b>grünen Hörer</b> tippen.</li>
+    <li>Zum Auflegen auf den <b>roten Hörer</b> tippen.</li>
+  </ol>
+  <details class="bg"><summary><span class="tag">Genau erklärt</span>Warum Nummern mit +49 speichern?</summary><div class="inner">
+    <p>Die Schreibweise <b>+49 151 2345678</b> ist die internationale Form von <b>0151 2345678</b>: Die führende 0 fällt weg, davor kommt die Ländervorwahl. Gespeicherte Nummern in dieser Form funktionieren überall auf der Welt, auch im Urlaub und bei WhatsApp. Mit 0 am Anfang funktionieren sie nur innerhalb Deutschlands zuverlässig.</p>
+  </div></details>
+
+  <h3 id="annehmen">Anrufe annehmen und ablehnen</h3>
+  <p>Wie ein Anruf erscheint, hängt davon ab, was Sie gerade tun:</p>
+  <ul>
+    <li><b>Bildschirm aus oder gesperrt:</b> Der ganze Bildschirm zeigt den Anrufer. Sie <b>ziehen</b> den grünen Knopf zum Annehmen oder den roten zum Ablehnen. Ziehen statt Tippen verhindert, dass in der Hosentasche versehentlich angenommen wird.</li>
+    <li><b>Sie benutzen das Telefon gerade:</b> Oben erscheint ein kleines Banner mit Knöpfen zum <b>Antippen</b>.</li>
+    <li><b>Klingeln stoppen ohne abzulehnen:</b> eine <b>Lautstärketaste</b> drücken.</li>
+    <li><b>„Nachricht senden“:</b> lehnt ab und schickt eine kurze SMS wie „Ich rufe gleich zurück“.</li>
+  </ul>
+  <p>Probieren Sie es im Anruf-Simulator aus:</p>
+  <div class="card" id="call-sim"></div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Warum wird der Bildschirm beim Telefonieren schwarz?</summary><div class="inner">
+    <p>Neben der Frontkamera sitzt ein <b>Näherungssensor</b>. Sobald das Telefon am Ohr liegt, schaltet er den Bildschirm ab, damit Ihre Wange nichts antippt. Nehmen Sie das Telefon vom Ohr, geht der Bildschirm wieder an. Eine dicke Displayfolie über dem Sensor kann das stören.</p>
+  </div></details>
+
+  <h3 id="kontakte">Kontakte anlegen</h3>
+  <div class="stepper" data-stepper="contact"></div>
+  <div class="callout tip" data-t="Kontakte aus dem Anruf speichern"><p>Gerade angerufen worden? In <b>Telefon › Letzte</b> die Nummer antippen und <b>„Kontakt hinzufügen“</b> wählen. Name eintragen, fertig.</p></div>
+
+  <h3 id="mailbox">Mailbox, Anrufliste und Sperren</h3>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="phone">Mailbox</h4><p>Die Mailbox ist ein Dienst Ihres Mobilfunkanbieters, nicht des Telefons. Abhören: im <b>Tastenfeld</b> die Taste <b>1 gedrückt halten</b>. Beim ersten Anruf richten Sie PIN und Ansage ein. Wollen Sie keine Mailbox, kann Ihr Anbieter sie abschalten.</p></div>
+    <div class="card"><h4 data-icon="note">Anrufliste („Letzte“)</h4><p>Verpasste Anrufe sind <b>rot</b> markiert. Eintrag antippen zeigt Rückruf, Nachricht und Details. Zum Löschen den Eintrag gedrückt halten.</p></div>
+    <div class="card"><h4 data-icon="shield">Nummern sperren</h4><p>In <b>Letzte</b> die Nummer antippen › <b>ⓘ</b> (Details) › <b>Sperren</b>. Gesperrte Anrufer hören, dass besetzt ist oder kommen auf die Mailbox. Unter Telefon › Einstellungen › <b>Anrufer-ID und Spam-Schutz</b> werden bekannte Werbe- und Betrugsnummern markiert.</p></div>
+    <div class="card"><h4 data-icon="wifi">WLAN-Anrufe</h4><p>Schlechter Empfang zu Hause? Unter <b>Einstellungen › Verbindungen › WLAN-Anrufe</b> telefonieren Sie über Ihr WLAN. Ihr Anbieter muss das unterstützen; abgerechnet wird wie in Ihrem Tarif.</p></div>
+  </div>
+
+  <h3 id="nachrichten">SMS und Chat-Nachrichten</h3>
+  <p>Für SMS ist die App <b>Nachrichten</b> zuständig. Je nach Softwarestand ist das Samsung Nachrichten oder Google Messages; beide funktionieren ähnlich.</p>
+  <ol class="steps">
+    <li>App <b>Nachrichten</b> öffnen und auf das Symbol für eine neue Nachricht tippen (Sprechblase bzw. Stift).</li>
+    <li>Namen oder Nummer eingeben, unten Text schreiben, auf <b>Senden</b> (Pfeil) tippen.</li>
+    <li>Bilder anhängen: auf das <b>+</b> bzw. Büroklammer-Symbol neben dem Textfeld tippen.</li>
+  </ol>
+  <details class="bg"><summary><span class="tag">Genau erklärt</span>SMS, MMS, Chat (RCS) und WhatsApp: der Unterschied</summary><div class="inner">
+    <ul>
+      <li><b>SMS:</b> reiner Text über das Mobilfunknetz, funktioniert ohne Internet. In den meisten Tarifen inklusive.</li>
+      <li><b>MMS:</b> Bild per Mobilfunk; kann extra kosten und Bilder werden stark verkleinert.</li>
+      <li><b>Chat-Funktionen (RCS):</b> Nachrichten über das Internet, direkt in der Nachrichten-App: mit Tippanzeige, Lesebestätigung und Bildern in guter Qualität. Funktioniert, wenn beide Seiten es aktiviert haben, sonst fällt die App automatisch auf SMS zurück.</li>
+      <li><b>WhatsApp, Signal, Threema:</b> eigene Apps, die über das Internet laufen. Beide Seiten brauchen dieselbe App.</li>
+    </ul>
+  </div></details>
+  <div class="callout warn" data-t="Typischer Betrug per Nachricht"><p>„Hallo Mama, mein Handy ist kaputt, das ist meine neue Nummer“ ist eine bekannte Masche. Rufen Sie immer die <b>alte, bekannte Nummer</b> an, bevor Sie Geld überweisen. Auch angebliche Paket-SMS mit Link sind fast immer Betrug.</p></div>
+
+  <h3 id="toene">Töne, Vibration und „Nicht stören“</h3>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="sound">Tonmodus und Lautstärken</h4><p>Unter <b>Einstellungen › Töne und Vibration</b> wählen Sie <b>Ton</b>, <b>Vibration</b> oder <b>Lautlos</b>. Darunter gibt es getrennte Regler für <b>Klingelton</b>, <b>Medien</b> (Musik, Videos), <b>Benachrichtigungen</b> und <b>System</b>. Häufiger Irrtum: Ein Video ist stumm, weil „Medien“ leise ist, obwohl der Klingelton laut ist.</p></div>
+    <div class="card"><h4 data-icon="moon">„Nicht stören“ richtig nutzen</h4><p>Schaltet Töne und Pop-ups stumm. Kachel in den Schnelleinstellungen <b>gedrückt halten</b>, um Ausnahmen festzulegen:</p><ul><li><b>Wecker</b> klingeln trotzdem.</li><li>Anrufe von <b>Favoriten</b> erlauben.</li><li><b>Wiederholte Anrufer</b>: Wer innerhalb kurzer Zeit zweimal anruft, kommt durch (für Notfälle).</li></ul></div>
+  </div>
+  <p>Einen eigenen Klingelton für eine Person stellen Sie im Kontakt ein: Kontakt öffnen › <b>Bearbeiten</b> › (ggf. „Mehr anzeigen“) › <b>Klingelton</b>.</p>
+
+  <h3 id="notruf">Notruf</h3>
+  <ul>
+    <li><b>112</b> (Feuerwehr, Rettungsdienst) und <b>110</b> (Polizei) sind kostenlos.</li>
+    <li>Auch bei gesperrtem Telefon: Auf dem PIN-Bildschirm unten auf <b>„Notruf“</b> tippen.</li>
+    <li>In Deutschland ist ein Notruf <b>nur mit eingelegter SIM-Karte</b> möglich.</li>
+    <li>Notruf-SOS (Seitentaste 5×) und medizinische Informationen: siehe <a href="#sos">Notruf-SOS</a>.</li>
+  </ul>
+
+  <h3 id="quiz-telefon">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="telefon"></div>
 </section>
 
 <!-- ===================== 4 SICHERHEIT ===================== -->
 <section class="chapter" id="sicherheit" data-ch="4" data-title="Sicherheit & Datenschutz" data-time="20" data-lvl="2">
-  <div class="chapter-head"><div class="chapter-num">4</div><div><h2>Sicherheit &amp; Datenschutz</h2><p>Displaysperre, Fingerabdruck, Ortung bei Verlust, Notruf und Updates.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Sicherheit &amp; Datenschutz</h2><p>Displaysperre, Fingerabdruck, Ortung bei Verlust, Notruf und Updates.</p></div></div>
 
   <h3 id="sperre">Welche Displaysperre ist die richtige?</h3>
   <div class="table-wrap"><table>
@@ -805,11 +1111,21 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   <div class="callout warn" data-t="Vorsicht vor falschen Warnungen">
     <p>Weder Samsung noch Google rufen Sie an oder schicken SMS mit Links, weil Ihr Telefon „infiziert“ sei. Solche Nachrichten sind Betrug (<button class="term" data-term="phishing">Phishing</button>). Updates kommen ausschließlich über das Menü „Software-Update“ und den Play Store.</p>
   </div>
+
+  <h3 id="betrug">Betrug erkennen und sich schützen</h3>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="warn">Warnzeichen</h4><ul><li>Zeitdruck: „sofort“, „Konto wird gesperrt“, „letzte Mahnung“</li><li>Links in SMS, angeblich von Paketdienst, Bank oder Behörde</li><li>Anrufe vom angeblichen „Microsoft-“, „Samsung-“ oder „Bank-Support“</li><li>Bitte um Codes, TANs, Passwörter oder Fernwartungs-Apps</li></ul></div>
+    <div class="card"><h4 data-icon="shield">Goldene Regeln</h4><ul><li><b>Niemals</b> Bestätigungscodes per Telefon oder Chat weitergeben, auch nicht an „Mitarbeiter“.</li><li>Bank und Behörden über die <b>selbst gesuchte</b> Nummer zurückrufen.</li><li>Apps nur aus Play Store oder Galaxy Store installieren.</li><li>Im Zweifel: auflegen und jemanden fragen, dem Sie vertrauen.</li></ul></div>
+  </div>
+  <p>Zusätzlichen Schutz bietet Samsungs <b>Auto Blocker</b> (Einstellungen › Sicherheit und Datenschutz; der deutsche Name kann je nach Version abweichen). Er blockiert App-Installationen aus unbekannten Quellen und verdächtige Befehle über das USB-Kabel, etwa an manipulierten Ladesäulen.</p>
+
+  <h3 id="quiz-sicherheit">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="sicherheit"></div>
 </section>
 
 <!-- ===================== 5 KAMERA ===================== -->
 <section class="chapter" id="kamera" data-ch="5" data-title="Kamera & Galerie" data-time="30" data-lvl="2">
-  <div class="chapter-head"><div class="chapter-num">5</div><div><h2>Kamera &amp; Galerie</h2><p>Drei Objektive, die wichtigsten Modi und wie Sie Fotos nachträglich verbessern.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Kamera &amp; Galerie</h2><p>Drei Objektive, die wichtigsten Modi und wie Sie Fotos nachträglich verbessern.</p></div></div>
 
   <h3 id="kamera-app">Die Kamera-App im Überblick</h3>
   <p>Fahren Sie über die Bereiche des Kamerabildschirms. Jeder Punkt erklärt ein Bedienelement.</p>
@@ -846,6 +1162,9 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     </tbody>
   </table></div>
 
+  <h3 id="kamera-berater">Kamera-Berater: Was ist die beste Einstellung?</h3>
+  <div class="card" id="cam-advisor"></div>
+
   <h3 id="foto-tipps">Sieben Tipps für bessere Fotos</h3>
   <ol class="steps">
     <li><b>Linsen putzen.</b> Fingerabdrücke auf der Kamera sind der häufigste Grund für milchige Fotos. Kurz mit einem weichen Tuch abwischen.</li>
@@ -857,17 +1176,44 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <li><b>Lautstärketaste als Auslöser.</b> Drücken Sie eine Lautstärketaste statt auf den Bildschirm zu tippen, das verwackelt weniger.</li>
   </ol>
 
+  <h3 id="pro-modus">Pro-Modus und Belichtung genau erklärt</h3>
+  <p>Jedes Foto ist eine Frage der <b>Lichtmenge</b>. Drei Größen bestimmen sie. Die Automatik stellt sie für Sie ein; im Modus <b>Mehr › Pro</b> können Sie selbst eingreifen.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Regler</th><th>Was er tut</th><th>Nebenwirkung</th></tr></thead>
+    <tbody>
+      <tr><td><b>Belichtungszeit</b> (z. B. 1/250 s)</td><td>Wie lange Licht auf den Sensor fällt. Länger = heller.</td><td>Lange Zeiten verwischen Bewegung und Handzittern.</td></tr>
+      <tr><td><b>ISO</b> (z. B. 100–3200)</td><td>Wie stark das Signal verstärkt wird. Höher = heller.</td><td>Hohe Werte erzeugen Bildrauschen („Grieseln“).</td></tr>
+      <tr><td><b>Blende</b> (f/1.8)</td><td>Größe der Öffnung. Beim Handy fest eingebaut, nicht verstellbar.</td><td>Deshalb bleiben nur Zeit und ISO als Regler.</td></tr>
+      <tr><td><b>EV</b> (Belichtungskorrektur)</td><td>Macht das Bild insgesamt heller oder dunkler; die Automatik regelt Zeit und ISO passend.</td><td>Der einfachste Regler für Einsteiger.</td></tr>
+      <tr><td><b>WB</b> (Weißabgleich, Kelvin)</td><td>Farbstimmung: niedrige Werte kühler/bläulicher, hohe Werte wärmer/gelblicher.</td><td>Falscher Wert = Farbstich.</td></tr>
+      <tr><td><b>MF</b> (manueller Fokus)</td><td>Schärfe selbst setzen, z. B. bei Nahaufnahmen durch Glas.</td><td>Ein kleiner Fehler macht das Motiv unscharf.</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Ausprobieren:</b> Im Simulator läuft eine Person durchs Bild. Finden Sie Einstellungen, bei denen das Bild hell genug ist, die Person scharf bleibt und kaum Rauschen entsteht. Wechseln Sie dann auf „Wohnzimmer abends“: Sie merken, warum Fotos bei wenig Licht schwierig sind.</p>
+  <div class="card" id="expo-sim"></div>
+
+  <h3 id="video">Videos filmen</h3>
+  <ol class="steps">
+    <li>Modus <b>Video</b> wählen. Oben (bzw. seitlich) tippen Sie auf die Angabe wie <b>FHD 30</b> oder <b>UHD 30</b>, um Auflösung und Bildrate zu ändern.</li>
+    <li>Für den Alltag reicht <b>FHD 30</b> (Full HD). <b>UHD</b> (4K) ist schärfer für große Fernseher, braucht aber etwa dreimal so viel Speicher. <b>8K</b> nur für Spezialfälle.</li>
+    <li>Das Telefon <b>quer</b> halten, wenn das Video auf Fernseher oder Computer gezeigt werden soll.</li>
+    <li>Beim Gehen hilft die Stabilisierung <b>„Super Steady“</b> (Hand-Symbol, falls angezeigt). Sie schneidet das Bild etwas zu und gleicht Wackeln stärker aus.</li>
+    <li>Während der Aufnahme können Sie mit dem weißen Auslöser zusätzlich <b>Fotos</b> machen.</li>
+  </ol>
   <h3 id="galerie">Galerie: ansehen, bearbeiten, retten</h3>
   <div class="stepper" data-stepper="edit"></div>
   <div class="grid-2">
     <div class="card"><h4 data-icon="trash">Papierkorb</h4><p>Gelöschte Fotos bleiben <b>30 Tage</b> im Papierkorb. Galerie › Menü (≡) › Papierkorb. Dort können Sie sie wiederherstellen.</p></div>
     <div class="card"><h4 data-icon="cloud">Sicherung</h4><p>Damit Fotos nicht verloren gehen, wenn das Telefon kaputtgeht: In <b>Google Fotos</b> die Sicherung einschalten oder in der Galerie unter Einstellungen die Synchronisierung mit OneDrive aktivieren.</p></div>
   </div>
+
+  <h3 id="quiz-kamera">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="kamera"></div>
 </section>
 
 <!-- ===================== 6 GALAXY AI ===================== -->
 <section class="chapter" id="ai" data-ch="6" data-title="Galaxy AI" data-time="20" data-lvl="2">
-  <div class="chapter-head"><div class="chapter-num">6</div><div><h2>Galaxy AI</h2><p>Künstliche Intelligenz im Alltag: Suchen, Übersetzen, Zusammenfassen, Fotos verbessern.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Galaxy AI</h2><p>Künstliche Intelligenz im Alltag: Suchen, Übersetzen, Zusammenfassen, Fotos verbessern.</p></div></div>
   <p>Galaxy AI ist eine Sammlung von Funktionen, die mit <button class="term" data-term="ki">künstlicher Intelligenz</button> arbeiten. Manche laufen direkt auf dem Telefon, andere über Server im Internet. Sie brauchen dafür ein Samsung-Konto.</p>
   <div class="path" data-path="Einstellungen|Galaxy AI"></div>
 
@@ -879,16 +1225,28 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <div class="card"><h4 data-icon="note">Notiz- und Transkript-Assistent</h4><p>In <b>Samsung Notes</b> lange Notizen zusammenfassen und ordnen. In der <b>Sprachrekorder</b>-App werden Aufnahmen automatisch zu Text, mit Sprechern getrennt.</p></div>
     <div class="card"><h4 data-icon="image">Foto-Assistent</h4><p>In der Galerie: Störende Personen oder Objekte entfernen, das Foto gerade rücken und die Lücken von der KI füllen lassen. Bearbeitete Bilder bekommen ein kleines Wasserzeichen und einen Vermerk in den Bilddetails.</p></div>
   </div>
+  <h3 id="ai-praxis">Circle to Search Schritt für Schritt</h3>
+  <ol class="steps">
+    <li>Öffnen Sie etwas, das Sie interessiert: ein Foto, eine Webseite, ein Video.</li>
+    <li><b>Halten</b> Sie die Home-Taste bzw. den Gestenstrich unten etwa eine Sekunde gedrückt. Der Bildschirm „friert ein“ und wird leicht abgedunkelt.</li>
+    <li><b>Kreisen</b> Sie das Objekt mit dem Finger ein, <b>wischen</b> Sie über einen Text oder <b>tippen</b> Sie es an.</li>
+    <li>Unten erscheinen Suchergebnisse: Pflanzenname, Einkaufsmöglichkeiten, Übersetzung oder Erklärung. Nach oben ziehen zeigt mehr.</li>
+    <li>Mit der Zurück-Geste beenden Sie die Suche und sind wieder in Ihrer App.</li>
+  </ol>
+  <div class="callout tip" data-t="Übersetzen auf einen Blick"><p>Bei Circle to Search gibt es unten ein Symbol <b>„Übersetzen“</b>. Damit wird der gesamte Bildschirm übersetzt, z. B. eine fremdsprachige Speisekarte, die Sie mit der Kamera fotografiert haben.</p></div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Was passiert mit meinen Daten?</summary><div class="inner">
     <p>Unter <b>Einstellungen › Galaxy AI</b> (bzw. „Erweiterte Intelligenz“) gibt es den Schalter <b>„Daten nur auf dem Gerät verarbeiten“</b>. Ist er an, werden Funktionen, die Server brauchen, abgeschaltet. Übersetzen, Diktieren und einige Zusammenfassungen funktionieren dann trotzdem, weil sie lokal laufen.</p>
     <p>Circle to Search ist eine Google-Funktion: Das eingekreiste Bild wird an Google geschickt, genau wie bei einer normalen Google-Suche.</p>
   </div></details>
   <div class="callout info" data-t="Kostet Galaxy AI etwas?"><p>Beim Marktstart hieß es „kostenlos bis Ende 2025“. Inzwischen (Stand 2026) hat Samsung erklärt, dass die <b>grundlegenden Galaxy-AI-Funktionen dauerhaft kostenlos</b> bleiben. Dazu gehören die in diesem Kapitel beschriebenen. Für künftige, erweiterte Funktionen kann Samsung ein kostenpflichtiges Angebot einführen. Ein Abo entsteht nie automatisch: Sie müssten es ausdrücklich abschließen.</p></div>
+
+  <h3 id="quiz-ai">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="ai"></div>
 </section>
 
 <!-- ===================== 7 AKKU ===================== -->
 <section class="chapter" id="akku" data-ch="7" data-title="Akku & Laden" data-time="15" data-lvl="1">
-  <div class="chapter-head"><div class="chapter-num">7</div><div><h2>Akku &amp; Laden</h2><p>Lange Laufzeit im Alltag und ein Akku, der viele Jahre durchhält.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Akku &amp; Laden</h2><p>Lange Laufzeit im Alltag und ein Akku, der viele Jahre durchhält.</p></div></div>
   <p>Der Akku hat <b>4.700 mAh</b>. Bei normaler Nutzung (Messenger, Fotos, etwas Video, Navigation) reicht das gut für einen Tag, bei sparsamer Nutzung auch für anderthalb.</p>
 
   <h3 id="akkuschutz">Akkuschutz: der wichtigste Schalter für ein langes Akkuleben</h3>
@@ -916,6 +1274,13 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
       <tr><td><b>Ungenutzte Apps einschläfern</b></td><td class="n">mittel</td><td>Akku › Hintergrundnutzungslimits › „Nicht verwendete Apps in Standby versetzen“</td></tr>
     </tbody>
   </table></div>
+  <h3 id="ladezeit">Ladezeit-Rechner</h3>
+  <p>Wie lange dauert es, bis der Akku voll genug ist? Wählen Sie Ihr Ladegerät und den gewünschten Akkustand.</p>
+  <div class="card" id="charge-calc"></div>
+  <details class="bg"><summary><span class="tag">Genau erklärt</span>Warum wird das Laden ab 80 % langsamer?</summary><div class="inner">
+    <p>Ein Lithium-Ionen-Akku wird in zwei Phasen geladen. Zuerst mit <b>hohem Strom</b> (schnell), bis die Zellspannung ihr Maximum erreicht. Danach wird der Strom <b>Stück für Stück verringert</b>, damit die Zelle nicht überladen wird. Diese zweite Phase beginnt grob bei 70 bis 80 % und dauert lange. Deshalb sind die letzten 20 % fast so langsam wie die ersten 50 %.</p>
+  </div></details>
+
   <details class="bg"><summary><span class="tag">Hintergrund</span>Mythen rund um den Akku</summary><div class="inner">
     <ul>
       <li><b>„Man muss den Akku ganz leer machen.“</b> Falsch. Das war bei alten Nickel-Akkus so. Heutige Akkus mögen den Bereich 20 bis 80 % am liebsten.</li>
@@ -927,11 +1292,14 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
 
   <h3 id="powershare">Andere Geräte aufladen (Wireless PowerShare)</h3>
   <p>Das S24 FE kann kabellos <b>andere Geräte laden</b>: Qi-fähige Smartphones sowie viele Galaxy Buds und Galaxy Watches. Schalten Sie in den Schnelleinstellungen <b>„Wireless PowerShare“</b> ein (oder unter Einstellungen › Akku) und legen Sie das Gerät mittig auf die Rückseite. Die Leistung ist gering, gedacht für den Notfall. Bei weniger als 30 % Akku schaltet sich die Funktion nicht ein, und eine dicke Hülle kann stören.</p>
+
+  <h3 id="quiz-akku">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="akku"></div>
 </section>
 
 <!-- ===================== 8 ANPASSEN ===================== -->
 <section class="chapter" id="anpassen" data-ch="8" data-title="Anpassen & Barrierefreiheit" data-time="20" data-lvl="1">
-  <div class="chapter-head"><div class="chapter-num">8</div><div><h2>Anpassen &amp; Barrierefreiheit</h2><p>Größere Schrift, Dunkelmodus, eigener Hintergrund, Modi und Routinen.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Anpassen &amp; Barrierefreiheit</h2><p>Größere Schrift, Dunkelmodus, eigener Hintergrund, Modi und Routinen.</p></div></div>
 
   <h3 id="anzeige">Anzeige: Schrift, Helligkeit, Dunkelmodus</h3>
   <div class="stepper" data-stepper="font"></div>
@@ -975,11 +1343,14 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     </tbody>
   </table></div>
   <div class="path" data-path="Einstellungen|Barrierefreiheit"></div>
+
+  <h3 id="quiz-anpassen">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="anpassen"></div>
 </section>
 
 <!-- ===================== 9 VERBINDUNGEN ===================== -->
 <section class="chapter" id="verbindungen" data-ch="9" data-title="Verbindungen" data-time="20" data-lvl="2">
-  <div class="chapter-head"><div class="chapter-num">9</div><div><h2>Verbindungen</h2><p>WLAN, mobile Daten, Bluetooth, Hotspot, Bezahlen und Dateien teilen.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Verbindungen</h2><p>WLAN, mobile Daten, Bluetooth, Hotspot, Bezahlen und Dateien teilen.</p></div></div>
 
   <h3 id="wlan">Mit dem WLAN verbinden</h3>
   <div class="stepper" data-stepper="wifi"></div>
@@ -1022,11 +1393,14 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
 
   <h3 id="dex">Samsung DeX: das Telefon als Computer</h3>
   <p>Schließen Sie das S24 FE per USB-C-auf-HDMI-Adapter an einen Fernseher oder Monitor an (oder kabellos an einen Fernseher, der Bildschirmspiegelung unterstützt). Es erscheint eine Desktop-Oberfläche mit Fenstern, Taskleiste und Maus-Unterstützung (Bluetooth-Maus und -Tastatur). Praktisch für Präsentationen oder um Fotos auf dem Fernseher zu zeigen.</p>
+
+  <h3 id="quiz-verbindungen">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="verbindungen"></div>
 </section>
 
 <!-- ===================== 10 APPS & SPEICHER ===================== -->
 <section class="chapter" id="apps" data-ch="10" data-title="Apps & Speicher" data-time="15" data-lvl="2">
-  <div class="chapter-head"><div class="chapter-num">10</div><div><h2>Apps &amp; Speicher</h2><p>Apps installieren und entfernen, Berechtigungen verstehen, Speicher aufräumen, sichern.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Apps &amp; Speicher</h2><p>Apps installieren und entfernen, Berechtigungen verstehen, Speicher aufräumen, sichern.</p></div></div>
 
   <h3 id="playstore">Apps aus dem Play Store installieren</h3>
   <div class="stepper" data-stepper="install"></div>
@@ -1067,17 +1441,24 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <li>In <b>Google Fotos</b>: „Speicherplatz freigeben“ entfernt Fotos vom Telefon, die bereits sicher in der Cloud liegen.</li>
   </ol>
 
+  <h3 id="speicher-rechner">Speicher-Rechner</h3>
+  <p>Wie viel passt noch auf Ihr Telefon? Stellen Sie ein, wie viel Speicher frei ist.</p>
+  <div class="card" id="storage-calc"></div>
+
   <h3 id="backup">Sichern: falls das Telefon verloren geht</h3>
   <div class="grid-2">
     <div class="card"><h4 data-icon="cloud">Google-Sicherung</h4><p>Kontakte, Kalender, App-Daten, SMS und Einstellungen. <b>Einstellungen › Konten und Sicherung › Sichern (Google Drive)</b>. Einschalten und vergessen.</p></div>
     <div class="card"><h4 data-icon="cloud">Samsung Cloud</h4><p>Samsung-spezifische Einstellungen, Startbildschirm-Layout und Samsung-Apps. <b>Konten und Sicherung › Daten sichern</b> (Samsung Cloud).</p></div>
   </div>
   <div class="callout tip" data-t="WhatsApp separat sichern"><p>WhatsApp sichert sich nicht über die Telefon-Sicherung. In WhatsApp: <b>Einstellungen › Chats › Chat-Backup</b> › Google-Konto wählen und „Täglich“ einstellen.</p></div>
+
+  <h3 id="quiz-apps">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="apps"></div>
 </section>
 
 <!-- ===================== 11 HILFE ===================== -->
 <section class="chapter" id="hilfe" data-ch="11" data-title="Problemlösung" data-time="10" data-lvl="3">
-  <div class="chapter-head"><div class="chapter-num">11</div><div><h2>Problemlösung</h2><p>Der Hilfe-Assistent führt Sie Schritt für Schritt zur Lösung.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Problemlösung</h2><p>Der Hilfe-Assistent führt Sie Schritt für Schritt zur Lösung.</p></div></div>
   <div class="ts" id="ts" aria-live="polite"></div>
 
   <h3 id="neustart">Die drei Stufen der Problemlösung</h3>
@@ -1091,18 +1472,21 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   </div>
   <div class="callout danger" data-t="Vor dem Verkauf oder Verschenken">
     <ol>
-      <li>Sicherung machen (Kapitel 10) und prüfen, dass Fotos in der Cloud sind.</li>
+      <li>Sicherung machen (siehe <a href="#backup">Sichern</a>) und prüfen, dass Fotos in der Cloud sind.</li>
       <li>Google- und Samsung-Konto <b>abmelden</b>: Einstellungen › Konten und Sicherung › Konten verwalten.</li>
       <li>Auf Werkseinstellungen zurücksetzen.</li>
       <li>SIM-Karte entnehmen.</li>
     </ol>
     <p>Ohne Schritt 2 kann der neue Besitzer das Telefon nicht einrichten.</p>
   </div>
+
+  <h3 id="quiz-hilfe">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="hilfe"></div>
 </section>
 
 <!-- ===================== 12 WISSEN ===================== -->
 <section class="chapter" id="wissen" data-ch="12" data-title="Wissenstest, FAQ & Glossar" data-time="10" data-lvl="1">
-  <div class="chapter-head"><div class="chapter-num">12</div><div><h2>Wissenstest, FAQ &amp; Glossar</h2><p>Prüfen Sie Ihr Wissen und schlagen Sie Begriffe nach.</p></div></div>
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Wissenstest, FAQ &amp; Glossar</h2><p>Prüfen Sie Ihr Wissen und schlagen Sie Begriffe nach.</p></div></div>
 
   <h3 id="quiz-h">Wissenstest</h3>
   <p>Zwölf Fragen quer durch das Handbuch. Nach jeder Antwort sehen Sie die Erklärung und wo Sie es nachlesen können.</p>
@@ -1689,7 +2073,7 @@ const STEPPERS = {
       { m: () => formScreen({ title: 'Apps und Daten kopieren', lines: ['Übertragen Sie Kontakte, Fotos, Apps und mehr von Ihrem alten Gerät.'], buttons: [{ t: 'Nicht kopieren' }, { t: 'Weiter', primary: true }], hlBtn: 1 }), h: 'Daten übertragen oder neu beginnen', p: 'Haben Sie ein altes Handy, tippen Sie auf <b>„Weiter“</b> und folgen dem Smart-Switch-Assistenten (siehe unten). Ist das Ihr erstes Smartphone, wählen Sie <b>„Nicht kopieren“</b>.', why: 'Sie können die Übertragung auch später nachholen: mit der App „Smart Switch“, die bereits installiert ist.' },
       { m: () => formScreen({ title: 'Anmelden', logo: `<circle cx="36" cy="72" r="12" class="m-c1"/>`, lines: ['Mit Ihrem Google-Konto anmelden.'], inputs: ['E-Mail-Adresse oder Telefonnummer'], hlInput: 0, buttons: [{ t: 'Konto erstellen' }, { t: 'Weiter', primary: true }] }), h: 'Google-Konto anmelden oder erstellen', p: 'Geben Sie Ihre Gmail-Adresse und das Passwort ein. Sie haben noch keins? Tippen Sie auf <b>„Konto erstellen“</b> › „Für meine private Nutzung“ und folgen Sie den Schritten.', why: 'Das Google-Konto ist nötig für den Play Store. Es sichert außerdem Kontakte und Fotos und dient als Diebstahlschutz.' },
       { m: () => listScreen({ title: 'Google-Dienste', note: 'Tippen Sie auf einen Dienst für Details.', items: [{ l: 'Auf Google Drive sichern', t: true }, { l: 'Standort verwenden', t: true }, { l: 'WLAN-Suche zulassen', t: false }, { l: 'Diagnosedaten senden', t: false }], buttons: [{ t: 'Akzeptieren', primary: true }], hlBtn: 0, top: 104 }), h: 'Google-Dienste festlegen', p: 'Lassen Sie <b>„Sichern“</b> eingeschaltet. Den <b>Standort</b> brauchen Navigation, Wetter und „Gerät finden“. Die übrigen Schalter sind Geschmackssache.', why: 'Alle Schalter lassen sich später unter Einstellungen › Google ändern.' },
-      { m: () => formScreen({ title: 'Telefon schützen', lines: ['Mit biometrischen Daten entsperren Sie schnell und sicher.'], checks: [{ l: 'Fingerabdrücke', on: true }, { l: 'Gesichtserkennung', on: false }], buttons: [{ t: 'Überspringen' }, { t: 'Weiter', primary: true }], hlBtn: 1 }), h: 'Displaysperre einrichten', p: 'Wählen Sie <b>Fingerabdrücke</b> und legen Sie danach eine <b>6-stellige PIN</b> fest. Wie der Fingerabdruck genau funktioniert, zeigt Kapitel 4.', why: 'Ohne Sperre hat jeder Finder Zugriff auf Fotos, E-Mails und Konten. Eine PIN ist zudem Voraussetzung für Banking-Apps und kontaktloses Bezahlen.' },
+      { m: () => formScreen({ title: 'Telefon schützen', lines: ['Mit biometrischen Daten entsperren Sie schnell und sicher.'], checks: [{ l: 'Fingerabdrücke', on: true }, { l: 'Gesichtserkennung', on: false }], buttons: [{ t: 'Überspringen' }, { t: 'Weiter', primary: true }], hlBtn: 1 }), h: 'Displaysperre einrichten', p: 'Wählen Sie <b>Fingerabdrücke</b> und legen Sie danach eine <b>6-stellige PIN</b> fest. Wie der Fingerabdruck genau funktioniert, zeigt das Kapitel „Sicherheit &amp; Datenschutz“.', why: 'Ohne Sperre hat jeder Finder Zugriff auf Fotos, E-Mails und Konten. Eine PIN ist zudem Voraussetzung für Banking-Apps und kontaktloses Bezahlen.' },
       { m: () => formScreen({ title: 'Samsung Account', logo: `<circle cx="36" cy="72" r="12" class="m-c7"/>`, lines: ['Melden Sie sich an, um Ihr Telefon zu finden, Daten zu sichern und Galaxy AI zu nutzen.'], inputs: ['E-Mail-Adresse oder Telefonnummer'], buttons: [{ t: 'Überspringen' }, { t: 'Weiter', primary: true }], hlBtn: 1 }), h: 'Samsung-Konto (empfohlen)', p: 'Melden Sie sich an oder erstellen Sie ein Konto. Sie können hier auch <b>„Mit Google fortfahren“</b> wählen, dann brauchen Sie kein weiteres Passwort.', why: 'Ohne Samsung-Konto funktionieren „Verlorene Geräte finden“, die Samsung-Cloud-Sicherung und Galaxy AI nicht.' },
       { m: () => homeScreen({ label: 'Fertig eingerichteter Startbildschirm' }), h: 'Fertig!', p: 'Ihr Startbildschirm erscheint. In den ersten Stunden lädt das Telefon im Hintergrund noch Updates und Apps: Lassen Sie es am besten eine Nacht im WLAN und am Ladekabel.', why: 'Prüfen Sie danach einmal <b>Einstellungen › Software-Update</b>. Neue Telefone haben oft schon ein großes Update bereit.' }
     ]
@@ -1753,7 +2137,7 @@ const SPECS = [
   ['Arbeitsspeicher', '8 GB RAM', 'Kurzzeitgedächtnis: Wie viele Apps gleichzeitig offen bleiben können, ohne neu zu laden. 8 GB reichen gut.'],
   ['Speicher', '128 / 256 / 512 GB, keine microSD', 'Hier liegen Fotos, Videos und Apps. Eine Speicherkarte lässt sich nicht nachrüsten. Faustregel: 128 GB reicht für etwa 25.000 Fotos, wenn Sie wenig filmen.'],
   ['Akku', '4.700 mAh · 25 W Kabel · 15 W kabellos', 'mAh gibt die Kapazität an. Mit einem 25-W-Netzteil ist der Akku nach etwa 30 Minuten zu rund 50 % geladen, voll nach gut einer Stunde. Kabellos (Qi) geht es langsamer, ist aber bequem.'],
-  ['Kameras hinten', '50 MP Haupt · 12 MP Ultraweit · 8 MP Tele 3×', 'Drei Objektive für drei Blickwinkel, Details in Kapitel 5.'],
+  ['Kameras hinten', '50 MP Haupt · 12 MP Ultraweit · 8 MP Tele 3×', 'Drei Objektive für drei Blickwinkel, Details im Kapitel „Kamera &amp; Galerie“.'],
   ['Frontkamera', '10 MP', 'Für Selfies und Videoanrufe, nimmt Videos in 4K auf.'],
   ['Video', 'bis 8K (30 Bilder/s), 4K bis 60 Bilder/s', '8K hat viermal so viele Bildpunkte wie 4K. Für den Alltag und den Fernseher reicht 4K völlig und spart Speicher.'],
   ['Schutz', 'IP68 · Gorilla Glass Victus+', 'IP68: staubdicht und bis 1,5 m Tiefe 30 Minuten in Süßwasser geschützt. Kein Schutz gegen Salzwasser, Chlorwasser, heißes Wasser oder Druck (Dusche, Wellen). Wasserschäden sind von der Garantie ausgeschlossen.'],
@@ -1868,6 +2252,257 @@ const GLOSS = {
   fiveg: ['5G', 'Fünfte Mobilfunkgeneration. Schneller als 4G/LTE, verfügbar je nach Tarif und Ort.']
 };
 
+/* ================= Einstellungs-Trainer: simulated settings tree ================= */
+/* Each page: title, rows. Row types: link (to page), radio (group), toggle, info. */
+const SIM_TREE = {
+  root: { title: 'Einstellungen', rows: [
+    { t: 'link', l: 'Verbindungen', s: 'WLAN · Bluetooth · Flugmodus', c: 'c1', to: 'conn' },
+    { t: 'link', l: 'Töne und Vibration', s: 'Tonmodus · Klingelton', c: 'c4', to: 'sound' },
+    { t: 'link', l: 'Benachrichtigungen', s: 'Statusleiste · Nicht stören', c: 'c3', to: 'notif' },
+    { t: 'link', l: 'Anzeige', s: 'Helligkeit · Dunkel · Navigation', c: 'c6', to: 'display' },
+    { t: 'link', l: 'Akku', s: 'Energiesparmodus · Laden', c: 'c2', to: 'battery' },
+    { t: 'link', l: 'Sperrbildschirm und AOD', s: 'Always On Display', c: 'c4', to: 'lock' },
+    { t: 'link', l: 'Sicherheit und Datenschutz', s: 'Biometrie · Berechtigungen', c: 'c1', to: 'sec' },
+    { t: 'link', l: 'Sicherheit und Notfall', s: 'Notruf-SOS · Medizinische Infos', c: 'c5', to: 'sos' },
+    { t: 'link', l: 'Erweiterte Funktionen', s: 'Seitentaste · Bewegungen', c: 'c3', to: 'adv' },
+    { t: 'link', l: 'Gerätewartung', s: 'Speicher · Wartungsmodus', c: 'c2', to: 'care' },
+    { t: 'link', l: 'Barrierefreiheit', s: 'Sehhilfen · Hörhilfen', c: 'c6', to: 'a11y' },
+    { t: 'link', l: 'Software-Update', s: 'Herunterladen und installieren', c: 'c7', to: 'update' }
+  ] },
+  conn: { title: 'Verbindungen', rows: [
+    { t: 'toggle', id: 'wifi', l: 'WLAN', s: 'Zuhause-WLAN' },
+    { t: 'toggle', id: 'bt', l: 'Bluetooth' },
+    { t: 'toggle', id: 'nfc', l: 'NFC und kontaktlose Zahlungen' },
+    { t: 'toggle', id: 'plane', l: 'Flugmodus' },
+    { t: 'link', l: 'SIM-Manager', to: 'simmgr' },
+    { t: 'link', l: 'Mobile Netzwerke', to: 'mobile' },
+    { t: 'link', l: 'Datennutzung', to: 'data' },
+    { t: 'link', l: 'Mobile Hotspot und Tethering', to: 'hotspot' }
+  ] },
+  simmgr: { title: 'SIM-Manager', rows: [{ t: 'info', l: 'SIM 1', s: 'Ihr Anbieter' }, { t: 'info', l: 'eSIM hinzufügen', s: 'QR-Code des Anbieters scannen' }] },
+  mobile: { title: 'Mobile Netzwerke', rows: [{ t: 'toggle', id: 'roaming', l: 'Daten-Roaming', s: 'Im Ausland Daten nutzen' }, { t: 'info', l: 'Netzmodus', s: '5G/LTE/3G/2G (autom.)' }] },
+  data: { title: 'Datennutzung', rows: [{ t: 'toggle', id: 'datasaver', l: 'Datensparmodus' }, { t: 'info', l: 'Mobile Datennutzung', s: '3,2 GB in diesem Monat' }] },
+  hotspot: { title: 'Mobile Hotspot und Tethering', rows: [{ t: 'toggle', id: 'hotspot', l: 'Mobile Hotspot', s: 'Andere Geräte nutzen Ihre Daten' }, { t: 'info', l: 'USB-Tethering', s: 'Per Kabel teilen' }] },
+  sound: { title: 'Töne und Vibration', rows: [
+    { t: 'radio', g: 'soundmode', v: 'ton', l: 'Ton' }, { t: 'radio', g: 'soundmode', v: 'vib', l: 'Vibration' }, { t: 'radio', g: 'soundmode', v: 'mute', l: 'Lautlos' },
+    { t: 'info', l: 'Klingelton', s: 'Over the Horizon' }, { t: 'info', l: 'Lautstärke', s: 'Klingelton, Medien, Benachrichtigungen' }
+  ] },
+  notif: { title: 'Benachrichtigungen', rows: [
+    { t: 'info', l: 'App-Benachrichtigungen', s: 'Für jede App festlegen' },
+    { t: 'toggle', id: 'dnd', l: 'Nicht stören', s: 'Töne und Pop-ups stumm' },
+    { t: 'info', l: 'Benachrichtigungen auf dem Sperrbildschirm' }
+  ] },
+  display: { title: 'Anzeige', rows: [
+    { t: 'radio', g: 'theme', v: 'light', l: 'Hell' }, { t: 'radio', g: 'theme', v: 'dark', l: 'Dunkel' },
+    { t: 'info', l: 'Helligkeit', s: 'Adaptive Helligkeit an' },
+    { t: 'link', l: 'Bewegungsglättung', sk: 'motion', to: 'motion' },
+    { t: 'toggle', id: 'eyecomfort', l: 'Augenschonfilter' },
+    { t: 'link', l: 'Schriftgröße und -stil', sk: 'font', to: 'font' },
+    { t: 'link', l: 'Bildschirm-Timeout', sk: 'timeout', to: 'timeout' },
+    { t: 'toggle', id: 'easy', l: 'Einfacher Modus', s: 'Größere Symbole, einfacheres Layout' },
+    { t: 'link', l: 'Navigationsleiste', sk: 'nav', to: 'nav' },
+    { t: 'link', l: 'Edge-Panels', to: 'edge' }
+  ] },
+  motion: { title: 'Bewegungsglättung', note: 'Adaptiv: bis zu 120 Hz, flüssiger. Standard: 60 Hz, spart Akku.', rows: [{ t: 'radio', g: 'motion', v: 'adaptive', l: 'Adaptiv' }, { t: 'radio', g: 'motion', v: 'standard', l: 'Standard' }] },
+  font: { title: 'Schriftgröße und -stil', note: 'Vorschau: So sieht Text aus.', rows: [{ t: 'radio', g: 'font', v: 's', l: 'Klein' }, { t: 'radio', g: 'font', v: 'm', l: 'Standard' }, { t: 'radio', g: 'font', v: 'l', l: 'Groß' }, { t: 'radio', g: 'font', v: 'xl', l: 'Sehr groß' }, { t: 'toggle', id: 'bold', l: 'Fettschrift' }] },
+  timeout: { title: 'Bildschirm-Timeout', rows: ['15 Sekunden', '30 Sekunden', '1 Minute', '2 Minuten', '5 Minuten', '10 Minuten'].map(v => ({ t: 'radio', g: 'timeout', v, l: v })) },
+  nav: { title: 'Navigationsleiste', rows: [{ t: 'radio', g: 'nav', v: 'gestures', l: 'Wischgesten' }, { t: 'radio', g: 'nav', v: 'buttons', l: 'Tasten' }, { t: 'info', l: 'Tastenreihenfolge', s: 'Zurück links oder rechts' }] },
+  edge: { title: 'Edge-Panels', rows: [{ t: 'toggle', id: 'edge', l: 'Edge-Panels', s: 'Seitenleiste mit Apps am Rand' }] },
+  battery: { title: 'Akku', note: 'Akku: 76 % · ca. 1 Tag 3 Std. verbleibend', rows: [
+    { t: 'toggle', id: 'powersave', l: 'Energiesparmodus' },
+    { t: 'info', l: 'Hintergrundnutzungslimits', s: 'Ungenutzte Apps in Standby' },
+    { t: 'link', l: 'Akkuschutz', sk: 'protect', to: 'protect' },
+    { t: 'link', l: 'Ladeeinstellungen', to: 'charge' }
+  ] },
+  protect: { title: 'Akkuschutz', note: 'Schützt den Akku, damit er länger hält.', rows: [{ t: 'radio', g: 'protect', v: 'basic', l: 'Standard', s: 'Bis 100 %, ab 95 % nachladen' }, { t: 'radio', g: 'protect', v: 'max', l: 'Maximal', s: 'Ladegrenze 80–95 % wählbar' }] },
+  charge: { title: 'Ladeeinstellungen', rows: [{ t: 'toggle', id: 'fastcharge', l: 'Schnellladen' }, { t: 'toggle', id: 'wlcharge', l: 'Schnelles kabelloses Laden' }] },
+  lock: { title: 'Sperrbildschirm und AOD', rows: [{ t: 'info', l: 'Displaysperre', s: 'PIN' }, { t: 'toggle', id: 'aod', l: 'Always On Display', s: 'Uhrzeit bei aus. Bildschirm' }] },
+  sec: { title: 'Sicherheit und Datenschutz', rows: [
+    { t: 'link', l: 'Biometrische Daten', s: 'Gesicht, Fingerabdrücke', to: 'bio' },
+    { t: 'link', l: 'Verlorene Geräte finden', to: 'find' },
+    { t: 'info', l: 'Berechtigungsmanager', s: 'Wer darf Kamera, Standort, …' },
+    { t: 'link', l: 'Weitere Sicherheitseinstellungen', to: 'moresec' }
+  ] },
+  bio: { title: 'Biometrische Daten', rows: [{ t: 'info', l: 'Gesichtserkennung', s: 'Nicht registriert' }, { t: 'action', id: 'finger', l: 'Fingerabdrücke', s: 'Tippen zum Registrieren' }] },
+  find: { title: 'Verlorene Geräte finden', rows: [{ t: 'toggle', id: 'findmy', l: 'Verlorene Geräte finden' }, { t: 'toggle', id: 'offline', l: 'Offline-Suche' }, { t: 'toggle', id: 'lastloc', l: 'Letzten Standort senden' }] },
+  moresec: { title: 'Weitere Sicherheitseinstellungen', rows: [{ t: 'info', l: 'Sicherer Ordner', s: 'Privater, verschlüsselter Bereich' }, { t: 'info', l: 'Geräteadministratoren' }] },
+  sos: { title: 'Sicherheit und Notfall', rows: [
+    { t: 'info', l: 'Medizinische Informationen', s: 'Blutgruppe, Allergien' },
+    { t: 'info', l: 'Notfallkontakte' },
+    { t: 'link', l: 'Notruf-SOS', to: 'sos2' }
+  ] },
+  sos2: { title: 'Notruf-SOS', note: 'Seitentaste 5-mal schnell drücken.', rows: [{ t: 'toggle', id: 'sosOn', l: 'Notruf-SOS' }, { t: 'toggle', id: 'sosSound', l: 'Countdown-Ton abspielen' }, { t: 'info', l: 'Notrufnummer', s: '112' }] },
+  adv: { title: 'Erweiterte Funktionen', rows: [
+    { t: 'link', l: 'Seitentaste', sk: 'side', to: 'side' },
+    { t: 'info', l: 'Bewegungen und Gesten', s: 'Anheben zum Aktivieren' },
+    { t: 'info', l: 'Bildschirmfoto-Einstellungen' }
+  ] },
+  side: { title: 'Seitentaste', rows: [
+    { t: 'toggle', id: 'doublepress', l: 'Zweimal drücken', s: 'Kamera schnell starten' },
+    { t: 'head', l: 'Gedrückt halten' },
+    { t: 'radio', g: 'sidehold', v: 'gemini', l: 'Gemini' }, { t: 'radio', g: 'sidehold', v: 'bixby', l: 'Bixby' }, { t: 'radio', g: 'sidehold', v: 'power', l: 'Ausschaltmenü' }
+  ] },
+  care: { title: 'Gerätewartung', rows: [{ t: 'info', l: 'Speicher', s: '74 GB von 128 GB belegt' }, { t: 'info', l: 'Arbeitsspeicher' }, { t: 'link', l: 'Wartungsmodus', to: 'maint' }] },
+  maint: { title: 'Wartungsmodus', note: 'Schützt Ihre Daten, wenn das Telefon repariert wird.', rows: [{ t: 'action', id: 'maint', l: 'Einschalten', s: 'Telefon startet neu' }] },
+  a11y: { title: 'Barrierefreiheit', rows: [{ t: 'info', l: 'Sehhilfen', s: 'Vergrößerung, Kontrast' }, { t: 'info', l: 'Hörhilfen', s: 'Live-Untertitel, Hörgeräte' }, { t: 'toggle', id: 'magnify', l: 'Vergrößerung (Kurzbefehl)' }] },
+  update: { title: 'Software-Update', rows: [{ t: 'action', id: 'update', l: 'Herunterladen und installieren', s: 'Zuletzt geprüft: heute' }, { t: 'toggle', id: 'autoupd', l: 'Autom. über WLAN herunterladen' }] }
+};
+const SIM_DEFAULTS = { wifi: true, bt: false, nfc: true, plane: false, roaming: false, datasaver: false, hotspot: false, soundmode: 'ton', dnd: false, theme: 'light', motion: 'adaptive', eyecomfort: false, font: 'm', bold: false, timeout: '30 Sekunden', easy: false, nav: 'gestures', edge: true, powersave: false, protect: 'basic', fastcharge: true, wlcharge: true, aod: false, findmy: false, offline: false, lastloc: false, sosOn: false, sosSound: true, doublepress: true, sidehold: 'gemini', magnify: false, autoupd: true };
+const SIM_TASKS = [
+  { q: 'Schalten Sie den Dunkelmodus ein.', key: 'theme', val: 'dark', path: ['Anzeige', 'Dunkel'], why: 'Dunkle Flächen schonen abends die Augen. Beim AMOLED-Display sind schwarze Pixel komplett aus und sparen Strom.' },
+  { q: 'Stellen Sie die Navigation auf drei Tasten um (statt Wischgesten).', key: 'nav', val: 'buttons', path: ['Anzeige', 'Navigationsleiste', 'Tasten'], why: 'Tasten sind für Einsteiger oft leichter: Sie sehen jederzeit, wo „Zurück“ und „Startbildschirm“ sind.' },
+  { q: 'Stellen Sie die Schrift auf „Groß“.', key: 'font', val: 'l', path: ['Anzeige', 'Schriftgröße und -stil', 'Groß'], why: 'Größere Schrift wirkt in allen Menüs und in vielen Apps.' },
+  { q: 'Schonen Sie den Akku: Akkuschutz auf „Maximal“.', key: 'protect', val: 'max', path: ['Akku', 'Akkuschutz', 'Maximal'], why: 'Mit einer Ladegrenze (z. B. 80 %) altert der Akku deutlich langsamer.' },
+  { q: 'Langes Drücken der Seitentaste soll das Ausschaltmenü öffnen.', key: 'sidehold', val: 'power', path: ['Erweiterte Funktionen', 'Seitentaste', 'Ausschaltmenü'], why: 'Dann schalten Sie das Telefon wie gewohnt per langem Tastendruck aus, statt den Assistenten zu starten.' },
+  { q: 'Schalten Sie Notruf-SOS ein.', key: 'sosOn', val: true, path: ['Sicherheit und Notfall', 'Notruf-SOS', 'Schalter „Notruf-SOS“'], why: 'Im Notfall reicht dann 5-maliges Drücken der Seitentaste, um die 112 zu rufen.' },
+  { q: 'Aktivieren Sie „Verlorene Geräte finden“.', key: 'findmy', val: true, path: ['Sicherheit und Datenschutz', 'Verlorene Geräte finden', 'Schalter'], why: 'Nur wenn das vorher an ist, können Sie ein verlorenes Telefon orten, klingeln lassen oder sperren.' },
+  { q: 'Schalten Sie das Telefon auf lautlos.', key: 'soundmode', val: 'mute', path: ['Töne und Vibration', 'Lautlos'], why: 'Schneller geht es über die Schnelleinstellungen (Kachel „Ton“) oder den Lautstärkeregler.' },
+  { q: 'Sparen Sie Akku: Bewegungsglättung auf „Standard“.', key: 'motion', val: 'standard', path: ['Anzeige', 'Bewegungsglättung', 'Standard'], why: 'Standard = 60 Bilder pro Sekunde. Das Scrollen wirkt etwas weniger flüssig, verbraucht aber weniger Strom.' },
+  { q: 'Schalten Sie den mobilen Hotspot ein, damit Ihr Laptop ins Internet kommt.', key: 'hotspot', val: true, path: ['Verbindungen', 'Mobile Hotspot und Tethering', 'Mobile Hotspot'], why: 'Der Laptop verbindet sich dann mit dem WLAN-Namen, der unter „Mobile Hotspot“ angezeigt wird. Die Daten gehen von Ihrem Tarif ab.' },
+  { q: 'Bildschirm soll sich erst nach 1 Minute ausschalten.', key: 'timeout', val: '1 Minute', path: ['Anzeige', 'Bildschirm-Timeout', '1 Minute'], why: 'Kürzere Zeiten sparen Akku, längere sind bequemer beim Lesen.' },
+  { q: 'Schalten Sie den Einfachen Modus ein.', key: 'easy', val: true, path: ['Anzeige', 'Einfacher Modus'], why: 'Größere Symbole, größere Schrift und ein aufgeräumter Startbildschirm. Ideal für Smartphone-Neulinge.' }
+];
+
+/* ================= Tasten-Trainer tasks ================= */
+const KEY_TASKS = [
+  { id: 'screen', q: 'Schalten Sie den Bildschirm ein (Seitentaste kurz drücken).' },
+  { id: 'volup', q: 'Stellen Sie lauter (Lauter-Taste).' },
+  { id: 'shot', q: 'Machen Sie ein Bildschirmfoto: Seitentaste und Leiser gleichzeitig kurz drücken.' },
+  { id: 'camera', q: 'Starten Sie die Kamera: Seitentaste zweimal schnell drücken.' },
+  { id: 'power', q: 'Öffnen Sie das Ausschaltmenü: Seitentaste und Leiser gemeinsam etwa 2 Sekunden halten.' },
+  { id: 'force', q: 'Erzwungener Neustart: Seitentaste und Leiser 7 Sekunden halten.' }
+];
+
+/* ================= Gesten-Trainer tasks ================= */
+const GESTURE_TASKS = [
+  { id: 'home', q: 'Gehen Sie zum Startbildschirm: vom unteren Rand nach oben wischen.' },
+  { id: 'notif', q: 'Öffnen Sie die Benachrichtigungen: von der linken oberen Hälfte nach unten wischen.' },
+  { id: 'quick', q: 'Öffnen Sie die Schnelleinstellungen: von der rechten oberen Hälfte nach unten wischen.' },
+  { id: 'back', q: 'Gehen Sie zurück: vom linken oder rechten Rand zur Mitte wischen.' },
+  { id: 'recent', q: 'Zuletzt verwendete Apps: vom unteren Rand nach oben wischen und kurz halten.' },
+  { id: 'circle', q: 'Circle to Search: den Strich unten etwa 1 Sekunde gedrückt halten.' }
+];
+
+/* ================= Kamera-Berater ================= */
+const CAM_ADVICE = {
+  person: { t: 'Porträt einer Person', lens: '3× Tele (oder 2×)', mode: 'Porträt', steps: ['Modus <b>Porträt</b> wählen und auf <b>3×</b> tippen.', '1,5 bis 2 m Abstand halten, bis die Kamera meldet, dass der Porträteffekt bereit ist.', 'Auf das Gesicht tippen. Licht von vorne oder seitlich, nicht von hinten.', 'Hintergrundunschärfe nachträglich in der Galerie ändern: Foto öffnen › „Porträteffekt ändern“.'], why: 'Das Tele verzerrt Gesichter nicht, weil Sie weiter weg stehen. Die Kamera trennt per Tiefenschätzung Person und Hintergrund.' },
+  group: { t: 'Gruppenfoto', lens: '1× oder 0,6×', mode: 'Foto', steps: ['Mit <b>1×</b> beginnen, passt nicht alles drauf, auf <b>0,6×</b> wechseln.', 'Personen nicht an den Bildrand stellen (dort verzerrt das Ultraweitwinkel).', 'Selbstauslöser über das Timer-Symbol (3 oder 10 Sekunden), damit Sie mit aufs Bild können.', 'Mehrere Fotos machen, damit niemand die Augen zu hat.'], why: 'Das Ultraweitwinkel erfasst viel, krümmt aber Linien und Gesichter am Rand.' },
+  landscape: { t: 'Landschaft', lens: '0,6× oder 1×', mode: 'Foto / Panorama', steps: ['Horizont gerade halten: Gitterlinien einschalten (Kamera-Einstellungen).', 'Horizont auf das obere oder untere Drittel legen, nicht in die Mitte.', 'Für sehr breite Ansichten: <b>Mehr › Panorama</b>, langsam schwenken.', 'Auf den Himmel tippen, wenn er zu hell ist: das Bild wird dunkler und der Himmel bekommt Farbe.'], why: 'Wohin Sie tippen, danach richtet die Kamera die Belichtung aus.' },
+  night: { t: 'Nacht / wenig Licht', lens: '1× (Hauptkamera)', mode: 'Nacht (oder Foto mit Mond-Symbol)', steps: ['<b>1×</b> verwenden: die Hauptkamera hat die größte Öffnung (f/1.8) und OIS.', 'Telefon mit beiden Händen halten oder anlehnen.', 'Nach dem Auslösen 1 bis 3 Sekunden stillhalten, bis die Aufnahme fertig ist.', 'Blitz nur für nahe Personen; der Nachtmodus wirkt natürlicher.'], why: 'Der Nachtmodus kombiniert mehrere Belichtungen zu einem helleren, rauschärmeren Bild. Dafür muss das Telefon kurz ruhig bleiben.' },
+  food: { t: 'Essen', lens: '1×', mode: 'Mehr › Food', steps: ['Modus <b>Food</b> wählen.', 'Von schräg oben (ca. 45°) oder direkt von oben fotografieren.', 'Tageslicht vom Fenster nutzen, keinen Blitz.', 'Den Schärfekreis auf den wichtigsten Teil legen.'], why: 'Food verstärkt Farben und legt eine weiche Unschärfe um den gewählten Bereich.' },
+  action: { t: 'Bewegung, Kinder, Haustiere', lens: '1×', mode: 'Foto (Auslöser halten)', steps: ['Bei viel Licht fotografieren, dann sind die Belichtungszeiten kurz.', 'Den Auslöser <b>zum Bildrand ziehen</b> und halten: Serienaufnahme. (Was das Ziehen auslöst, stellen Sie in den Kamera-Einstellungen unter „Auslöser zum Rand ziehen“ ein.)', 'Alternativ im Video filmen und später ein Einzelbild in der Galerie speichern.', 'Für Zeitlupen: <b>Mehr › Zeitlupe</b>.'], why: 'Bei schneller Bewegung und wenig Licht wird es unscharf, weil die Belichtungszeit zu lang ist. Siehe Belichtungs-Simulator unten.' },
+  far: { t: 'Weit entfernt', lens: '3× Tele, max. ca. 10×', mode: 'Foto', steps: ['Auf <b>3×</b> tippen; das ist optischer Zoom ohne Qualitätsverlust.', 'Mehr als etwa 10× nur zur Not, das Bild wird weich.', 'Telefon abstützen, beim Zoomen verwackelt alles stärker.', 'Lieber näher herangehen, wenn möglich.'], why: 'Über 3× hinaus wird digital vergrößert. Software schärft nach, echte Details kommen aber nicht dazu.' },
+  doc: { t: 'Dokument / Text', lens: '1×', mode: 'Foto (Dokumentenscan)', steps: ['Dokument auf einen dunklen, ruhigen Untergrund legen.', 'Kamera gerade darüber halten. Erkennt sie ein Dokument, erscheint der Knopf <b>„Scannen“</b>.', 'Antippen: Die Kamera schneidet zu und entzerrt. Ecken bei Bedarf verschieben, dann speichern.', 'Text aus dem Foto kopieren: In der Galerie auf das „T“-Symbol tippen.'], why: 'Dafür muss in den Kamera-Einstellungen der Szenenoptimierer (bzw. „Dokumente scannen“) eingeschaltet sein.' }
+};
+
+/* ================= Chapter mini quizzes (3 per chapter) ================= */
+const MINI_QUIZ = {
+  geraet: [
+    { q: 'Was ist bei einem neuen S24 FE NICHT in der Schachtel?', o: ['USB-C-Kabel', 'SIM-Werkzeug', 'Netzteil'], a: 2, e: 'Ein Netzteil liegt nicht bei. Für 25 W Schnellladen brauchen Sie ein USB-C-Netzteil mit PD/PPS.' },
+    { q: 'Wo sitzt das SIM-Kartenfach?', o: ['Unterseite neben USB-C', 'Linke Seite oben', 'Unter dem Akkudeckel'], a: 1, e: 'Links oben. Der Akku ist fest verbaut, es gibt keinen Deckel.' },
+    { q: 'Kann man eine microSD-Karte einsetzen?', o: ['Ja, im SIM-Fach', 'Nein', 'Nur beim 512-GB-Modell'], a: 1, e: 'Das S24 FE hat keinen Speicherkarten-Steckplatz.' }
+  ],
+  einrichtung: [
+    { q: 'Wofür brauchen Sie unbedingt ein Google-Konto?', o: ['Zum Telefonieren', 'Für Apps aus dem Play Store', 'Für WLAN'], a: 1, e: 'Ohne Google-Konto keine Apps aus dem Play Store.' },
+    { q: 'Was passiert nach dreimal falscher SIM-PIN?', o: ['Nichts', 'Die SIM wird gesperrt, Sie brauchen die PUK', 'Das Telefon wird gelöscht'], a: 1, e: 'Die PUK steht im Brief Ihres Anbieters. Gut aufbewahren!' },
+    { q: 'Womit übertragen Sie Daten vom alten Handy?', o: ['Smart Switch', 'Quick Share', 'DeX'], a: 0, e: 'Smart Switch überträgt Kontakte, Fotos, Nachrichten, Apps und Einstellungen.' }
+  ],
+  bedienung: [
+    { q: 'Wie öffnen Sie in One UI 7 die Schnelleinstellungen?', o: ['Von oben rechts nach unten wischen', 'Von unten nach oben wischen', 'Seitentaste zweimal'], a: 0, e: 'Oben rechts = Schnelleinstellungen, oben links = Benachrichtigungen (Standard „Getrennt“).' },
+    { q: 'Sie halten die WLAN-Kachel gedrückt. Was passiert?', o: ['WLAN geht aus', 'Die Liste der WLAN-Netze öffnet sich', 'Das Telefon startet neu'], a: 1, e: 'Kurz tippen schaltet an/aus, gedrückt halten öffnet die Einstellung dahinter.' },
+    { q: 'Wie bekommen Sie ein „ä“ auf der Tastatur?', o: ['„a“ gedrückt halten', 'Zweimal „a“', 'Über !#1'], a: 0, e: 'Buchstaben gedrückt halten zeigt Umlaute und Sonderzeichen.' }
+  ],
+  telefon: [
+    { q: 'Es klingelt im Kino. Wie stoppen Sie das Klingeln am schnellsten, ohne aufzulegen?', o: ['Eine Lautstärketaste drücken', 'Telefon ausschalten', 'Flugmodus'], a: 0, e: 'Eine Lautstärketaste stummt den Klingelton. Der Anruf läuft weiter, bis er auf die Mailbox geht.' },
+    { q: 'Wo sollten neue Kontakte gespeichert werden?', o: ['Auf der SIM-Karte', 'Im Google-Konto', 'Nur auf dem Telefon'], a: 1, e: 'Im Google-Konto sind sie automatisch gesichert und auf dem nächsten Telefon sofort da.' },
+    { q: 'Funktioniert der Notruf 112 in Deutschland ohne SIM-Karte?', o: ['Ja, immer', 'Nein', 'Nur mit WLAN'], a: 1, e: 'In Deutschland sind Notrufe ohne SIM-Karte nicht möglich. Mit SIM klappt 112 auch vom Sperrbildschirm.' }
+  ],
+  sicherheit: [
+    { q: 'Welche Displaysperre ist die beste Empfehlung für die meisten?', o: ['Streichen', '6-stellige PIN plus Fingerabdruck', 'Muster'], a: 1, e: 'PIN als sicherer Schlüssel, Fingerabdruck für die Bequemlichkeit.' },
+    { q: 'Wann verlangt das Telefon trotz Fingerabdruck die PIN?', o: ['Nie', 'Nach jedem Neustart', 'Nur nachts'], a: 1, e: 'Nach einem Neustart und spätestens alle 72 Stunden ist die PIN nötig.' },
+    { q: 'Was muss vorher eingeschaltet sein, damit Sie ein verlorenes Telefon orten können?', o: ['Bluetooth', '„Verlorene Geräte finden“', 'Energiesparmodus'], a: 1, e: 'Und ein Samsung-Konto. Ideal mit „Offline-Suche“.' }
+  ],
+  kamera: [
+    { q: 'Welche Kamera ist nachts am besten?', o: ['0,6×', '1× Hauptkamera', '10× Zoom'], a: 1, e: 'Größte Blendenöffnung (f/1.8), größter Sensor und Bildstabilisator.' },
+    { q: 'Ein höherer ISO-Wert macht das Bild …', o: ['heller, aber körniger', 'dunkler und schärfer', 'nur farbiger'], a: 0, e: 'ISO verstärkt das Signal: heller, aber mit mehr Bildrauschen.' },
+    { q: 'Wie lange bleiben gelöschte Fotos im Papierkorb?', o: ['24 Stunden', '30 Tage', 'Für immer'], a: 1, e: 'Galerie › Menü › Papierkorb.' }
+  ],
+  ai: [
+    { q: 'Wie starten Sie Circle to Search?', o: ['Home-Taste / Strich unten gedrückt halten', 'Seitentaste 3×', 'Telefon schütteln'], a: 0, e: 'Danach das Gesuchte einkreisen, markieren oder antippen.' },
+    { q: 'Was bewirkt „Daten nur auf dem Gerät verarbeiten“?', o: ['KI-Funktionen, die Server brauchen, werden abgeschaltet', 'Alles geht schneller', 'Das WLAN wird abgeschaltet'], a: 0, e: 'Lokale Funktionen wie Übersetzen mit Sprachpaket laufen weiter.' },
+    { q: 'Woran erkennt man ein KI-bearbeitetes Foto?', o: ['Gar nicht', 'Wasserzeichen-Symbol und Hinweis in den Details', 'Es ist schwarz-weiß'], a: 1, e: 'Generativ bearbeitete Fotos werden gekennzeichnet.' }
+  ],
+  akku: [
+    { q: 'Welcher Ladebereich ist am schonendsten für den Akku?', o: ['0–100 %', 'etwa 20–80 %', 'Immer leer laufen lassen'], a: 1, e: 'Volle 100 % über lange Zeit und Tiefentladung lassen den Akku schneller altern.' },
+    { q: 'Was ist der größte Feind des Akkus?', o: ['Hitze', 'Kälte im Kühlschrank', 'WLAN'], a: 0, e: 'Hohe Temperaturen beim Laden altern den Akku am stärksten.' },
+    { q: 'Spart das Wegwischen aller Hintergrund-Apps Strom?', o: ['Ja, viel', 'Meistens nicht', 'Nur nachts'], a: 1, e: 'Neustarts von Apps kosten oft mehr Energie als das Weiterlaufen im Ruhezustand.' }
+  ],
+  anpassen: [
+    { q: 'Was macht der Einfache Modus?', o: ['Größere Symbole und Schrift, einfacheres Layout', 'Schaltet Apps ab', 'Spart nur Akku'], a: 0, e: 'Einstellungen › Anzeige › Einfacher Modus.' },
+    { q: 'Eine Routine funktioniert nach dem Prinzip …', o: ['Wenn …, dann …', 'Immer alles', 'Nur per Sprache'], a: 0, e: 'Beispiel: Wenn 22:30 Uhr, dann Nicht stören an.' },
+    { q: 'Was reduziert der Augenschonfilter?', o: ['Blaues Licht', 'Die Lautstärke', 'Den Datenverbrauch'], a: 0, e: 'Das Bild wird wärmer (gelblicher), angenehmer am Abend.' }
+  ],
+  verbindungen: [
+    { q: 'Welches WLAN-Band reicht am weitesten durch Wände?', o: ['2,4 GHz', '5 GHz', '6 GHz'], a: 0, e: '2,4 GHz reicht weiter, ist aber langsamer.' },
+    { q: 'Was sollten Sie außerhalb der EU ausschalten, um hohe Kosten zu vermeiden?', o: ['Bluetooth', 'Daten-Roaming', 'NFC'], a: 1, e: 'Verbindungen › Mobile Netzwerke › Daten-Roaming.' },
+    { q: 'Wofür braucht man NFC?', o: ['Kontaktlos bezahlen', 'Fotos drucken', 'Lauter telefonieren'], a: 0, e: 'NFC funkt über wenige Zentimeter, z. B. zum Kartenterminal.' }
+  ],
+  apps: [
+    { q: 'Eine Taschenlampen-App möchte Ihre Kontakte. Was tun?', o: ['Zulassen', 'Nicht zulassen, App am besten löschen', 'Neustarten'], a: 1, e: 'Berechtigungen müssen zur Funktion der App passen.' },
+    { q: 'Ab welcher Speicherbelegung wird das Telefon oft spürbar langsamer?', o: ['ab ca. 30 %', 'ab ca. 90 %', 'nie'], a: 1, e: 'Halten Sie 10–15 % frei.' },
+    { q: 'Wird WhatsApp automatisch mit der Telefon-Sicherung gesichert?', o: ['Ja', 'Nein, separat in WhatsApp einrichten', 'Nur Fotos'], a: 1, e: 'WhatsApp › Einstellungen › Chats › Chat-Backup.' }
+  ],
+  hilfe: [
+    { q: 'Welcher Schritt löscht KEINE Daten?', o: ['Erzwungener Neustart', 'Werkseinstellungen', 'Beides löscht'], a: 0, e: 'Neustart = nur aus- und einschalten.' },
+    { q: 'Wofür ist der abgesicherte Modus?', o: ['Herausfinden, ob eine installierte App das Problem verursacht', 'Akku sparen', 'Daten sichern'], a: 0, e: 'Dort laufen nur vorinstallierte Apps.' },
+    { q: 'Was tun Sie vor einer Reparatur?', o: ['Nichts', 'Sichern und Wartungsmodus einschalten', 'SIM wegwerfen'], a: 1, e: 'Der Wartungsmodus versteckt Ihre Daten vor dem Techniker.' }
+  ]
+};
+
+/* ================= First-week checklist ================= */
+const CHECKLIST = [
+  ['Software-Update installiert', 'einrichtung'],
+  ['6-stellige PIN und zwei Fingerabdrücke eingerichtet', 'fingerabdruck'],
+  ['„Verlorene Geräte finden“ und Offline-Suche eingeschaltet', 'finden'],
+  ['Notruf-SOS eingeschaltet und Notfallkontakte hinterlegt', 'sos'],
+  ['Akkuschutz eingestellt', 'akkuschutz'],
+  ['Google-Sicherung und Foto-Sicherung eingeschaltet', 'backup'],
+  ['WhatsApp-Chat-Backup eingerichtet', 'backup'],
+  ['Schriftgröße und Navigation nach Wunsch angepasst', 'anzeige'],
+  ['Seriennummer/IMEI notiert (Einstellungen › Telefoninfo)', 'specs'],
+  ['Google- und Samsung-Passwort auf Papier notiert', 'konten'],
+  ['Schutzhülle / Displayschutz angebracht', 'pflege']
+];
+
+/* ================= Charging & storage calculators ================= */
+// minutes for segments 0-50, 50-80, 80-100 (Richtwerte)
+const CHARGERS = {
+  w25: { l: '25-W-Netzteil (USB-C, PD/PPS)', seg: [30, 17, 21] },
+  w15: { l: 'Kabelloses Ladepad (15 W)', seg: [50, 30, 32] },
+  w10: { l: 'Altes Netzteil (USB-A, ca. 10 W)', seg: [70, 45, 37] },
+  pc: { l: 'USB-Anschluss am Computer', seg: [150, 95, 80] }
+};
+// MB per photo / per minute video (Richtwerte)
+const MEDIA = {
+  photo12: { l: 'Fotos (12 MP, Standard)', unit: 'Fotos', mb: 3.5 },
+  photo50: { l: 'Fotos (50 MP)', unit: 'Fotos', mb: 13 },
+  fhd30: { l: 'Video Full HD (30 Bilder/s)', unit: 'Minuten', mb: 130 },
+  uhd30: { l: 'Video 4K (30 Bilder/s)', unit: 'Minuten', mb: 350 },
+  uhd60: { l: 'Video 4K (60 Bilder/s)', unit: 'Minuten', mb: 530 },
+  k8: { l: 'Video 8K (30 Bilder/s)', unit: 'Minuten', mb: 600 }
+};
+
+/* ================= Extra stepper: Kontakt anlegen ================= */
+const withPlus = svg => svg.replace(/<\/svg>$/, T(204, 66, '+', 24, 'm-accent', 500, 'middle') + tap(204, 58) + '</svg>');
+STEPPERS.contact = {
+  title: 'Kontakt anlegen', icon: 'user', steps: [
+    { m: () => withPlus(listScreen({ title: 'Kontakte', search: true, items: [{ l: 'Anna Beispiel', c: 'c3' }, { l: 'Bernd Muster', c: 'c1' }, { l: 'Hausarzt Dr. Weber', c: 'c6' }, { l: 'Mama', c: 'c5' }], top: 96 })), h: 'Kontakte öffnen und „+“ tippen', p: 'Öffnen Sie die App <b>Telefon</b> und tippen Sie unten auf <b>Kontakte</b> (oder öffnen Sie direkt die App <b>Kontakte</b>). Oben rechts tippen Sie auf <b>+</b>.', why: 'Telefon-App und Kontakte-App greifen auf dieselbe Kontaktliste zu. Es ist egal, welche Sie nehmen.' },
+    { m: () => formScreen({ title: 'Kontakt speichern in', lines: ['Wählen Sie, wo der neue Kontakt gespeichert wird.'], checks: [{ l: 'Google (ihr.name@gmail.com)', on: true }, { l: 'Samsung Account', on: false }, { l: 'Telefon', on: false }, { l: 'SIM', on: false }], hlCheck: 0 }), h: 'Speicherort: Google-Konto', p: 'Beim ersten Kontakt fragt das Telefon nach dem Speicherort. Wählen Sie Ihr <b>Google-Konto</b>.', why: 'Kontakte im Google-Konto werden automatisch gesichert. Auf einem neuen Telefon sind sie nach der Anmeldung sofort da. Kontakte nur „auf dem Telefon“ oder auf der SIM gehen bei Verlust leicht verloren.' },
+    { m: () => formScreen({ title: 'Neuer Kontakt', inputs: ['Vorname: Anna', 'Nachname: Beispiel', '+49 151 2345678'], hlInput: 2, buttons: [{ t: 'Abbrechen' }, { t: 'Speichern', primary: true }] }), h: 'Name und Nummer eintragen', p: 'Tragen Sie Vor- und Nachname ein und die Telefonnummer, am besten mit <b>+49</b> statt der ersten 0. Unter „Mehr anzeigen“ gibt es Felder für E-Mail, Adresse, Geburtstag und Notizen. Dann <b>Speichern</b>.', why: 'Ein eingetragener Geburtstag erscheint automatisch im Kalender, wenn das Google-Konto synchronisiert.' },
+    { m: () => listScreen({ title: 'Anna Beispiel', back: true, note: '+49 151 2345678 · Mobil', items: [{ l: 'Anrufen', c: 'c6' }, { l: 'Nachricht', c: 'c1' }, { l: 'Videoanruf', c: 'c2' }, { l: 'Zu Favoriten hinzufügen ☆', c: 'c3' }], hl: 3, top: 84 }), h: 'Wichtige Personen als Favorit', p: 'Im gespeicherten Kontakt tippen Sie auf den <b>Stern</b> (Favorit). Favoriten stehen in der Kontaktliste ganz oben und können bei „Nicht stören“ trotzdem anrufen.', why: 'Sie können einen Kontakt auch als Widget auf den Startbildschirm legen: dann reicht ein Tipp zum Anrufen. Gut für ältere Menschen.' }
+  ]
+};
+
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -1932,6 +2567,8 @@ const GLOSS = {
   /* ---------- chapter meta & done boxes ---------- */
   const LVL = { 1: 'Einsteiger', 2: 'Grundlagen+', 3: 'Bei Bedarf' };
   const chapters = $$('section[data-ch]').filter(s => +s.dataset.ch > 0);
+  chapters.forEach((sec, i) => { sec.dataset.ch = i + 1; const n = $('.chapter-num', sec); if (n) n.textContent = i + 1; });
+  $$('[data-chref]').forEach(a => { const sec = document.getElementById(a.dataset.chref); if (sec) a.textContent = 'Kapitel ' + sec.dataset.ch; });
   let done = new Set(store.get('done', []));
   chapters.forEach(sec => {
     const head = $('.chapter-head', sec);
@@ -2187,6 +2824,8 @@ const GLOSS = {
     copyText(url);
   });
 
+  window.HB = { store, toast };
+
   /* ---------- search ---------- */
   const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
   const index = [];
@@ -2251,6 +2890,421 @@ const GLOSS = {
   document.addEventListener('keydown', e => {
     if (e.key === '/' && !e.target.matches('input, textarea')) { e.preventDefault(); qInput.focus(); }
   });
+})();
+
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const { store, toast } = window.HB;
+
+  /* ======================= Mini quizzes ======================= */
+  $$('[data-mini-quiz]').forEach(el => {
+    const qs = MINI_QUIZ[el.dataset.miniQuiz]; if (!qs) return;
+    let answered = 0, right = 0;
+    el.innerHTML = `<div class="mq-head">${icon('check')}<b>Kurz geprüft</b><span class="chip mq-score">0 / ${qs.length}</span></div>` +
+      qs.map((q, i) => `<div class="mq-q" data-i="${i}"><p class="quiz-q">${i + 1}. ${esc(q.q)}</p><div class="quiz-opts">${q.o.map((o, k) => `<button type="button" data-k="${k}">${esc(o)}</button>`).join('')}</div><div class="quiz-fb" hidden></div></div>`).join('');
+    el.addEventListener('click', e => {
+      const b = e.target.closest('.quiz-opts button'); if (!b) return;
+      const box = b.closest('.mq-q'), q = qs[+box.dataset.i], k = +b.dataset.k;
+      if (box.dataset.done) return; box.dataset.done = 1; answered++;
+      const ok = k === q.a; if (ok) right++;
+      $$('button', box).forEach((x, j) => { x.disabled = true; if (j === q.a) x.classList.add('right'); else if (j === k) x.classList.add('wrong'); });
+      const fb = $('.quiz-fb', box); fb.hidden = false; fb.innerHTML = `<b>${ok ? 'Richtig.' : 'Nicht ganz.'}</b> ${esc(q.e)}`;
+      $('.mq-score', el).textContent = `${right} / ${qs.length}`;
+      if (answered === qs.length) toast(right === qs.length ? 'Alles richtig!' : `${right} von ${qs.length} richtig`);
+    });
+  });
+
+  /* ======================= Checklist ======================= */
+  const cl = $('#checklist');
+  if (cl) {
+    let done = new Set(store.get('checklist', []));
+    const render = () => {
+      cl.innerHTML = `<div class="cl-bar"><span style="width:${done.size / CHECKLIST.length * 100}%"></span></div><p class="caption" style="text-align:left">${done.size} von ${CHECKLIST.length} erledigt</p>` +
+        CHECKLIST.map(([t, id], i) => `<label class="cl-item"><input type="checkbox" id="cl-${i}" data-i="${i}" ${done.has(i) ? 'checked' : ''}><span>${esc(t)}</span><a href="#${id}">Anleitung</a></label>`).join('');
+    };
+    cl.addEventListener('change', e => { const i = +e.target.dataset.i; e.target.checked ? done.add(i) : done.delete(i); store.set('checklist', [...done]); render(); if (done.size === CHECKLIST.length) toast('Checkliste komplett, Ihr Telefon ist gut eingerichtet!'); });
+    render();
+  }
+
+  /* ======================= Settings trainer ======================= */
+  const st = $('#settings-trainer');
+  if (st) {
+    let state = { ...SIM_DEFAULTS }, stack = ['root'], taskI = 0, taps = 0, hint = false, solved = false;
+    let doneT = new Set(store.get('simdone', []));
+    st.innerHTML = `<div class="trainer">
+      <div class="sim-phone" id="sim-phone"><div class="sim-status"><span>12:30</span><span class="sim-dot"></span><span>▮▮ 76 %</span></div><div class="sim-screen" id="sim-screen"></div><div class="sim-handle"></div></div>
+      <div class="trainer-side">
+        <div class="task-card"><div class="step-count" id="sim-count"></div><h4 id="sim-q"></h4><p class="caption" id="sim-taps" style="text-align:left"></p><div class="trainer-fb" id="sim-fb" hidden></div>
+          <div class="cta-row"><button class="btn" type="button" id="sim-hint">${icon('bulb')}Tipp zeigen</button><button class="btn primary" type="button" id="sim-next">Nächste Aufgabe${icon('chevR')}</button></div></div>
+        <div class="task-dots" id="sim-dots"></div>
+        <button class="btn" type="button" id="sim-reset">${icon('refresh')}Übungs-Handy zurücksetzen</button>
+      </div></div>`;
+    const screen = $('#sim-screen'), phoneEl = $('#sim-phone');
+    const task = () => SIM_TASKS[taskI];
+    const isHint = (r) => {
+      if (!hint || solved) return false;
+      const t = task();
+      if (r.t === 'link') return t.path.includes(r.l);
+      if (r.t === 'toggle') return r.id === t.key;
+      if (r.t === 'radio') return r.g === t.key && r.v === t.val;
+      return false;
+    };
+    const fontScale = { s: .9, m: 1, l: 1.12, xl: 1.24 };
+    function renderPhone() {
+      const page = SIM_TREE[stack[stack.length - 1]];
+      phoneEl.classList.toggle('dark', state.theme === 'dark');
+      phoneEl.classList.toggle('easy', !!state.easy);
+      phoneEl.style.setProperty('--sim-fs', fontScale[state.font] * (state.easy ? 1.12 : 1));
+      phoneEl.classList.toggle('bold', !!state.bold);
+      let h = `<div class="sim-top">${stack.length > 1 ? `<button type="button" class="sim-back" aria-label="Zurück">‹</button>` : ''}<span class="sim-title">${esc(page.title)}</span></div>`;
+      if (page.note) h += `<p class="sim-note">${esc(page.note)}</p>`;
+      h += '<div class="sim-list">';
+      page.rows.forEach((r, i) => {
+        const hl = isHint(r) ? ' hint' : '';
+        if (r.t === 'head') { h += `<div class="sim-head">${esc(r.l)}</div>`; return; }
+        let right = '', sub = r.s ? `<small>${esc(r.s)}</small>` : '';
+        if (r.t === 'link' && r.sk) {
+          const v = state[r.sk === 'protect' ? 'protect' : r.sk === 'side' ? 'sidehold' : r.sk];
+          const map = { adaptive: 'Adaptiv', standard: 'Standard', gestures: 'Wischgesten', buttons: 'Tasten', s: 'Klein', m: 'Standard', l: 'Groß', xl: 'Sehr groß', basic: 'Standard', max: 'Maximal', gemini: 'Gemini', bixby: 'Bixby', power: 'Ausschaltmenü' };
+          sub = `<small class="acc">${esc(map[v] || v)}</small>`;
+        }
+        if (r.t === 'toggle') right = `<span class="sim-tg${state[r.id] ? ' on' : ''}" aria-hidden="true"></span>`;
+        if (r.t === 'radio') right = `<span class="sim-rd${state[r.g] === r.v ? ' on' : ''}" aria-hidden="true"></span>`;
+        if (r.t === 'link') right = '<span class="sim-chev" aria-hidden="true">›</span>';
+        const icn = r.c ? `<span class="sim-ic m-${r.c}"></span>` : '';
+        const role = r.t === 'toggle' ? `role="switch" aria-checked="${!!state[r.id]}"` : r.t === 'radio' ? `role="radio" aria-checked="${state[r.g] === r.v}"` : '';
+        h += `<button type="button" class="sim-row${r.t === 'info' ? ' info' : ''}${hl}" data-i="${i}" ${role}>${r.t === 'radio' ? right : icn}<span class="sim-lbl">${esc(r.l)}${sub}</span>${r.t === 'radio' ? '' : right}</button>`;
+      });
+      screen.innerHTML = h + '</div>';
+    }
+    function renderTask() {
+      const t = task();
+      $('#sim-count').textContent = `Aufgabe ${taskI + 1} von ${SIM_TASKS.length}`;
+      $('#sim-q').textContent = t.q;
+      $('#sim-taps').textContent = `Tipps auf dem Übungs-Handy: ${taps}`;
+      const fb = $('#sim-fb');
+      if (solved) { fb.hidden = false; fb.className = 'trainer-fb ok'; fb.innerHTML = `<b>Geschafft!</b> Weg: ${t.path.map(esc).join(' › ')}<br>${esc(t.why)}`; }
+      else if (hint) { fb.hidden = false; fb.className = 'trainer-fb'; fb.innerHTML = `<b>Tipp:</b> Einstellungen › ${t.path.map(esc).join(' › ')}. Die passende Zeile ist im Übungs-Handy markiert.`; }
+      else fb.hidden = true;
+      $('#sim-dots').innerHTML = SIM_TASKS.map((x, i) => `<button type="button" data-i="${i}" class="${doneT.has(i) ? 'done' : ''}${i === taskI ? ' cur' : ''}" aria-label="Aufgabe ${i + 1}${doneT.has(i) ? ' (erledigt)' : ''}">${doneT.has(i) ? '✓' : i + 1}</button>`).join('');
+    }
+    function check() {
+      const t = task();
+      if (!solved && state[t.key] === t.val) {
+        solved = true; doneT.add(taskI); store.set('simdone', [...doneT]);
+        toast('Richtig gemacht!');
+      }
+    }
+    function gotoTask(i) { taskI = (i + SIM_TASKS.length) % SIM_TASKS.length; taps = 0; hint = false; solved = false; stack = ['root']; renderPhone(); renderTask(); }
+    screen.addEventListener('click', e => {
+      if (e.target.closest('.sim-back')) { stack.pop(); taps++; renderPhone(); renderTask(); return; }
+      const b = e.target.closest('.sim-row'); if (!b) return;
+      const r = SIM_TREE[stack[stack.length - 1]].rows[+b.dataset.i]; taps++;
+      if (r.t === 'link') stack.push(r.to);
+      else if (r.t === 'toggle') state[r.id] = !state[r.id];
+      else if (r.t === 'radio') state[r.g] = r.v;
+      else if (r.t === 'action') toast(r.id === 'finger' ? 'Hier würde jetzt die Fingerabdruck-Registrierung starten.' : r.id === 'update' ? 'Übung: Es wird nach Updates gesucht …' : 'Übung: Das Telefon würde jetzt neu starten.');
+      else toast('Diese Zeile ist in der Übung nur zur Ansicht.');
+      check(); renderPhone(); renderTask();
+      screen.scrollTop = r.t === 'link' ? 0 : screen.scrollTop;
+    });
+    $('#sim-hint').addEventListener('click', () => { hint = true; renderPhone(); renderTask(); });
+    $('#sim-next').addEventListener('click', () => gotoTask(taskI + 1));
+    $('#sim-dots').addEventListener('click', e => { const b = e.target.closest('button'); if (b) gotoTask(+b.dataset.i); });
+    $('#sim-reset').addEventListener('click', () => { state = { ...SIM_DEFAULTS }; stack = ['root']; solved = false; hint = false; taps = 0; renderPhone(); renderTask(); toast('Übungs-Handy zurückgesetzt'); });
+    const firstOpen = SIM_TASKS.findIndex((x, i) => !doneT.has(i));
+    gotoTask(firstOpen < 0 ? 0 : firstOpen);
+  }
+
+  /* ======================= Key trainer ======================= */
+  const kt = $('#key-trainer');
+  if (kt) {
+    kt.innerHTML = `<div class="trainer">
+      <div class="kt-wrap"><div class="kt-phone"><div class="kt-screen" id="kt-screen"></div>
+        <button type="button" class="kt-key" data-key="up" style="top:22%;height:11%" aria-label="Lauter-Taste"></button>
+        <button type="button" class="kt-key" data-key="down" style="top:33.5%;height:11%" aria-label="Leiser-Taste"></button>
+        <button type="button" class="kt-key side" data-key="side" style="top:49%;height:12%" aria-label="Seitentaste"></button>
+        <span class="kt-lbl" style="top:22%">Lauter</span><span class="kt-lbl" style="top:34%">Leiser</span><span class="kt-lbl" style="top:50%">Seiten&shy;taste</span></div>
+        <div class="kt-hold" id="kt-hold" aria-live="polite">&nbsp;</div></div>
+      <div class="trainer-side"><p>Drücken Sie die Tasten am Übungs-Handy wie am echten Gerät: mit dem Finger antippen oder <b>gedrückt halten</b>. Für „gleichzeitig“ zwei Finger nehmen. Am Computer: Tasten <kbd>L</kbd> Lauter, <kbd>K</kbd> Leiser, <kbd>S</kbd> Seitentaste (auch zusammen halten).</p>
+        <ul class="task-list" id="kt-tasks"></ul><button class="btn" type="button" id="kt-reset">${icon('refresh')}Neu beginnen</button></div></div>`;
+    const scr = $('#kt-screen'), holdEl = $('#kt-hold');
+    let done = new Set(), view = 'off', vol = 6, down = {}, ignore = {}, combo = null, comboTimer = null, sidePresses = 0, sideTimer = null, sideHoldTimer = null, sideLong = false, volTimer = null;
+    const renderTasks = () => { $('#kt-tasks').innerHTML = KEY_TASKS.map(t => `<li class="${done.has(t.id) ? 'done' : ''}">${done.has(t.id) ? icon('check') : '<span class="tdot"></span>'}<span>${esc(t.q)}</span></li>`).join(''); };
+    const ok = id => { if (!done.has(id)) { done.add(id); renderTasks(); toast('Richtig: ' + KEY_TASKS.find(t => t.id === id).q.split(':')[0].replace(/\(.*\)/, '').trim()); } };
+    const VIEWS = {
+      off: () => '<div class="kt-v off"><span>Bildschirm aus</span></div>',
+      lock: () => '<div class="kt-v lock"><b>12:30</b><span>Samstag, 14. November</span><i class="kt-fp"></i></div>',
+      camera: () => '<div class="kt-v cam"><span class="kt-vf"></span><i class="kt-shutter"></i><span>Kamera gestartet</span></div>',
+      shot: () => '<div class="kt-v lock flash"><b>12:30</b><span>Bildschirmfoto gespeichert</span><em class="kt-thumb">Screenshot</em></div>',
+      power: () => '<div class="kt-v power"><span class="pm red">Ausschalten</span><span class="pm">Neu starten</span><span class="pm">Notfallmodus</span><small>Weiter halten für erzwungenen Neustart …</small></div>',
+      restart: () => '<div class="kt-v off"><span>Neustart …</span><small>Daten bleiben erhalten</small></div>',
+      assistant: () => '<div class="kt-v assist"><span>✦ Assistent</span><small>„Wie kann ich helfen?“ (Gemini)</small></div>',
+      sos: () => '<div class="kt-v sos"><b>SOS</b><span>Übung: Notruf würde in 5 s gewählt.</span><small>Am echten Telefon können Sie hier abbrechen.</small></div>'
+    };
+    const show = v => { view = v; scr.innerHTML = VIEWS[v]() + (volTimer ? volBar() : ''); };
+    const volBar = () => `<div class="kt-vol"><span style="height:${vol / 15 * 100}%"></span></div>`;
+    function volume(d) {
+      vol = Math.max(0, Math.min(15, vol + d)); clearTimeout(volTimer);
+      volTimer = setTimeout(() => { volTimer = null; show(view); }, 1500); show(view);
+      if (d > 0) ok('volup');
+    }
+    function startCombo() {
+      combo = { t: Date.now(), phase: 'shot' }; clearTimeout(sideHoldTimer); clearTimeout(volTimer); volTimer = null;
+      comboTimer = setInterval(() => {
+        const s = (Date.now() - combo.t) / 1000;
+        holdEl.textContent = `Beide Tasten gehalten: ${s.toFixed(1).replace('.', ',')} s`;
+        if (s >= 1.5 && combo.phase === 'shot') { combo.phase = 'power'; show('power'); ok('power'); }
+        if (s >= 7 && combo.phase === 'power') { combo.phase = 'restart'; show('restart'); ok('force'); }
+      }, 100);
+    }
+    function endCombo() {
+      clearInterval(comboTimer);
+      const s = (Date.now() - combo.t) / 1000;
+      if (combo.phase === 'shot' && s < 1.5) { if (view === 'off') show('lock'); else { show('shot'); ok('shot'); } }
+      if (combo.phase === 'restart') setTimeout(() => show('lock'), 1500);
+      holdEl.innerHTML = '&nbsp;'; combo = null;
+      Object.keys(down).forEach(k => { ignore[k] = true; });
+    }
+    function press(k) {
+      if (down[k]) return; down[k] = Date.now();
+      $(`.kt-key[data-key="${k}"]`).classList.add('down');
+      if ((k === 'side' && down.down) || (k === 'down' && down.side)) { sidePresses = 0; clearTimeout(sideTimer); startCombo(); return; }
+      if (k === 'side') {
+        sideLong = false;
+        sideHoldTimer = setTimeout(() => { if (down.side && !combo) { sideLong = true; show('assistant'); holdEl.textContent = 'Seitentaste gehalten: Assistent startet'; } }, 900);
+      }
+    }
+    function release(k) {
+      if (!down[k]) return; const held = Date.now() - down[k]; delete down[k];
+      $(`.kt-key[data-key="${k}"]`).classList.remove('down');
+      if (ignore[k]) { delete ignore[k]; return; }
+      if (combo) { if (!down.side || !down.down) endCombo(); return; }
+      if (k === 'side') {
+        clearTimeout(sideHoldTimer);
+        if (sideLong) { setTimeout(() => { holdEl.innerHTML = '&nbsp;'; }, 1200); return; }
+        sidePresses++; clearTimeout(sideTimer);
+        sideTimer = setTimeout(() => {
+          const n = sidePresses; sidePresses = 0;
+          if (n >= 5) show('sos');
+          else if (n === 2) { show('camera'); ok('camera'); }
+          else if (n === 1) { show(view === 'off' ? 'lock' : 'off'); if (view === 'lock') ok('screen'); }
+        }, 420);
+      }
+      if (k === 'up' && held < 1500) volume(1);
+      if (k === 'down' && held < 1500) setTimeout(() => { if (!combo && !down.side) volume(-1); }, 60);
+    }
+    $$('.kt-key', kt).forEach(b => {
+      b.addEventListener('pointerdown', e => { e.preventDefault(); try { b.setPointerCapture(e.pointerId); } catch (_) { } press(b.dataset.key); });
+      ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => b.addEventListener(ev, () => release(b.dataset.key)));
+      b.addEventListener('contextmenu', e => e.preventDefault());
+    });
+    const KM = { l: 'up', k: 'down', s: 'side' };
+    document.addEventListener('keydown', e => { const k = KM[e.key.toLowerCase()]; if (!k || e.target.matches('input, textarea') || !inView(kt)) return; e.preventDefault(); press(k); });
+    document.addEventListener('keyup', e => { const k = KM[e.key.toLowerCase()]; if (k) release(k); });
+    $('#kt-reset').addEventListener('click', () => { done.clear(); renderTasks(); show('off'); });
+    renderTasks(); show('off');
+  }
+  function inView(el) { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+
+  /* ======================= Gesture trainer ======================= */
+  const gt = $('#gesture-trainer');
+  if (gt) {
+    gt.innerHTML = `<div class="trainer"><div class="gt-phone"><div class="gt-screen" id="gt-screen"><div id="gt-view"></div><span class="gt-handle"></span><span class="gt-dot" id="gt-dot" hidden></span></div></div>
+      <div class="trainer-side"><p>Wischen Sie direkt auf dem Übungs-Bildschirm, mit dem Finger oder mit gedrückter Maustaste. Wichtig ist, <b>wo</b> Sie anfangen: am Rand.</p>
+      <div class="trainer-fb" id="gt-fb">Versuchen Sie die erste Aufgabe.</div><ul class="task-list" id="gt-tasks"></ul></div></div>`;
+    const area = $('#gt-screen'), viewEl = $('#gt-view'), dot = $('#gt-dot'), fb = $('#gt-fb');
+    const done = new Set();
+    const V = {
+      app: '<div class="gv app"><b>Galerie</b><div class="gv-grid">' + '<i></i>'.repeat(9) + '</div></div>',
+      home: '<div class="gv home"><b>12:30</b><div class="gv-icons">' + '<i></i>'.repeat(8) + '</div></div>',
+      notif: '<div class="gv panel"><b>Benachrichtigungen</b><p>Anna: Bis heute Abend!</p><p>Kalender: Zahnarzt 15:00</p></div>',
+      quick: '<div class="gv panel"><b>Schnelleinstellungen</b><div class="gv-tiles"><i class="on">WLAN</i><i>Bluetooth</i><i class="on">Ton</i><i>Taschenl.</i></div></div>',
+      recent: '<div class="gv recent"><span>Galerie</span><span>Nachrichten</span><span>Kamera</span><small>Zuletzt verwendet</small></div>',
+      circle: '<div class="gv app"><b>Galerie</b><div class="gv-grid">' + '<i></i>'.repeat(9) + '</div><em class="gv-circle">Kreisen Sie ein, wonach Google suchen soll</em></div>',
+      back: '<div class="gv app"><b>‹ Alben</b><p style="padding:0 10px">Sie sind einen Schritt zurückgegangen.</p></div>'
+    };
+    const MSG = { home: 'Startbildschirm geöffnet.', notif: 'Benachrichtigungen geöffnet. Nach oben wischen schließt sie.', quick: 'Schnelleinstellungen geöffnet.', back: 'Zurück. Das funktioniert von beiden Seiten.', recent: 'Zuletzt verwendete Apps. Nach oben wischen schließt eine App.', circle: 'Circle to Search gestartet.' };
+    const show = v => { viewEl.innerHTML = V[v]; };
+    const renderT = () => { $('#gt-tasks').innerHTML = GESTURE_TASKS.map(t => `<li class="${done.has(t.id) ? 'done' : ''}">${done.has(t.id) ? icon('check') : '<span class="tdot"></span>'}<span>${esc(t.q)}</span></li>`).join(''); };
+    let st = null, holdT = null;
+    const rel = e => { const r = area.getBoundingClientRect(); return { x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }; };
+    const result = (id) => {
+      show(id); fb.className = 'trainer-fb ok'; fb.textContent = MSG[id];
+      if (!done.has(id)) { done.add(id); renderT(); if (done.size === GESTURE_TASKS.length) toast('Alle Gesten geschafft!'); }
+      setTimeout(() => { if (id !== 'home') show('app'); else setTimeout(() => show('app'), 1200); }, 2200);
+    };
+    area.addEventListener('pointerdown', e => {
+      e.preventDefault(); try { area.setPointerCapture(e.pointerId); } catch (_) { }
+      const p = rel(e); st = { ...p, t: Date.now(), lx: p.x, ly: p.y, lm: Date.now(), moved: false };
+      dot.hidden = false; dot.style.left = p.x * 100 + '%'; dot.style.top = p.y * 100 + '%';
+      clearTimeout(holdT);
+      if (p.y > .9) holdT = setTimeout(() => { if (st && !st.moved) { result('circle'); st = null; dot.hidden = true; } }, 900);
+    });
+    area.addEventListener('pointermove', e => {
+      if (!st) return; const p = rel(e);
+      if (Math.hypot(p.x - st.x, p.y - st.y) > .03) st.moved = true;
+      if (Math.hypot(p.x - st.lx, p.y - st.ly) > .01) { st.lm = Date.now(); st.lx = p.x; st.ly = p.y; }
+      dot.style.left = p.x * 100 + '%'; dot.style.top = p.y * 100 + '%';
+    });
+    const end = e => {
+      clearTimeout(holdT); dot.hidden = true; if (!st) return;
+      const p = rel(e), dx = p.x - st.x, dy = p.y - st.y, pause = Date.now() - st.lm;
+      const s = st; st = null;
+      if (s.y > .88 && dy < -.15) return result(pause > 280 ? 'recent' : 'home');
+      if (s.y < .12 && dy > .15) return result(s.x < .5 ? 'notif' : 'quick');
+      if ((s.x < .1 && dx > .15) || (s.x > .9 && dx < -.15)) return result('back');
+      fb.className = 'trainer-fb';
+      fb.textContent = s.moved ? (s.y >= .12 && s.y <= .88 && Math.abs(dy) > Math.abs(dx) ? 'Fast! Beginnen Sie die Bewegung ganz am oberen oder unteren Rand.' : 'Beginnen Sie am Rand des Bildschirms und wischen Sie zügig.') : 'Das war ein Tippen. Für Gesten den Finger über den Bildschirm ziehen.';
+    };
+    area.addEventListener('pointerup', end); area.addEventListener('pointercancel', () => { st = null; dot.hidden = true; });
+    renderT(); show('app');
+  }
+
+  /* ======================= Call simulator ======================= */
+  const cs = $('#call-sim');
+  if (cs) {
+    cs.innerHTML = `<div class="trainer"><div class="kt-wrap"><div class="call-phone" id="call-phone"></div><button type="button" class="btn" id="call-vol" style="margin-top:10px">Lautstärketaste drücken</button></div>
+      <div class="trainer-side"><div class="trainer-fb" id="call-fb">Ein Anruf kommt herein. Ziehen Sie den <b>grünen</b> Knopf zur Seite, um anzunehmen, oder den <b>roten</b>, um abzulehnen.</div><ul class="task-list" id="call-explain"></ul></div></div>`;
+    const ph = $('#call-phone'), fb = $('#call-fb'); let timer = null, secs = 0, muted = false;
+    const BTN = { spk: ['Lautsprecher', 'Schaltet auf Freisprechen um. Das Telefon können Sie dann vor sich auf den Tisch legen.'], mute: ['Stumm', 'Ihr Mikrofon ist aus: Ihr Gegenüber hört Sie nicht, Sie hören es weiterhin.'], pad: ['Tastenfeld', 'Für Ziffern-Eingaben, z. B. bei Hotlines („Drücken Sie die 1“).'], bt: ['Bluetooth', 'Gespräch auf Kopfhörer oder Auto-Freisprechanlage umleiten.'], hold: ['Halten', 'Gespräch in die Warteschleife legen (wenn Ihr Tarif es unterstützt).'], add: ['Anruf hinzuf.', 'Zweite Person anrufen, z. B. für eine Konferenz.'] };
+    function ringing() {
+      clearInterval(timer); muted = false;
+      ph.innerHTML = `<div class="call-v ring"><small>Eingehender Anruf</small><b>Anna Beispiel</b><span>Mobil · 0151 2345678</span>
+        <div class="call-drag"><span class="call-h green" data-act="accept" aria-label="Annehmen">✆</span><span class="call-h red" data-act="decline" aria-label="Ablehnen">✆</span></div>
+        <button type="button" class="call-msg">Nachricht senden</button></div>`;
+    }
+    function incall() {
+      secs = 0; ph.innerHTML = `<div class="call-v"><b>Anna Beispiel</b><span id="call-t">00:00</span><div class="call-grid">${Object.entries(BTN).map(([k, [l]]) => `<button type="button" data-b="${k}" aria-label="${esc(l)}">${esc({ spk: 'Lautspr.', mute: 'Stumm', pad: 'Tasten', bt: 'Blueto.', hold: 'Halten', add: 'Anruf +' }[k])}</button>`).join('')}</div><button type="button" class="call-end" aria-label="Auflegen">Auflegen</button></div>`;
+      timer = setInterval(() => { secs++; const t = $('#call-t'); if (t) t.textContent = String(Math.floor(secs / 60)).padStart(2, '0') + ':' + String(secs % 60).padStart(2, '0'); }, 1000);
+    }
+    function ended(msg) { clearInterval(timer); ph.innerHTML = `<div class="call-v"><b>${esc(msg)}</b><button type="button" class="btn primary" data-act="again">Neuer Anruf</button></div>`; }
+    let drag = null;
+    ph.addEventListener('pointerdown', e => {
+      const h = e.target.closest('.call-h'); if (!h) return; e.preventDefault();
+      drag = { h, x: e.clientX, y: e.clientY }; try { h.setPointerCapture(e.pointerId); } catch (_) { }
+    });
+    ph.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.h.style.transform = `translate(${dx}px, ${dy}px)`; drag.d = Math.hypot(dx, dy); });
+    ph.addEventListener('pointerup', () => {
+      if (!drag) return; const { h, d } = drag; drag = null; h.style.transform = '';
+      if ((d || 0) < 50) { fb.innerHTML = 'Tippen reicht nicht: <b>ziehen</b> Sie den Knopf ein Stück zur Seite. So verhindert das Telefon versehentliches Annehmen in der Tasche.'; return; }
+      if (h.dataset.act === 'accept') { incall(); fb.innerHTML = '<b>Angenommen.</b> Tippen Sie auf die Knöpfe, um zu erfahren, was sie tun.'; }
+      else { ended('Abgelehnt'); fb.innerHTML = '<b>Abgelehnt.</b> Der Anrufer landet auf Ihrer Mailbox (falls eingerichtet).'; }
+    });
+    ph.addEventListener('click', e => {
+      if (e.target.closest('.call-msg')) { ended('Nachricht gesendet: „Ich rufe gleich zurück.“'); fb.innerHTML = '<b>Mit Nachricht abgelehnt.</b> Der Anrufer bekommt eine SMS. Die Texte können Sie in der Telefon-App unter Einstellungen › Schnellablehnungsnachrichten ändern.'; return; }
+      const b = e.target.closest('[data-b]');
+      if (b) { b.classList.toggle('on'); const [l, d] = BTN[b.dataset.b]; fb.innerHTML = `<b>${esc(l)}:</b> ${esc(d)}`; return; }
+      if (e.target.closest('.call-end')) { ended('Anruf beendet'); fb.innerHTML = '<b>Aufgelegt.</b> Tipp: Liegt das Telefon am Ohr, ist der Bildschirm aus (Näherungssensor). Nehmen Sie es kurz vom Ohr, um aufzulegen.'; return; }
+      if (e.target.closest('[data-act="again"]')) { ringing(); fb.innerHTML = 'Ein Anruf kommt herein. Ziehen Sie den <b>grünen</b> Knopf zur Seite, um anzunehmen.'; }
+    });
+    $('#call-vol').addEventListener('click', () => {
+      if ($('.ring', ph)) { $('.ring', ph).classList.add('muted'); fb.innerHTML = '<b>Klingelton stumm.</b> Der Anruf läuft weiter, Sie können ihn noch annehmen. Ohne Annahme geht er nach einiger Zeit auf die Mailbox.'; }
+      else fb.innerHTML = 'Während eines Gesprächs ändern die Lautstärketasten die Gesprächslautstärke.';
+    });
+    ringing();
+  }
+
+  /* ======================= Exposure simulator ======================= */
+  const ex = $('#expo-sim');
+  if (ex) {
+    const ISO = [50, 100, 200, 400, 800, 1600, 3200], SH = [1 / 2000, 1 / 1000, 1 / 500, 1 / 250, 1 / 125, 1 / 60, 1 / 30, 1 / 15, 1 / 8, 1 / 4];
+    const SHL = ['1/2000', '1/1000', '1/500', '1/250', '1/125', '1/60', '1/30', '1/15', '1/8', '1/4'];
+    const LIGHT = { day: { l: 'Sonniger Tag', base: 3.32 }, room: { l: 'Wohnzimmer abends', base: -4.74 } };
+    ex.innerHTML = `<div class="expo">
+      <svg viewBox="0 0 320 200" class="expo-img" role="img" aria-label="Simuliertes Foto mit laufender Person">
+        <defs><filter id="ex-blur" x="-50%" y="-10%" width="200%" height="120%"><feGaussianBlur id="ex-bstd" stdDeviation="0 0"/></filter>
+        <filter id="ex-noise"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="4"/><feColorMatrix type="saturate" values="0"/></filter>
+        <linearGradient id="ex-sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" class="m-sky-a"/><stop offset="1" class="m-sky-b"/></linearGradient></defs>
+        <g id="ex-scene"><rect width="320" height="200" fill="url(#ex-sky)"/><circle cx="250" cy="50" r="18" class="m-sun"/>
+          <path class="m-hill1" d="M0 140 Q90 100 180 135 T320 120 V200 H0z"/><path class="m-hill2" d="M0 170 Q140 145 320 165 V200 H0z"/>
+          <g filter="url(#ex-blur)"><g class="expo-runner"><circle cx="60" cy="118" r="9" class="m-person"/><rect x="52" y="128" width="16" height="30" rx="6" class="m-person"/></g></g></g>
+        <rect id="ex-noise-r" width="320" height="200" filter="url(#ex-noise)" opacity="0"/>
+      </svg>
+      <div class="expo-ctl">
+        <div class="seg" role="group" aria-label="Licht">${Object.entries(LIGHT).map(([k, v], i) => `<button type="button" data-light="${k}" aria-pressed="${i === 0}">${v.l}</button>`).join('')}</div>
+        <label for="ex-iso">ISO (Lichtempfindlichkeit): <b id="ex-iso-v"></b></label><input type="range" id="ex-iso" min="0" max="6" step="1" value="1">
+        <label for="ex-sh">Belichtungszeit: <b id="ex-sh-v"></b> Sekunden</label><input type="range" id="ex-sh" min="0" max="9" step="1" value="1">
+        <div class="expo-meter"><span>zu dunkel</span><div><i id="ex-needle"></i></div><span>zu hell</span></div>
+        <ul class="expo-out" id="ex-out"></ul>
+        <button type="button" class="btn" id="ex-auto">${icon('refresh')}Automatik-Werte setzen</button>
+      </div></div>`;
+    let light = 'day';
+    const scene = $('#ex-scene', ex);
+    function upd() {
+      const iso = ISO[+$('#ex-iso').value], t = SH[+$('#ex-sh').value];
+      $('#ex-iso-v').textContent = iso; $('#ex-sh-v').textContent = SHL[+$('#ex-sh').value];
+      const ev = Math.log2(iso / 100) + Math.log2(t * 100) + LIGHT[light].base;
+      const bright = Math.max(.08, Math.min(3.2, Math.pow(2, ev * .55)));
+      scene.style.filter = `brightness(${bright.toFixed(2)})`;
+      const noise = Math.max(0, (Math.log2(iso / 100)) / 5) * .55 * (ev < -1 ? 1.2 : 1);
+      $('#ex-noise-r').setAttribute('opacity', noise.toFixed(2));
+      const blur = Math.min(14, t * 450);
+      $('#ex-bstd').setAttribute('stdDeviation', `${blur.toFixed(1)} 0`);
+      const pos = Math.max(0, Math.min(100, 50 + ev * 12));
+      $('#ex-needle').style.left = pos + '%';
+      const out = [];
+      out.push(Math.abs(ev) < .8 ? ['ok', 'Helligkeit stimmt.'] : ev < 0 ? ['bad', 'Zu dunkel: ISO erhöhen oder länger belichten.'] : ['bad', 'Zu hell: ISO senken oder kürzer belichten.']);
+      out.push(blur > 3 ? ['bad', `Bewegungsunschärfe: Bei ${SHL[+$('#ex-sh').value]} s verwischt die laufende Person. Für Bewegung 1/250 s oder kürzer.`] : ['ok', 'Bewegung eingefroren.']);
+      out.push(iso >= 1600 ? ['bad', `Bildrauschen sichtbar: ISO ${iso} verstärkt auch das „Grieseln“.`] : ['ok', `ISO ${iso}: kaum Rauschen.`]);
+      $('#ex-out').innerHTML = out.map(([c, s]) => `<li class="${c}">${c === 'ok' ? '✓' : '!'} ${esc(s)}</li>`).join('');
+    }
+    $$('[data-light]', ex).forEach(b => b.addEventListener('click', () => { light = b.dataset.light; $$('[data-light]', ex).forEach(x => x.setAttribute('aria-pressed', x === b)); upd(); }));
+    $('#ex-iso').addEventListener('input', upd); $('#ex-sh').addEventListener('input', upd);
+    $('#ex-auto').addEventListener('click', () => { if (light === 'day') { $('#ex-iso').value = 1; $('#ex-sh').value = 1; } else { $('#ex-iso').value = 4; $('#ex-sh').value = 6; } upd(); toast('So ungefähr würde die Automatik wählen'); });
+    upd();
+  }
+
+  /* ======================= Camera advisor ======================= */
+  const ca = $('#cam-advisor');
+  if (ca) {
+    ca.innerHTML = `<p class="quiz-q">Was möchten Sie fotografieren?</p><div class="combo-picks">${Object.entries(CAM_ADVICE).map(([k, v]) => `<button type="button" data-k="${k}" aria-pressed="false">${esc(v.t)}</button>`).join('')}</div><div id="ca-out" aria-live="polite"></div>`;
+    ca.addEventListener('click', e => {
+      const b = e.target.closest('[data-k]'); if (!b) return;
+      $$('[data-k]', ca).forEach(x => x.setAttribute('aria-pressed', x === b));
+      const a = CAM_ADVICE[b.dataset.k];
+      $('#ca-out').innerHTML = `<div class="ca-card"><div class="ca-tags"><span class="chip lvl-2">Objektiv: ${esc(a.lens)}</span><span class="chip lvl-1">Modus: ${esc(a.mode)}</span></div><ol class="steps">${a.steps.map(s => `<li>${s}</li>`).join('')}</ol><div class="why"><b>Warum?</b> ${a.why}</div></div>`;
+    });
+  }
+
+  /* ======================= Charging calculator ======================= */
+  const cc = $('#charge-calc');
+  if (cc) {
+    cc.innerHTML = `<div class="calc"><div class="calc-in">
+      <label for="cc-ch">Ladegerät</label><select id="cc-ch">${Object.entries(CHARGERS).map(([k, v]) => `<option value="${k}">${esc(v.l)}</option>`).join('')}</select>
+      <label for="cc-from">Akkustand jetzt: <b id="cc-from-v"></b></label><input type="range" id="cc-from" min="0" max="95" step="5" value="15">
+      <label for="cc-to">Laden bis: <b id="cc-to-v"></b></label><input type="range" id="cc-to" min="20" max="100" step="5" value="80">
+      </div><div class="calc-out"><div class="batt"><span id="cc-b1"></span><span id="cc-b2"></span></div><div class="big-n" id="cc-res"></div><p class="caption" id="cc-note" style="text-align:left"></p></div></div>`;
+    const segTime = (seg, a, b) => { const bounds = [[0, 50], [50, 80], [80, 100]]; let m = 0; bounds.forEach(([lo, hi], i) => { const ov = Math.max(0, Math.min(b, hi) - Math.max(a, lo)); m += ov / (hi - lo) * seg[i]; }); return m; };
+    function upd() {
+      let a = +$('#cc-from').value, b = +$('#cc-to').value; if (b <= a) { b = Math.min(100, a + 5); $('#cc-to').value = b; }
+      $('#cc-from-v').textContent = a + ' %'; $('#cc-to-v').textContent = b + ' %';
+      const m = Math.round(segTime(CHARGERS[$('#cc-ch').value].seg, a, b));
+      $('#cc-b1').style.width = a + '%'; $('#cc-b2').style.width = (b - a) + '%';
+      $('#cc-res').textContent = m >= 60 ? `ca. ${Math.floor(m / 60)} Std. ${m % 60} Min.` : `ca. ${m} Min.`;
+      $('#cc-note').textContent = (b > 80 ? 'Ab etwa 80 % lädt jeder Akku langsamer, um ihn zu schonen. ' : 'Bis 80 % geht es am schnellsten. ') + 'Richtwerte bei Zimmertemperatur und ohne gleichzeitige Nutzung.';
+    }
+    ['cc-ch', 'cc-from', 'cc-to'].forEach(id => $('#' + id).addEventListener('input', upd)); upd();
+  }
+
+  /* ======================= Storage calculator ======================= */
+  const sc = $('#storage-calc');
+  if (sc) {
+    sc.innerHTML = `<div class="calc"><div class="calc-in">
+      <label for="sc-size">Speichergröße Ihres Modells</label><select id="sc-size"><option value="128">128 GB</option><option value="256" selected>256 GB</option><option value="512">512 GB</option></select>
+      <label for="sc-free">Davon noch frei: <b id="sc-free-v"></b></label><input type="range" id="sc-free" min="1" max="230" step="1" value="120">
+      <p class="caption" style="text-align:left">Den freien Speicher sehen Sie unter Einstellungen › Gerätewartung › Speicher.</p></div>
+      <div class="calc-out"><div class="table-wrap" style="margin:0"><table><thead><tr><th>Das passt noch drauf</th><th>ca.</th></tr></thead><tbody id="sc-out"></tbody></table></div></div></div>`;
+    function upd() {
+      const size = +$('#sc-size').value, max = size - 20, f = $('#sc-free');
+      f.max = max; if (+f.value > max) f.value = max;
+      const free = +f.value; $('#sc-free-v').textContent = free + ' GB';
+      $('#sc-out').innerHTML = Object.values(MEDIA).map(m => { const n = Math.floor(free * 1024 * .9 / m.mb); return `<tr><td>${esc(m.l)}</td><td class="n">${n.toLocaleString('de-DE')} ${m.unit}</td></tr>`; }).join('') +
+        `<tr><td colspan="2" class="caption" style="text-align:left">Richtwerte: Dateigrößen schwanken je nach Motiv. 10 % Reserve sind eingerechnet, damit das Telefon flüssig bleibt. Etwa 20 GB belegt das System selbst.</td></tr>`;
+    }
+    ['sc-size', 'sc-free'].forEach(id => $('#' + id).addEventListener('input', upd)); upd();
+  }
 })();
 
 </script>
