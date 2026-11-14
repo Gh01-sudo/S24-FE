@@ -59,7 +59,7 @@
     </div>
   </div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Welches Netzteil soll ich kaufen?</summary><div class="inner">
-    <p>Das S24 FE lädt mit bis zu <b>25 Watt</b> („Super-Schnellladen“). Dafür braucht das Netzteil einen USB-C-Ausgang und den Standard <button class="term" data-term="pps">USB PD mit PPS</button>. Auf der Verpackung steht das meist als „PD 3.0 PPS“ oder „Super Fast Charging“. Ein Netzteil mit mehr Watt (z. B. 45 W) schadet nicht: Das Telefon nimmt sich nur so viel, wie es verträgt.</p>
+    <p>Das S24 FE lädt mit bis zu <b>25 Watt</b> („Super-Schnellladen“), etwa 50 % in 30 Minuten. Dafür braucht das Netzteil einen USB-C-Ausgang und den Standard <button class="term" data-term="pps">USB PD mit PPS</button>. Auf der Verpackung steht das meist als „PD 3.0 PPS“ oder „Super Fast Charging“. Ein Netzteil mit mehr Watt (z. B. 45 W) schadet nicht: Das Telefon nimmt sich nur so viel, wie es verträgt.</p>
     <p>Ein altes Netzteil mit USB-A-Buchse funktioniert auch, lädt aber deutlich langsamer (oft nur 10 bis 15 Watt). Ein voller Ladevorgang dauert dann zwei bis drei Stunden statt gut einer Stunde.</p>
   </div></details>
 
@@ -70,6 +70,7 @@
       <div class="seg" role="group" aria-label="Ansicht wählen">
         <button data-view="front" aria-pressed="true">Vorne</button>
         <button data-view="back" aria-pressed="false">Hinten</button>
+        <button data-view="left" aria-pressed="false">Links</button>
         <button data-view="right" aria-pressed="false">Rechts</button>
         <button data-view="bottom" aria-pressed="false">Unten</button>
       </div>
@@ -157,9 +158,9 @@
     </div>
   </div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Warum schaltet langes Drücken der Seitentaste nicht aus?</summary><div class="inner">
-    <p>Samsung belegt langes Drücken der Seitentaste ab Werk mit dem <b>digitalen Assistenten</b> (Bixby oder, je nach Einstellung, Google Gemini). Das verwirrt viele Umsteiger. So ändern Sie es:</p>
+    <p>Samsung belegt langes Drücken der Seitentaste ab Werk mit einem <b>digitalen Assistenten</b>: Seit One UI 7 ist das <button class="term" data-term="gemini">Google Gemini</button>, vorher war es <button class="term" data-term="bixby">Bixby</button>. Das verwirrt viele Umsteiger. So ändern Sie es:</p>
     <div class="path" data-path="Einstellungen|Erweiterte Funktionen|Seitentaste|Gedrückt halten: Ausschaltmenü"></div>
-    <p>Ab dann öffnet langes Drücken das Menü mit „Ausschalten“, „Neu starten“ und „Notfallmodus“.</p>
+    <p>Ab dann öffnet langes Drücken das Menü mit „Ausschalten“, „Neu starten“ und „Notfallmodus“. An derselben Stelle können Sie auch zwischen Gemini und Bixby wählen.</p>
   </div></details>
 
   <h3 id="gesten">Gesten oder Tasten unten am Bildschirm</h3>
@@ -275,7 +276,7 @@
   </ol>
 
   <h3 id="sos">Notruf-SOS</h3>
-  <p>Drücken Sie die Seitentaste <b>fünfmal schnell hintereinander</b>. Das Telefon ruft dann die Notrufnummer 112 an (nach einem kurzen Countdown, den Sie abbrechen können). Zusätzlich lassen sich Notfallkontakte hinterlegen, die eine SMS mit Ihrem Standort erhalten.</p>
+  <p>Ist die Funktion eingeschaltet, drücken Sie die Seitentaste <b>fünfmal schnell hintereinander</b>. Das Telefon ruft dann die Notrufnummer 112 an (nach einem kurzen Countdown, den Sie abbrechen können). Zusätzlich lassen sich Notfallkontakte hinterlegen, die eine SMS mit Ihrem Standort erhalten. Schalten Sie Notruf-SOS am besten gleich ein und probieren Sie aus, ob die Notfallkontakte stimmen.</p>
   <div class="path" data-path="Einstellungen|Sicherheit und Notfall|Notruf-SOS"></div>
   <div class="callout tip" data-t="Medizinische Infos hinterlegen"><p>Unter <b>Sicherheit und Notfall › Medizinische Informationen</b> können Sie Blutgruppe, Allergien und Medikamente eintragen. Rettungskräfte sehen diese Infos auf dem Sperrbildschirm unter „Notruf“, ohne Ihre PIN zu kennen.</p></div>
 
@@ -309,9 +310,9 @@
 
   <h3 id="objektive">Drei Objektive, drei Blickwinkel</h3>
   <div class="grid-3">
-    <div class="card"><h4 data-icon="lens">0,6× Ultraweitwinkel</h4><p class="n">12 MP · 123°</p><p>Für Landschaften, Gebäude, enge Räume und große Gruppen. Alles passt drauf. Am Rand wirken Gesichter leicht verzerrt, deshalb nicht für Porträts.</p></div>
+    <div class="card"><h4 data-icon="lens">0,6× Ultraweitwinkel</h4><p class="n">12 MP · f/2.2</p><p>Für Landschaften, Gebäude, enge Räume und große Gruppen. Alles passt drauf. Am Rand wirken Gesichter leicht verzerrt, deshalb nicht für Porträts.</p></div>
     <div class="card"><h4 data-icon="lens">1× Hauptkamera</h4><p class="n">50 MP · f/1.8 · OIS</p><p>Die beste Kamera, besonders bei wenig Licht. Nutzen Sie sie, wann immer es geht. Die Stufe <b>2×</b> ist ein verlustarmer Ausschnitt dieses 50-MP-Sensors.</p></div>
-    <div class="card"><h4 data-icon="lens">3× Tele</h4><p class="n">8 MP · optischer Zoom · OIS</p><p>Holt entfernte Motive heran und ist ideal für Porträts: Gesichter wirken natürlicher, der Hintergrund ruhiger. Bis 30× ist digitaler Zoom möglich, ab etwa 10× wird das Bild deutlich weicher.</p></div>
+    <div class="card"><h4 data-icon="lens">3× Tele</h4><p class="n">8 MP · f/2.4 · optischer Zoom · OIS</p><p>Holt entfernte Motive heran und ist ideal für Porträts: Gesichter wirken natürlicher, der Hintergrund ruhiger. Bis 30× ist digitaler Zoom möglich, ab etwa 10× wird das Bild deutlich weicher.</p></div>
   </div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Was bedeuten Megapixel, Blende und OIS?</summary><div class="inner">
     <p><b>Megapixel (MP):</b> Die Zahl der Bildpunkte in Millionen. Mehr Megapixel bedeuten nicht automatisch bessere Fotos. Die Hauptkamera fasst standardmäßig je vier Pixel zu einem zusammen (<button class="term" data-term="binning">Pixel-Binning</button>) und speichert 12-MP-Fotos, die bei wenig Licht klarer sind.</p>
@@ -326,7 +327,7 @@
     <tbody>
       <tr><td><b>Foto</b></td><td>Alltag, die Automatik macht fast alles richtig</td><td>Auf das Motiv tippen, um scharf zu stellen</td></tr>
       <tr><td><b>Porträt</b></td><td>Person scharf, Hintergrund weich</td><td>Abstand 1 bis 2 m halten; Unschärfe ist später in der Galerie änderbar</td></tr>
-      <tr><td><b>Video</b></td><td>Filme bis 4K (60 Bilder/s) oder 8K (30 Bilder/s)</td><td>Für den Alltag „FHD 30“ oder „UHD 30“ wählen, 8K belegt viel Speicher</td></tr>
+      <tr><td><b>Video</b></td><td>Filme in Full HD, 4K (bis 60 Bilder/s) oder 8K (30 Bilder/s)</td><td>Für den Alltag „FHD 30“ oder „UHD 30“ wählen, 8K belegt viel Speicher</td></tr>
       <tr><td><b>Nacht</b></td><td>Dunkle Szenen</td><td>Startet bei Dunkelheit oft automatisch; Telefon 2 bis 3 Sekunden ruhig halten</td></tr>
       <tr><td><b>Pro</b></td><td>Manuelle Kontrolle (ISO, Belichtungszeit, Fokus)</td><td>Für Fortgeschrittene; erst die Automatik beherrschen</td></tr>
       <tr><td><b>Panorama</b></td><td>Breite Landschaften</td><td>Langsam und gleichmäßig schwenken, der Pfeil hilft</td></tr>
@@ -362,7 +363,7 @@
 
   <div class="grid-2">
     <div class="card"><h4 data-icon="search">Circle to Search</h4><p>Halten Sie die <b>Home-Taste</b> (bzw. den Gestenstrich unten) gedrückt. Dann kreisen Sie mit dem Finger irgendetwas auf dem Bildschirm ein: eine Pflanze, eine Jacke, ein Wort. Google sucht sofort danach, ohne dass Sie die App wechseln.</p></div>
-    <div class="card"><h4 data-icon="phone">Live Translate (Anrufe)</h4><p>Übersetzt Telefonate in Echtzeit. Sie sprechen Deutsch, Ihr Gegenüber hört z. B. Spanisch und umgekehrt. In der Telefon-App über <b>„Anrufassistent“</b> einschalten. Funktioniert auch ohne Internet, wenn das Sprachpaket geladen ist.</p></div>
+    <div class="card"><h4 data-icon="phone">Live Translate (Anrufe)</h4><p>Übersetzt Telefonate in Echtzeit. Sie sprechen Deutsch, Ihr Gegenüber hört z. B. Spanisch und umgekehrt. Einschalten unter <b>Einstellungen › Galaxy AI › Anrufassistent › Live Translate</b>. Die Sprachpakete laden Sie dort oder unter <b>Allgemeine Verwaltung › Sprachpakete</b>; danach klappt es auch ohne Internet.</p></div>
     <div class="card"><h4 data-icon="chat">Dolmetscher</h4><p>Für Gespräche von Angesicht zu Angesicht: Der Bildschirm wird geteilt, jede Person sieht die Übersetzung in ihrer Sprache. In den Schnelleinstellungen die Kachel <b>„Dolmetscher“</b> hinzufügen.</p></div>
     <div class="card"><h4 data-icon="pen">Schreibassistent</h4><p>In der Samsung-Tastatur auf das <b>Galaxy-AI-Symbol</b> tippen: Text höflicher oder lockerer formulieren, Rechtschreibung prüfen, übersetzen.</p></div>
     <div class="card"><h4 data-icon="note">Notiz- und Transkript-Assistent</h4><p>In <b>Samsung Notes</b> lange Notizen zusammenfassen und ordnen. In der <b>Sprachrekorder</b>-App werden Aufnahmen automatisch zu Text, mit Sprechern getrennt.</p></div>
@@ -372,7 +373,7 @@
     <p>Unter <b>Einstellungen › Galaxy AI</b> (bzw. „Erweiterte Intelligenz“) gibt es den Schalter <b>„Daten nur auf dem Gerät verarbeiten“</b>. Ist er an, werden Funktionen, die Server brauchen, abgeschaltet. Übersetzen, Diktieren und einige Zusammenfassungen funktionieren dann trotzdem, weil sie lokal laufen.</p>
     <p>Circle to Search ist eine Google-Funktion: Das eingekreiste Bild wird an Google geschickt, genau wie bei einer normalen Google-Suche.</p>
   </div></details>
-  <div class="callout info" data-t="Kostet Galaxy AI etwas?"><p>Samsung hat die Galaxy-AI-Funktionen beim Marktstart als kostenlos „bis Ende 2025“ angekündigt. Ob und welche Funktionen später kostenpflichtig werden, legt Samsung fest. Den aktuellen Stand sehen Sie unter <b>Einstellungen › Galaxy AI</b>. Bevor eine Funktion etwas kostet, müssen Sie aktiv zustimmen.</p></div>
+  <div class="callout info" data-t="Kostet Galaxy AI etwas?"><p>Beim Marktstart hieß es „kostenlos bis Ende 2025“. Inzwischen (Stand 2026) hat Samsung erklärt, dass die <b>grundlegenden Galaxy-AI-Funktionen dauerhaft kostenlos</b> bleiben. Dazu gehören die in diesem Kapitel beschriebenen. Für künftige, erweiterte Funktionen kann Samsung ein kostenpflichtiges Angebot einführen. Ein Abo entsteht nie automatisch: Sie müssten es ausdrücklich abschließen.</p></div>
 </section>
 
 <!-- ===================== 7 AKKU ===================== -->
@@ -386,9 +387,9 @@
     <div>
       <p>Lithium-Ionen-Akkus altern schneller, wenn sie lange bei 100 % stehen und warm werden. Der Akkuschutz verhindert das:</p>
       <ul>
-        <li><b>Standard:</b> Lädt auf 100 %, lädt danach erst wieder, wenn er unter 95 % fällt.</li>
-        <li><b>Adaptiv:</b> Lernt Ihren Schlafrhythmus, hält nachts bei 80 % und lädt erst kurz vor dem Aufstehen voll. <b>Empfehlung für die meisten.</b></li>
-        <li><b>Maximal:</b> Stoppt bei 80 % (bei neueren Versionen einstellbar). Ideal, wenn Ihnen 80 % für den Tag reichen.</li>
+        <li><b>Standard:</b> Lädt auf 100 % und lädt danach erst wieder, wenn der Akku unter 95 % fällt. Ab One UI 8 hält „Standard“ zusätzlich nachts bei 80 % an und lädt kurz vor dem Aufstehen voll.</li>
+        <li><b>Adaptiv</b> (nur One UI 7): Lernt Ihren Schlafrhythmus, hält nachts bei 80 % und lädt erst kurz vor dem Aufstehen voll. In One UI 8 ist das in „Standard“ aufgegangen.</li>
+        <li><b>Maximal:</b> Stoppt das Laden an einer festen Grenze, die Sie zwischen <b>80 und 95 %</b> wählen. Am schonendsten für den Akku und ideal, wenn Ihnen 80 bis 85 % für den Tag reichen.</li>
       </ul>
       <div class="path" data-path="Einstellungen|Akku|Akkuschutz"></div>
     </div>
@@ -415,7 +416,7 @@
   </div></details>
 
   <h3 id="powershare">Andere Geräte aufladen (Wireless PowerShare)</h3>
-  <p>Das S24 FE kann kabellos <b>andere Geräte laden</b>, z. B. Galaxy Buds oder eine Smartwatch. Schalten Sie in den Schnelleinstellungen <b>„Wireless PowerShare“</b> ein und legen Sie das Gerät mittig auf die Rückseite. Die Leistung ist gering (etwa 4,5 W), gedacht für den Notfall.</p>
+  <p>Das S24 FE kann kabellos <b>andere Geräte laden</b>: Qi-fähige Smartphones sowie viele Galaxy Buds und Galaxy Watches. Schalten Sie in den Schnelleinstellungen <b>„Wireless PowerShare“</b> ein (oder unter Einstellungen › Akku) und legen Sie das Gerät mittig auf die Rückseite. Die Leistung ist gering, gedacht für den Notfall. Bei weniger als 30 % Akku schaltet sich die Funktion nicht ein, und eine dicke Hülle kann stören.</p>
 </section>
 
 <!-- ===================== 8 ANPASSEN ===================== -->
@@ -457,7 +458,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Funktion</th><th>Hilft bei</th></tr></thead>
     <tbody>
-      <tr><td><b>Vergrößerung</b></td><td>Schlechtem Sehen: dreimal auf den Bildschirm tippen zoomt hinein</td></tr>
+      <tr><td><b>Vergrößerung</b></td><td>Schlechtem Sehen: Nach dem Einschalten zoomt z. B. dreimaliges Tippen auf den Bildschirm hinein</td></tr>
       <tr><td><b>Voice Assistant</b> / <b>TalkBack</b></td><td>Blindheit: Das Telefon liest alles vor</td></tr>
       <tr><td><b>Hörhilfen</b> &amp; Untertitel</td><td>Schwerhörigkeit: Live-Untertitel für Videos und Anrufe, Hörgeräte-Unterstützung</td></tr>
       <tr><td><b>Interaktion und Geschicklichkeit</b></td><td>Zittern oder eingeschränkter Motorik: längere Tippzeiten, Assistenzmenü</td></tr>
@@ -510,7 +511,7 @@
   <p>Mit Quick Share schicken Sie Fotos, Videos und Dateien kabellos an Telefone, Tablets und Windows-PCs in der Nähe, ohne Qualitätsverlust und ohne Datenvolumen. Foto öffnen › <b>Teilen</b> › <b>Quick Share</b> › Gerät wählen. Der Empfänger muss Quick Share auf „Jeder“ oder „Nur Kontakte“ gestellt haben.</p>
 
   <h3 id="dex">Samsung DeX: das Telefon als Computer</h3>
-  <p>Schließen Sie das S24 FE per USB-C-auf-HDMI-Adapter an einen Fernseher oder Monitor an. Es erscheint eine Desktop-Oberfläche mit Fenstern, Taskleiste und Maus-Unterstützung (Bluetooth-Maus und -Tastatur). Praktisch für Präsentationen oder um Fotos auf dem Fernseher zu zeigen.</p>
+  <p>Schließen Sie das S24 FE per USB-C-auf-HDMI-Adapter an einen Fernseher oder Monitor an (oder kabellos an einen Fernseher, der Bildschirmspiegelung unterstützt). Es erscheint eine Desktop-Oberfläche mit Fenstern, Taskleiste und Maus-Unterstützung (Bluetooth-Maus und -Tastatur). Praktisch für Präsentationen oder um Fotos auf dem Fernseher zu zeigen.</p>
 </section>
 
 <!-- ===================== 10 APPS & SPEICHER ===================== -->

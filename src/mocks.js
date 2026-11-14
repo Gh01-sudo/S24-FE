@@ -300,8 +300,8 @@ function batteryScreen() {
   return listScreen({
     title: 'Akkuschutz', back: true, top: 84,
     note: 'Schützt den Akku, damit er länger hält.',
-    items: [{ l: 'An', t: true }, { l: 'Standard', s: 'Bis 100 %, ab 95 % nachladen', r: false }, { l: 'Adaptiv', s: 'Nachts bei 80 % pausieren', r: true }, { l: 'Maximal', s: 'Laden bei 80 % stoppen', r: false }],
-    hl: 2, label: 'Akkuschutz-Einstellungen'
+    items: [{ l: 'An', t: true }, { l: 'Standard', s: 'Bis 100 %, ab 95 % nachladen', r: false }, { l: 'Adaptiv', s: 'Nachts bei 80 % (nur One UI 7)', r: false }, { l: 'Maximal', s: 'Ladegrenze: 80 %', sa: 1, r: true }],
+    hl: 3, label: 'Akkuschutz-Einstellungen'
   });
 }
 
@@ -398,19 +398,25 @@ function bottomView(o = {}) {
   // bottom edge, long horizontal
   const hot = o.hot || -1;
   const parts = [
-    { x: 46, w: 26, label: 'SIM' },
     { x: 92, w: 4, label: 'Mikro' },
     { x: 110, w: 30, label: 'USB-C' },
     { x: 160, w: 40, label: 'Laut.' }
   ];
   let out = `<rect x="10" y="40" width="220" height="40" rx="20" class="m-body"/>`;
-  out += `<rect x="46" y="54" width="26" height="12" rx="3" class="${hot === 0 ? 'm-key-hot' : 'm-key'}" fill-opacity=".55"/><circle cx="50" cy="60" r="2.2" class="m-dark"/>`;
-  out += `<circle cx="94" cy="60" r="2" class="${hot === 1 ? 'm-key-hot' : 'm-key'}"/>`;
-  out += `<rect x="110" y="53" width="30" height="14" rx="7" class="${hot === 2 ? 'm-key-hot' : 'm-key'}"/>`;
-  for (let i = 0; i < 6; i++) out += `<circle cx="${164 + i * 6}" cy="60" r="1.8" class="${hot === 3 ? 'm-key-hot' : 'm-key'}"/>`;
+  out += `<circle cx="94" cy="60" r="2" class="${hot === 0 ? 'm-key-hot' : 'm-key'}"/>`;
+  out += `<rect x="110" y="53" width="30" height="14" rx="7" class="${hot === 1 ? 'm-key-hot' : 'm-key'}"/>`;
+  for (let i = 0; i < 6; i++) out += `<circle cx="${164 + i * 6}" cy="60" r="1.8" class="${hot === 2 ? 'm-key-hot' : 'm-key'}"/>`;
   if (o.tool) out += `<path d="M50 60 L50 12 L44 6 L56 6 L50 12" class="m-arrow" />` + `<rect x="47" y="0" width="6" height="16" rx="2" class="m-key"/>` + arrowTo(70, 20, 54, 48) + T(76, 24, 'Werkzeug gerade ins Loch drücken', 10, 'm-label', 600);
   if (o.labels !== false) parts.forEach((p, i) => out += T(p.x + p.w / 2, 100, p.label, 10, i === hot ? 'm-label' : 'm-label-muted', 600, 'middle'));
   return `<svg viewBox="0 0 240 ${o.tool ? 110 : 110}" role="img" aria-label="Unterseite des Telefons" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
+}
+function leftView(o = {}) {
+  // left edge seen from the side, top of the phone on the left
+  let out = `<rect x="10" y="40" width="220" height="40" rx="20" class="m-body"/>`;
+  out += `<rect x="30" y="54" width="44" height="12" rx="4" class="${o.hot ? 'm-key-hot' : 'm-key'}" fill-opacity=".55"/><circle cx="36" cy="60" r="2.4" class="m-dark"/>`;
+  out += T(20, 100, '◀ oben', 10, 'm-label-muted', 600) + T(220, 100, 'unten ▶', 10, 'm-label-muted', 600, 'end') + (o.tool ? '' : T(52, 34, 'SIM-Fach', 10, 'm-label', 700, 'middle'));
+  if (o.tool) out += `<rect x="33" y="2" width="6" height="22" rx="2" class="m-key"/>` + arrowTo(36, 26, 36, 50) + T(48, 16, 'Werkzeug gerade hineindrücken', 10, 'm-label', 600);
+  return `<svg viewBox="0 ${o.tool ? -4 : 20} 240 ${o.tool ? 114 : 90}" role="img" aria-label="Linke Seite des Telefons mit SIM-Fach oben" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
 }
 function simTray() {
   return `<svg viewBox="0 0 240 200" role="img" aria-label="SIM-Schlitten mit eingelegter Nano-SIM" xmlns="http://www.w3.org/2000/svg">
@@ -422,8 +428,8 @@ function simTray() {
   ${arrowTo(150, 40, 122, 76)}
   ${T(152, 36, 'Abgeschrägte Ecke', 11, 'm-label', 700)}
   ${T(152, 50, 'zeigt nach rechts oben', 10, 'm-label-muted')}
-  ${T(93, 152, 'Goldkontakte nach unten', 11, 'm-label', 700, 'middle')}
-  ${T(93, 168, '(zeigen zum Telefon)', 10, 'm-label-muted', 500, 'middle')}
+  ${T(93, 152, 'Karte liegt flach in der Mulde', 11, 'm-label', 700, 'middle')}
+  ${T(93, 168, '(Ecke passt nur in einer Richtung)', 10, 'm-label-muted', 500, 'middle')}
   ${T(196, 99, 'Fach', 10, 'm-label-muted', 600, 'middle')}</svg>`;
 }
 
@@ -453,30 +459,38 @@ const EXPLORER = {
       <circle cx="120" cy="260" r="40" class="m-accent-stroke" stroke-dasharray="4 5" stroke-width="1.5"/>
       ${T(120, 400, 'SAMSUNG', 13, 'm-label-muted', 700, 'middle')}</svg>`,
     spots: [
-      { x: 98, y: 44, t: 'Ultraweitwinkel (12 MP, 0,6×)', w: 'Obere Linse', d: 'Erfasst einen sehr breiten Blickwinkel von 123°. Ideal für Landschaften, Architektur und Gruppenfotos in engen Räumen.' },
+      { x: 98, y: 44, t: 'Ultraweitwinkel (12 MP, 0,6×)', w: 'Obere Linse', d: 'Erfasst einen sehr breiten Blickwinkel. Ideal für Landschaften, Architektur und Gruppenfotos in engen Räumen.' },
       { x: 98, y: 102, t: 'Hauptkamera (50 MP, 1×)', w: 'Mittlere Linse', d: 'Die wichtigste und lichtstärkste Kamera mit optischem Bildstabilisator. Sie liefert die besten Bilder, besonders nachts. Auch die Stufe 2× nutzt diesen Sensor.' },
       { x: 98, y: 160, t: 'Telekamera (8 MP, 3×)', w: 'Untere Linse', d: 'Dreifacher optischer Zoom ohne Qualitätsverlust. Perfekt für Porträts und entfernte Motive.' },
       { x: 124, y: 58, t: 'LED-Blitz / Taschenlampe', w: 'Rechts neben der oberen Linse', d: 'Dient als Blitz und als Taschenlampe (Schnelleinstellungen › Taschenlampe). Bei Personenfotos ist der Nachtmodus meist schöner als der Blitz.' },
-      { x: 120, y: 260, t: 'Kabellose Ladespule & NFC', w: 'Mitte der Rückseite (unsichtbar)', d: 'Hier liegt das Telefon auf einem Qi-Ladepad richtig. Dieselbe Stelle halten Sie beim kontaktlosen Bezahlen an das Kartenterminal und hier lädt Wireless PowerShare andere Geräte.' }
+      { x: 120, y: 260, t: 'Kabellose Ladespule & NFC', w: 'Mitte der Rückseite (unsichtbar)', d: 'Hier liegt das Telefon auf einem Qi-Ladepad richtig. Dieselbe Stelle halten Sie beim kontaktlosen Bezahlen an das Kartenterminal, und hier lädt Wireless PowerShare andere Geräte.' }
     ]
   },
   right: {
-    svg: () => `<svg viewBox="0 0 240 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rechte Seite">
+    svg: () => `<svg viewBox="0 -14 240 484" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rechte Seite">
       <rect x="100" y="10" width="34" height="440" rx="14" class="m-body"/>
       <rect x="134" y="110" width="8" height="70" rx="3" class="m-key"/><line x1="134" x2="142" y1="145" y2="145" class="m-line" stroke-width="2"/>
       <rect x="134" y="200" width="8" height="44" rx="3" class="m-key"/>
-      ${T(117, 470 - 6, 'oben ↑', 10, 'm-label-muted', 600, 'middle')}</svg>`,
+      ${T(117, 2, '↑ oben', 10, 'm-label-muted', 600, 'middle')}</svg>`,
     spots: [
       { x: 170, y: 125, t: 'Lauter', w: 'Obere Hälfte der langen Taste', d: 'Erhöht die Lautstärke. In der Kamera löst die Taste ein Foto aus. Nach dem Drücken erscheint am Rand ein Regler: Tippen Sie auf die drei Punkte, um Klingelton, Medien und Benachrichtigungen getrennt einzustellen.' },
       { x: 170, y: 165, t: 'Leiser', w: 'Untere Hälfte der langen Taste', d: 'Verringert die Lautstärke. Zusammen mit der Seitentaste: Bildschirmfoto (kurz) oder Ausschaltmenü (halten).' },
-      { x: 170, y: 222, t: 'Seitentaste', w: 'Kurze Taste unter der Lautstärketaste', d: 'Kurz drücken: Bildschirm an/aus. Zweimal: Kamera. Fünfmal: Notruf. Gedrückt halten: Assistent bzw. Ausschaltmenü (einstellbar). Sie ist die wichtigste Taste des Telefons.' }
+      { x: 170, y: 222, t: 'Seitentaste', w: 'Kurze Taste unter der Lautstärketaste', d: 'Kurz drücken: Bildschirm an/aus. Zweimal: Kamera. Fünfmal: Notruf (wenn eingeschaltet). Gedrückt halten: seit One UI 7 standardmäßig Google Gemini, umstellbar auf Bixby oder das Ausschaltmenü. Sie ist die wichtigste Taste des Telefons.' }
+    ]
+  },
+  left: {
+    svg: () => `<svg viewBox="0 -14 240 484" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Linke Seite">
+      <rect x="106" y="10" width="34" height="440" rx="14" class="m-body"/>
+      <rect x="102" y="60" width="6" height="46" rx="2" class="m-key" fill-opacity=".6"/><circle cx="105" cy="66" r="2" class="m-dark"/>
+      ${T(123, 2, '↑ oben', 10, 'm-label-muted', 600, 'middle')}</svg>`,
+    spots: [
+      { x: 72, y: 80, t: 'SIM-Kartenfach', w: 'Linke Seite, oben (feine Fuge mit kleinem Loch)', d: 'Hier stecken Sie das mitgelieferte Werkzeug in das Loch, dann springt der Schlitten heraus. Beim europäischen Modell (SM-S721B/DS) passen zwei Nano-SIM-Karten hinein, zusätzlich gibt es eine eSIM. Eine Speicherkarte passt nicht.' }
     ]
   },
   bottom: {
     svg: () => bottomView({ labels: false }).replace('viewBox="0 0 240 110"', 'viewBox="0 -20 240 140"'),
     spots: [
-      { x: 59, y: 30, t: 'SIM-Kartenfach', w: 'Links an der Unterseite (Fuge mit kleinem Loch)', d: 'Hier stecken Sie das Werkzeug hinein, um das Fach für die Nano-SIM-Karte herauszuholen. Die Position kann sich je nach Baureihe leicht unterscheiden: Das Fach erkennen Sie immer an der feinen Fuge rund um das Loch.' },
-      { x: 94, y: 30, t: 'Mikrofon', w: 'Kleines Loch ohne Fuge', d: 'Nimmt beim Telefonieren Ihre Stimme auf. Wichtig: Hier niemals das SIM-Werkzeug hineinstecken, das beschädigt das Mikrofon.' },
+      { x: 94, y: 30, t: 'Mikrofon', w: 'Kleines Loch ohne Fuge', d: 'Nimmt beim Telefonieren Ihre Stimme auf. Wichtig: Hier niemals das SIM-Werkzeug hineinstecken, das beschädigt das Mikrofon. Das SIM-Fach sitzt nicht hier, sondern an der linken Seite oben.' },
       { x: 125, y: 30, t: 'USB-C-Anschluss', w: 'Mitte der Unterseite', d: 'Zum Laden, für Datenübertragung zum Computer, für kabelgebundene Kopfhörer (USB-C oder Adapter, eine 3,5-mm-Klinkenbuchse gibt es nicht) und für Samsung DeX am Monitor.' },
       { x: 180, y: 30, t: 'Unterer Lautsprecher', w: 'Rechts, Reihe kleiner Löcher', d: 'Der Hauptlautsprecher. Wenn Ton gedämpft klingt, ist oft Staub in den Löchern: Mit einer weichen, trockenen Zahnbürste vorsichtig reinigen.' }
     ]

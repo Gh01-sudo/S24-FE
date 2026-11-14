@@ -569,7 +569,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     </div>
   </div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Welches Netzteil soll ich kaufen?</summary><div class="inner">
-    <p>Das S24 FE lädt mit bis zu <b>25 Watt</b> („Super-Schnellladen“). Dafür braucht das Netzteil einen USB-C-Ausgang und den Standard <button class="term" data-term="pps">USB PD mit PPS</button>. Auf der Verpackung steht das meist als „PD 3.0 PPS“ oder „Super Fast Charging“. Ein Netzteil mit mehr Watt (z. B. 45 W) schadet nicht: Das Telefon nimmt sich nur so viel, wie es verträgt.</p>
+    <p>Das S24 FE lädt mit bis zu <b>25 Watt</b> („Super-Schnellladen“), etwa 50 % in 30 Minuten. Dafür braucht das Netzteil einen USB-C-Ausgang und den Standard <button class="term" data-term="pps">USB PD mit PPS</button>. Auf der Verpackung steht das meist als „PD 3.0 PPS“ oder „Super Fast Charging“. Ein Netzteil mit mehr Watt (z. B. 45 W) schadet nicht: Das Telefon nimmt sich nur so viel, wie es verträgt.</p>
     <p>Ein altes Netzteil mit USB-A-Buchse funktioniert auch, lädt aber deutlich langsamer (oft nur 10 bis 15 Watt). Ein voller Ladevorgang dauert dann zwei bis drei Stunden statt gut einer Stunde.</p>
   </div></details>
 
@@ -580,6 +580,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
       <div class="seg" role="group" aria-label="Ansicht wählen">
         <button data-view="front" aria-pressed="true">Vorne</button>
         <button data-view="back" aria-pressed="false">Hinten</button>
+        <button data-view="left" aria-pressed="false">Links</button>
         <button data-view="right" aria-pressed="false">Rechts</button>
         <button data-view="bottom" aria-pressed="false">Unten</button>
       </div>
@@ -667,9 +668,9 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     </div>
   </div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Warum schaltet langes Drücken der Seitentaste nicht aus?</summary><div class="inner">
-    <p>Samsung belegt langes Drücken der Seitentaste ab Werk mit dem <b>digitalen Assistenten</b> (Bixby oder, je nach Einstellung, Google Gemini). Das verwirrt viele Umsteiger. So ändern Sie es:</p>
+    <p>Samsung belegt langes Drücken der Seitentaste ab Werk mit einem <b>digitalen Assistenten</b>: Seit One UI 7 ist das <button class="term" data-term="gemini">Google Gemini</button>, vorher war es <button class="term" data-term="bixby">Bixby</button>. Das verwirrt viele Umsteiger. So ändern Sie es:</p>
     <div class="path" data-path="Einstellungen|Erweiterte Funktionen|Seitentaste|Gedrückt halten: Ausschaltmenü"></div>
-    <p>Ab dann öffnet langes Drücken das Menü mit „Ausschalten“, „Neu starten“ und „Notfallmodus“.</p>
+    <p>Ab dann öffnet langes Drücken das Menü mit „Ausschalten“, „Neu starten“ und „Notfallmodus“. An derselben Stelle können Sie auch zwischen Gemini und Bixby wählen.</p>
   </div></details>
 
   <h3 id="gesten">Gesten oder Tasten unten am Bildschirm</h3>
@@ -785,7 +786,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   </ol>
 
   <h3 id="sos">Notruf-SOS</h3>
-  <p>Drücken Sie die Seitentaste <b>fünfmal schnell hintereinander</b>. Das Telefon ruft dann die Notrufnummer 112 an (nach einem kurzen Countdown, den Sie abbrechen können). Zusätzlich lassen sich Notfallkontakte hinterlegen, die eine SMS mit Ihrem Standort erhalten.</p>
+  <p>Ist die Funktion eingeschaltet, drücken Sie die Seitentaste <b>fünfmal schnell hintereinander</b>. Das Telefon ruft dann die Notrufnummer 112 an (nach einem kurzen Countdown, den Sie abbrechen können). Zusätzlich lassen sich Notfallkontakte hinterlegen, die eine SMS mit Ihrem Standort erhalten. Schalten Sie Notruf-SOS am besten gleich ein und probieren Sie aus, ob die Notfallkontakte stimmen.</p>
   <div class="path" data-path="Einstellungen|Sicherheit und Notfall|Notruf-SOS"></div>
   <div class="callout tip" data-t="Medizinische Infos hinterlegen"><p>Unter <b>Sicherheit und Notfall › Medizinische Informationen</b> können Sie Blutgruppe, Allergien und Medikamente eintragen. Rettungskräfte sehen diese Infos auf dem Sperrbildschirm unter „Notruf“, ohne Ihre PIN zu kennen.</p></div>
 
@@ -819,9 +820,9 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
 
   <h3 id="objektive">Drei Objektive, drei Blickwinkel</h3>
   <div class="grid-3">
-    <div class="card"><h4 data-icon="lens">0,6× Ultraweitwinkel</h4><p class="n">12 MP · 123°</p><p>Für Landschaften, Gebäude, enge Räume und große Gruppen. Alles passt drauf. Am Rand wirken Gesichter leicht verzerrt, deshalb nicht für Porträts.</p></div>
+    <div class="card"><h4 data-icon="lens">0,6× Ultraweitwinkel</h4><p class="n">12 MP · f/2.2</p><p>Für Landschaften, Gebäude, enge Räume und große Gruppen. Alles passt drauf. Am Rand wirken Gesichter leicht verzerrt, deshalb nicht für Porträts.</p></div>
     <div class="card"><h4 data-icon="lens">1× Hauptkamera</h4><p class="n">50 MP · f/1.8 · OIS</p><p>Die beste Kamera, besonders bei wenig Licht. Nutzen Sie sie, wann immer es geht. Die Stufe <b>2×</b> ist ein verlustarmer Ausschnitt dieses 50-MP-Sensors.</p></div>
-    <div class="card"><h4 data-icon="lens">3× Tele</h4><p class="n">8 MP · optischer Zoom · OIS</p><p>Holt entfernte Motive heran und ist ideal für Porträts: Gesichter wirken natürlicher, der Hintergrund ruhiger. Bis 30× ist digitaler Zoom möglich, ab etwa 10× wird das Bild deutlich weicher.</p></div>
+    <div class="card"><h4 data-icon="lens">3× Tele</h4><p class="n">8 MP · f/2.4 · optischer Zoom · OIS</p><p>Holt entfernte Motive heran und ist ideal für Porträts: Gesichter wirken natürlicher, der Hintergrund ruhiger. Bis 30× ist digitaler Zoom möglich, ab etwa 10× wird das Bild deutlich weicher.</p></div>
   </div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Was bedeuten Megapixel, Blende und OIS?</summary><div class="inner">
     <p><b>Megapixel (MP):</b> Die Zahl der Bildpunkte in Millionen. Mehr Megapixel bedeuten nicht automatisch bessere Fotos. Die Hauptkamera fasst standardmäßig je vier Pixel zu einem zusammen (<button class="term" data-term="binning">Pixel-Binning</button>) und speichert 12-MP-Fotos, die bei wenig Licht klarer sind.</p>
@@ -836,7 +837,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <tbody>
       <tr><td><b>Foto</b></td><td>Alltag, die Automatik macht fast alles richtig</td><td>Auf das Motiv tippen, um scharf zu stellen</td></tr>
       <tr><td><b>Porträt</b></td><td>Person scharf, Hintergrund weich</td><td>Abstand 1 bis 2 m halten; Unschärfe ist später in der Galerie änderbar</td></tr>
-      <tr><td><b>Video</b></td><td>Filme bis 4K (60 Bilder/s) oder 8K (30 Bilder/s)</td><td>Für den Alltag „FHD 30“ oder „UHD 30“ wählen, 8K belegt viel Speicher</td></tr>
+      <tr><td><b>Video</b></td><td>Filme in Full HD, 4K (bis 60 Bilder/s) oder 8K (30 Bilder/s)</td><td>Für den Alltag „FHD 30“ oder „UHD 30“ wählen, 8K belegt viel Speicher</td></tr>
       <tr><td><b>Nacht</b></td><td>Dunkle Szenen</td><td>Startet bei Dunkelheit oft automatisch; Telefon 2 bis 3 Sekunden ruhig halten</td></tr>
       <tr><td><b>Pro</b></td><td>Manuelle Kontrolle (ISO, Belichtungszeit, Fokus)</td><td>Für Fortgeschrittene; erst die Automatik beherrschen</td></tr>
       <tr><td><b>Panorama</b></td><td>Breite Landschaften</td><td>Langsam und gleichmäßig schwenken, der Pfeil hilft</td></tr>
@@ -872,7 +873,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
 
   <div class="grid-2">
     <div class="card"><h4 data-icon="search">Circle to Search</h4><p>Halten Sie die <b>Home-Taste</b> (bzw. den Gestenstrich unten) gedrückt. Dann kreisen Sie mit dem Finger irgendetwas auf dem Bildschirm ein: eine Pflanze, eine Jacke, ein Wort. Google sucht sofort danach, ohne dass Sie die App wechseln.</p></div>
-    <div class="card"><h4 data-icon="phone">Live Translate (Anrufe)</h4><p>Übersetzt Telefonate in Echtzeit. Sie sprechen Deutsch, Ihr Gegenüber hört z. B. Spanisch und umgekehrt. In der Telefon-App über <b>„Anrufassistent“</b> einschalten. Funktioniert auch ohne Internet, wenn das Sprachpaket geladen ist.</p></div>
+    <div class="card"><h4 data-icon="phone">Live Translate (Anrufe)</h4><p>Übersetzt Telefonate in Echtzeit. Sie sprechen Deutsch, Ihr Gegenüber hört z. B. Spanisch und umgekehrt. Einschalten unter <b>Einstellungen › Galaxy AI › Anrufassistent › Live Translate</b>. Die Sprachpakete laden Sie dort oder unter <b>Allgemeine Verwaltung › Sprachpakete</b>; danach klappt es auch ohne Internet.</p></div>
     <div class="card"><h4 data-icon="chat">Dolmetscher</h4><p>Für Gespräche von Angesicht zu Angesicht: Der Bildschirm wird geteilt, jede Person sieht die Übersetzung in ihrer Sprache. In den Schnelleinstellungen die Kachel <b>„Dolmetscher“</b> hinzufügen.</p></div>
     <div class="card"><h4 data-icon="pen">Schreibassistent</h4><p>In der Samsung-Tastatur auf das <b>Galaxy-AI-Symbol</b> tippen: Text höflicher oder lockerer formulieren, Rechtschreibung prüfen, übersetzen.</p></div>
     <div class="card"><h4 data-icon="note">Notiz- und Transkript-Assistent</h4><p>In <b>Samsung Notes</b> lange Notizen zusammenfassen und ordnen. In der <b>Sprachrekorder</b>-App werden Aufnahmen automatisch zu Text, mit Sprechern getrennt.</p></div>
@@ -882,7 +883,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <p>Unter <b>Einstellungen › Galaxy AI</b> (bzw. „Erweiterte Intelligenz“) gibt es den Schalter <b>„Daten nur auf dem Gerät verarbeiten“</b>. Ist er an, werden Funktionen, die Server brauchen, abgeschaltet. Übersetzen, Diktieren und einige Zusammenfassungen funktionieren dann trotzdem, weil sie lokal laufen.</p>
     <p>Circle to Search ist eine Google-Funktion: Das eingekreiste Bild wird an Google geschickt, genau wie bei einer normalen Google-Suche.</p>
   </div></details>
-  <div class="callout info" data-t="Kostet Galaxy AI etwas?"><p>Samsung hat die Galaxy-AI-Funktionen beim Marktstart als kostenlos „bis Ende 2025“ angekündigt. Ob und welche Funktionen später kostenpflichtig werden, legt Samsung fest. Den aktuellen Stand sehen Sie unter <b>Einstellungen › Galaxy AI</b>. Bevor eine Funktion etwas kostet, müssen Sie aktiv zustimmen.</p></div>
+  <div class="callout info" data-t="Kostet Galaxy AI etwas?"><p>Beim Marktstart hieß es „kostenlos bis Ende 2025“. Inzwischen (Stand 2026) hat Samsung erklärt, dass die <b>grundlegenden Galaxy-AI-Funktionen dauerhaft kostenlos</b> bleiben. Dazu gehören die in diesem Kapitel beschriebenen. Für künftige, erweiterte Funktionen kann Samsung ein kostenpflichtiges Angebot einführen. Ein Abo entsteht nie automatisch: Sie müssten es ausdrücklich abschließen.</p></div>
 </section>
 
 <!-- ===================== 7 AKKU ===================== -->
@@ -896,9 +897,9 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
     <div>
       <p>Lithium-Ionen-Akkus altern schneller, wenn sie lange bei 100 % stehen und warm werden. Der Akkuschutz verhindert das:</p>
       <ul>
-        <li><b>Standard:</b> Lädt auf 100 %, lädt danach erst wieder, wenn er unter 95 % fällt.</li>
-        <li><b>Adaptiv:</b> Lernt Ihren Schlafrhythmus, hält nachts bei 80 % und lädt erst kurz vor dem Aufstehen voll. <b>Empfehlung für die meisten.</b></li>
-        <li><b>Maximal:</b> Stoppt bei 80 % (bei neueren Versionen einstellbar). Ideal, wenn Ihnen 80 % für den Tag reichen.</li>
+        <li><b>Standard:</b> Lädt auf 100 % und lädt danach erst wieder, wenn der Akku unter 95 % fällt. Ab One UI 8 hält „Standard“ zusätzlich nachts bei 80 % an und lädt kurz vor dem Aufstehen voll.</li>
+        <li><b>Adaptiv</b> (nur One UI 7): Lernt Ihren Schlafrhythmus, hält nachts bei 80 % und lädt erst kurz vor dem Aufstehen voll. In One UI 8 ist das in „Standard“ aufgegangen.</li>
+        <li><b>Maximal:</b> Stoppt das Laden an einer festen Grenze, die Sie zwischen <b>80 und 95 %</b> wählen. Am schonendsten für den Akku und ideal, wenn Ihnen 80 bis 85 % für den Tag reichen.</li>
       </ul>
       <div class="path" data-path="Einstellungen|Akku|Akkuschutz"></div>
     </div>
@@ -925,7 +926,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   </div></details>
 
   <h3 id="powershare">Andere Geräte aufladen (Wireless PowerShare)</h3>
-  <p>Das S24 FE kann kabellos <b>andere Geräte laden</b>, z. B. Galaxy Buds oder eine Smartwatch. Schalten Sie in den Schnelleinstellungen <b>„Wireless PowerShare“</b> ein und legen Sie das Gerät mittig auf die Rückseite. Die Leistung ist gering (etwa 4,5 W), gedacht für den Notfall.</p>
+  <p>Das S24 FE kann kabellos <b>andere Geräte laden</b>: Qi-fähige Smartphones sowie viele Galaxy Buds und Galaxy Watches. Schalten Sie in den Schnelleinstellungen <b>„Wireless PowerShare“</b> ein (oder unter Einstellungen › Akku) und legen Sie das Gerät mittig auf die Rückseite. Die Leistung ist gering, gedacht für den Notfall. Bei weniger als 30 % Akku schaltet sich die Funktion nicht ein, und eine dicke Hülle kann stören.</p>
 </section>
 
 <!-- ===================== 8 ANPASSEN ===================== -->
@@ -967,7 +968,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   <div class="table-wrap"><table>
     <thead><tr><th>Funktion</th><th>Hilft bei</th></tr></thead>
     <tbody>
-      <tr><td><b>Vergrößerung</b></td><td>Schlechtem Sehen: dreimal auf den Bildschirm tippen zoomt hinein</td></tr>
+      <tr><td><b>Vergrößerung</b></td><td>Schlechtem Sehen: Nach dem Einschalten zoomt z. B. dreimaliges Tippen auf den Bildschirm hinein</td></tr>
       <tr><td><b>Voice Assistant</b> / <b>TalkBack</b></td><td>Blindheit: Das Telefon liest alles vor</td></tr>
       <tr><td><b>Hörhilfen</b> &amp; Untertitel</td><td>Schwerhörigkeit: Live-Untertitel für Videos und Anrufe, Hörgeräte-Unterstützung</td></tr>
       <tr><td><b>Interaktion und Geschicklichkeit</b></td><td>Zittern oder eingeschränkter Motorik: längere Tippzeiten, Assistenzmenü</td></tr>
@@ -1020,7 +1021,7 @@ button, a, .hs { -webkit-tap-highlight-color: transparent; }
   <p>Mit Quick Share schicken Sie Fotos, Videos und Dateien kabellos an Telefone, Tablets und Windows-PCs in der Nähe, ohne Qualitätsverlust und ohne Datenvolumen. Foto öffnen › <b>Teilen</b> › <b>Quick Share</b> › Gerät wählen. Der Empfänger muss Quick Share auf „Jeder“ oder „Nur Kontakte“ gestellt haben.</p>
 
   <h3 id="dex">Samsung DeX: das Telefon als Computer</h3>
-  <p>Schließen Sie das S24 FE per USB-C-auf-HDMI-Adapter an einen Fernseher oder Monitor an. Es erscheint eine Desktop-Oberfläche mit Fenstern, Taskleiste und Maus-Unterstützung (Bluetooth-Maus und -Tastatur). Praktisch für Präsentationen oder um Fotos auf dem Fernseher zu zeigen.</p>
+  <p>Schließen Sie das S24 FE per USB-C-auf-HDMI-Adapter an einen Fernseher oder Monitor an (oder kabellos an einen Fernseher, der Bildschirmspiegelung unterstützt). Es erscheint eine Desktop-Oberfläche mit Fenstern, Taskleiste und Maus-Unterstützung (Bluetooth-Maus und -Tastatur). Praktisch für Präsentationen oder um Fotos auf dem Fernseher zu zeigen.</p>
 </section>
 
 <!-- ===================== 10 APPS & SPEICHER ===================== -->
@@ -1450,8 +1451,8 @@ function batteryScreen() {
   return listScreen({
     title: 'Akkuschutz', back: true, top: 84,
     note: 'Schützt den Akku, damit er länger hält.',
-    items: [{ l: 'An', t: true }, { l: 'Standard', s: 'Bis 100 %, ab 95 % nachladen', r: false }, { l: 'Adaptiv', s: 'Nachts bei 80 % pausieren', r: true }, { l: 'Maximal', s: 'Laden bei 80 % stoppen', r: false }],
-    hl: 2, label: 'Akkuschutz-Einstellungen'
+    items: [{ l: 'An', t: true }, { l: 'Standard', s: 'Bis 100 %, ab 95 % nachladen', r: false }, { l: 'Adaptiv', s: 'Nachts bei 80 % (nur One UI 7)', r: false }, { l: 'Maximal', s: 'Ladegrenze: 80 %', sa: 1, r: true }],
+    hl: 3, label: 'Akkuschutz-Einstellungen'
   });
 }
 
@@ -1548,19 +1549,25 @@ function bottomView(o = {}) {
   // bottom edge, long horizontal
   const hot = o.hot || -1;
   const parts = [
-    { x: 46, w: 26, label: 'SIM' },
     { x: 92, w: 4, label: 'Mikro' },
     { x: 110, w: 30, label: 'USB-C' },
     { x: 160, w: 40, label: 'Laut.' }
   ];
   let out = `<rect x="10" y="40" width="220" height="40" rx="20" class="m-body"/>`;
-  out += `<rect x="46" y="54" width="26" height="12" rx="3" class="${hot === 0 ? 'm-key-hot' : 'm-key'}" fill-opacity=".55"/><circle cx="50" cy="60" r="2.2" class="m-dark"/>`;
-  out += `<circle cx="94" cy="60" r="2" class="${hot === 1 ? 'm-key-hot' : 'm-key'}"/>`;
-  out += `<rect x="110" y="53" width="30" height="14" rx="7" class="${hot === 2 ? 'm-key-hot' : 'm-key'}"/>`;
-  for (let i = 0; i < 6; i++) out += `<circle cx="${164 + i * 6}" cy="60" r="1.8" class="${hot === 3 ? 'm-key-hot' : 'm-key'}"/>`;
+  out += `<circle cx="94" cy="60" r="2" class="${hot === 0 ? 'm-key-hot' : 'm-key'}"/>`;
+  out += `<rect x="110" y="53" width="30" height="14" rx="7" class="${hot === 1 ? 'm-key-hot' : 'm-key'}"/>`;
+  for (let i = 0; i < 6; i++) out += `<circle cx="${164 + i * 6}" cy="60" r="1.8" class="${hot === 2 ? 'm-key-hot' : 'm-key'}"/>`;
   if (o.tool) out += `<path d="M50 60 L50 12 L44 6 L56 6 L50 12" class="m-arrow" />` + `<rect x="47" y="0" width="6" height="16" rx="2" class="m-key"/>` + arrowTo(70, 20, 54, 48) + T(76, 24, 'Werkzeug gerade ins Loch drücken', 10, 'm-label', 600);
   if (o.labels !== false) parts.forEach((p, i) => out += T(p.x + p.w / 2, 100, p.label, 10, i === hot ? 'm-label' : 'm-label-muted', 600, 'middle'));
   return `<svg viewBox="0 0 240 ${o.tool ? 110 : 110}" role="img" aria-label="Unterseite des Telefons" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
+}
+function leftView(o = {}) {
+  // left edge seen from the side, top of the phone on the left
+  let out = `<rect x="10" y="40" width="220" height="40" rx="20" class="m-body"/>`;
+  out += `<rect x="30" y="54" width="44" height="12" rx="4" class="${o.hot ? 'm-key-hot' : 'm-key'}" fill-opacity=".55"/><circle cx="36" cy="60" r="2.4" class="m-dark"/>`;
+  out += T(20, 100, '◀ oben', 10, 'm-label-muted', 600) + T(220, 100, 'unten ▶', 10, 'm-label-muted', 600, 'end') + (o.tool ? '' : T(52, 34, 'SIM-Fach', 10, 'm-label', 700, 'middle'));
+  if (o.tool) out += `<rect x="33" y="2" width="6" height="22" rx="2" class="m-key"/>` + arrowTo(36, 26, 36, 50) + T(48, 16, 'Werkzeug gerade hineindrücken', 10, 'm-label', 600);
+  return `<svg viewBox="0 ${o.tool ? -4 : 20} 240 ${o.tool ? 114 : 90}" role="img" aria-label="Linke Seite des Telefons mit SIM-Fach oben" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
 }
 function simTray() {
   return `<svg viewBox="0 0 240 200" role="img" aria-label="SIM-Schlitten mit eingelegter Nano-SIM" xmlns="http://www.w3.org/2000/svg">
@@ -1572,8 +1579,8 @@ function simTray() {
   ${arrowTo(150, 40, 122, 76)}
   ${T(152, 36, 'Abgeschrägte Ecke', 11, 'm-label', 700)}
   ${T(152, 50, 'zeigt nach rechts oben', 10, 'm-label-muted')}
-  ${T(93, 152, 'Goldkontakte nach unten', 11, 'm-label', 700, 'middle')}
-  ${T(93, 168, '(zeigen zum Telefon)', 10, 'm-label-muted', 500, 'middle')}
+  ${T(93, 152, 'Karte liegt flach in der Mulde', 11, 'm-label', 700, 'middle')}
+  ${T(93, 168, '(Ecke passt nur in einer Richtung)', 10, 'm-label-muted', 500, 'middle')}
   ${T(196, 99, 'Fach', 10, 'm-label-muted', 600, 'middle')}</svg>`;
 }
 
@@ -1603,30 +1610,38 @@ const EXPLORER = {
       <circle cx="120" cy="260" r="40" class="m-accent-stroke" stroke-dasharray="4 5" stroke-width="1.5"/>
       ${T(120, 400, 'SAMSUNG', 13, 'm-label-muted', 700, 'middle')}</svg>`,
     spots: [
-      { x: 98, y: 44, t: 'Ultraweitwinkel (12 MP, 0,6×)', w: 'Obere Linse', d: 'Erfasst einen sehr breiten Blickwinkel von 123°. Ideal für Landschaften, Architektur und Gruppenfotos in engen Räumen.' },
+      { x: 98, y: 44, t: 'Ultraweitwinkel (12 MP, 0,6×)', w: 'Obere Linse', d: 'Erfasst einen sehr breiten Blickwinkel. Ideal für Landschaften, Architektur und Gruppenfotos in engen Räumen.' },
       { x: 98, y: 102, t: 'Hauptkamera (50 MP, 1×)', w: 'Mittlere Linse', d: 'Die wichtigste und lichtstärkste Kamera mit optischem Bildstabilisator. Sie liefert die besten Bilder, besonders nachts. Auch die Stufe 2× nutzt diesen Sensor.' },
       { x: 98, y: 160, t: 'Telekamera (8 MP, 3×)', w: 'Untere Linse', d: 'Dreifacher optischer Zoom ohne Qualitätsverlust. Perfekt für Porträts und entfernte Motive.' },
       { x: 124, y: 58, t: 'LED-Blitz / Taschenlampe', w: 'Rechts neben der oberen Linse', d: 'Dient als Blitz und als Taschenlampe (Schnelleinstellungen › Taschenlampe). Bei Personenfotos ist der Nachtmodus meist schöner als der Blitz.' },
-      { x: 120, y: 260, t: 'Kabellose Ladespule & NFC', w: 'Mitte der Rückseite (unsichtbar)', d: 'Hier liegt das Telefon auf einem Qi-Ladepad richtig. Dieselbe Stelle halten Sie beim kontaktlosen Bezahlen an das Kartenterminal und hier lädt Wireless PowerShare andere Geräte.' }
+      { x: 120, y: 260, t: 'Kabellose Ladespule & NFC', w: 'Mitte der Rückseite (unsichtbar)', d: 'Hier liegt das Telefon auf einem Qi-Ladepad richtig. Dieselbe Stelle halten Sie beim kontaktlosen Bezahlen an das Kartenterminal, und hier lädt Wireless PowerShare andere Geräte.' }
     ]
   },
   right: {
-    svg: () => `<svg viewBox="0 0 240 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rechte Seite">
+    svg: () => `<svg viewBox="0 -14 240 484" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rechte Seite">
       <rect x="100" y="10" width="34" height="440" rx="14" class="m-body"/>
       <rect x="134" y="110" width="8" height="70" rx="3" class="m-key"/><line x1="134" x2="142" y1="145" y2="145" class="m-line" stroke-width="2"/>
       <rect x="134" y="200" width="8" height="44" rx="3" class="m-key"/>
-      ${T(117, 470 - 6, 'oben ↑', 10, 'm-label-muted', 600, 'middle')}</svg>`,
+      ${T(117, 2, '↑ oben', 10, 'm-label-muted', 600, 'middle')}</svg>`,
     spots: [
       { x: 170, y: 125, t: 'Lauter', w: 'Obere Hälfte der langen Taste', d: 'Erhöht die Lautstärke. In der Kamera löst die Taste ein Foto aus. Nach dem Drücken erscheint am Rand ein Regler: Tippen Sie auf die drei Punkte, um Klingelton, Medien und Benachrichtigungen getrennt einzustellen.' },
       { x: 170, y: 165, t: 'Leiser', w: 'Untere Hälfte der langen Taste', d: 'Verringert die Lautstärke. Zusammen mit der Seitentaste: Bildschirmfoto (kurz) oder Ausschaltmenü (halten).' },
-      { x: 170, y: 222, t: 'Seitentaste', w: 'Kurze Taste unter der Lautstärketaste', d: 'Kurz drücken: Bildschirm an/aus. Zweimal: Kamera. Fünfmal: Notruf. Gedrückt halten: Assistent bzw. Ausschaltmenü (einstellbar). Sie ist die wichtigste Taste des Telefons.' }
+      { x: 170, y: 222, t: 'Seitentaste', w: 'Kurze Taste unter der Lautstärketaste', d: 'Kurz drücken: Bildschirm an/aus. Zweimal: Kamera. Fünfmal: Notruf (wenn eingeschaltet). Gedrückt halten: seit One UI 7 standardmäßig Google Gemini, umstellbar auf Bixby oder das Ausschaltmenü. Sie ist die wichtigste Taste des Telefons.' }
+    ]
+  },
+  left: {
+    svg: () => `<svg viewBox="0 -14 240 484" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Linke Seite">
+      <rect x="106" y="10" width="34" height="440" rx="14" class="m-body"/>
+      <rect x="102" y="60" width="6" height="46" rx="2" class="m-key" fill-opacity=".6"/><circle cx="105" cy="66" r="2" class="m-dark"/>
+      ${T(123, 2, '↑ oben', 10, 'm-label-muted', 600, 'middle')}</svg>`,
+    spots: [
+      { x: 72, y: 80, t: 'SIM-Kartenfach', w: 'Linke Seite, oben (feine Fuge mit kleinem Loch)', d: 'Hier stecken Sie das mitgelieferte Werkzeug in das Loch, dann springt der Schlitten heraus. Beim europäischen Modell (SM-S721B/DS) passen zwei Nano-SIM-Karten hinein, zusätzlich gibt es eine eSIM. Eine Speicherkarte passt nicht.' }
     ]
   },
   bottom: {
     svg: () => bottomView({ labels: false }).replace('viewBox="0 0 240 110"', 'viewBox="0 -20 240 140"'),
     spots: [
-      { x: 59, y: 30, t: 'SIM-Kartenfach', w: 'Links an der Unterseite (Fuge mit kleinem Loch)', d: 'Hier stecken Sie das Werkzeug hinein, um das Fach für die Nano-SIM-Karte herauszuholen. Die Position kann sich je nach Baureihe leicht unterscheiden: Das Fach erkennen Sie immer an der feinen Fuge rund um das Loch.' },
-      { x: 94, y: 30, t: 'Mikrofon', w: 'Kleines Loch ohne Fuge', d: 'Nimmt beim Telefonieren Ihre Stimme auf. Wichtig: Hier niemals das SIM-Werkzeug hineinstecken, das beschädigt das Mikrofon.' },
+      { x: 94, y: 30, t: 'Mikrofon', w: 'Kleines Loch ohne Fuge', d: 'Nimmt beim Telefonieren Ihre Stimme auf. Wichtig: Hier niemals das SIM-Werkzeug hineinstecken, das beschädigt das Mikrofon. Das SIM-Fach sitzt nicht hier, sondern an der linken Seite oben.' },
       { x: 125, y: 30, t: 'USB-C-Anschluss', w: 'Mitte der Unterseite', d: 'Zum Laden, für Datenübertragung zum Computer, für kabelgebundene Kopfhörer (USB-C oder Adapter, eine 3,5-mm-Klinkenbuchse gibt es nicht) und für Samsung DeX am Monitor.' },
       { x: 180, y: 30, t: 'Unterer Lautsprecher', w: 'Rechts, Reihe kleiner Löcher', d: 'Der Hauptlautsprecher. Wenn Ton gedämpft klingt, ist oft Staub in den Löchern: Mit einer weichen, trockenen Zahnbürste vorsichtig reinigen.' }
     ]
@@ -1660,9 +1675,9 @@ const STEPPERS = {
   sim: {
     title: 'SIM-Karte einlegen', icon: 'box', steps: [
       { m: () => sidePower(), h: 'Telefon ausgeschaltet lassen', p: 'Legen Sie die SIM-Karte am besten ein, <b>bevor</b> Sie das Telefon zum ersten Mal einschalten. Ist es schon an, halten Sie <kbd>Seitentaste</kbd> + <kbd>Leiser</kbd> gedrückt und wählen „Ausschalten“.', why: 'Das Telefon verträgt das Einlegen auch im eingeschalteten Zustand, erkennt die Karte aber erst nach einem Neustart sicher.' },
-      { m: () => bottomView({ hot: 0 }), h: 'Das SIM-Fach finden', p: 'Suchen Sie am Rand die schmale <b>Fuge mit einem winzigen Loch</b>. Beim S24 FE sitzt sie an der Unterseite links.', why: 'Achtung: Das Loch ohne Fuge daneben ist das <b>Mikrofon</b>. Stecken Sie dort nichts hinein.' },
-      { m: () => bottomView({ hot: 0, tool: true }), h: 'Mit dem Werkzeug öffnen', p: 'Drücken Sie das mitgelieferte Metallstiftchen <b>gerade</b> und mit leichtem Druck in das Loch. Der Schlitten springt ein paar Millimeter heraus. Ziehen Sie ihn mit den Fingern vollständig heraus.', why: 'Kein Werkzeug zur Hand? Eine aufgebogene Büroklammer funktioniert genauso. Keine Nadel und keinen Zahnstocher nehmen: Die können abbrechen.' },
-      { m: () => simTray(), h: 'Karte richtig einlegen', p: 'Legen Sie die <b>Nano-SIM</b> mit den <b>goldenen Kontakten nach unten</b> in die passende Mulde. Die abgeschrägte Ecke zeigt Ihnen, wie herum sie passt. Sie darf nicht wackeln oder überstehen.', why: 'Ihre SIM ist größer? Bei vielen Karten lässt sich die kleinste Größe (Nano) aus der Plastikkarte herausdrücken. Sonst bekommen Sie beim Anbieter kostenlos eine passende Karte.' },
+      { m: () => leftView({ hot: true }), h: 'Das SIM-Fach finden', p: 'Das SIM-Fach sitzt an der <b>linken Seite, im oberen Bereich</b>. Sie erkennen es an der schmalen <b>Fuge mit einem winzigen Loch</b>.', why: 'Achtung: Ein kleines Loch <b>ohne</b> Fuge ist ein <b>Mikrofon</b> (z. B. an der Unter- oder Oberkante). Stecken Sie dort nichts hinein. Im Zweifel ist das SIM-Loch das größere der beiden.' },
+      { m: () => leftView({ hot: true, tool: true }), h: 'Mit dem Werkzeug öffnen', p: 'Drücken Sie das mitgelieferte Metallstiftchen <b>gerade</b> und mit leichtem Druck in das Loch. Der Schlitten springt ein paar Millimeter heraus. Ziehen Sie ihn mit den Fingern vollständig heraus.', why: 'Kein Werkzeug zur Hand? Eine aufgebogene Büroklammer funktioniert genauso. Keine Nadel und keinen Zahnstocher nehmen: Die können abbrechen.' },
+      { m: () => simTray(), h: 'Karte richtig einlegen', p: 'Legen Sie die <b>Nano-SIM</b> so in die Mulde, dass die <b>abgeschrägte Ecke</b> der Karte genau in die abgeschrägte Ecke der Mulde passt. Dann liegt sie flach, wackelt nicht und steht nicht über. Liegt sie schief, ist sie verkehrt herum. Beim europäischen Modell gibt es zwei Mulden: Die Hauptkarte gehört in den Platz „SIM 1“.', why: 'Ihre SIM ist größer? Bei vielen Karten lässt sich die kleinste Größe (Nano) aus der Plastikkarte herausdrücken. Sonst bekommen Sie beim Anbieter kostenlos eine passende Karte.' },
       { m: () => lockScreen({ pin: true }), h: 'Zurückschieben, einschalten, SIM-PIN eingeben', p: 'Schieben Sie den Schlitten in derselben Richtung zurück, bis er bündig abschließt. Schalten Sie das Telefon ein. Es fragt nach der <b>SIM-PIN</b> (4 Ziffern aus dem Brief Ihres Anbieters).', why: 'Die SIM-PIN schützt Ihre Karte, nicht das Telefon. Nach dreimal falscher Eingabe brauchen Sie die <b>PUK</b> aus demselben Brief. Gut aufbewahren!' }
     ]
   },
@@ -1737,14 +1752,14 @@ const SPECS = [
   ['Prozessor', 'Samsung Exynos 2400e (10 Kerne)', 'Das „Gehirn“ des Telefons. Schnell genug für alles im Alltag, auch für aufwendige Spiele und die KI-Funktionen.'],
   ['Arbeitsspeicher', '8 GB RAM', 'Kurzzeitgedächtnis: Wie viele Apps gleichzeitig offen bleiben können, ohne neu zu laden. 8 GB reichen gut.'],
   ['Speicher', '128 / 256 / 512 GB, keine microSD', 'Hier liegen Fotos, Videos und Apps. Eine Speicherkarte lässt sich nicht nachrüsten. Faustregel: 128 GB reicht für etwa 25.000 Fotos, wenn Sie wenig filmen.'],
-  ['Akku', '4.700 mAh · 25 W Kabel · 15 W kabellos', 'mAh gibt die Kapazität an. 25 W Kabel-Laden bringt den Akku in etwa 30 Minuten auf rund 50 %. Kabellos (Qi) geht es langsamer, ist aber bequem.'],
+  ['Akku', '4.700 mAh · 25 W Kabel · 15 W kabellos', 'mAh gibt die Kapazität an. Mit einem 25-W-Netzteil ist der Akku nach etwa 30 Minuten zu rund 50 % geladen, voll nach gut einer Stunde. Kabellos (Qi) geht es langsamer, ist aber bequem.'],
   ['Kameras hinten', '50 MP Haupt · 12 MP Ultraweit · 8 MP Tele 3×', 'Drei Objektive für drei Blickwinkel, Details in Kapitel 5.'],
   ['Frontkamera', '10 MP', 'Für Selfies und Videoanrufe, nimmt Videos in 4K auf.'],
-  ['Video', 'bis 8K (30 fps), 4K (60 fps)', '8K hat viermal so viele Bildpunkte wie 4K. Für den Alltag und den Fernseher reicht 4K völlig und spart Speicher.'],
+  ['Video', 'bis 8K (30 Bilder/s), 4K bis 60 Bilder/s', '8K hat viermal so viele Bildpunkte wie 4K. Für den Alltag und den Fernseher reicht 4K völlig und spart Speicher.'],
   ['Schutz', 'IP68 · Gorilla Glass Victus+', 'IP68: staubdicht und bis 1,5 m Tiefe 30 Minuten in Süßwasser geschützt. Kein Schutz gegen Salzwasser, Chlorwasser, heißes Wasser oder Druck (Dusche, Wellen). Wasserschäden sind von der Garantie ausgeschlossen.'],
   ['Maße & Gewicht', '162,0 × 77,3 × 8,0 mm · 213 g', 'Ein großes Telefon. Rahmen aus Aluminium.'],
   ['Netz & Funk', '5G · Wi-Fi 6E · Bluetooth 5.3 · NFC · USB-C 3.2', 'Alle aktuellen Standards: schnelles Mobilfunknetz, schnelles WLAN, kabellose Kopfhörer, kontaktloses Bezahlen.'],
-  ['SIM', 'Nano-SIM + eSIM', 'Sie können eine Plastik-SIM und eine eingebaute eSIM gleichzeitig nutzen (Dual-SIM), z. B. für privat und beruflich.'],
+  ['SIM', '2 × Nano-SIM + eSIM (EU-Modell)', 'Das europäische Modell SM-S721B/DS hat ein Fach für zwei Nano-SIM-Karten und zusätzlich eine eSIM. So nutzen Sie z. B. eine private und eine berufliche Nummer auf einem Gerät (Dual-SIM).'],
   ['Entsperren', 'Fingerabdruck im Display · Gesichtserkennung', 'Optischer Sensor unter dem Glas. Die Gesichtserkennung nutzt die Frontkamera.'],
   ['Software', 'Android mit One UI · 7 Jahre Updates', 'Ab Marktstart (Okt. 2024) sieben Jahre Android-Versionen und Sicherheitsupdates.']
 ];
@@ -1755,8 +1770,8 @@ const COMBOS = [
   { id: 'off', l: 'Ausschalten / Neustart', hot: ['side', 'vol-'], how: ['Seitentaste', '+', 'Leiser', 'ca. 2 Sekunden halten'], d: 'Das Ausschaltmenü erscheint mit „Ausschalten“, „Neu starten“ und „Notfallmodus“. Alternativ: Schnelleinstellungen öffnen und oben auf das Ein/Aus-Symbol tippen.', a: '2 Sek. halten' },
   { id: 'force', l: 'Erzwungener Neustart', hot: ['side', 'vol-'], how: ['Seitentaste', '+', 'Leiser', '7 Sekunden oder länger halten'], d: 'Wenn das Telefon gar nicht mehr reagiert. Halten Sie beide Tasten, bis der Bildschirm schwarz wird und das Logo erscheint. Ihre Daten bleiben erhalten.', a: '7+ Sek. halten' },
   { id: 'cam', l: 'Kamera schnell starten', hot: ['side'], how: ['Seitentaste', 'zweimal schnell drücken'], d: 'Die Kamera öffnet sich sofort, auch aus dem Sperrbildschirm. Ideal für spontane Fotos. Einstellbar unter Erweiterte Funktionen › Seitentaste.', a: '2× drücken' },
-  { id: 'sos', l: 'Notruf-SOS', hot: ['side'], how: ['Seitentaste', 'fünfmal schnell drücken'], d: 'Ein Countdown startet, dann wählt das Telefon die 112. Optional werden Notfallkontakte mit Ihrem Standort benachrichtigt. Vorher unter Sicherheit und Notfall › Notruf-SOS einschalten.', a: '5× drücken' },
-  { id: 'assist', l: 'Assistent / Ausschaltmenü', hot: ['side'], how: ['Seitentaste', 'gedrückt halten'], d: 'Ab Werk startet der Sprachassistent. Sie können das unter Einstellungen › Erweiterte Funktionen › Seitentaste auf „Ausschaltmenü“ umstellen.', a: 'gedrückt halten' },
+  { id: 'sos', l: 'Notruf-SOS', hot: ['side'], how: ['Seitentaste', 'fünfmal schnell drücken'], d: 'Ein Countdown startet, dann wählt das Telefon die Notrufnummer 112. Optional werden Notfallkontakte mit Ihrem Standort benachrichtigt. Die Funktion muss vorher unter Sicherheit und Notfall › Notruf-SOS eingeschaltet sein.', a: '5× drücken' },
+  { id: 'assist', l: 'Assistent / Ausschaltmenü', hot: ['side'], how: ['Seitentaste', 'gedrückt halten'], d: 'Seit One UI 7 startet ab Werk Google Gemini (vorher Bixby). Unter Einstellungen › Erweiterte Funktionen › Seitentaste › Gedrückt halten wählen Sie stattdessen Bixby oder das Ausschaltmenü.', a: 'gedrückt halten' },
   { id: 'vol', l: 'Lautstärke & Lautlos', hot: ['vol+', 'vol-'], how: ['Lauter', 'oder', 'Leiser', 'drücken'], d: 'Am rechten Rand erscheint ein Regler. Tippen Sie auf das Lautsprechersymbol darüber, um zwischen Ton, Vibration und Lautlos zu wechseln. Die drei Punkte öffnen getrennte Regler für Medien, Klingelton und Benachrichtigungen.', a: 'drücken' }
 ];
 
@@ -1774,7 +1789,7 @@ const GESTURES = [
 const QUIZ = [
   { q: 'Wie machen Sie ein Bildschirmfoto?', o: ['Seitentaste lange drücken', 'Seitentaste + Leiser gleichzeitig kurz drücken', 'Lauter + Leiser gleichzeitig drücken', 'Zweimal auf den Bildschirm tippen'], a: 1, e: 'Seitentaste und Leiser gleichzeitig kurz drücken. Lange halten öffnet dagegen das Ausschaltmenü.', l: '#tasten' },
   { q: 'Das Telefon reagiert auf nichts mehr. Was tun Sie zuerst?', o: ['Auf Werkseinstellungen zurücksetzen', 'Warten, bis der Akku leer ist', 'Seitentaste + Leiser etwa 7 Sekunden halten', 'SIM-Karte herausnehmen'], a: 2, e: 'Ein erzwungener Neustart löst fast alle Hänger, ohne Daten zu löschen.', l: '#neustart' },
-  { q: 'Welche Akkuschutz-Einstellung lädt nachts nur bis 80 % und kurz vor dem Aufstehen voll?', o: ['Standard', 'Adaptiv', 'Maximal', 'Energiesparmodus'], a: 1, e: '„Adaptiv“ lernt Ihre Gewohnheiten und schont den Akku, ohne dass Sie morgens weniger haben.', l: '#akkuschutz' },
+  { q: 'Mit welcher Akkuschutz-Einstellung stoppt das Laden dauerhaft z. B. bei 80 %?', o: ['Standard', 'Maximal', 'Energiesparmodus', 'Bewegungsglättung'], a: 1, e: '„Maximal“ begrenzt das Laden auf einen festen Wert (seit One UI 7 zwischen 80 und 95 % einstellbar). Das schont den Akku am stärksten.', l: '#akkuschutz' },
   { q: 'Welches Objektiv nehmen Sie für ein Porträt mit natürlich wirkendem Gesicht?', o: ['0,6× Ultraweitwinkel', '3× Tele', 'Die Frontkamera', 'Digitalzoom 30×'], a: 1, e: 'Das Tele-Objektiv verzerrt Gesichter nicht und lässt den Hintergrund ruhiger wirken. Das Ultraweitwinkel verzerrt am Rand.', l: '#objektive' },
   { q: 'Wie lange liegen gelöschte Fotos im Papierkorb der Galerie?', o: ['Gar nicht, sie sind sofort weg', '24 Stunden', '30 Tage', 'Für immer'], a: 2, e: '30 Tage lang können Sie sie unter Galerie › Menü › Papierkorb wiederherstellen.', l: '#galerie' },
   { q: 'Wozu brauchen Sie unbedingt ein Google-Konto?', o: ['Zum Telefonieren', 'Um Apps aus dem Play Store zu laden', 'Für das WLAN', 'Für die Kamera'], a: 1, e: 'Ohne Google-Konto keine Apps aus dem Play Store. Telefonieren, WLAN und Kamera gehen auch ohne.', l: '#konten' },
@@ -1795,7 +1810,7 @@ const TS = {
   bat2: { t: 'Einstellungen optimieren', s: ['Dunkelmodus einschalten (Anzeige › Dunkel).', 'Bildschirmhelligkeit auf „Adaptiv“ lassen und den Timeout auf 30 Sekunden stellen.', 'Energiesparmodus einschalten, wenn es knapp wird.', 'Standort, Bluetooth und WLAN-Suche abschalten, wenn Sie sie nicht brauchen.'], n: 'bat3' },
   bat3: { t: 'Akkuzustand prüfen lassen', s: ['Öffnen Sie die App <b>Samsung Members</b> › „Support“ › „Telefondiagnose“ › „Akkustatus“.', 'Steht dort „Schwach“ oder liegt die Kapazität unter 80 %, ist ein Akkutausch sinnvoll. Wenden Sie sich an einen Samsung-Service-Partner.'], n: 'service' },
   chg1: { t: 'Kabel, Netzteil und Buchse prüfen', s: ['Probieren Sie ein anderes Kabel und ein anderes Netzteil. Kabel gehen häufiger kaputt, als man denkt.', 'Schauen Sie mit einer Taschenlampe in die USB-C-Buchse. Fusseln aus der Hosentasche verhindern den Kontakt. Vorsichtig mit einem <b>Holzzahnstocher</b> entfernen (kein Metall!).', 'Erscheint die Meldung „Feuchtigkeit erkannt“: Telefon trocknen lassen, bis die Meldung verschwindet. Kabellos laden geht in der Zwischenzeit.'], n: 'chg2' },
-  chg2: { t: 'Ladeeinstellungen prüfen', s: ['Ist der Akkuschutz auf „Maximal“, stoppt das Laden bewusst bei 80 %. Das ist kein Fehler (Einstellungen › Akku › Akkuschutz).', 'Schnellladen einschalten: Einstellungen › Akku › Ladeeinstellungen › „Schnellladen“.', 'Ist das Telefon sehr warm, drosselt es das Laden zum Schutz. Hülle abnehmen und an einem kühlen Ort laden.'], n: 'service' },
+  chg2: { t: 'Ladeeinstellungen prüfen', s: ['Ist der Akkuschutz auf „Maximal“, stoppt das Laden bewusst bei der eingestellten Grenze (z. B. 80 %). Das ist kein Fehler (Einstellungen › Akku › Akkuschutz).', 'Schnellladen einschalten: Einstellungen › Akku › Ladeeinstellungen › „Schnellladen“.', 'Ist das Telefon sehr warm, drosselt es das Laden zum Schutz. Hülle abnehmen und an einem kühlen Ort laden.'], n: 'service' },
   net1: { t: 'Verbindung neu aufbauen', s: ['Flugmodus in den Schnelleinstellungen <b>ein- und nach 10 Sekunden wieder ausschalten</b>.', 'Bei WLAN: Router für 30 Sekunden vom Strom nehmen und wieder einstecken.', 'Prüfen Sie, ob andere Geräte im selben WLAN Internet haben. Wenn nicht, liegt es am Router oder Anbieter.'], n: 'net2' },
   net2: { t: 'Netzwerk vergessen und neu verbinden', s: ['Einstellungen › Verbindungen › WLAN › Zahnrad neben dem Netz › <b>„Entfernen“</b>. Dann neu mit Passwort verbinden.', 'Bei mobilen Daten: Verbindungen › Datennutzung prüfen, ob das Datenvolumen aufgebraucht ist (Ihr Anbieter schickt dann meist eine SMS).', 'Letzter Schritt: Allgemeine Verwaltung › Zurücksetzen › <b>„Mobilfunknetzwerk-Einstellungen zurücksetzen“</b>. Das löscht nur gespeicherte WLAN-Passwörter und Bluetooth-Kopplungen, keine Fotos.'], n: 'service' },
   sto1: { t: 'Schnell Platz schaffen', s: ['Einstellungen › Gerätewartung › <b>Speicher</b>: Prüfen Sie „Große Dateien“, „Duplikate“ und „Nicht verwendete Apps“.', 'Galerie-Papierkorb leeren (Galerie › Menü › Papierkorb › Leeren).', 'WhatsApp › Einstellungen › Speicher und Daten › Speicher verwalten: große Videos löschen.', 'In Google Fotos die Sicherung prüfen und dann „Speicherplatz freigeben“.'], n: 'service' },
@@ -1814,11 +1829,11 @@ const FAQ = [
   ['Brauche ich eine Virenschutz-App?', 'Für die meisten nicht. Google Play Protect prüft Apps automatisch, Samsung Knox schützt das System, und unter Einstellungen › Gerätewartung gibt es einen eingebauten Gerätescan. Der beste Schutz: Apps nur aus dem Play Store oder Galaxy Store installieren und keine Links in unbekannten SMS öffnen.'],
   ['Wie lösche ich Fotos, ohne dass sie auch aus der Cloud verschwinden?', 'Bei Google Fotos mit aktiver Sicherung löscht „Löschen“ überall. Nutzen Sie stattdessen in Google Fotos „Vom Gerät löschen“ bzw. „Speicherplatz freigeben“. Dann bleiben sie in der Cloud.'],
   ['Kann ich mit dem S24 FE schwimmen gehen?', 'Bitte nicht. IP68 schützt bei Unfällen (in die Spüle gefallen, Regen). Chlor- und Salzwasser, Wellen und Duschstrahl können die Dichtungen beschädigen, und Wasserschäden sind nicht durch die Garantie gedeckt.'],
-  ['Warum steht da „Bixby“, wenn ich die Seitentaste lange drücke?', 'Das ist der Samsung-Sprachassistent. Unter Einstellungen › Erweiterte Funktionen › Seitentaste stellen Sie „Gedrückt halten“ auf „Ausschaltmenü“ um.'],
+  ['Warum startet Gemini oder Bixby, wenn ich die Seitentaste lange drücke?', 'Seit One UI 7 öffnet langes Drücken ab Werk den Assistenten Google Gemini (früher Samsungs Bixby). Unter Einstellungen › Erweiterte Funktionen › Seitentaste › Gedrückt halten stellen Sie auf „Ausschaltmenü“ um.'],
   ['Wie übertrage ich Fotos auf meinen Computer?', 'USB-C-Kabel anschließen, auf dem Telefon die Benachrichtigung „USB-Optionen“ antippen und „Dateien übertragen“ wählen. Am Windows-PC erscheint das Telefon im Explorer. Am Mac nutzen Sie die kostenlose App „Smart Switch für Mac“, oder Sie laden die Fotos über Google Fotos im Browser herunter.'],
   ['Mein Bildschirm dreht sich nicht mehr.', 'Schnelleinstellungen öffnen und die Kachel „Auto-Drehen“ einschalten. Steht dort „Hochformat“, ist das Drehen gesperrt.'],
   ['Was ist der Unterschied zwischen Ausschalten und Bildschirm aus?', 'Ein kurzer Druck auf die Seitentaste schaltet nur den Bildschirm aus, das Telefon bleibt erreichbar. Ausschalten (über das Ausschaltmenü) beendet alles: Dann klingelt es nicht mehr.'],
-  ['Wie lange bekommt mein Telefon Updates?', 'Samsung verspricht sieben Jahre Android-Versions- und Sicherheitsupdates ab Marktstart (Oktober 2024), also etwa bis 2031.'],
+  ['Wie lange bekommt mein Telefon Updates?', 'Samsung verspricht sieben Jahre Android-Versions- und Sicherheitsupdates. Gerechnet ab Marktstart (Oktober 2024) also voraussichtlich bis etwa 2031.'],
   ['Wie blockiere ich lästige Anrufer?', 'In der Telefon-App unter „Letzte“ die Nummer antippen › ⓘ › „Blockieren“. Unter Telefon › Einstellungen › „Anrufer-ID und Spam-Schutz“ werden bekannte Spam-Nummern automatisch markiert.']
 ];
 
@@ -1827,7 +1842,8 @@ const GLOSS = {
   amoled: ['AMOLED', 'Bildschirmtechnik, bei der jeder Bildpunkt selbst leuchtet. Schwarze Flächen sind komplett aus, daher sattes Schwarz und Stromersparnis im Dunkelmodus.'],
   aod: ['Always On Display (AOD)', 'Zeigt Uhrzeit, Datum und Benachrichtigungssymbole bei „ausgeschaltetem“ Bildschirm. Verbraucht nur wenig Strom, weil nur wenige Pixel leuchten.'],
   binning: ['Pixel-Binning', 'Mehrere kleine Bildpunkte des Kamerasensors werden zu einem großen zusammengefasst. Ergebnis: weniger Megapixel, aber mehr Licht pro Punkt und weniger Bildrauschen.'],
-  bixby: ['Bixby', 'Der Sprachassistent von Samsung. Steuert Telefonfunktionen per Sprache („Hi Bixby, stelle einen Wecker auf 7 Uhr“).'],
+  bixby: ['Bixby', 'Der Sprachassistent von Samsung. Steuert Telefonfunktionen per Sprache („Hi Bixby, stelle einen Wecker auf 7 Uhr“). Seit One UI 7 ist auf der Seitentaste ab Werk Google Gemini hinterlegt; Bixby lässt sich wieder auswählen.'],
+  gemini: ['Gemini', 'Der KI-Assistent von Google. Beantwortet Fragen, schreibt Texte und steuert Apps per Sprache. Startet beim S24 FE seit One UI 7 durch langes Drücken der Seitentaste.'],
   cloud: ['Cloud', 'Speicher im Internet auf Servern eines Anbieters (Google, Samsung, Microsoft). Ihre Daten liegen dort zusätzlich und sind bei Verlust des Telefons nicht weg.'],
   dex: ['Samsung DeX', 'Desktop-Modus: Das Telefon zeigt am Monitor oder Fernseher eine Computer-Oberfläche mit Fenstern.'],
   drittel: ['Drittel-Regel', 'Gestaltungsregel der Fotografie: Das Bild gedanklich in neun Felder teilen und das Motiv auf eine Linie oder einen Schnittpunkt setzen. Wirkt spannender als mittig.'],

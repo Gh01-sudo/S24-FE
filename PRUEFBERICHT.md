@@ -1,0 +1,43 @@
+# Prüfbericht: Faktencheck des S24-FE-Handbuchs
+
+Stand: 14. November 2026. Geprüft wurden technische Daten, Hardware-Angaben, Menüpfade und Aussagen zu Galaxy AI. Quellen: Hersteller- und Netzbetreiber-Seiten, Testberichte, Händlerangaben.
+
+## Korrigiert
+
+| Thema | Vorher (falsch oder veraltet) | Jetzt | Quelle |
+|---|---|---|---|
+| **Lage des SIM-Fachs** | Unterseite links | **Linke Seite, oben** (neue Ansicht „Links“ im Geräte-Modell, Schritte 2 und 3 neu gezeichnet) | [AT&T: S24 FE SIM einlegen](https://www.att.com/device-support/article-modal/wireless/000106174/Samsung/SamsungSMS721U), [AT&T](https://www.att.com/device-support/article/139395/samsung/galaxy-s24-fe/) |
+| **SIM-Ausstattung** | 1 Nano-SIM + eSIM | EU-Modell SM-S721B/DS: **2 × Nano-SIM + eSIM** | [GSMArena](https://m.gsmarena.com/galaxy_s24_fe_support_pagegoes_up_onsamsung_france_launch_should_be_close-news-64019.php), [Galaxus](https://www.galaxus.at/en/s1/product/samsung-galaxy-s24-fe-128-gb-yellow-670-sim-esim-5g-smartphones-49056247) |
+| **SIM-Ausrichtung** | „Goldkontakte nach unten“ | Neutrale Anleitung über die abgeschrägte Ecke, weil sich die Quellen widersprechen | [Verizon](https://www.verizon.com/support/knowledge-base-309140/), [manuals.plus](https://manuals.plus/m/992474b78d0976ff138cbbb96fd1d68c3dae0cf8c5f2efe636c0277ed4da888b) |
+| **Seitentaste lang drücken** | Bixby | Seit One UI 7 ab Werk **Google Gemini**, umstellbar auf Bixby oder Ausschaltmenü | [Samsung Support](https://www.samsung.com/ae/support/mobile-devices/why-does-gemini-work-instead-of-bixby-when-pressing-and-holding-the-side-button-in-one-ui-7/) |
+| **Akkuschutz** | „Adaptiv“ als Empfehlung, „Maximal“ = 80 % | „Maximal“ seit One UI 7 zwischen **80 und 95 %** einstellbar. „Adaptiv“ gibt es nur in One UI 7, in One UI 8 ist es in „Standard“ aufgegangen. Quiz-Frage angepasst. | [Samsung DE: Tipps zum Akkuschutz](https://www.samsung.com/de/support/galaxy-battery/tipps-zum-akkuschutz/), [Android Authority](https://www.androidauthority.com/one-ui-7-battery-limit-3507063/), [SamMobile/Sammyfans](https://www.sammyfans.com/2025/06/21/samsung-has-a-new-battery-protection-feature-overhaul/amp/) |
+| **Galaxy AI Kosten** | „kostenlos bis Ende 2025, danach offen“ | Grundfunktionen laut Samsung **dauerhaft kostenlos**; künftige erweiterte Funktionen können kostenpflichtig werden | [Android Authority](https://www.androidauthority.com/samsung-galaxy-ai-features-free-3632510/), [Tech Advisor](https://www.techadvisor.com/article/3279846/exclusive-samsung-galaxy-ai-subscription-official-response.html) |
+| **Wireless PowerShare** | „etwa 4,5 W“ | Wattzahl entfernt (nicht belegbar); ergänzt: funktioniert erst ab 30 % Akku, mit Qi-Handys und vielen Galaxy-Wearables | [Samsung Mobile Press: Spezifikationen](https://www.samsungmobilepress.com/media-assets/galaxy-s24-fe?tab=specs) |
+| **Live Translate** | „In der Telefon-App über Anrufassistent“ | Einstellungen › Galaxy AI › Anrufassistent › Live Translate; Sprachpakete unter Allgemeine Verwaltung › Sprachpakete | [Samsung Newsroom](https://news.samsung.com/us/how-to-use-the-latest-galaxy-ai-features-on-one-ui-8), [Samsung Support](https://www.samsung.com/ae/support/mobile-devices/galaxy-ai-languages-usage-guide/) |
+| **Ultraweitwinkel 123°** | „123°“ | Entfernt (nicht verifizierbar); ergänzt: Blendenwerte f/2.2 bzw. f/2.4 (Tele) | [Amateur Photographer](https://amateurphotographer.com/review/samsung-galaxy-s24-fe-review/) |
+| **Notruf-SOS** | klang wie ab Werk aktiv | Hinweis: muss vorher eingeschaltet werden | – |
+
+## Bestätigt
+
+| Angabe | Quelle |
+|---|---|
+| Exynos 2400e (10 Kerne), 8 GB RAM | [GSMArena Test](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755.php) |
+| 4.700 mAh, 25 W Kabel (ca. 50 % in 30 Min.), 15 W kabellos, Reverse Wireless | [GSMArena](https://m.gsmarena.com/samsung_galaxy_s24_fe-13262.php), [GSMArena Ladedaten](https://m.gsmarena.com/newscomm-64376p3.php) |
+| 162,0 × 77,3 × 8,0 mm, 213 g | [Vodafone UK](https://deviceguides.vodafone.co.uk/samsung/galaxy-s24-fe-android-14/specifications/) |
+| Gorilla Glass Victus+, IP68 (1,5 m, 30 Min.) | [GSMArena](https://m.gsmarena.com/samsung_galaxy_s24_fe-13262.php), [FoneArena](https://www.fonearena.com/blog/436423/samsung-galaxy-s24-fe-price-specifications.html) |
+| 6,7″ Dynamic AMOLED 2X, 120 Hz, 1.900 Nits Spitze | [91mobiles](https://www.91mobiles.com/samsung-galaxy-s24-fe-price-in-india?ty=specs) |
+| Kameras 50 MP (f/1.8, OIS) / 12 MP / 8 MP 3×, Front 10 MP 4K | [PhoneArena](https://www.phonearena.com/reviews/galaxy-s24-fe-review_id6669), [Amateur Photographer](https://amateurphotographer.com/review/samsung-galaxy-s24-fe-review/) |
+| Video 8K@30, 4K@60 | [GSMArena Test](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755.php) |
+| Wi-Fi 6E, Bluetooth 5.3, USB-C 3.2 | [GSMArena](https://m.gsmarena.com/samsung_galaxy_s24_fe-13262.php) |
+| 7 Jahre Updates | [FoneArena](https://www.fonearena.com/blog/436423/samsung-galaxy-s24-fe-price-specifications.html) |
+| Lieferumfang: Telefon, USB-C-Kabel, SIM-Werkzeug, kein Netzteil | [GSMArena Unboxing](https://m.gsmarena.com/newscomm-64797.php), [TechARP](https://www.techarp.com/mobile/samsung-galaxy-s24-fe-review/?amp=1) |
+| Samsung DeX (Kabel/HDMI und kabellos) | [Cybershack](https://cybershack.com.au/reviews/samsung-galaxy-s24-fe-the-value-s24-smartphone-review), [Tom's Guide](https://www.tomsguide.com/phones/samsung-phones/the-most-underrated-phone-i-tested-in-2024-is-not-an-expensive-flagship) |
+| Getrennte Benachrichtigungen/Schnelleinstellungen als Standard in One UI 7 | [9to5Google](https://9to5google.com/2025/05/05/samsung-changed-quick-settings-in-one-ui-7/), [Samsung Support](https://ushl.samsung.com/hk_en/support/mobile-devices/how-to-open-notifications-or-quick-settings-panel-on-galaxy-s25) |
+| Wartungsmodus unter Einstellungen › Gerätewartung | [Samsung Support](https://www.samsung.com/us/support/answer/ANS00091542/) |
+| Modellnummer SM-S721B (Europa) | [GSMArena](https://m.gsmarena.com/galaxy_s24_fe_support_pagegoes_up_onsamsung_france_launch_should_be_close-news-64019.php) |
+
+## Bleibt zu beachten
+
+- **SIM-Fach:** Die Lage „links oben“ stammt aus US-Netzbetreiber-Anleitungen (SM-S721U). Für das EU-Modell ist sie sehr wahrscheinlich gleich, aber nicht aus einer Samsung-EU-Quelle belegt. Einmal am echten Gerät prüfen.
+- **Menünamen** können sich mit One UI 8.5 und späteren Updates erneut ändern. Das Handbuch verweist dafür auf die Suche in den Einstellungen.
+- **Galaxy AI:** Samsung testet laut Berichten ein Premium-Abo. Sobald es offiziell ist, sollte der Kostenhinweis aktualisiert werden.
