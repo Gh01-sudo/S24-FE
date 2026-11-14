@@ -874,6 +874,39 @@ footer.foot { border-top-color: var(--line); }
 @media (max-width: 760px) { .hero-art svg { max-width: 140px; } .hero { gap: 14px; } .hero .eyebrow { font-size: .66rem; } }
 @media (max-width: 640px) { .chapter-head { align-items: start; } }
 
+/* ---- Tipps, Mythen, Hintergrund ---- */
+.tips-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; justify-content: space-between; }
+.tips-top .combo-picks { margin: 0; flex: 1; min-width: 0; }
+.tip-card { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); margin: 8px 0; box-shadow: var(--shadow-sm); transition: box-shadow .2s, background .3s; }
+.tip-card.done { background: var(--good-soft); border-color: transparent; }
+.tip-card summary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer; list-style: none; }
+.tip-card summary::-webkit-details-marker { display: none; }
+.tip-card summary b { flex: 1; min-width: 180px; }
+.tip-card.flash-card { box-shadow: 0 0 0 4px var(--warn); }
+.tip-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center; margin-top: 12px; font-size: .84rem; color: var(--muted); }
+.tip-try { display: inline-flex; gap: 8px; align-items: center; font-weight: 600; color: var(--fg); cursor: pointer; }
+.tip-try input { width: 20px; height: 20px; accent-color: var(--accent); }
+.myth-score { display: inline-flex; align-items: baseline; gap: 8px; padding: 10px 16px; border-radius: 14px; background: var(--accent-soft); margin-bottom: 12px; }
+.myth-score b { font-family: var(--font-display); font-size: 1.4rem; color: var(--accent-strong); font-variant-numeric: tabular-nums; }
+.myth-score span { font-size: .85rem; color: var(--muted); }
+.myth-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.myth { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px; }
+.myth.ok { border-color: var(--good); background: var(--good-soft); }
+.myth.bad { border-color: var(--danger); background: var(--danger-soft); }
+.myth-q { margin: 0; font-weight: 600; font-family: var(--font-display); }
+.myth-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.myth-btns .btn { flex: 1; justify-content: center; min-width: 110px; }
+.myth-a { font-size: .9rem; }
+.bg-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.bg-card { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow-sm); }
+.bg-card summary { display: flex; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; list-style: none; }
+.bg-card summary::-webkit-details-marker { display: none; }
+.bg-card .ch-ico { width: 38px; height: 38px; border-radius: 11px; flex: none; }
+.bg-card .ch-ico svg { width: 19px; height: 19px; }
+.bg-card[open] { box-shadow: var(--shadow); }
+.tips-top .combo-picks { flex: 1 1 100%; }
+.tips-top #tip-random { order: -1; }
+
 </style>
 </head>
 <body>
@@ -1900,6 +1933,35 @@ footer.foot { border-top-color: var(--line); }
   <div class="quiz mini" data-mini-quiz="alltag"></div>
 </section>
 
+<!-- ===================== WISSEN & TIPPS ===================== -->
+<section class="chapter" id="profi" data-ch="1" data-title="Hintergrundwissen, Tipps & Tricks" data-time="35" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Hintergrundwissen, Tipps &amp; Tricks</h2><p>Geprüfte Kniffe mit Quellenangabe, verständliches Technikwissen und ein Mythen-Check zum Mitraten.</p></div></div>
+
+  <h3 id="tipps">Geprüfte Tipps &amp; Tricks</h3>
+  <p>Jeder Tipp wurde gegen Samsung-Support-Seiten oder Fachpresse geprüft; die Quelle steht unter dem Tipp. Menübezeichnungen können je nach One-UI-Version leicht abweichen. Haken Sie ab, was Sie ausprobiert haben.</p>
+  <div class="card" id="tips-list"></div>
+
+  <h3 id="mythen">Mythen-Check: Stimmt das?</h3>
+  <p>Über Smartphones kursieren viele Halbwahrheiten. Schätzen Sie ein, ob die Aussage stimmt, und lesen Sie die Begründung.</p>
+  <div id="myth-check"></div>
+
+  <h3 id="hintergrund-wissen">Hintergrundwissen: So funktioniert Ihr Telefon</h3>
+  <p>Wer versteht, wie etwas funktioniert, bedient es sicherer. Tippen Sie auf ein Thema.</p>
+  <div id="background-cards" class="bg-cards"></div>
+
+  <h3 id="profi-gewohnheiten">Fünf Gewohnheiten, die sich auszahlen</h3>
+  <ol class="steps">
+    <li><b>Updates zeitnah installieren</b>, am besten abends am Ladekabel.</li>
+    <li><b>Einmal im Monat</b> prüfen, ob die Fotos gesichert sind (Google Fotos oder Galerie-Synchronisierung).</li>
+    <li><b>10–15 % Speicher frei</b> halten; WhatsApp-Medien und Duplikate regelmäßig aufräumen.</li>
+    <li><b>Hitze vermeiden:</b> nicht in der Sonne oder unter dem Kopfkissen laden, im Sommer nicht im Auto liegen lassen.</li>
+    <li><b>Nie Codes weitergeben</b>, die per SMS kommen, egal wer anruft oder schreibt.</li>
+  </ol>
+
+  <h3 id="quiz-profi">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="wissen2"></div>
+</section>
+
 <!-- ===================== 11 HILFE ===================== -->
 <section class="chapter" id="hilfe" data-ch="11" data-title="Problemlösung" data-time="10" data-lvl="3">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Problemlösung</h2><p>Der Hilfe-Assistent führt Sie Schritt für Schritt zur Lösung.</p></div></div>
@@ -2783,11 +2845,12 @@ const SIM_TREE = {
   lock: { title: 'Sperrbildschirm und AOD', rows: [{ t: 'info', l: 'Displaysperre', s: 'PIN' }, { t: 'toggle', id: 'aod', l: 'Always On Display', s: 'Uhrzeit bei aus. Bildschirm' }] },
   sec: { title: 'Sicherheit und Datenschutz', rows: [
     { t: 'link', l: 'Biometrische Daten', s: 'Gesicht, Fingerabdrücke', to: 'bio' },
-    { t: 'link', l: 'Verlorene Geräte finden', to: 'find' },
+    { t: 'link', l: 'Schutz bei Geräteverlust', s: 'Gerät finden · Diebstahlschutz', to: 'lost' },
     { t: 'info', l: 'Berechtigungsmanager', s: 'Wer darf Kamera, Standort, …' },
     { t: 'link', l: 'Weitere Sicherheitseinstellungen', to: 'moresec' }
   ] },
   bio: { title: 'Biometrische Daten', rows: [{ t: 'info', l: 'Gesichtserkennung', s: 'Nicht registriert' }, { t: 'action', id: 'finger', l: 'Fingerabdrücke', s: 'Tippen zum Registrieren' }] },
+  lost: { title: 'Schutz bei Geräteverlust', rows: [{ t: 'link', l: 'Verlorene Geräte finden', to: 'find' }, { t: 'info', l: 'Diebstahlschutz', s: 'Diebstahlerkennung, Identitätsprüfung' }] },
   find: { title: 'Verlorene Geräte finden', rows: [{ t: 'toggle', id: 'findmy', l: 'Verlorene Geräte finden' }, { t: 'toggle', id: 'offline', l: 'Offline-Suche' }, { t: 'toggle', id: 'lastloc', l: 'Letzten Standort senden' }] },
   moresec: { title: 'Weitere Sicherheitseinstellungen', rows: [{ t: 'info', l: 'Sicherer Ordner', s: 'Privater, verschlüsselter Bereich' }, { t: 'info', l: 'Geräteadministratoren' }] },
   sos: { title: 'Sicherheit und Notfall', rows: [
@@ -2819,7 +2882,7 @@ const SIM_TASKS = [
   { q: 'Schonen Sie den Akku: Akkuschutz auf „Maximal“.', key: 'protect', val: 'max', path: ['Akku', 'Akkuschutz', 'Maximal'], why: 'Mit einer Ladegrenze (z. B. 80 %) altert der Akku deutlich langsamer.' },
   { q: 'Langes Drücken der Seitentaste soll das Ausschaltmenü öffnen.', key: 'sidehold', val: 'power', path: ['Erweiterte Funktionen', 'Seitentaste', 'Ausschaltmenü'], why: 'Dann schalten Sie das Telefon wie gewohnt per langem Tastendruck aus, statt den Assistenten zu starten.' },
   { q: 'Schalten Sie Notruf-SOS ein.', key: 'sosOn', val: true, path: ['Sicherheit und Notfall', 'Notruf-SOS', 'Schalter „Notruf-SOS“'], why: 'Im Notfall reicht dann 5-maliges Drücken der Seitentaste, um die 112 zu rufen.' },
-  { q: 'Aktivieren Sie „Verlorene Geräte finden“.', key: 'findmy', val: true, path: ['Sicherheit und Datenschutz', 'Verlorene Geräte finden', 'Schalter'], why: 'Nur wenn das vorher an ist, können Sie ein verlorenes Telefon orten, klingeln lassen oder sperren.' },
+  { q: 'Aktivieren Sie „Verlorene Geräte finden“.', key: 'findmy', val: true, path: ['Sicherheit und Datenschutz', 'Schutz bei Geräteverlust', 'Verlorene Geräte finden', 'Schalter'], why: 'Nur wenn das vorher an ist, können Sie ein verlorenes Telefon orten, klingeln lassen oder sperren.' },
   { q: 'Schalten Sie das Telefon auf lautlos.', key: 'soundmode', val: 'mute', path: ['Töne und Vibration', 'Lautlos'], why: 'Schneller geht es über die Schnelleinstellungen (Kachel „Ton“) oder den Lautstärkeregler.' },
   { q: 'Sparen Sie Akku: Bewegungsglättung auf „Standard“.', key: 'motion', val: 'standard', path: ['Anzeige', 'Bewegungsglättung', 'Standard'], why: 'Standard = 60 Bilder pro Sekunde. Das Scrollen wirkt etwas weniger flüssig, verbraucht aber weniger Strom.' },
   { q: 'Schalten Sie den mobilen Hotspot ein, damit Ihr Laptop ins Internet kommt.', key: 'hotspot', val: true, path: ['Verbindungen', 'Mobile Hotspot und Tethering', 'Mobile Hotspot'], why: 'Der Laptop verbindet sich dann mit dem WLAN-Namen, der unter „Mobile Hotspot“ angezeigt wird. Die Daten gehen von Ihrem Tarif ab.' },
@@ -3233,6 +3296,66 @@ MINI_QUIZ.alltag = [
 GLOSS.gewaehrleistung = ['Gewährleistung', 'Gesetzlicher Anspruch gegenüber dem Händler: 2 Jahre bei Mängeln, die beim Kauf schon vorhanden waren. Nicht zu verwechseln mit der freiwilligen Herstellergarantie.'];
 GLOSS.familylink = ['Family Link', 'Kostenlose Google-App, mit der Eltern Bildschirmzeit, App-Downloads und Standort auf dem Telefon ihres Kindes verwalten.'];
 
+/* ================= Geprüfte Tipps & Tricks ================= */
+/* cat, t, how, why, src: [label, url] */
+const TIPS = [
+  { cat: 'Bedienung', t: 'Einhandmodus: den ganzen Bildschirm nach unten holen', how: 'Einschalten unter <b>Einstellungen › Erweiterte Funktionen › Einhändiger Modus</b>. Dann bei Wischgesten vom unteren Rand <b>in der Mitte nach unten</b> wischen; bei Navigationstasten die Home-Taste zweimal antippen (je nach Einstellung). Beenden: auf die freie Fläche außerhalb tippen.', why: 'Beim 6,7-Zoll-Display erreicht der Daumen die obere Hälfte kaum. Der Einhandmodus verkleinert die Ansicht in eine Ecke.', src: ['Samsung Support', 'https://www.samsung.com/ch/support/mobile-devices/how-to-use-one-handed-mode-and-one-hand-operation-plus/'] },
+  { cat: 'Bedienung', t: 'Screenshot mit der Handkante', how: '<b>Einstellungen › Erweiterte Funktionen › Bewegungen und Gesten</b> › Handkanten-Screenshot einschalten. Dann mit der Handkante zügig von einer Seite zur anderen über den Bildschirm wischen.', why: 'Geht ohne Tastenkombination, praktisch beim Halten mit einer Hand.', src: ['Samsung Support', 'https://ushl.samsung.com/at/support/mobile-devices/wie-erstelle-ich-ein-screenshot'] },
+  { cat: 'Bedienung', t: 'Lange Seiten komplett aufnehmen (Scroll-Screenshot)', how: 'Screenshot machen. In der Leiste, die kurz unten erscheint, auf das Symbol mit dem <b>Pfeil nach unten</b> tippen, so oft, bis alles erfasst ist.', why: 'Ein ganzer Chatverlauf oder eine Webseite landet in einem einzigen Bild.', src: ['Samsung Support', 'https://ushl.samsung.com/at/support/mobile-devices/wie-erstelle-ich-ein-screenshot'] },
+  { cat: 'Bedienung', t: 'Versehentlich weggewischte Benachrichtigungen wiederfinden', how: '<b>Einstellungen › Benachrichtigungen › Erweiterte Einstellungen › Benachrichtigungsverlauf</b> einschalten. Ab dann sind alle Benachrichtigungen der letzten 24 Stunden dort abrufbar.', why: 'Wer eine wichtige Nachricht aus Versehen wegwischt, findet sie hier wieder.', src: ['Samsung Support', 'https://www.samsung.com/de/support/mobile-devices/galaxy-smartphone-benachrichtigungen-verwalten'] },
+  { cat: 'Bedienung', t: 'Bildschirm per Anheben oder Doppeltippen einschalten', how: '<b>Erweiterte Funktionen › Bewegungen und Gesten</b>: „Zum Aktivieren anheben“ und „Zum Einschalten des Bildschirms doppeltippen“ (bzw. „…ausschalten“) einschalten.', why: 'Sie müssen nicht nach der Seitentaste tasten; das Telefon ist bereit, sobald Sie es in die Hand nehmen.', src: ['Samsung Support (US)', 'https://www.samsung.com/us/support/answer/ANS10003415'] },
+  { cat: 'Bedienung', t: 'Seitentaste doppelt drücken: eigene App starten', how: '<b>Einstellungen › Erweiterte Funktionen › Seitentaste › Zweimal drücken</b> › „App öffnen“ und z. B. Taschenlampe-App, Notizen oder Rechner wählen. Standard ist die Kamera.', why: 'Ihre wichtigste App ist dann aus jeder Situation mit zwei Klicks erreichbar.', src: ['Samsung Support', 'https://www.samsung.com/de/support/mobile-devices/so-passt-du-die-funktionstaste-mit-neuen-funktionen-auf-deinem-galaxy-telefon-und-tablet-an'] },
+  { cat: 'Bedienung', t: 'Einstellungen in Alltagssprache suchen', how: 'In der Einstellungen-App oben auf die <b>Lupe</b> tippen und schreiben, was Sie wollen, z. B. „Klingelton ändern“ oder „Schrift größer“.', why: 'Sie müssen nicht wissen, in welchem Menü eine Option steckt.', src: ['Android Police', 'https://www.androidpolice.com/hidden-one-ui-7-features-you-probably-missed/'] },
+  { cat: 'Bedienung', t: 'Mehr Optionen hinter Helligkeits- und Lautstärke-Regler', how: 'In den Schnelleinstellungen den <b>Helligkeitsregler gedrückt halten</b>: Es öffnet sich das erweiterte Menü mit adaptiver Helligkeit. Den Audio-Regler gedrückt halten öffnet Klangeinstellungen.', why: 'Spart den Umweg über die Einstellungen-App.', src: ['Sammy Fans', 'https://www.sammyfans.com/2025/07/20/samsung-one-ui-7-quick-panel-has-two-hidden-features/'] },
+  { cat: 'Kamera & Galerie', t: 'Objekt aus einem Foto ausschneiden', how: 'In der Galerie ein Foto öffnen und das Motiv (Person, Tier, Gegenstand) etwa <b>eine Sekunde gedrückt halten</b>. Es wird freigestellt; dann <b>Kopieren</b>, <b>Teilen</b> oder <b>Als Bild speichern</b> (PNG mit transparentem Hintergrund).', why: 'Ideal für eigene Sticker in WhatsApp oder für Collagen, ganz ohne Bildbearbeitungs-App.', src: ['nextpit', 'https://www.nextpit.com/how-tos/how-to-use-image-clipper-samsung-galaxy-device'] },
+  { cat: 'Kamera & Galerie', t: 'Text aus Fotos und Screenshots kopieren', how: 'Foto in der Galerie öffnen. Erscheint unten rechts das <b>„T“-Symbol</b>, antippen: Der erkannte Text wird markierbar. Dann kopieren, teilen oder übersetzen.', why: 'Telefonnummer vom Plakat, IBAN von der Rechnung oder WLAN-Passwort vom Router abfotografieren, statt abzutippen.', src: ['Samsung Support', 'https://ushl.samsung.com/de/support/mobile-devices/text-auf-bild-erkennen-und-kopieren'] },
+  { cat: 'Kamera & Galerie', t: 'Kamera per Sprachbefehl auslösen', how: 'Kamera › Zahnrad › <b>Aufnahmemethoden</b> › Sprachbefehle einschalten. Dann ein Schlüsselwort wie „Cheese“ sagen; für Videos den angezeigten Befehl (auf Englisch „Record video“). Welche Wörter gelten, zeigt die App beim Einschalten in Ihrer Sprache.', why: 'Kein Verwackeln beim Auslösen, ideal mit Stativ oder für Gruppenfotos aus der Entfernung.', src: ['Samsung NL', 'https://www.samsung.com/nl/samsung-and-you/foto-maken-met-stembediening'] },
+  { cat: 'Kamera & Galerie', t: 'Lautstärketaste als Auslöser', how: 'Kamera › Zahnrad › Aufnahmemethoden › <b>Lautstärketasten drücken zum</b> › „Foto aufnehmen oder Video aufnehmen“.', why: 'Ein fester Tastendruck verwackelt weniger als ein Tippen auf das Glas.', src: ['Samsung Support (US)', 'https://www.samsung.com/us/support/answer/ANS10001353'] },
+  { cat: 'Verbindungen', t: 'WLAN-Zugang per QR-Code weitergeben', how: '<b>Einstellungen › Verbindungen › WLAN</b> › Zahnrad neben dem verbundenen Netz › <b>QR-Code</b>. Der Gast scannt den Code mit seiner Kamera. Der Code lässt sich auch als Bild speichern.', why: 'Kein Buchstabieren langer Router-Passwörter mehr.', src: ['TechBone', 'https://www.techbone.de/samsung/qr-code-vom-wlan-erstellen'] },
+  { cat: 'Verbindungen', t: 'Zwei Konten derselben App (Dual Messenger)', how: '<b>Einstellungen › Erweiterte Funktionen › Dual Messenger</b> und die App (z. B. WhatsApp) einschalten. Es entsteht ein zweites App-Symbol mit kleinem Zusatzzeichen, in dem Sie eine zweite Nummer einrichten.', why: 'Privat und beruflich getrennt mit der eSIM als zweiter Nummer.', src: ['Samsung-Bedienungsanleitung (Inhaltsverzeichnis „Dual Messenger“)', 'https://manuals.coolblue.de/e0/samsung-galaxy-a52s-128gb-lila-5g.pdf'] },
+  { cat: 'Akku & Display', t: 'Ladegrenze statt Vollladen', how: '<b>Einstellungen › Akku › Akkuschutz › Maximal</b> und die Grenze zwischen 80 und 95 % wählen (ab One UI 7).', why: 'Volle Akkus bei hoher Spannung altern schneller. Mit 80–85 % halten die Zellen deutlich länger.', src: ['Android Authority', 'https://www.androidauthority.com/one-ui-7-battery-limit-3507063/'] },
+  { cat: 'Akku & Display', t: 'Einbrennen des Displays vermeiden', how: 'Dunkelmodus nutzen, Helligkeit auf „adaptiv“ lassen, Wischgesten statt fester Navigationsleiste, keine stundenlangen Standbilder (z. B. Navigation mit voller Helligkeit am Ladekabel im Sommerauto).', why: 'OLED-Pixel altern ungleichmäßig, wenn dauerhaft dasselbe Bild leuchtet. Samsung verschiebt kleine Elemente minimal (Pixel-Shift), ganz verhindern lässt es sich nicht, und Einbrennen gilt als Verschleiß, nicht als Garantiefall.', src: ['nextpit', 'https://www.nextpit.de/ratgeber/wie-einbrennen-des-display-auf-ios-android-handys-verhindern-anleitung'] },
+  { cat: 'Akku & Display', t: 'Mit Displayschutzfolie: Touch-Empfindlichkeit erhöhen', how: '<b>Einstellungen › Anzeige › Touch-Empfindlichkeit</b> einschalten (oder über die Suche: „Touch“).', why: 'Dickere Schutzgläser schwächen das elektrische Feld, das der Touchscreen misst. Die höhere Empfindlichkeit gleicht das aus.', src: ['Samsung Support', 'https://www.samsung.com/ca/support/mobile-devices/activate-touch-sensitivity-on-your-samsung-galaxy/'] },
+  { cat: 'Sicherheit', t: 'Diebstahlschutz und Identitätsprüfung', how: '<b>Sicherheit und Datenschutz › Schutz bei Geräteverlust › Diebstahlschutz</b>: Diebstahlerkennungssperre, Offline-Gerätesperre, Identitätsprüfung einschalten und „sichere Orte“ (Zuhause) festlegen.', why: 'Selbst wer Ihre PIN beim Eintippen ausspioniert hat, kann außerhalb Ihrer sicheren Orte „Gerät finden“ nicht abschalten.', src: ['Samsung Support', 'https://www.samsung.com/uk/support/mobile-devices/how-to-use-security-settings/'] },
+  { cat: 'Sicherheit', t: 'Notruf-SOS testen, ohne die 112 zu rufen', how: 'Unter <b>Sicherheit und Notfall › Notruf-SOS</b> den <b>Countdown</b> einschalten. Probieren Sie fünfmaliges Drücken aus und brechen Sie im Countdown ab.', why: 'So wissen Sie im Ernstfall, dass es funktioniert, und wie schnell Sie drücken müssen.', src: ['Samsung Support', 'https://ushl.samsung.com/de/support/mobile-devices/wie-funktioniert-die-notfall-sms'] },
+  { cat: 'Erweiterungen', t: 'Good Lock: offizielle Samsung-Erweiterungen', how: 'Kostenlos im <b>Galaxy Store</b> (inzwischen auch im Play Store). Module wie <b>One Hand Operation+</b> (Gesten am Bildschirmrand) oder <b>Sound Assistant</b> (Lautstärke je App) einzeln installieren. Das Angebot an Modulen schwankt je nach Region und Version.', why: 'Samsungs eigene Bastelkiste: tiefe Anpassungen, ohne das Gerät zu rooten oder die Sicherheit zu gefährden.', src: ['Samsung Support', 'https://ushl.samsung.com/de/support/apps-services/was-ist-samsung-good-lock'] }
+];
+
+/* ================= Mythen-Check ================= */
+const MYTHS = [
+  { q: 'Ein neuer Akku muss vor der ersten Nutzung 8 Stunden geladen werden.', a: false, e: 'Das galt für alte Nickel-Akkus. Lithium-Ionen-Akkus brauchen kein „Anlernen“; Sie können sofort loslegen.' },
+  { q: 'Beim AMOLED-Display spart der Dunkelmodus Strom.', a: true, e: 'Schwarze Pixel sind komplett aus. Je mehr dunkle Fläche, desto weniger Verbrauch.' },
+  { q: 'Mehr Megapixel bedeuten automatisch bessere Fotos.', a: false, e: 'Sensorgröße, Optik und Bildverarbeitung zählen mehr. Die 50-MP-Hauptkamera speichert standardmäßig sogar 12-MP-Bilder, weil die bei wenig Licht besser aussehen.' },
+  { q: 'Alle Apps im Hintergrund wegzuwischen spart viel Akku.', a: false, e: 'Android verwaltet Hintergrund-Apps selbst. Wer ständig wegwischt, zwingt Apps zum Neustart, und das kostet oft mehr Energie.' },
+  { q: 'Der Inkognito- bzw. Geheimmodus macht mich im Internet unsichtbar.', a: false, e: 'Er löscht nur Verlauf und Cookies auf dem Gerät. Webseiten, Arbeitgeber oder Internetanbieter sehen weiterhin, was aufgerufen wird.' },
+  { q: 'Mit IP68 kann ich mit dem Telefon im Pool schwimmen.', a: false, e: 'Geprüft wurde in ruhigem Süßwasser im Labor. Chlor, Salz, Wellen und Druck können die Dichtungen schädigen; Wasserschäden sind nicht von der Garantie gedeckt.' },
+  { q: 'Mein Fingerabdruck wird an Samsung übertragen.', a: false, e: 'Der Abdruck wird verschlüsselt im geschützten Bereich des Chips gespeichert und verlässt das Gerät nicht.' },
+  { q: 'Rooten macht ein Telefon sicherer.', a: false, e: 'Im Gegenteil: Es hebelt Schutzschichten aus und löst das Knox-Warranty-Bit unwiderruflich aus. Sicherer Ordner und Bezahl-Apps funktionieren danach nicht mehr.' },
+  { q: 'Über Nacht laden schadet dem Akku, egal wie.', a: false, e: 'Mit Akkuschutz (Standard oder Maximal) steuert das Telefon den Ladevorgang selbst. Schädlich sind vor allem Hitze und lange Zeit bei 100 %.' },
+  { q: 'Für den Notruf 112 muss eine SIM-Karte im Telefon stecken (Deutschland).', a: true, e: 'Seit 2009 ist in Deutschland ein Notruf ohne SIM nicht möglich. Die Karte muss aber weder entsperrt sein noch Guthaben haben.' },
+  { q: 'Android-Telefone brauchen unbedingt eine kostenpflichtige Antiviren-App.', a: false, e: 'Google Play Protect, Samsung Knox und Auto Blocker schützen bereits. Entscheidend ist, Apps nur aus offiziellen Stores zu laden und Updates zu installieren.' },
+  { q: 'Ein fast voller Speicher kann das Telefon spürbar langsamer machen.', a: true, e: 'Der Speicher braucht freien Platz zum Verwalten der Daten. Ab etwa 90 % Belegung wird es oft zäh. Halten Sie 10–15 % frei.' }
+];
+
+/* ================= Hintergrundwissen ================= */
+const BACKGROUND = [
+  { t: 'Wie funktioniert der Touchscreen?', icon: 'tap', d: 'Unter dem Glas liegt ein feines Gitter aus Leiterbahnen mit einem schwachen elektrischen Feld. Ihr Finger ist leitfähig und verändert dieses Feld an der Berührungsstelle; der Chip berechnet daraus die Position, viele Male pro Sekunde. Darum funktionieren normale Handschuhe nicht, Touchscreen-Handschuhe mit leitfähigen Fasern aber schon, und ein dickes Schutzglas kann die Empfindlichkeit verringern.' },
+  { t: 'Arbeitsspeicher (RAM) und Speicher: der Unterschied', icon: 'storage', d: '<b>RAM</b> (8 GB) ist der Schreibtisch: Hier liegt, woran gerade gearbeitet wird. Er wird beim Ausschalten geleert. Der <b>Speicher</b> (128/256 GB) ist der Aktenschrank: Fotos, Apps und Daten bleiben dauerhaft. Ist der Schreibtisch voll, räumt Android selten genutzte Apps weg; ist der Schrank voll, wird alles langsam.' },
+  { t: 'Warum Fotos besser sind, als die Kamera „eigentlich“ kann', icon: 'lens', d: 'Beim Auslösen nimmt das Telefon meist <b>mehrere Bilder</b> in Sekundenbruchteilen auf, unterschiedlich belichtet. Die Bildverarbeitung (bei Samsung „ProVisual Engine“) legt sie übereinander, reduziert Rauschen und gleicht helle und dunkle Stellen aus (HDR). Das nennt man <b>Computational Photography</b>. Deshalb sollten Sie nach dem Auslösen bei Nacht kurz stillhalten.' },
+  { t: 'Wie das Telefon seinen Standort kennt', icon: 'search', d: 'Satelliten (GPS, Galileo, GLONASS, BeiDou) senden Zeitsignale. Aus den Laufzeiten von mindestens vier Signalen berechnet das Telefon seine Position auf wenige Meter genau. Weil das draußen am besten klappt, helfen zusätzlich Mobilfunkmasten und bekannte WLAN-Netze (assistiertes GPS); so geht es schneller und funktioniert grob auch in Gebäuden.' },
+  { t: 'Was ein Akku „Ladezyklus“ ist', icon: 'battery', d: 'Ein Zyklus entspricht 100 % geladener Energie, egal ob am Stück oder in Etappen (zweimal 50 % = ein Zyklus). Lithium-Ionen-Akkus verlieren mit jedem Zyklus minimal Kapazität; nach einigen hundert vollen Zyklen ist das spürbar. Hitze und lange Zeit bei 100 % beschleunigen die Alterung, deshalb lohnen Akkuschutz und kühles Laden.' },
+  { t: 'Watt, Volt, Ampere beim Laden', icon: 'plug', d: 'Ladeleistung (Watt) = Spannung (Volt) × Stromstärke (Ampere). Beim 25-W-Schnellladen handeln Telefon und Netzteil per <b>USB PD/PPS</b> laufend die passende Spannung aus. Je genauer die Spannung zum Akku passt, desto weniger Wärme entsteht, und Wärme ist der eigentliche Feind des Akkus.' },
+  { t: 'Was macht die NPU im Prozessor?', icon: 'bulb', d: 'Die <b>NPU</b> (Neural Processing Unit) ist ein Spezialrechenwerk für künstliche Intelligenz. Sie berechnet Dinge wie Spracherkennung, Übersetzung oder Motiverkennung der Kamera viel stromsparender als der normale Prozessor. Darum funktionieren manche Galaxy-AI-Funktionen auch ohne Internet direkt auf dem Gerät.' },
+  { t: 'Android und One UI: wer macht was?', icon: 'app', d: '<b>Android</b> ist das Betriebssystem von Google, die Grundlage für fast alle Nicht-Apple-Smartphones. <b>One UI</b> ist Samsungs Oberfläche darauf: Aussehen, Einstellungen, Samsung-Apps und Zusatzfunktionen. Ein großes Update bringt meist beides: eine neue Android-Version (z. B. 16) und eine neue One-UI-Version (z. B. 8.5).' },
+  { t: 'Warum Sicherheitsupdates so wichtig sind', icon: 'shield', d: 'Google und Samsung veröffentlichen regelmäßig Listen mit geschlossenen Sicherheitslücken. Sobald eine Lücke öffentlich ist, wissen auch Angreifer davon. Wer das Update nicht installiert, bleibt angreifbar. Den Stand Ihres Telefons sehen Sie unter Telefoninfo › Softwareinformationen › Sicherheitspatch-Stand.' },
+  { t: 'Was passiert beim Zurücksetzen wirklich?', icon: 'reset', d: 'Alle Daten sind verschlüsselt gespeichert. Beim Zurücksetzen auf Werkseinstellungen wird der Schlüssel gelöscht. Ohne Schlüssel sind die verbliebenen Daten nur noch unlesbarer Zeichensalat. Darum dauert das Zurücksetzen nur wenige Minuten und ist trotzdem sicher, etwa vor einem Verkauf.' }
+];
+MINI_QUIZ.wissen2 = [
+  { q: 'Was ist der Unterschied zwischen RAM und Speicher?', o: ['Kein Unterschied', 'RAM = Arbeitsfläche (wird geleert), Speicher = dauerhafte Ablage', 'RAM ist nur für Fotos'], a: 1, e: 'RAM ist der Schreibtisch, der Speicher der Aktenschrank.' },
+  { q: 'Wie holen Sie den ganzen Bildschirm in Daumenreichweite?', o: ['Einhandmodus', 'Dunkelmodus', 'Bildschirmzoom'], a: 0, e: 'Einstellungen › Erweiterte Funktionen › Einhändiger Modus.' },
+  { q: 'Wie kopieren Sie eine Telefonnummer von einem Foto?', o: ['Abtippen', 'In der Galerie auf das „T“-Symbol tippen', 'Gar nicht möglich'], a: 1, e: 'Die Texterkennung macht Text in Bildern markierbar.' }
+];
+
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -3321,7 +3444,7 @@ GLOSS.familylink = ['Family Link', 'Kostenlose Google-App, mit der Eltern Bildsc
     sicherheit: ['shield', 'Sicherheit'], knox: ['lock', 'Sicherheit'], schutzplan: ['check', 'Sicherheit'],
     kamera: ['lens', 'Kamera & KI'], ai: ['search', 'Kamera & KI'],
     akku: ['battery', 'Alltag'], anpassen: ['contrast', 'Alltag'], verbindungen: ['wifi', 'Alltag'], apps: ['app', 'Alltag'],
-    alltag: ['grid', 'Alltag'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
+    alltag: ['grid', 'Alltag'], profi: ['bulb', 'Profi-Wissen'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
   };
   const metaOf = sec => CH_META[sec.id] || ['book', 'Weitere'];
   chapters.forEach(sec => {
@@ -4249,6 +4372,53 @@ GLOSS.familylink = ['Family Link', 'Kostenlose Google-App, mit der Eltern Bildsc
     $('#lab-tabs').addEventListener('click', e => { const b = e.target.closest('[data-t]'); if (b) show(b.dataset.t); });
     show('ratio');
   }
+
+  /* ======================= Tipps & Tricks ======================= */
+  const tl = $('#tips-list');
+  if (tl) {
+    let cat = '', tried = new Set(store.get('tips', []));
+    const cats = [...new Set(TIPS.map(t => t.cat))];
+    tl.innerHTML = `<div class="tips-top"><div class="combo-picks" id="tip-cats"><button type="button" data-c="" aria-pressed="true">Alle (${TIPS.length})</button>${cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('')}</div>
+      <button type="button" class="btn" id="tip-random">${icon('bulb')}Zufälliger Tipp</button></div><p class="caption" id="tip-count" style="text-align:left"></p><div id="tip-out"></div>`;
+    function render() {
+      const list = TIPS.map((t, i) => [t, i]).filter(([t]) => !cat || t.cat === cat);
+      $('#tip-out').innerHTML = list.map(([t, i]) => `<details class="tip-card${tried.has(i) ? ' done' : ''}" id="tip-${i}"><summary><span class="chip lvl-2">${esc(t.cat)}</span><b>${esc(t.t)}</b></summary>
+        <div class="pp-body"><p><b>So geht’s:</b> ${t.how}</p><div class="why"><b>Warum es hilft:</b> ${t.why}</div>
+        <div class="tip-foot"><span class="tip-src">Belegt durch: <a href="${t.src[1]}" target="_blank" rel="noopener">${esc(t.src[0])}</a></span><label class="tip-try"><input type="checkbox" data-i="${i}" ${tried.has(i) ? 'checked' : ''}> Ausprobiert</label></div></div></details>`).join('');
+      $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`;
+    }
+    $('#tip-cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; $$('#tip-cats button').forEach(x => x.setAttribute('aria-pressed', x === b)); render(); });
+    $('#tip-random').addEventListener('click', () => {
+      cat = ''; $$('#tip-cats button').forEach((x, k) => x.setAttribute('aria-pressed', k === 0)); render();
+      const open = TIPS.map((t, i) => i).filter(i => !tried.has(i)), pool = open.length ? open : TIPS.map((t, i) => i);
+      const i = pool[Math.floor(Math.random() * pool.length)], el = $('#tip-' + i);
+      el.open = true; el.scrollIntoView({ block: 'center' }); el.classList.add('flash-card'); setTimeout(() => el.classList.remove('flash-card'), 1200);
+    });
+    tl.addEventListener('change', e => { const i = +e.target.dataset.i; if (isNaN(i)) return; e.target.checked ? tried.add(i) : tried.delete(i); store.set('tips', [...tried]); e.target.closest('.tip-card').classList.toggle('done', e.target.checked); $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`; });
+    render();
+  }
+
+  /* ======================= Mythen-Check ======================= */
+  const mc = $('#myth-check');
+  if (mc) {
+    let right = 0, answered = 0;
+    mc.innerHTML = `<div class="myth-score"><b id="myth-score">0 / ${MYTHS.length}</b><span>richtig eingeschätzt</span></div><div class="myth-grid">${MYTHS.map((m, i) => `<div class="myth" data-i="${i}"><p class="myth-q">„${esc(m.q)}“</p><div class="myth-btns"><button type="button" class="btn" data-v="1">Stimmt</button><button type="button" class="btn" data-v="0">Stimmt nicht</button></div><div class="myth-a" hidden></div></div>`).join('')}</div>`;
+    mc.addEventListener('click', e => {
+      const b = e.target.closest('[data-v]'); if (!b) return;
+      const card = b.closest('.myth'); if (card.dataset.done) return; card.dataset.done = 1; answered++;
+      const m = MYTHS[+card.dataset.i], ok = (b.dataset.v === '1') === m.a; if (ok) right++;
+      card.classList.add(ok ? 'ok' : 'bad');
+      $$('[data-v]', card).forEach(x => { x.disabled = true; });
+      const a = $('.myth-a', card); a.hidden = false;
+      a.innerHTML = `<b>${m.a ? 'Stimmt.' : 'Stimmt nicht.'}</b> ${esc(m.e)}`;
+      $('#myth-score').textContent = `${right} / ${MYTHS.length}`;
+      if (answered === MYTHS.length) toast(`Mythen-Check: ${right} von ${MYTHS.length} richtig`);
+    });
+  }
+
+  /* ======================= Hintergrundwissen ======================= */
+  const bg = $('#background-cards');
+  if (bg) bg.innerHTML = BACKGROUND.map(b => `<details class="bg-card"><summary><span class="ch-ico">${icon(b.icon)}</span><b>${esc(b.t)}</b></summary><div class="pp-body"><p>${b.d}</p></div></details>`).join('');
 })();
 
 </script>

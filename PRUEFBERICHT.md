@@ -111,6 +111,42 @@ Neues Kapitel **„Alltags-Apps & Funktionen“**: Wecker/Timer, Kalender, Bilds
 - **Knox Vault** beim S24 FE: weiterhin nicht offiziell bestätigt.
 - **SIM-Fach EU-Modell**: keine Samsung-EU-Quelle.
 
+## Nachtrag 4: Dritte Gesamtprüfung und Kapitel „Hintergrundwissen, Tipps & Tricks“
+
+### Automatische Integritätsprüfung (simuliertes S24 FE)
+- Interne Links (alle `#…`-Verweise): **0 defekt**
+- Glossar-Verweise ohne Eintrag: **0**
+- Quiz-, Checklisten- und Lernpfad-Links: **alle gültig**
+- Leere oder fehlerhafte interaktive Module: **0**, Konsolenfehler: **0**, seitliches Überlaufen: **0**
+- Korrigiert: Im Einstellungs-Trainer fehlte der One-UI-7-Menüpunkt „Schutz bei Geräteverlust“; Grammatikfehler im Mythen-Check.
+
+### Quellen der 20 Tipps
+
+| Tipp | Quelle |
+|---|---|
+| Einhandmodus | [Samsung Support CH](https://www.samsung.com/ch/support/mobile-devices/how-to-use-one-handed-mode-and-one-hand-operation-plus/) |
+| Handkanten- und Scroll-Screenshot | [Samsung Support AT](https://ushl.samsung.com/at/support/mobile-devices/wie-erstelle-ich-ein-screenshot) |
+| Benachrichtigungsverlauf | [Samsung Support DE](https://www.samsung.com/de/support/mobile-devices/galaxy-smartphone-benachrichtigungen-verwalten) |
+| Anheben/Doppeltippen zum Aktivieren | [Samsung Support US](https://www.samsung.com/us/support/answer/ANS10003415) |
+| Seitentaste doppelt: eigene App | [Samsung Support DE](https://www.samsung.com/de/support/mobile-devices/so-passt-du-die-funktionstaste-mit-neuen-funktionen-auf-deinem-galaxy-telefon-und-tablet-an) |
+| Einstellungssuche in Alltagssprache | [Android Police](https://www.androidpolice.com/hidden-one-ui-7-features-you-probably-missed/) |
+| Regler im Quick Panel gedrückt halten | [Sammy Fans](https://www.sammyfans.com/2025/07/20/samsung-one-ui-7-quick-panel-has-two-hidden-features/) |
+| Objekt ausschneiden (Image Clipper) | [nextpit](https://www.nextpit.com/how-tos/how-to-use-image-clipper-samsung-galaxy-device) |
+| Text aus Bildern (T-Symbol) | [Samsung Support DE](https://ushl.samsung.com/de/support/mobile-devices/text-auf-bild-erkennen-und-kopieren) |
+| Kamera per Sprachbefehl | [Samsung NL](https://www.samsung.com/nl/samsung-and-you/foto-maken-met-stembediening) |
+| Lautstärketaste als Auslöser | [Samsung Support US](https://www.samsung.com/us/support/answer/ANS10001353) |
+| WLAN per QR-Code teilen | [TechBone](https://www.techbone.de/samsung/qr-code-vom-wlan-erstellen) |
+| Dual Messenger | Samsung-Bedienungsanleitungen (Kapitel „Dual Messenger“); schwächer belegt |
+| Ladegrenze 80–95 % | [Android Authority](https://www.androidauthority.com/one-ui-7-battery-limit-3507063/) |
+| Einbrennen vermeiden | [nextpit](https://www.nextpit.de/ratgeber/wie-einbrennen-des-display-auf-ios-android-handys-verhindern-anleitung) |
+| Touch-Empfindlichkeit | [Samsung Support CA](https://www.samsung.com/ca/support/mobile-devices/activate-touch-sensitivity-on-your-samsung-galaxy/) |
+| Diebstahlschutz | [Samsung Support UK](https://www.samsung.com/uk/support/mobile-devices/how-to-use-security-settings/) |
+| Notruf-SOS testen | [Samsung Support DE](https://ushl.samsung.com/de/support/mobile-devices/wie-funktioniert-die-notfall-sms) |
+| Good Lock | [Samsung Support DE](https://ushl.samsung.com/de/support/apps-services/was-ist-samsung-good-lock), Modulverfügbarkeit laut [SamMobile](https://www.sammobile.com/news/good-lock-global-launch-has-something-in-common-with-one-ui-7-and-it-is-not-good/) schwankend |
+
+### Bewusst nicht aufgenommen (nicht ausreichend belegt)
+Taschenlampen-Helligkeit über die Kachel, „Separater App-Ton“ als Schritt-für-Schritt-Anleitung, Zwischenablage-Verlauf der Tastatur, Rückseiten-Tippen (RegiStar: Verfügbarkeit in Good Lock unklar).
+
 ## Bleibt zu beachten
 
 - **SIM-Fach:** Die Lage „links oben“ stammt aus US-Netzbetreiber-Anleitungen (SM-S721U). Für das EU-Modell ist sie sehr wahrscheinlich gleich, aber nicht aus einer Samsung-EU-Quelle belegt. Einmal am echten Gerät prüfen.

@@ -163,4 +163,51 @@
     $('#lab-tabs').addEventListener('click', e => { const b = e.target.closest('[data-t]'); if (b) show(b.dataset.t); });
     show('ratio');
   }
+
+  /* ======================= Tipps & Tricks ======================= */
+  const tl = $('#tips-list');
+  if (tl) {
+    let cat = '', tried = new Set(store.get('tips', []));
+    const cats = [...new Set(TIPS.map(t => t.cat))];
+    tl.innerHTML = `<div class="tips-top"><div class="combo-picks" id="tip-cats"><button type="button" data-c="" aria-pressed="true">Alle (${TIPS.length})</button>${cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join('')}</div>
+      <button type="button" class="btn" id="tip-random">${icon('bulb')}Zufälliger Tipp</button></div><p class="caption" id="tip-count" style="text-align:left"></p><div id="tip-out"></div>`;
+    function render() {
+      const list = TIPS.map((t, i) => [t, i]).filter(([t]) => !cat || t.cat === cat);
+      $('#tip-out').innerHTML = list.map(([t, i]) => `<details class="tip-card${tried.has(i) ? ' done' : ''}" id="tip-${i}"><summary><span class="chip lvl-2">${esc(t.cat)}</span><b>${esc(t.t)}</b></summary>
+        <div class="pp-body"><p><b>So geht’s:</b> ${t.how}</p><div class="why"><b>Warum es hilft:</b> ${t.why}</div>
+        <div class="tip-foot"><span class="tip-src">Belegt durch: <a href="${t.src[1]}" target="_blank" rel="noopener">${esc(t.src[0])}</a></span><label class="tip-try"><input type="checkbox" data-i="${i}" ${tried.has(i) ? 'checked' : ''}> Ausprobiert</label></div></div></details>`).join('');
+      $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`;
+    }
+    $('#tip-cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cat = b.dataset.c; $$('#tip-cats button').forEach(x => x.setAttribute('aria-pressed', x === b)); render(); });
+    $('#tip-random').addEventListener('click', () => {
+      cat = ''; $$('#tip-cats button').forEach((x, k) => x.setAttribute('aria-pressed', k === 0)); render();
+      const open = TIPS.map((t, i) => i).filter(i => !tried.has(i)), pool = open.length ? open : TIPS.map((t, i) => i);
+      const i = pool[Math.floor(Math.random() * pool.length)], el = $('#tip-' + i);
+      el.open = true; el.scrollIntoView({ block: 'center' }); el.classList.add('flash-card'); setTimeout(() => el.classList.remove('flash-card'), 1200);
+    });
+    tl.addEventListener('change', e => { const i = +e.target.dataset.i; if (isNaN(i)) return; e.target.checked ? tried.add(i) : tried.delete(i); store.set('tips', [...tried]); e.target.closest('.tip-card').classList.toggle('done', e.target.checked); $('#tip-count').textContent = `${tried.size} von ${TIPS.length} Tipps ausprobiert`; });
+    render();
+  }
+
+  /* ======================= Mythen-Check ======================= */
+  const mc = $('#myth-check');
+  if (mc) {
+    let right = 0, answered = 0;
+    mc.innerHTML = `<div class="myth-score"><b id="myth-score">0 / ${MYTHS.length}</b><span>richtig eingeschätzt</span></div><div class="myth-grid">${MYTHS.map((m, i) => `<div class="myth" data-i="${i}"><p class="myth-q">„${esc(m.q)}“</p><div class="myth-btns"><button type="button" class="btn" data-v="1">Stimmt</button><button type="button" class="btn" data-v="0">Stimmt nicht</button></div><div class="myth-a" hidden></div></div>`).join('')}</div>`;
+    mc.addEventListener('click', e => {
+      const b = e.target.closest('[data-v]'); if (!b) return;
+      const card = b.closest('.myth'); if (card.dataset.done) return; card.dataset.done = 1; answered++;
+      const m = MYTHS[+card.dataset.i], ok = (b.dataset.v === '1') === m.a; if (ok) right++;
+      card.classList.add(ok ? 'ok' : 'bad');
+      $$('[data-v]', card).forEach(x => { x.disabled = true; });
+      const a = $('.myth-a', card); a.hidden = false;
+      a.innerHTML = `<b>${m.a ? 'Stimmt.' : 'Stimmt nicht.'}</b> ${esc(m.e)}`;
+      $('#myth-score').textContent = `${right} / ${MYTHS.length}`;
+      if (answered === MYTHS.length) toast(`Mythen-Check: ${right} von ${MYTHS.length} richtig`);
+    });
+  }
+
+  /* ======================= Hintergrundwissen ======================= */
+  const bg = $('#background-cards');
+  if (bg) bg.innerHTML = BACKGROUND.map(b => `<details class="bg-card"><summary><span class="ch-ico">${icon(b.icon)}</span><b>${esc(b.t)}</b></summary><div class="pp-body"><p>${b.d}</p></div></details>`).join('');
 })();

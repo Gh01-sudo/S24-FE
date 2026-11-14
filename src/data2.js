@@ -65,11 +65,12 @@ const SIM_TREE = {
   lock: { title: 'Sperrbildschirm und AOD', rows: [{ t: 'info', l: 'Displaysperre', s: 'PIN' }, { t: 'toggle', id: 'aod', l: 'Always On Display', s: 'Uhrzeit bei aus. Bildschirm' }] },
   sec: { title: 'Sicherheit und Datenschutz', rows: [
     { t: 'link', l: 'Biometrische Daten', s: 'Gesicht, Fingerabdrücke', to: 'bio' },
-    { t: 'link', l: 'Verlorene Geräte finden', to: 'find' },
+    { t: 'link', l: 'Schutz bei Geräteverlust', s: 'Gerät finden · Diebstahlschutz', to: 'lost' },
     { t: 'info', l: 'Berechtigungsmanager', s: 'Wer darf Kamera, Standort, …' },
     { t: 'link', l: 'Weitere Sicherheitseinstellungen', to: 'moresec' }
   ] },
   bio: { title: 'Biometrische Daten', rows: [{ t: 'info', l: 'Gesichtserkennung', s: 'Nicht registriert' }, { t: 'action', id: 'finger', l: 'Fingerabdrücke', s: 'Tippen zum Registrieren' }] },
+  lost: { title: 'Schutz bei Geräteverlust', rows: [{ t: 'link', l: 'Verlorene Geräte finden', to: 'find' }, { t: 'info', l: 'Diebstahlschutz', s: 'Diebstahlerkennung, Identitätsprüfung' }] },
   find: { title: 'Verlorene Geräte finden', rows: [{ t: 'toggle', id: 'findmy', l: 'Verlorene Geräte finden' }, { t: 'toggle', id: 'offline', l: 'Offline-Suche' }, { t: 'toggle', id: 'lastloc', l: 'Letzten Standort senden' }] },
   moresec: { title: 'Weitere Sicherheitseinstellungen', rows: [{ t: 'info', l: 'Sicherer Ordner', s: 'Privater, verschlüsselter Bereich' }, { t: 'info', l: 'Geräteadministratoren' }] },
   sos: { title: 'Sicherheit und Notfall', rows: [
@@ -101,7 +102,7 @@ const SIM_TASKS = [
   { q: 'Schonen Sie den Akku: Akkuschutz auf „Maximal“.', key: 'protect', val: 'max', path: ['Akku', 'Akkuschutz', 'Maximal'], why: 'Mit einer Ladegrenze (z. B. 80 %) altert der Akku deutlich langsamer.' },
   { q: 'Langes Drücken der Seitentaste soll das Ausschaltmenü öffnen.', key: 'sidehold', val: 'power', path: ['Erweiterte Funktionen', 'Seitentaste', 'Ausschaltmenü'], why: 'Dann schalten Sie das Telefon wie gewohnt per langem Tastendruck aus, statt den Assistenten zu starten.' },
   { q: 'Schalten Sie Notruf-SOS ein.', key: 'sosOn', val: true, path: ['Sicherheit und Notfall', 'Notruf-SOS', 'Schalter „Notruf-SOS“'], why: 'Im Notfall reicht dann 5-maliges Drücken der Seitentaste, um die 112 zu rufen.' },
-  { q: 'Aktivieren Sie „Verlorene Geräte finden“.', key: 'findmy', val: true, path: ['Sicherheit und Datenschutz', 'Verlorene Geräte finden', 'Schalter'], why: 'Nur wenn das vorher an ist, können Sie ein verlorenes Telefon orten, klingeln lassen oder sperren.' },
+  { q: 'Aktivieren Sie „Verlorene Geräte finden“.', key: 'findmy', val: true, path: ['Sicherheit und Datenschutz', 'Schutz bei Geräteverlust', 'Verlorene Geräte finden', 'Schalter'], why: 'Nur wenn das vorher an ist, können Sie ein verlorenes Telefon orten, klingeln lassen oder sperren.' },
   { q: 'Schalten Sie das Telefon auf lautlos.', key: 'soundmode', val: 'mute', path: ['Töne und Vibration', 'Lautlos'], why: 'Schneller geht es über die Schnelleinstellungen (Kachel „Ton“) oder den Lautstärkeregler.' },
   { q: 'Sparen Sie Akku: Bewegungsglättung auf „Standard“.', key: 'motion', val: 'standard', path: ['Anzeige', 'Bewegungsglättung', 'Standard'], why: 'Standard = 60 Bilder pro Sekunde. Das Scrollen wirkt etwas weniger flüssig, verbraucht aber weniger Strom.' },
   { q: 'Schalten Sie den mobilen Hotspot ein, damit Ihr Laptop ins Internet kommt.', key: 'hotspot', val: true, path: ['Verbindungen', 'Mobile Hotspot und Tethering', 'Mobile Hotspot'], why: 'Der Laptop verbindet sich dann mit dem WLAN-Namen, der unter „Mobile Hotspot“ angezeigt wird. Die Daten gehen von Ihrem Tarif ab.' },
