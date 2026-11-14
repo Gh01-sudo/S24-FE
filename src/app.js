@@ -86,7 +86,7 @@
     sicherheit: ['shield', 'Sicherheit'], knox: ['lock', 'Sicherheit'], schutzplan: ['check', 'Sicherheit'],
     kamera: ['lens', 'Kamera & KI'], ai: ['search', 'Kamera & KI'],
     akku: ['battery', 'Alltag'], anpassen: ['contrast', 'Alltag'], verbindungen: ['wifi', 'Alltag'], apps: ['app', 'Alltag'],
-    alltag: ['grid', 'Alltag'], profi: ['bulb', 'Profi-Wissen'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
+    alltag: ['grid', 'Alltag'], profi: ['bulb', 'Profi-Wissen'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], spickzettel: ['menu', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
   };
   const metaOf = sec => CH_META[sec.id] || ['book', 'Weitere'];
   chapters.forEach(sec => {
@@ -380,6 +380,43 @@
   TIPS.forEach(t => { const x = strip(t.how + ' ' + t.why); index.push({ id: 'tipps', title: t.t, ch: 'Tipps & Tricks', text: x, nt: norm(t.t), nx: norm(x) }); });
   MYTHS.forEach(m => index.push({ id: 'mythen', title: m.q, ch: 'Mythen-Check', text: '', nt: norm(m.q), nx: '' }));
   BACKGROUND.forEach(b => { const x = strip(b.d); index.push({ id: 'hintergrund-wissen', title: b.t, ch: 'Hintergrundwissen', text: x, nt: norm(b.t), nx: norm(x) }); });
+  ONEUI85.forEach(([t, d]) => index.push({ id: 'oneui85', title: t, ch: 'Neu in One UI 8.5', text: d, nt: norm(t), nx: norm(d) }));
+  [...CHEAT.keys, ...CHEAT.gestures, ...CHEAT.paths, ...CHEAT.numbers].forEach(([a, b2]) => index.push({ id: 'spickzettel-seite', title: a, ch: 'Spickzettel', text: b2, nt: norm(a), nx: norm(b2) }));
+
+  /* fehlertolerante Suche: Wortschatz + Synonyme */
+  const vocab = new Set();
+  index.forEach(it => (it.nt + ' ' + it.nx).split(/[^a-z0-9äöü]+/).forEach(w => { if (w.length >= 4) vocab.add(w); }));
+  const allText = index.map(it => it.nt + ' ' + it.nx).join(' ');
+  const SYN = new Map();
+  SYNONYMS.forEach(g => g.forEach(w => SYN.set(w, g)));
+  function lev(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+      const cur = [i]; let best = i;
+      for (let j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) cur[j] = Math.min(cur[j], prev[j - 2] === undefined ? cur[j] : prev[j - 2] + 1);
+        best = Math.min(best, cur[j]);
+      }
+      if (best > max) return max + 1;
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+  function alternatives(w) {
+    const alts = new Set();
+    const g = SYN.get(w) || [...SYN.keys()].filter(k => k.length >= 4 && w.length >= 4 && (k.startsWith(w) || w.startsWith(k))).map(k => SYN.get(k))[0];
+    if (g) g.forEach(x => { if (x !== w) alts.add(x); });
+    let fuzzy = [];
+    if (w.length >= 4 && !allText.includes(w)) {
+      const max = w.length >= 8 ? 2 : 1;
+      vocab.forEach(v => { if (v[0] === w[0] || v.length >= 6) { const d = lev(w, v, max); if (d <= max) fuzzy.push([d, v]); } });
+      fuzzy = fuzzy.sort((a, b) => a[0] - b[0]).slice(0, 4).map(x => x[1]);
+      fuzzy.forEach(x => alts.add(x));
+    }
+    return { alts: [...alts], fuzzy };
+  }
 
   const qInput = $('#q'), results = $('#results');
   let hits = [], sel = -1;
@@ -393,17 +430,23 @@
   function search() {
     const words = norm(qInput.value).split(/\s+/).filter(w => w.length > 1);
     if (!words.length) { hideResults(); return; }
+    const expanded = words.map(w => ({ w, ...alternatives(w) }));
+    const usedFuzzy = new Set();
     hits = index.map(it => {
-      let sc = 0;
-      for (const w of words) {
-        const inT = it.nt.includes(w), inX = it.nx.includes(w);
-        if (!inT && !inX) return null;
-        sc += (inT ? 10 : 0) + (inX ? 2 : 0);
+      let sc = 0, hl = null;
+      for (const e of expanded) {
+        const inT = it.nt.includes(e.w), inX = it.nx.includes(e.w);
+        if (inT || inX) { sc += (inT ? 10 : 0) + (inX ? 2 : 0); hl = hl || e.w; continue; }
+        const alt = e.alts.find(a => it.nt.includes(a) || it.nx.includes(a));
+        if (!alt) return null;
+        sc += it.nt.includes(alt) ? 6 : 1.5; hl = hl || alt;
+        if (e.fuzzy.includes(alt)) usedFuzzy.add(alt);
       }
-      return { it, sc };
+      return { it, sc, hl };
     }).filter(Boolean).sort((a, b) => b.sc - a.sc).slice(0, 8);
     sel = -1;
-    results.innerHTML = hits.length ? hits.map((h, k) => `<a href="#${h.it.id}" data-k="${k}"><b>${esc(h.it.title)}</b><span>${esc(h.it.ch)} · ${snippet(h.it.text, words[0])}</span></a>`).join('')
+    const note = usedFuzzy.size ? `<div class="empty fuzzy-note">Ähnliche Treffer für: <b>${[...usedFuzzy].map(esc).join(', ')}</b></div>` : '';
+    results.innerHTML = hits.length ? note + hits.map((h, k) => `<a href="#${h.it.id}" data-k="${k}"><b>${esc(h.it.title)}</b><span>${esc(h.it.ch)} · ${snippet(h.it.text, h.hl || words[0])}</span></a>`).join('')
       : `<div class="empty">Nichts gefunden zu „${esc(qInput.value)}“. Versuchen Sie ein anderes Wort, z. B. „Akku“, „Foto“ oder „WLAN“.</div>`;
     results.hidden = false;
   }

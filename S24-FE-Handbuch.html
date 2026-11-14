@@ -919,6 +919,69 @@ footer.foot { border-top-color: var(--line); }
 .tt .tt-more:hover { opacity: 1; color: var(--bg); }
 @keyframes ttIn { from { opacity: 0; transform: translateY(4px); } }
 
+/* ---- Version, One UI 8.5, Spickzettel, Mein Gerät, Notizen, Kompakt, Weitergabe ---- */
+.version-line { margin: 14px 0 0; font-size: .8rem; color: var(--muted); font-weight: 600; }
+.changelog { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.changelog li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 12px; padding: 12px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); margin: 0; font-size: .92rem; }
+.changelog li.cur { border-color: var(--accent); background: var(--accent-soft); }
+@media (max-width: 520px) { .changelog li { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+.nu-card h4 { font-size: 1rem; }
+.cheat-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; align-items: baseline; margin-bottom: 10px; }
+.cheat-head b { font-family: var(--font-display); font-size: 1.1rem; }
+.cheat-head span { font-size: .78rem; color: var(--muted); }
+.cheat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 640px) { .cheat-grid { grid-template-columns: minmax(0, 1fr); } }
+.cheat-block h4 { margin: 0 0 6px; display: flex; align-items: center; gap: 8px; font-size: .95rem; }
+.cheat-block h4 svg { width: 26px; height: 26px; padding: 5px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-strong); }
+.cheat-block table { font-size: .86rem; }
+.cheat-block th { width: 46%; text-transform: none; letter-spacing: 0; color: var(--fg); background: transparent; font-weight: 600; padding: 6px 8px; }
+.cheat-block td { padding: 6px 8px; }
+.cheat-block tbody tr:nth-child(even) td, .cheat-block tbody tr:nth-child(even) th { background: var(--surface-2); }
+.md-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+@media (max-width: 640px) { .md-grid { grid-template-columns: minmax(0, 1fr); } }
+.md-field { display: flex; flex-direction: column; gap: 4px; font-size: .86rem; font-weight: 600; }
+.md-field.wide { grid-column: 1 / -1; }
+.md-field input, .md-field textarea, .note-box textarea { font: inherit; font-weight: 400; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; min-height: 46px; width: 100%; }
+.md-field input:focus, .md-field textarea:focus, .note-box textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.md-warranty { margin: 12px 0 0; font-size: .9rem; padding: 10px 12px; border-radius: 12px; background: var(--info-soft); }
+.note-box { margin-top: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.note-box summary { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; list-style: none; font-weight: 600; }
+.note-box summary::-webkit-details-marker { display: none; }
+.note-box summary svg { width: 20px; height: 20px; color: var(--accent); }
+.note-flag { margin-left: auto; font-style: normal; font-size: .72rem; color: var(--good); background: var(--good-soft); padding: 2px 8px; border-radius: 99px; }
+.note-box textarea { display: block; margin: 0 16px 16px; width: calc(100% - 32px); }
+.note-box + .done-box { margin-top: 12px; }
+.compact-banner, .viewer-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; border-radius: var(--radius); margin-bottom: 18px; font-size: .9rem; }
+.compact-banner { background: var(--accent-soft); }
+.viewer-banner { background: var(--warn-soft); }
+.compact-banner span, .viewer-banner span { display: flex; gap: 8px; align-items: flex-start; flex: 1; min-width: 200px; }
+.compact-banner svg, .viewer-banner svg { width: 20px; height: 20px; flex: none; margin-top: 2px; }
+body.compact details.bg, body.compact .pro-block, body.compact .pro-chapter, body.compact .pro-hidden { display: none !important; }
+[data-act="compact"][aria-pressed="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+.fuzzy-note { font-size: .8rem; padding: 6px 12px 8px; }
+
+/* ---- Druckansicht ---- */
+@media print {
+  @page { margin: 12mm; }
+  :root { --bg: #fff; --surface: #fff; --surface-2: #f1f3f7; --fg: #111; --muted: #444; --line: #ccc; --accent: #1c44c4; --accent-soft: #e8eeff; --accent-strong: #1c44c4; }
+  body { background: #fff; color: #111; font-size: 11pt; }
+  body::before, .topbar, .sidebar, .scrim, .to-top, .toast, .tt, .ch-nav, .done-box, .note-box, .compact-banner, .viewer-banner, .print-row, .in-chapter { display: none !important; }
+  .shell { display: block; }
+  main { padding: 0; }
+  .card, .table-wrap, .chapter-head { box-shadow: none !important; }
+  details:not([open]) > :not(summary) { display: none; }
+  body.printing-cheat .content > * { display: none !important; }
+  body.printing-cheat .content > #spickzettel { display: block !important; margin: 0; }
+  body.printing-cheat #spickzettel > :not(#cheatsheet):not(#my-device):not(#mein-geraet) { display: none !important; }
+  body.printing-cheat #cheatsheet, body.printing-cheat #my-device { border: 1px solid #ccc; }
+  body.printing-cheat #mein-geraet { break-before: page; display: block !important; }
+  body.printing-cheat #mein-geraet::before { display: none; }
+  .md-field input, .md-field textarea { border: 0; border-bottom: 1px solid #999; border-radius: 0; background: transparent; }
+  .cheat-block { break-inside: avoid; }
+  .md-field input::placeholder, .md-field textarea::placeholder { color: transparent; }
+  .md-field input[type="date"]::-webkit-calendar-picker-indicator { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -947,8 +1010,10 @@ footer.foot { border-top-color: var(--line); }
       <button class="btn" type="button" data-act="font-down" aria-label="Schrift kleiner"><span aria-hidden="true">A−</span> Kleiner</button>
       <button class="btn" type="button" data-act="font-up" aria-label="Schrift größer"><span aria-hidden="true">A+</span> Größer</button>
       <button class="btn wide" type="button" data-act="theme">Hell / Dunkel umschalten</button>
+      <button class="btn wide" type="button" data-act="compact" aria-pressed="false"><span>Nur das Wichtigste</span></button>
+      <button class="btn wide" type="button" data-act="share"><span>Handbuch weitergeben</span></button>
     </div>
-    <div class="side-note"><b>Tipp:</b> Über das Suchfeld oben finden Sie jedes Thema. Das Handbuch funktioniert auch ohne Internet. <a href="#weitergeben">Handbuch weitergeben</a></div>
+    <div class="side-note"><span data-version></span><br><b>Tipp:</b> Über das Suchfeld oben finden Sie jedes Thema. Das Handbuch funktioniert auch ohne Internet. <a href="#weitergeben">Handbuch weitergeben</a></div>
   </nav>
   <div class="scrim" id="scrim"></div>
   <main id="main"><div class="content">
@@ -964,6 +1029,7 @@ footer.foot { border-top-color: var(--line); }
         <a class="btn" href="#hilfe" data-icon="wrench">Ich habe ein Problem</a>
       </div>
       <div class="hero-stats" id="hero-stats"></div>
+      <p class="version-line" data-version></p>
     </div>
     <div class="hero-art" data-mock="hero"></div>
   </div>
@@ -1666,7 +1732,7 @@ footer.foot { border-top-color: var(--line); }
     <thead><tr><th>Maßnahme</th><th>Wirkung</th><th>Wo?</th></tr></thead>
     <tbody>
       <tr><td><b>Dunkelmodus</b></td><td class="n">mittel</td><td>Anzeige › Dunkel. Schwarze Pixel verbrauchen beim <button class="term" data-term="amoled">AMOLED</button>-Display keinen Strom.</td></tr>
-      <tr><td><b>Energiesparmodus</b></td><td class="n">hoch</td><td>Schnelleinstellungen oder Akku › Energiesparmodus. Begrenzt Hintergrundaktivität und Helligkeit.</td></tr>
+      <tr><td><b>Energiesparmodus</b></td><td class="n">hoch</td><td>Schnelleinstellungen oder Akku › Energiesparmodus. Begrenzt Hintergrundaktivität und Helligkeit. Ab One UI 8.5 wählbar: „Standard“ (anpassbar) oder „Maximal“ (schaltet alles Unwichtige ab).</td></tr>
       <tr><td><b>Bewegungsglättung „Standard“</b></td><td class="n">gering</td><td>Anzeige › Bewegungsglättung. 60 Hz statt bis zu 120 Hz.</td></tr>
       <tr><td><b>Always On Display nur bei Tippen</b></td><td class="n">gering</td><td>Sperrbildschirm und AOD › Always On Display › „Zum Anzeigen tippen“</td></tr>
       <tr><td><b>Ungenutzte Apps einschläfern</b></td><td class="n">mittel</td><td>Akku › Hintergrundnutzungslimits › „Nicht verwendete Apps in Standby versetzen“</td></tr>
@@ -1882,6 +1948,7 @@ footer.foot { border-top-color: var(--line); }
   <ol class="steps">
     <li>Schnelleinstellungen öffnen und die Kachel <b>Bildschirmrekorder</b> antippen. Fehlt sie: oben auf den Stift (Bearbeiten) tippen und die Kachel hinzufügen.</li>
     <li>Ton wählen: <b>Kein Ton</b>, <b>Medientöne</b> (Ton der Apps) oder <b>Medientöne und Mikrofon</b> (zusätzlich Ihre Stimme).</li>
+    <li>Ab One UI 8.5 können Sie wählen, ob der <b>ganze Bildschirm</b> oder nur ein <b>Ausschnitt</b> aufgenommen wird.</li>
     <li><b>Aufnahme starten</b>. Nach einem kurzen Countdown läuft die Aufnahme; oben rechts erscheint eine kleine Leiste.</li>
     <li>Zum Beenden in der Leiste auf <b>Stopp</b> (Quadrat) tippen. Das Video liegt in der <b>Galerie</b>.</li>
   </ol>
@@ -1949,6 +2016,11 @@ footer.foot { border-top-color: var(--line); }
 <section class="chapter" id="profi" data-ch="1" data-title="Hintergrundwissen, Tipps & Tricks" data-time="35" data-lvl="2">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Hintergrundwissen, Tipps &amp; Tricks</h2><p>Geprüfte Kniffe mit Quellenangabe, verständliches Technikwissen und ein Mythen-Check zum Mitraten.</p></div></div>
 
+  <h3 id="oneui85">Neu in One UI 8.5</h3>
+  <p>Seit Mai 2026 verteilt Samsung <b>One UI 8.5</b> (Android 16) an das S24 FE. Das sind die wichtigsten Neuerungen für den Alltag. Die Liste stammt aus dem Änderungsprotokoll der Galaxy-S24-Serie; einzelne Funktionen können beim S24 FE fehlen oder anders heißen.</p>
+  <div class="grid-2" id="oneui85-list"></div>
+  <p class="caption" style="text-align:left">Ihren Stand sehen Sie unter <b>Einstellungen › Telefoninfo › Softwareinformationen</b>. Das Update laden Sie unter <b>Software-Update › Herunterladen und installieren</b> (ca. 4 GB, nur im WLAN und mit mindestens 20 % Akku).</p>
+
   <h3 id="tipps">Geprüfte Tipps &amp; Tricks</h3>
   <p>Jeder Tipp wurde gegen Samsung-Support-Seiten oder Fachpresse geprüft; die Quelle steht unter dem Tipp. Menübezeichnungen können je nach One-UI-Version leicht abweichen. Haken Sie ab, was Sie ausprobiert haben.</p>
   <div class="card" id="tips-list"></div>
@@ -2014,6 +2086,20 @@ footer.foot { border-top-color: var(--line); }
   <div class="quiz mini" data-mini-quiz="hilfe"></div>
 </section>
 
+<!-- ===================== SPICKZETTEL ===================== -->
+<section class="chapter" id="spickzettel" data-ch="1" data-title="Spickzettel & Mein Gerät" data-time="5" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Spickzettel &amp; Mein Gerät</h2><p>Das Wichtigste auf einer Seite zum Ausdrucken und ein Notizblatt für die Daten Ihres Telefons.</p></div></div>
+
+  <h3 id="spickzettel-seite">Spickzettel</h3>
+  <p>Tasten, Gesten, wichtige Einstellungen und Nummern auf einen Blick. Drucken Sie ihn aus und legen Sie ihn zur Verpackung, oder speichern Sie ihn als PDF.</p>
+  <div class="cta-row print-row"><button type="button" class="btn primary print-btn" data-icon="note">Spickzettel drucken / als PDF</button><p class="caption print-note" hidden style="text-align:left;margin:0">Drucken geht in der heruntergeladenen Datei (in Chrome: Menü ⋮ › Teilen › Drucken). Hier im Online-Link ist es nicht möglich.</p></div>
+  <div class="cheat card" id="cheatsheet"></div>
+
+  <h3 id="mein-geraet">Mein Gerät</h3>
+  <p>Die wichtigsten Daten Ihres Telefons an einem Ort, z. B. für Diebstahlanzeige, Versicherung oder Reparatur. Beim Drucken des Spickzettels wird dieses Blatt mitgedruckt.</p>
+  <div class="card" id="my-device"></div>
+</section>
+
 <!-- ===================== DATENBLATT ===================== -->
 <section class="chapter" id="datenblatt" data-ch="1" data-title="Datenblatt" data-time="10" data-lvl="1">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Datenblatt</h2><p>Alle technischen Daten des Galaxy S24 FE an einem Ort, durchsuchbar und mit Erklärungen.</p></div></div>
@@ -2056,13 +2142,22 @@ footer.foot { border-top-color: var(--line); }
       </ol>
     </div>
   </div>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="app">Weitergeben mit einem Tipp</h4><p>Öffnen Sie das Handbuch in Chrome oder Samsung Internet und tippen Sie auf <b>„Handbuch weitergeben“</b> (oben und im Menü ☰ unter „Ansicht“). Es öffnet sich das Teilen-Menü des Telefons mit der Datei, z. B. für WhatsApp oder Quick Share. Wo das nicht geht, wird eine Kopie in <b>Downloads</b> gespeichert, die Sie von dort teilen.</p></div>
+    <div class="card"><h4 data-icon="box">E-Mail blockiert die Datei?</h4><p>Manche E-Mail-Dienste und Firmen-Postfächer lassen keine <code>.html</code>-Anhänge zu. Schicken Sie dann die ZIP-Version <code>S24-FE-Handbuch.zip</code> (auch kleiner). Auf dem S24 FE: in <b>Eigene Dateien</b> antippen › <b>Entpacken</b>, dann die HTML-Datei öffnen.</p></div>
+  </div>
+  <div class="callout info" data-t="Geöffnet, aber manches funktioniert nicht?"><p>Öffnet WhatsApp oder eine E-Mail-App die Datei in einer eigenen Vorschau, können dort Fortschritt, Notizen und einige Knöpfe fehlen. Das Handbuch zeigt dann oben einen Hinweis. Abhilfe: im Menü ⋮ der Vorschau „Öffnen mit“ › <b>Chrome</b> oder <b>Samsung Internet</b> wählen. Ob Sie die neueste Fassung haben, sehen Sie an der Versionsangabe auf der Startseite und im Menü.</p></div>
   <div class="callout tip" data-t="Schnell wiederfinden">
     <p>Haben Sie das Handbuch als <b>Link</b> bekommen, legen Sie es sich als Symbol auf den Startbildschirm: In <b>Samsung Internet</b> unten auf ≡ › „Seite hinzufügen zu“ › <b>Startbildschirm</b>. In <b>Chrome</b> oben auf ⋮ › „Zum Startbildschirm hinzufügen“. Als Datei finden Sie es jederzeit in <b>Eigene Dateien › Zuletzt</b>.</p>
   </div>
   <div class="callout info" data-t="Lesefortschritt"><p>Erledigte Kapitel, Quiz-Ergebnis, Schriftgröße und Hell/Dunkel merkt sich der Browser auf diesem Gerät. Öffnet ein Datei-Viewer das Handbuch ohne Speichermöglichkeit, funktioniert trotzdem alles, nur der Fortschritt wird nicht gemerkt. Dann die Datei mit Samsung Internet oder Chrome öffnen.</p></div>
 
+  <h3 id="versionen">Versionen und Änderungen</h3>
+  <p>Die aktuelle Fassung: <b data-version></b>. Haben Sie eine ältere Datei bekommen, bitten Sie den Absender um die neue.</p>
+  <ol class="changelog" id="changelog"></ol>
+
   <footer class="foot">
-    <p><b>Hinweis:</b> Dies ist ein unabhängiges, inoffizielles Handbuch. Es steht in keiner Verbindung zu Samsung. „Samsung“, „Galaxy“ und „One UI“ sind Marken der Samsung Electronics Co., Ltd. Bildschirmdarstellungen sind vereinfachte Illustrationen. Menünamen können sich durch Software-Updates ändern. Stand: November 2026.</p>
+    <p><b>Hinweis:</b> Dies ist ein unabhängiges, inoffizielles Handbuch. Es steht in keiner Verbindung zu Samsung. „Samsung“, „Galaxy“ und „One UI“ sind Marken der Samsung Electronics Co., Ltd. Bildschirmdarstellungen sind vereinfachte Illustrationen. Menünamen können sich durch Software-Updates ändern. <span data-version></span>.</p>
   </footer>
 </section>
 
@@ -2071,6 +2166,8 @@ footer.foot { border-top-color: var(--line); }
 <button class="to-top" id="totop" type="button" hidden aria-label="Nach oben"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="toast" id="toast" role="status" hidden></div>
 <script>
+/* Unveränderte Kopie der Seite für den Weitergeben-Knopf (vor allen Änderungen am DOM) */
+window.__HB_SRC = document.documentElement ? '<!doctype html>\n' + document.documentElement.outerHTML : '';
 /* ============ Icons ============ */
 const ICONS = {
   play: '<path d="M8 5v14l11-7z"/>',
@@ -3483,6 +3580,71 @@ const TERM_PATTERNS = {
   dolby: ['Dolby Atmos'], visionbooster: ['Vision Booster'], wireless: ['Wireless PowerShare']
 };
 
+/* ================= Version & Änderungsliste ================= */
+const HB_VERSION = { v: '1.8', date: '14. November 2026' };
+const CHANGELOG = [
+  ['1.8', 'Neu in One UI 8.5, Spickzettel zum Ausdrucken, „Mein Gerät“-Notizblatt, fehlertolerante Suche mit Synonymen, Kompaktansicht, persönliche Notizen pro Kapitel, Weitergeben-Knopf und ZIP-Version.'],
+  ['1.7', 'Kapitel „Hintergrundwissen, Tipps & Tricks“ mit 20 belegten Tipps und Mythen-Check; Tooltips für über 100 Fachbegriffe.'],
+  ['1.6', 'Kapitel „Alltags-Apps & Funktionen“, Abschnitt Garantie und Reparatur, Softwarestand One UI 8.5, zweite Faktenprüfung.'],
+  ['1.5', 'Neues, übersichtlicheres Design mit Kapitelkacheln, gruppierter Seitenleiste und Kapitelnavigation.'],
+  ['1.4', 'Datenblatt, Kapitel Samsung Knox, Schutzplan, alle Kamera-Einstellungen und Kamera-Labor.'],
+  ['1.3', 'Übungs-Handys (Einstellungen, Tasten, Gesten, Anrufe), Belichtungs-Simulator, Rechner, Kurzquiz pro Kapitel, Kapitel Telefonieren.'],
+  ['1.2', 'Faktencheck: SIM-Fach, Seitentaste (Gemini), Akkuschutz und weitere Korrekturen.'],
+  ['1.1', 'Komplett offline nutzbar als einzelne Datei, für das S24 FE optimiert.'],
+  ['1.0', 'Erstausgabe mit 12 Kapiteln.']
+];
+
+/* ================= Neu in One UI 8.5 ================= */
+/* Quelle: Changelog der Galaxy-S24-Serie (Android Authority, Mai 2026). Für das S24 FE nicht einzeln bestätigt. */
+const ONEUI85 = [
+  ['Schnelleinstellungen frei anpassen', 'Kacheln und Regler lassen sich hinzufügen, entfernen, umsortieren und neu anordnen: Schnelleinstellungen öffnen › Stift (Bearbeiten).'],
+  ['Nur einen Teil des Bildschirms aufnehmen', 'Der Bildschirmrekorder kann jetzt auch nur einen ausgewählten Bereich aufzeichnen.'],
+  ['Neue Akku-Einstellungen', 'Die Akku-Seite zeigt Restlaufzeit, Ladestatus und Tagesverbrauch übersichtlicher. Der Energiesparmodus bietet „Standard“ (moderat, anpassbar) und „Maximal“ (schaltet alles Unwichtige ab).'],
+  ['Sperre nach Fehlversuchen', 'Eine neue Option im Diebstahlschutz sperrt den Bildschirm automatisch, wenn zu oft falsch entsperrt wurde. Die Identitätsprüfung schützt zusätzliche Einstellungen.'],
+  ['Auto Blocker vergisst nicht', 'Wer Auto Blocker kurz ausschaltet, kann ihn automatisch nach 30 Minuten wieder einschalten lassen.'],
+  ['Mailbox direkt auf dem Telefon', 'Anrufer können eine Sprachnachricht direkt auf Ihrem Telefon hinterlassen, die Sie später abhören (zusätzlich zur Mailbox Ihres Anbieters).'],
+  ['Quick Share nur von Bekannten', 'Einstellbar: Dateien nur von Geräten empfangen, die mit Ihrem Samsung- oder Google-Konto angemeldet sind. Zusätzlich schlägt Quick Share vor, Fotos direkt mit den abgebildeten Personen zu teilen.'],
+  ['Bildschirm auf den Fernseher', 'Für Smart View (Bildschirm spiegeln) lässt sich eine Verknüpfung auf dem Startbildschirm anlegen.'],
+  ['Sperrbildschirm passt sich dem Foto an', 'Uhr und Widgets rücken automatisch so, dass sie wichtige Bildteile Ihres Hintergrundfotos nicht verdecken.'],
+  ['Wetter und Uhr', 'Wetter-Widget mit Regengrafik für die nächsten Stunden und Pollenflug. Der Wecker kann das aktuelle Wetter als Hintergrund zeigen; ein Zeitzonen-Schieberegler zeigt Zeitunterschiede.'],
+  ['Erinnerungen und Rechner', 'Für jede Erinnerung lässt sich festlegen, wie früh sie meldet. Der Rechner schlägt kopierte Zahlen und Formeln aus der Zwischenablage vor.'],
+  ['Barrierefreiheit', 'Einstellungen für Bluetooth-Hörgeräte direkt über die Barrierefreiheits-Verknüpfung; neue Maus-Funktionen (Verweilaktion, Eckaktionen).'],
+  ['Galaxy AI und Bixby', 'Der Foto-Assistent erzeugt mehrere Varianten nacheinander, ohne jede zu speichern. Bixby versteht freiere Formulierungen und zeigt den Gesprächsverlauf.']
+];
+
+/* ================= Such-Synonyme (normalisiert, ohne Umlaute) ================= */
+const SYNONYMS = [
+  ['bildschirmfoto', 'screenshot'], ['handy', 'telefon', 'smartphone'], ['akku', 'batterie'], ['wlan', 'wifi', 'wi-fi', 'internet'],
+  ['zurucksetzen', 'werkseinstellungen', 'reset'], ['passwort', 'kennwort'], ['foto', 'bild', 'fotos', 'bilder'], ['video', 'film', 'filmen'],
+  ['lautlos', 'stumm', 'ton aus'], ['klingelton', 'ton', 'klingel'], ['nachricht', 'sms', 'nachrichten'], ['anruf', 'anrufen', 'telefonieren'],
+  ['hotspot', 'tethering'], ['kopfhorer', 'bluetooth', 'buds'], ['verloren', 'finden', 'diebstahl', 'geklaut', 'gestohlen'],
+  ['speicher', 'platz', 'voll'], ['schrift', 'text', 'schriftgrosse'], ['dunkel', 'nachtmodus', 'dunkelmodus'], ['update', 'aktualisierung', 'aktualisieren'],
+  ['app', 'anwendung', 'apps'], ['sim', 'simkarte', 'karte'], ['ausschalten', 'abschalten', 'neustart', 'neu starten'], ['entsperren', 'pin', 'sperre'],
+  ['laden', 'aufladen', 'ladegerat', 'netzteil'], ['kamera', 'fotografieren'], ['notruf', '112', 'sos'], ['wecker', 'alarm'], ['navigation', 'maps', 'karte'],
+  ['email', 'e-mail', 'mail'], ['virus', 'viren', 'schadsoftware', 'malware'], ['langsam', 'hangt', 'eingefroren', 'ruckelt']
+];
+
+/* ================= Spickzettel ================= */
+const CHEAT = {
+  keys: [
+    ['Bildschirm an/aus', 'Seitentaste kurz'], ['Bildschirmfoto', 'Seitentaste + Leiser kurz'], ['Ausschaltmenü', 'Seitentaste + Leiser ca. 2 s'],
+    ['Erzwungener Neustart', 'Seitentaste + Leiser 7 s'], ['Kamera starten', 'Seitentaste 2×'], ['Notruf-SOS', 'Seitentaste 5× (muss eingeschaltet sein)']
+  ],
+  gestures: [
+    ['Startbildschirm', 'Von unten nach oben wischen'], ['Zurück', 'Vom linken oder rechten Rand zur Mitte'], ['Letzte Apps', 'Von unten wischen und halten'],
+    ['Benachrichtigungen', 'Oben links nach unten wischen'], ['Schnelleinstellungen', 'Oben rechts nach unten wischen'], ['Circle to Search', 'Strich unten gedrückt halten']
+  ],
+  paths: [
+    ['Schrift größer', 'Anzeige › Schriftgröße und -stil'], ['Dunkelmodus', 'Anzeige › Dunkel'], ['Akkuschutz', 'Akku › Akkuschutz'],
+    ['Gerät finden', 'Sicherheit und Datenschutz › Schutz bei Geräteverlust'], ['Updates', 'Software-Update › Herunterladen und installieren'],
+    ['Speicher prüfen', 'Gerätewartung › Speicher'], ['Wartungsmodus', 'Gerätewartung › Wartungsmodus'], ['Seitentaste ändern', 'Erweiterte Funktionen › Seitentaste']
+  ],
+  numbers: [
+    ['Feuerwehr / Rettungsdienst', '112'], ['Polizei', '110'], ['Ärztlicher Bereitschaftsdienst', '116 117'], ['Sperr-Notruf (Karten, Konten)', '116 116'],
+    ['IMEI anzeigen', '*#06# im Tastenfeld'], ['Mailbox abhören', 'Taste 1 gedrückt halten']
+  ]
+};
+
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -3571,7 +3733,7 @@ const TERM_PATTERNS = {
     sicherheit: ['shield', 'Sicherheit'], knox: ['lock', 'Sicherheit'], schutzplan: ['check', 'Sicherheit'],
     kamera: ['lens', 'Kamera & KI'], ai: ['search', 'Kamera & KI'],
     akku: ['battery', 'Alltag'], anpassen: ['contrast', 'Alltag'], verbindungen: ['wifi', 'Alltag'], apps: ['app', 'Alltag'],
-    alltag: ['grid', 'Alltag'], profi: ['bulb', 'Profi-Wissen'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
+    alltag: ['grid', 'Alltag'], profi: ['bulb', 'Profi-Wissen'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], spickzettel: ['menu', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
   };
   const metaOf = sec => CH_META[sec.id] || ['book', 'Weitere'];
   chapters.forEach(sec => {
@@ -3865,6 +4027,43 @@ const TERM_PATTERNS = {
   TIPS.forEach(t => { const x = strip(t.how + ' ' + t.why); index.push({ id: 'tipps', title: t.t, ch: 'Tipps & Tricks', text: x, nt: norm(t.t), nx: norm(x) }); });
   MYTHS.forEach(m => index.push({ id: 'mythen', title: m.q, ch: 'Mythen-Check', text: '', nt: norm(m.q), nx: '' }));
   BACKGROUND.forEach(b => { const x = strip(b.d); index.push({ id: 'hintergrund-wissen', title: b.t, ch: 'Hintergrundwissen', text: x, nt: norm(b.t), nx: norm(x) }); });
+  ONEUI85.forEach(([t, d]) => index.push({ id: 'oneui85', title: t, ch: 'Neu in One UI 8.5', text: d, nt: norm(t), nx: norm(d) }));
+  [...CHEAT.keys, ...CHEAT.gestures, ...CHEAT.paths, ...CHEAT.numbers].forEach(([a, b2]) => index.push({ id: 'spickzettel-seite', title: a, ch: 'Spickzettel', text: b2, nt: norm(a), nx: norm(b2) }));
+
+  /* fehlertolerante Suche: Wortschatz + Synonyme */
+  const vocab = new Set();
+  index.forEach(it => (it.nt + ' ' + it.nx).split(/[^a-z0-9äöü]+/).forEach(w => { if (w.length >= 4) vocab.add(w); }));
+  const allText = index.map(it => it.nt + ' ' + it.nx).join(' ');
+  const SYN = new Map();
+  SYNONYMS.forEach(g => g.forEach(w => SYN.set(w, g)));
+  function lev(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+      const cur = [i]; let best = i;
+      for (let j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) cur[j] = Math.min(cur[j], prev[j - 2] === undefined ? cur[j] : prev[j - 2] + 1);
+        best = Math.min(best, cur[j]);
+      }
+      if (best > max) return max + 1;
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+  function alternatives(w) {
+    const alts = new Set();
+    const g = SYN.get(w) || [...SYN.keys()].filter(k => k.length >= 4 && w.length >= 4 && (k.startsWith(w) || w.startsWith(k))).map(k => SYN.get(k))[0];
+    if (g) g.forEach(x => { if (x !== w) alts.add(x); });
+    let fuzzy = [];
+    if (w.length >= 4 && !allText.includes(w)) {
+      const max = w.length >= 8 ? 2 : 1;
+      vocab.forEach(v => { if (v[0] === w[0] || v.length >= 6) { const d = lev(w, v, max); if (d <= max) fuzzy.push([d, v]); } });
+      fuzzy = fuzzy.sort((a, b) => a[0] - b[0]).slice(0, 4).map(x => x[1]);
+      fuzzy.forEach(x => alts.add(x));
+    }
+    return { alts: [...alts], fuzzy };
+  }
 
   const qInput = $('#q'), results = $('#results');
   let hits = [], sel = -1;
@@ -3878,17 +4077,23 @@ const TERM_PATTERNS = {
   function search() {
     const words = norm(qInput.value).split(/\s+/).filter(w => w.length > 1);
     if (!words.length) { hideResults(); return; }
+    const expanded = words.map(w => ({ w, ...alternatives(w) }));
+    const usedFuzzy = new Set();
     hits = index.map(it => {
-      let sc = 0;
-      for (const w of words) {
-        const inT = it.nt.includes(w), inX = it.nx.includes(w);
-        if (!inT && !inX) return null;
-        sc += (inT ? 10 : 0) + (inX ? 2 : 0);
+      let sc = 0, hl = null;
+      for (const e of expanded) {
+        const inT = it.nt.includes(e.w), inX = it.nx.includes(e.w);
+        if (inT || inX) { sc += (inT ? 10 : 0) + (inX ? 2 : 0); hl = hl || e.w; continue; }
+        const alt = e.alts.find(a => it.nt.includes(a) || it.nx.includes(a));
+        if (!alt) return null;
+        sc += it.nt.includes(alt) ? 6 : 1.5; hl = hl || alt;
+        if (e.fuzzy.includes(alt)) usedFuzzy.add(alt);
       }
-      return { it, sc };
+      return { it, sc, hl };
     }).filter(Boolean).sort((a, b) => b.sc - a.sc).slice(0, 8);
     sel = -1;
-    results.innerHTML = hits.length ? hits.map((h, k) => `<a href="#${h.it.id}" data-k="${k}"><b>${esc(h.it.title)}</b><span>${esc(h.it.ch)} · ${snippet(h.it.text, words[0])}</span></a>`).join('')
+    const note = usedFuzzy.size ? `<div class="empty fuzzy-note">Ähnliche Treffer für: <b>${[...usedFuzzy].map(esc).join(', ')}</b></div>` : '';
+    results.innerHTML = hits.length ? note + hits.map((h, k) => `<a href="#${h.it.id}" data-k="${k}"><b>${esc(h.it.title)}</b><span>${esc(h.it.ch)} · ${snippet(h.it.text, h.hl || words[0])}</span></a>`).join('')
       : `<div class="empty">Nichts gefunden zu „${esc(qInput.value)}“. Versuchen Sie ein anderes Wort, z. B. „Akku“, „Foto“ oder „WLAN“.</div>`;
     results.hidden = false;
   }
@@ -4541,6 +4746,156 @@ const TERM_PATTERNS = {
   /* ======================= Hintergrundwissen ======================= */
   const bg = $('#background-cards');
   if (bg) bg.innerHTML = BACKGROUND.map(b => `<details class="bg-card"><summary><span class="ch-ico">${icon(b.icon)}</span><b>${esc(b.t)}</b></summary><div class="pp-body"><p>${b.d}</p></div></details>`).join('');
+})();
+
+/* ================= Version, One UI 8.5, Spickzettel, Mein Gerät, Kompaktansicht, Notizen, Weitergabe ================= */
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const { store, toast } = window.HB;
+  const isLocal = location.protocol === 'file:' || location.protocol === 'content:';
+
+  /* ---------- Version ---------- */
+  $$('[data-version]').forEach(el => { el.textContent = `Version ${HB_VERSION.v} · Stand ${HB_VERSION.date}`; });
+  const cl = $('#changelog');
+  if (cl) cl.innerHTML = CHANGELOG.map(([v, t], i) => `<li${i === 0 ? ' class="cur"' : ''}><b>Version ${esc(v)}${i === 0 ? ' (aktuell)' : ''}</b><span>${esc(t)}</span></li>`).join('');
+
+  /* ---------- Neu in One UI 8.5 ---------- */
+  const ou = $('#oneui85-list');
+  if (ou) ou.innerHTML = ONEUI85.map(([t, d]) => `<div class="card nu-card"><h4>${icon('bulb')}${esc(t)}</h4><p>${esc(d)}</p></div>`).join('');
+
+  /* ---------- Spickzettel ---------- */
+  const cs = $('#cheatsheet');
+  if (cs) {
+    const block = (title, ic, rows) => `<div class="cheat-block"><h4>${icon(ic)}${esc(title)}</h4><table><tbody>${rows.map(([a, b]) => `<tr><th scope="row">${esc(a)}</th><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div>`;
+    cs.innerHTML = `<div class="cheat-head"><b>Galaxy S24 FE · Spickzettel</b><span data-version></span></div><div class="cheat-grid">` +
+      block('Tasten', 'phone', CHEAT.keys) + block('Gesten', 'swipe', CHEAT.gestures) + block('Wichtige Einstellungen (Einstellungen › …)', 'grid', CHEAT.paths) + block('Nummern & Codes', 'info', CHEAT.numbers) + '</div>';
+    $$('[data-version]', cs).forEach(el => { el.textContent = `Version ${HB_VERSION.v} · Stand ${HB_VERSION.date}`; });
+  }
+  $$('.print-btn').forEach(b => {
+    if (!isLocal) { b.hidden = true; const n = b.parentElement.querySelector('.print-note'); if (n) n.hidden = false; return; }
+    b.addEventListener('click', () => {
+      document.body.classList.add('printing-cheat');
+      setTimeout(() => { try { window.print(); } catch (e) { toast('Drucken ist hier nicht möglich.'); } document.body.classList.remove('printing-cheat'); }, 50);
+    });
+  });
+
+  /* ---------- Mein Gerät ---------- */
+  const md = $('#my-device');
+  if (md) {
+    const F = [
+      ['model', 'Modell', 'SM-S721B/DS', 'text'], ['imei', 'IMEI (*#06#)', '15 Ziffern', 'text'], ['serial', 'Seriennummer', 'Einstellungen › Telefoninfo', 'text'],
+      ['bought', 'Kaufdatum', '', 'date'], ['shop', 'Händler', 'z. B. Elektromarkt in …', 'text'], ['carrier', 'Mobilfunkanbieter & Tarif', 'z. B. Anbieter, Tarifname', 'text'],
+      ['hotline', 'Hotline des Anbieters (SIM sperren)', 'Telefonnummer', 'tel'], ['case', 'Zubehör (Hülle, Schutzglas, Ladegerät)', '', 'text'], ['notes', 'Sonstiges', 'z. B. Versicherung, Vertragsnummer', 'textarea']
+    ];
+    let data = store.get('mydevice', {});
+    md.innerHTML = `<div class="callout warn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${ICONS.warn}</svg><div><b class="t">Bitte keine Passwörter, PINs oder PUKs eintragen</b><p>Die Angaben werden nur in diesem Browser auf diesem Gerät gespeichert. Zugangsdaten gehören auf Papier an einen sicheren Ort.</p></div></div>
+      <div class="md-grid">${F.map(([k, l, ph, t]) => `<label class="md-field${t === 'textarea' ? ' wide' : ''}" for="md-${k}"><span>${esc(l)}</span>${t === 'textarea' ? `<textarea id="md-${k}" data-k="${k}" rows="3" placeholder="${esc(ph)}"></textarea>` : `<input id="md-${k}" data-k="${k}" type="${t}" placeholder="${esc(ph)}" autocomplete="off">`}</label>`).join('')}</div>
+      <p class="md-warranty" id="md-warranty"></p>`;
+    $$('[data-k]', md).forEach(i => { if (data[i.dataset.k]) i.value = data[i.dataset.k]; });
+    const warranty = () => {
+      const v = data.bought, el = $('#md-warranty');
+      if (!v) { el.textContent = 'Tragen Sie das Kaufdatum ein, dann zeige ich, bis wann Gewährleistung und Herstellergarantie laufen.'; return; }
+      const d = new Date(v + 'T12:00:00'); if (isNaN(d)) { el.textContent = ''; return; }
+      const plus = m => { const x = new Date(d); x.setMonth(x.getMonth() + m); return x.toLocaleDateString('de-DE'); };
+      el.innerHTML = `Gewährleistung beim Händler und Samsung-Herstellergarantie (24 Monate) laufen bis etwa <b>${plus(24)}</b>. Beweislastumkehr bis <b>${plus(12)}</b>.`;
+    };
+    let tmr;
+    md.addEventListener('input', e => {
+      const k = e.target.dataset.k; if (!k) return;
+      data[k] = e.target.value; clearTimeout(tmr); tmr = setTimeout(() => { store.set('mydevice', data); }, 300);
+      if (k === 'bought') warranty();
+    });
+    warranty();
+  }
+
+  /* ---------- Persönliche Notizen pro Kapitel ---------- */
+  $$('section.chapter').forEach(sec => {
+    const box = $('.done-box', sec); if (!box) return;
+    const id = 'note-' + sec.id;
+    const wrap = document.createElement('details');
+    wrap.className = 'note-box';
+    const saved = store.get(id, '');
+    wrap.innerHTML = `<summary>${icon('note')}<span>Meine Notizen zu diesem Kapitel</span><em class="note-flag"${saved ? '' : ' hidden'}>gespeichert</em></summary>
+      <label class="visually-hidden" for="${id}">Notizen zu ${esc(sec.dataset.title)}</label><textarea id="${id}" rows="4" placeholder="z. B. „Mein Akkuschutz steht auf 85 %“ – wird nur auf diesem Gerät gespeichert.">${esc(saved)}</textarea>`;
+    if (saved) wrap.open = true;
+    sec.insertBefore(wrap, box);
+    let t;
+    $('textarea', wrap).addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { store.set(id, e.target.value); $('.note-flag', wrap).hidden = !e.target.value; }, 400); });
+  });
+
+  /* ---------- Kompaktansicht ---------- */
+  const PRO_CHAPTERS = ['knox', 'profi'];
+  const PRO_H3 = ['modi-detail', 'kamera-labor', 'pro-modus', 'kamera-einstellungen', 'kamera-ai', 'speicher-rechner', 'ladezeit', 'dex', 'knox-firma', 'pflege', 'checkliste', 'multitasking', 'edge', 'weitere-apps'];
+  PRO_H3.forEach(id => {
+    const h = document.getElementById(id); if (!h || h.closest('.pro-block')) return;
+    const w = document.createElement('div'); w.className = 'pro-block';
+    h.parentNode.insertBefore(w, h);
+    let el = h; const stop = n => !n || (n.matches && (n.matches('h3') && n !== h)) || n.classList && (n.classList.contains('done-box') || n.classList.contains('note-box') || n.classList.contains('ch-nav'));
+    while (el && !stop(el)) { const nx = el.nextElementSibling; w.appendChild(el); el = nx; }
+  });
+  PRO_CHAPTERS.forEach(id => { const s = document.getElementById(id); if (s) s.classList.add('pro-chapter'); });
+  const banner = document.createElement('div');
+  banner.className = 'compact-banner'; banner.hidden = true;
+  banner.innerHTML = `<span>${icon('eye')}<b>Kompaktansicht:</b> Hintergrund-Kästen und Profi-Abschnitte sind ausgeblendet.</span><button type="button" class="btn" data-act="compact">Alles anzeigen</button>`;
+  const content = $('.content'); content.insertBefore(banner, content.firstChild);
+  const applyCompact = on => {
+    document.body.classList.toggle('compact', on);
+    banner.hidden = !on;
+    PRO_CHAPTERS.forEach(id => { $$(`[data-sec="${id}"]`).forEach(a => { (a.closest('li') || a).classList.toggle('pro-hidden', on); }); });
+    $$('.ch-nav a').forEach(a => a.classList.toggle('pro-hidden', on && PRO_CHAPTERS.includes(a.getAttribute('href').slice(1))));
+    // Gruppenüberschriften ausblenden, wenn alle ihre Kapitel ausgeblendet sind
+    $$('.toc-group, .ch-group-title').forEach(g => {
+      let n = g.nextElementSibling, any = false;
+      while (n && !n.matches('.toc-group, .ch-group-title')) { if (!n.classList.contains('pro-hidden') && !(n.querySelector && n.querySelector('.pro-hidden'))) any = true; n = n.nextElementSibling; }
+      g.classList.toggle('pro-hidden', on && !any);
+    });
+    $$('.in-chapter a').forEach(a => { const t = document.getElementById(a.getAttribute('href').slice(1)); a.parentElement.hidden = on && !!t && !!t.closest('.pro-block'); });
+    $$('[data-act="compact"]').forEach(b => { if (b.closest('.compact-banner')) return; b.setAttribute('aria-pressed', on); b.querySelector('span') && (b.querySelector('span').textContent = on ? 'Alles anzeigen' : 'Nur das Wichtigste'); });
+  };
+  let compact = store.get('compact', false);
+  applyCompact(compact);
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-act="compact"]'); if (!b) return;
+    compact = !compact; store.set('compact', compact); applyCompact(compact);
+    toast(compact ? 'Kompaktansicht: nur das Wichtigste' : 'Alle Inhalte werden angezeigt');
+  });
+
+  /* ---------- Weitergabe ---------- */
+  const fileName = 'S24-FE-Handbuch.html';
+  async function shareHandbook() {
+    if (!isLocal) {
+      const url = location.href.split('#')[0];
+      try { if (navigator.share) { await navigator.share({ title: document.title, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+      try { await navigator.clipboard.writeText(url); toast('Link kopiert'); } catch (e) { toast('Bitte den Link aus der Adresszeile kopieren.'); }
+      return;
+    }
+    const src = window.__HB_SRC;
+    if (!src) { toast('Bitte die Datei über „Eigene Dateien“ teilen.'); return; }
+    const file = new File([src], fileName, { type: 'text/html' });
+    try {
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Galaxy S24 FE Handbuch', text: 'Das Einsteiger-Handbuch für das Galaxy S24 FE. Datei antippen und mit Chrome oder Samsung Internet öffnen.' }); return; }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    try {
+      const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = fileName;
+      document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+      toast('Kopie gespeichert: in „Eigene Dateien › Downloads“ antippen › Teilen');
+    } catch (e) { toast('Bitte die Datei über „Eigene Dateien“ teilen.'); }
+  }
+  $$('[data-act="share"]').forEach(b => b.addEventListener('click', shareHandbook));
+  const old = $('#share-btn');
+  if (old) { const nb = old.cloneNode(true); old.replaceWith(nb); nb.parentElement.hidden = false; nb.lastChild.textContent = isLocal ? 'Handbuch weitergeben' : 'Link teilen'; nb.addEventListener('click', shareHandbook); }
+
+  // Hinweis bei eingeschränkter Vorschau (z. B. in WhatsApp oder E-Mail-App geöffnet)
+  let storageOk = true;
+  try { localStorage.setItem('s24fe:probe', '1'); localStorage.removeItem('s24fe:probe'); } catch (e) { storageOk = false; }
+  const inWebView = /; wv\)/.test(navigator.userAgent);
+  if (isLocal && (!storageOk || inWebView)) {
+    const v = document.createElement('div'); v.className = 'viewer-banner';
+    v.innerHTML = `<span>${icon('info')}Sie sehen das Handbuch in einer Vorschau${storageOk ? '' : ', die nichts speichern kann'}. Für alle Funktionen: Datei in <b>Chrome</b> oder <b>Samsung Internet</b> öffnen (Menü ⋮ › „Öffnen mit“).</span><button type="button" class="iconbtn" aria-label="Hinweis schließen">×</button>`;
+    content.insertBefore(v, content.firstChild);
+    $('button', v).addEventListener('click', () => v.remove());
+  }
 })();
 
 /* ================= Fachbegriff-Tooltips =================

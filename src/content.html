@@ -10,6 +10,7 @@
         <a class="btn" href="#hilfe" data-icon="wrench">Ich habe ein Problem</a>
       </div>
       <div class="hero-stats" id="hero-stats"></div>
+      <p class="version-line" data-version></p>
     </div>
     <div class="hero-art" data-mock="hero"></div>
   </div>
@@ -712,7 +713,7 @@
     <thead><tr><th>Maßnahme</th><th>Wirkung</th><th>Wo?</th></tr></thead>
     <tbody>
       <tr><td><b>Dunkelmodus</b></td><td class="n">mittel</td><td>Anzeige › Dunkel. Schwarze Pixel verbrauchen beim <button class="term" data-term="amoled">AMOLED</button>-Display keinen Strom.</td></tr>
-      <tr><td><b>Energiesparmodus</b></td><td class="n">hoch</td><td>Schnelleinstellungen oder Akku › Energiesparmodus. Begrenzt Hintergrundaktivität und Helligkeit.</td></tr>
+      <tr><td><b>Energiesparmodus</b></td><td class="n">hoch</td><td>Schnelleinstellungen oder Akku › Energiesparmodus. Begrenzt Hintergrundaktivität und Helligkeit. Ab One UI 8.5 wählbar: „Standard“ (anpassbar) oder „Maximal“ (schaltet alles Unwichtige ab).</td></tr>
       <tr><td><b>Bewegungsglättung „Standard“</b></td><td class="n">gering</td><td>Anzeige › Bewegungsglättung. 60 Hz statt bis zu 120 Hz.</td></tr>
       <tr><td><b>Always On Display nur bei Tippen</b></td><td class="n">gering</td><td>Sperrbildschirm und AOD › Always On Display › „Zum Anzeigen tippen“</td></tr>
       <tr><td><b>Ungenutzte Apps einschläfern</b></td><td class="n">mittel</td><td>Akku › Hintergrundnutzungslimits › „Nicht verwendete Apps in Standby versetzen“</td></tr>
@@ -928,6 +929,7 @@
   <ol class="steps">
     <li>Schnelleinstellungen öffnen und die Kachel <b>Bildschirmrekorder</b> antippen. Fehlt sie: oben auf den Stift (Bearbeiten) tippen und die Kachel hinzufügen.</li>
     <li>Ton wählen: <b>Kein Ton</b>, <b>Medientöne</b> (Ton der Apps) oder <b>Medientöne und Mikrofon</b> (zusätzlich Ihre Stimme).</li>
+    <li>Ab One UI 8.5 können Sie wählen, ob der <b>ganze Bildschirm</b> oder nur ein <b>Ausschnitt</b> aufgenommen wird.</li>
     <li><b>Aufnahme starten</b>. Nach einem kurzen Countdown läuft die Aufnahme; oben rechts erscheint eine kleine Leiste.</li>
     <li>Zum Beenden in der Leiste auf <b>Stopp</b> (Quadrat) tippen. Das Video liegt in der <b>Galerie</b>.</li>
   </ol>
@@ -995,6 +997,11 @@
 <section class="chapter" id="profi" data-ch="1" data-title="Hintergrundwissen, Tipps & Tricks" data-time="35" data-lvl="2">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Hintergrundwissen, Tipps &amp; Tricks</h2><p>Geprüfte Kniffe mit Quellenangabe, verständliches Technikwissen und ein Mythen-Check zum Mitraten.</p></div></div>
 
+  <h3 id="oneui85">Neu in One UI 8.5</h3>
+  <p>Seit Mai 2026 verteilt Samsung <b>One UI 8.5</b> (Android 16) an das S24 FE. Das sind die wichtigsten Neuerungen für den Alltag. Die Liste stammt aus dem Änderungsprotokoll der Galaxy-S24-Serie; einzelne Funktionen können beim S24 FE fehlen oder anders heißen.</p>
+  <div class="grid-2" id="oneui85-list"></div>
+  <p class="caption" style="text-align:left">Ihren Stand sehen Sie unter <b>Einstellungen › Telefoninfo › Softwareinformationen</b>. Das Update laden Sie unter <b>Software-Update › Herunterladen und installieren</b> (ca. 4 GB, nur im WLAN und mit mindestens 20 % Akku).</p>
+
   <h3 id="tipps">Geprüfte Tipps &amp; Tricks</h3>
   <p>Jeder Tipp wurde gegen Samsung-Support-Seiten oder Fachpresse geprüft; die Quelle steht unter dem Tipp. Menübezeichnungen können je nach One-UI-Version leicht abweichen. Haken Sie ab, was Sie ausprobiert haben.</p>
   <div class="card" id="tips-list"></div>
@@ -1060,6 +1067,20 @@
   <div class="quiz mini" data-mini-quiz="hilfe"></div>
 </section>
 
+<!-- ===================== SPICKZETTEL ===================== -->
+<section class="chapter" id="spickzettel" data-ch="1" data-title="Spickzettel & Mein Gerät" data-time="5" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Spickzettel &amp; Mein Gerät</h2><p>Das Wichtigste auf einer Seite zum Ausdrucken und ein Notizblatt für die Daten Ihres Telefons.</p></div></div>
+
+  <h3 id="spickzettel-seite">Spickzettel</h3>
+  <p>Tasten, Gesten, wichtige Einstellungen und Nummern auf einen Blick. Drucken Sie ihn aus und legen Sie ihn zur Verpackung, oder speichern Sie ihn als PDF.</p>
+  <div class="cta-row print-row"><button type="button" class="btn primary print-btn" data-icon="note">Spickzettel drucken / als PDF</button><p class="caption print-note" hidden style="text-align:left;margin:0">Drucken geht in der heruntergeladenen Datei (in Chrome: Menü ⋮ › Teilen › Drucken). Hier im Online-Link ist es nicht möglich.</p></div>
+  <div class="cheat card" id="cheatsheet"></div>
+
+  <h3 id="mein-geraet">Mein Gerät</h3>
+  <p>Die wichtigsten Daten Ihres Telefons an einem Ort, z. B. für Diebstahlanzeige, Versicherung oder Reparatur. Beim Drucken des Spickzettels wird dieses Blatt mitgedruckt.</p>
+  <div class="card" id="my-device"></div>
+</section>
+
 <!-- ===================== DATENBLATT ===================== -->
 <section class="chapter" id="datenblatt" data-ch="1" data-title="Datenblatt" data-time="10" data-lvl="1">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Datenblatt</h2><p>Alle technischen Daten des Galaxy S24 FE an einem Ort, durchsuchbar und mit Erklärungen.</p></div></div>
@@ -1102,12 +1123,21 @@
       </ol>
     </div>
   </div>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="app">Weitergeben mit einem Tipp</h4><p>Öffnen Sie das Handbuch in Chrome oder Samsung Internet und tippen Sie auf <b>„Handbuch weitergeben“</b> (oben und im Menü ☰ unter „Ansicht“). Es öffnet sich das Teilen-Menü des Telefons mit der Datei, z. B. für WhatsApp oder Quick Share. Wo das nicht geht, wird eine Kopie in <b>Downloads</b> gespeichert, die Sie von dort teilen.</p></div>
+    <div class="card"><h4 data-icon="box">E-Mail blockiert die Datei?</h4><p>Manche E-Mail-Dienste und Firmen-Postfächer lassen keine <code>.html</code>-Anhänge zu. Schicken Sie dann die ZIP-Version <code>S24-FE-Handbuch.zip</code> (auch kleiner). Auf dem S24 FE: in <b>Eigene Dateien</b> antippen › <b>Entpacken</b>, dann die HTML-Datei öffnen.</p></div>
+  </div>
+  <div class="callout info" data-t="Geöffnet, aber manches funktioniert nicht?"><p>Öffnet WhatsApp oder eine E-Mail-App die Datei in einer eigenen Vorschau, können dort Fortschritt, Notizen und einige Knöpfe fehlen. Das Handbuch zeigt dann oben einen Hinweis. Abhilfe: im Menü ⋮ der Vorschau „Öffnen mit“ › <b>Chrome</b> oder <b>Samsung Internet</b> wählen. Ob Sie die neueste Fassung haben, sehen Sie an der Versionsangabe auf der Startseite und im Menü.</p></div>
   <div class="callout tip" data-t="Schnell wiederfinden">
     <p>Haben Sie das Handbuch als <b>Link</b> bekommen, legen Sie es sich als Symbol auf den Startbildschirm: In <b>Samsung Internet</b> unten auf ≡ › „Seite hinzufügen zu“ › <b>Startbildschirm</b>. In <b>Chrome</b> oben auf ⋮ › „Zum Startbildschirm hinzufügen“. Als Datei finden Sie es jederzeit in <b>Eigene Dateien › Zuletzt</b>.</p>
   </div>
   <div class="callout info" data-t="Lesefortschritt"><p>Erledigte Kapitel, Quiz-Ergebnis, Schriftgröße und Hell/Dunkel merkt sich der Browser auf diesem Gerät. Öffnet ein Datei-Viewer das Handbuch ohne Speichermöglichkeit, funktioniert trotzdem alles, nur der Fortschritt wird nicht gemerkt. Dann die Datei mit Samsung Internet oder Chrome öffnen.</p></div>
 
+  <h3 id="versionen">Versionen und Änderungen</h3>
+  <p>Die aktuelle Fassung: <b data-version></b>. Haben Sie eine ältere Datei bekommen, bitten Sie den Absender um die neue.</p>
+  <ol class="changelog" id="changelog"></ol>
+
   <footer class="foot">
-    <p><b>Hinweis:</b> Dies ist ein unabhängiges, inoffizielles Handbuch. Es steht in keiner Verbindung zu Samsung. „Samsung“, „Galaxy“ und „One UI“ sind Marken der Samsung Electronics Co., Ltd. Bildschirmdarstellungen sind vereinfachte Illustrationen. Menünamen können sich durch Software-Updates ändern. Stand: November 2026.</p>
+    <p><b>Hinweis:</b> Dies ist ein unabhängiges, inoffizielles Handbuch. Es steht in keiner Verbindung zu Samsung. „Samsung“, „Galaxy“ und „One UI“ sind Marken der Samsung Electronics Co., Ltd. Bildschirmdarstellungen sind vereinfachte Illustrationen. Menünamen können sich durch Software-Updates ändern. <span data-version></span>.</p>
   </footer>
 </section>

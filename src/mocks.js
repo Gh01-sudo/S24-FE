@@ -1,3 +1,5 @@
+/* Unveränderte Kopie der Seite für den Weitergeben-Knopf (vor allen Änderungen am DOM) */
+window.__HB_SRC = document.documentElement ? '<!doctype html>\n' + document.documentElement.outerHTML : '';
 /* ============ Icons ============ */
 const ICONS = {
   play: '<path d="M8 5v14l11-7z"/>',

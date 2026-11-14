@@ -5,25 +5,30 @@ Interaktives, inoffizielles Einsteiger-Handbuch für das Samsung Galaxy S24 FE (
 **Öffnen:** `S24-FE-Handbuch.html` im Browser öffnen, am PC oder direkt auf dem Galaxy S24 FE
 (Samsung Internet oder Chrome). Keine Installation, kein Internet nötig.
 
-**Weitergeben:** Die Datei ist komplett eigenständig (ca. 0,5 MB, Schriften und Bilder eingebettet).
+**Weitergeben:** Die Datei ist komplett eigenständig (ca. 0,6 MB, Schriften und Bilder eingebettet).
+Im Handbuch gibt es den Knopf „Handbuch weitergeben“ (öffnet das Teilen-Menü mit der Datei).
+Für E-Mail-Postfächer, die `.html`-Anhänge blockieren: `S24-FE-Handbuch.zip` (ca. 0,25 MB) verschicken.
 Einfach per WhatsApp (als Dokument), E-Mail oder Quick Share verschicken. Auf dem Handy die Datei
 antippen und mit Samsung Internet oder Chrome öffnen.
 
 ## Inhalt
-18 Kapitel: Gerät kennenlernen, Einrichtung, Grundbedienung, Telefonieren & Nachrichten, Sicherheit, Samsung Knox,
+19 Kapitel: Gerät kennenlernen, Einrichtung, Grundbedienung, Telefonieren & Nachrichten, Sicherheit, Samsung Knox,
 Optimal einrichten & schützen (Schutzplan), Kamera (alle Einstellungen, Kamera-Labor), Galaxy AI,
-Akku, Anpassen & Barrierefreiheit, Verbindungen, Apps & Speicher, Alltags-Apps & Funktionen, Hintergrundwissen/Tipps & Tricks (mit Quellen) und Mythen-Check, Problemlösung (inkl. Garantie), Datenblatt, Wissenstest/FAQ/Glossar.
+Akku, Anpassen & Barrierefreiheit, Verbindungen, Apps & Speicher, Alltags-Apps & Funktionen, Hintergrundwissen/Tipps & Tricks (mit Quellen) und Mythen-Check, Problemlösung (inkl. Garantie), Spickzettel & Mein Gerät (druckbar), Datenblatt, Wissenstest/FAQ/Glossar.
 
 Interaktiv: Einstellungs-Trainer (Übungs-Handy), Tasten- und Gesten-Trainer, Anruf-Simulator,
 Belichtungs-Simulator, Kamera-Berater, Lade- und Speicher-Rechner, Kurzquiz pro Kapitel,
 Checkliste, Schritt-Assistenten mit Bildschirm-Illustrationen, klickbares Geräte-Modell,
 Tastenkombinations-Simulator, animierte Gesten, Hilfe-Assistent, Quiz, Volltextsuche,
-Fortschritt, Fachbegriff-Tooltips (über 100 Begriffe, automatisch im Text markiert), Hell/Dunkel und Schriftgröße.
+Fortschritt, fehlertolerante Suche mit Synonymen, Kompaktansicht, persönliche Notizen pro Kapitel,
+Neu in One UI 8.5, Versionsangabe und Änderungsliste, Fachbegriff-Tooltips (über 100 Begriffe, automatisch im Text markiert), Hell/Dunkel und Schriftgröße.
 
 ## Bearbeiten
-Quelltexte liegen in `src/` (`content.html`, `styles.css`, `mocks.js`, `data.js`, `data2.js`, `data3.js`, `data4.js`, `data5.js`, `app.js`, `interactive.js`, `interactive2.js`, `tooltips.js`, `shell.html`, `fonts/`).
+Quelltexte liegen in `src/` (`content.html`, `styles.css`, `mocks.js`, `data.js`, `data2.js`, `data3.js`, `data4.js`, `data5.js`, `data6.js`, `app.js`, `interactive.js`, `interactive2.js`, `features.js`, `tooltips.js`, `shell.html`, `fonts/`).
 Nach Änderungen neu bauen:
 
 ```
 python3 build.py
 ```
+
+Der Build erzeugt `S24-FE-Handbuch.html` und `S24-FE-Handbuch.zip`. Bei inhaltlichen Änderungen die Version in `src/data6.js` (`HB_VERSION`, `CHANGELOG`) erhöhen.

@@ -147,6 +147,17 @@ Neues Kapitel **„Alltags-Apps & Funktionen“**: Wecker/Timer, Kalender, Bilds
 ### Bewusst nicht aufgenommen (nicht ausreichend belegt)
 Taschenlampen-Helligkeit über die Kachel, „Separater App-Ton“ als Schritt-für-Schritt-Anleitung, Zwischenablage-Verlauf der Tastatur, Rückseiten-Tippen (RegiStar: Verfügbarkeit in Good Lock unklar).
 
+## Nachtrag 5: Neu in One UI 8.5 (Version 1.8 des Handbuchs)
+
+Die Liste „Neu in One UI 8.5“ beruht auf dem Änderungsprotokoll der Galaxy-S24-Serie. Für das S24 FE nennt keine Quelle Einschränkungen; einzeln bestätigt ist es aber nicht. Das steht so auch im Handbuch.
+
+| Angabe | Quelle |
+|---|---|
+| Funktionsliste (Schnelleinstellungen anpassbar, Teil-Bildschirmaufnahme, neue Akku-Einstellungen und Energiesparmodus Standard/Maximal, Sperre nach Fehlversuchen, Auto-Blocker-Wiedereinschaltung, Mailbox auf dem Telefon, Quick-Share-Einschränkung, Smart-View-Verknüpfung, Sperrbildschirm-Layout, Wetter/Uhr, Erinnerungen/Rechner, Barrierefreiheit, Foto-Assistent/Bixby) | [Android Authority (stabile Version)](https://www.androidauthority.com/samsung-galaxy-s24-stable-one-ui-8-5-us-rollout-3667549/), [Android Authority (Beta-Changelog)](https://www.androidauthority.com/samsung-galaxy-s24-one-ui-8-5-beta-leaked-changelog-3652124/) |
+| Verteilung an das S24 FE ab Mai 2026, ca. 4 GB Download | [SamMobile](https://www.sammobile.com/news/stable-one-ui-8-5-update-galaxy-s24-fe-out/), [Sammy Fans](https://www.sammyfans.com/2026/05/18/samsung-starts-wider-one-ui-8-5-rollout-for-galaxy-s24-fe-users/), [GSMArena](https://www.gsmarena.com/one_ui_85_for_the_galaxy_s24_series_is_now_available_globally-news-72878.php) |
+| Weitergeben-Knopf: Teilen von `.html`-Dateien über das Teilen-Menü ist in Chrome erlaubt | [web.dev: Web Share](https://web.dev/articles/web-share), [Chromium-Quellcode](https://chromium.googlesource.com/chromium/src/+/main/chrome/browser/webshare/share_service_impl.cc) |
+| Spickzettel: 116 117 (ärztlicher Bereitschaftsdienst), 116 116 (Sperr-Notruf) | allgemein bekannte bundesweite Rufnummern |
+
 ## Bleibt zu beachten
 
 - **SIM-Fach:** Die Lage „links oben“ stammt aus US-Netzbetreiber-Anleitungen (SM-S721U). Für das EU-Modell ist sie sehr wahrscheinlich gleich, aber nicht aus einer Samsung-EU-Quelle belegt. Einmal am echten Gerät prüfen.
