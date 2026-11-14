@@ -1,0 +1,609 @@
+<!-- ===================== START ===================== -->
+<section id="start" class="intro" data-ch="0" data-title="Willkommen">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Inoffizielles Einsteiger-Handbuch · One UI 7 / 8</div>
+      <h1>Ihr Galaxy S24 FE, Schritt für Schritt erklärt</h1>
+      <p class="lead">Von der ersten SIM-Karte bis zum Nachtfoto: Jedes Kapitel zeigt Ihnen, <b>wo</b> Sie tippen, <b>was</b> dabei passiert und <b>warum</b> es so funktioniert. Sie brauchen kein Vorwissen.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#einrichtung" data-icon="play">Mit der Einrichtung beginnen</a>
+        <a class="btn" href="#hilfe" data-icon="wrench">Ich habe ein Problem</a>
+      </div>
+    </div>
+    <div class="hero-art" data-mock="hero"></div>
+  </div>
+
+  <div class="howto">
+    <div><b data-icon="tap">Tipp-Stellen</b>Orange markierte Punkte in den Bildschirm-Bildern zeigen genau, wohin Sie tippen.</div>
+    <div><b data-icon="steps">Schritt-Assistenten</b>Mit „Weiter“ blättern Sie durch Anleitungen, Bild und Text wechseln gemeinsam.</div>
+    <div><b data-icon="book">Hintergrundwissen</b>Aufklappbare Kästen erklären, warum etwas so ist. Lesen Sie sie, wenn Sie neugierig sind.</div>
+    <div><b data-icon="check">Fortschritt</b>Haken Sie Kapitel ab. Ihr Stand wird in diesem Browser gespeichert.</div>
+  </div>
+
+  <h3 style="margin-top:0">Welcher Weg passt zu Ihnen?</h3>
+  <div class="paths" id="paths">
+    <button class="path-card" data-path="neu" aria-pressed="false"><b>Mein erstes Smartphone</b><span>Alles von Grund auf, in der empfohlenen Reihenfolge.</span></button>
+    <button class="path-card" data-path="wechsel" aria-pressed="false"><b>Umstieg von iPhone oder älterem Handy</b><span>Daten übertragen und die Samsung-Eigenheiten kennenlernen.</span></button>
+    <button class="path-card" data-path="schnell" aria-pressed="false"><b>Ich will schnell das Wichtigste</b><span>Die fünf Kapitel, die im Alltag am meisten bringen.</span></button>
+  </div>
+  <ul class="path-list" id="path-out" aria-live="polite"></ul>
+
+  <div class="callout info" data-t="Gut zu wissen: Software-Versionen">
+    <p>Das S24 FE kam im Oktober 2024 mit Android 14 und One UI 6.1 auf den Markt. Samsung liefert <b>7 Jahre</b> Android- und Sicherheits-Updates. Dieses Handbuch beschreibt die Menüs von One UI 7 und 8. Heißt ein Menüpunkt bei Ihnen etwas anders, tippen Sie in den Einstellungen oben auf die <b>Lupe</b> und suchen nach dem Begriff. So finden Sie jede Einstellung, egal wo Samsung sie gerade einsortiert hat.</p>
+  </div>
+</section>
+
+<!-- ===================== 1 GERÄT ===================== -->
+<section class="chapter" id="geraet" data-ch="1" data-title="Das Gerät kennenlernen" data-time="10" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num">1</div><div><h2>Das Gerät kennenlernen</h2><p>Was ist in der Schachtel, wo sitzen die Tasten und was bedeuten die technischen Daten?</p></div></div>
+
+  <h3 id="lieferumfang">Was ist in der Schachtel?</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4 data-icon="box">Lieferumfang</h4>
+      <ul>
+        <li>Das Smartphone Galaxy S24 FE</li>
+        <li>Ein USB-C-Kabel (USB-C auf USB-C)</li>
+        <li>Ein kleines Metallwerkzeug zum Öffnen des SIM-Fachs</li>
+        <li>Eine Kurzanleitung mit Sicherheitshinweisen</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 data-icon="plug">Nicht enthalten</h4>
+      <ul>
+        <li><b>Kein Netzteil</b> (Stecker für die Steckdose)</li>
+        <li>Keine Kopfhörer, keine Hülle, keine Schutzfolie</li>
+        <li>Keine Speicherkarte (das Gerät hat keinen microSD-Steckplatz)</li>
+      </ul>
+    </div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Welches Netzteil soll ich kaufen?</summary><div class="inner">
+    <p>Das S24 FE lädt mit bis zu <b>25 Watt</b> („Super-Schnellladen“). Dafür braucht das Netzteil einen USB-C-Ausgang und den Standard <button class="term" data-term="pps">USB PD mit PPS</button>. Auf der Verpackung steht das meist als „PD 3.0 PPS“ oder „Super Fast Charging“. Ein Netzteil mit mehr Watt (z. B. 45 W) schadet nicht: Das Telefon nimmt sich nur so viel, wie es verträgt.</p>
+    <p>Ein altes Netzteil mit USB-A-Buchse funktioniert auch, lädt aber deutlich langsamer (oft nur 10 bis 15 Watt). Ein voller Ladevorgang dauert dann zwei bis drei Stunden statt gut einer Stunde.</p>
+  </div></details>
+
+  <h3 id="hardware">Tasten, Anschlüsse und Kameras</h3>
+  <p>Tippen Sie auf die nummerierten Punkte oder wählen Sie oben die Ansicht. Rechts erscheint, wofür das Bauteil da ist.</p>
+  <div class="explorer" id="explorer">
+    <div class="stage">
+      <div class="seg" role="group" aria-label="Ansicht wählen">
+        <button data-view="front" aria-pressed="true">Vorne</button>
+        <button data-view="back" aria-pressed="false">Hinten</button>
+        <button data-view="right" aria-pressed="false">Rechts</button>
+        <button data-view="bottom" aria-pressed="false">Unten</button>
+      </div>
+      <div id="explorer-svg"></div>
+    </div>
+    <div>
+      <ul class="hs-list" id="explorer-list"></ul>
+      <div class="hs-info" id="explorer-info" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <h3 id="specs">Technische Daten verständlich erklärt</h3>
+  <p>Tippen Sie auf eine Zeile, um zu sehen, was der Wert im Alltag bedeutet.</p>
+  <div class="table-wrap"><table id="spec-table"><thead><tr><th>Merkmal</th><th>Wert</th><th></th></tr></thead><tbody></tbody></table></div>
+  <div class="callout tip" data-t="Tipp: Welches Modell habe ich?">
+    <p>Unter <b>Einstellungen › Telefoninfo</b> sehen Sie Modellnummer (beim S24 FE <b>SM-S721B</b> in Europa), Speichergröße, Telefonnummer und die Seriennummer. Die Seriennummer und IMEI brauchen Sie bei Reparatur, Versicherung oder Diebstahlanzeige. Machen Sie davon am besten gleich ein Foto und bewahren Sie es außerhalb des Telefons auf.</p>
+  </div>
+</section>
+
+<!-- ===================== 2 EINRICHTUNG ===================== -->
+<section class="chapter" id="einrichtung" data-ch="2" data-title="Erste Einrichtung" data-time="25" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num">2</div><div><h2>Erste Einrichtung</h2><p>SIM-Karte einlegen, laden, einschalten und den Einrichtungsassistenten durchlaufen.</p></div></div>
+
+  <h3 id="sim">SIM-Karte einlegen</h3>
+  <div class="stepper" data-stepper="sim"></div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Was ist eine eSIM und brauche ich sie?</summary><div class="inner">
+    <p>Eine <button class="term" data-term="esim">eSIM</button> ist eine SIM-Karte, die fest im Telefon verbaut ist. Statt eine Plastikkarte einzulegen, laden Sie Ihr Mobilfunkprofil per QR-Code herunter, den Sie von Ihrem Anbieter bekommen (Telekom, Vodafone, O2 und viele Discounter bieten das an).</p>
+    <p>So richten Sie sie ein: <b>Einstellungen › Verbindungen › SIM-Manager › eSIM hinzufügen</b> und den QR-Code scannen. Vorteil: Sie können zwei Rufnummern gleichzeitig nutzen, z. B. privat (Karte) und dienstlich (eSIM). Für Anfänger reicht die normale Karte völlig.</p>
+  </div></details>
+
+  <h3 id="laden">Akku laden</h3>
+  <p>Das Telefon wird mit einem teilweise geladenen Akku ausgeliefert. Laden Sie es vor der Einrichtung am besten eine halbe Stunde auf, denn die erste Einrichtung lädt viele Updates herunter.</p>
+  <ol class="steps">
+    <li>Stecken Sie das USB-C-Kabel in die Buchse <b>unten</b> am Telefon. Der Stecker passt in beide Richtungen, es gibt kein Oben und Unten.</li>
+    <li>Stecken Sie das andere Ende in ein Netzteil und dieses in die Steckdose.</li>
+    <li>Auf dem Bildschirm erscheint ein Akkusymbol mit Prozentangabe. Steht dort <b>„Super-Schnellladen“</b>, haben Sie das passende Netzteil.</li>
+  </ol>
+  <p>Alternativ legen Sie das Telefon auf ein <button class="term" data-term="qi">Qi-Ladepad</button>. Kabellos lädt es mit bis zu 15 Watt.</p>
+
+  <h3 id="einschalten">Einschalten</h3>
+  <div class="grid-2">
+    <figure class="card fig" style="margin:0" data-mock="side-power"><figcaption>Seitentaste rechts etwa 3 Sekunden gedrückt halten</figcaption></figure>
+    <div>
+      <p>Halten Sie die <b>Seitentaste</b> (die untere der beiden Tasten auf der rechten Seite) gedrückt, bis das Samsung-Logo erscheint. Das dauert etwa drei Sekunden. Der erste Start dauert bis zu einer Minute.</p>
+      <div class="callout warn" data-t="Nichts passiert?"><p>Dann ist der Akku leer. Lassen Sie das Telefon 15 Minuten am Ladekabel und versuchen Sie es erneut.</p></div>
+    </div>
+  </div>
+
+  <h3 id="assistent">Der Einrichtungsassistent</h3>
+  <p>Nach dem ersten Einschalten führt Sie das Telefon durch mehrere Bildschirme. Hier sehen Sie jeden davon und erfahren, was Sie wählen sollten.</p>
+  <div class="stepper" data-stepper="setup"></div>
+
+  <h3 id="konten">Google-Konto und Samsung-Konto: Wozu zwei Konten?</h3>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="user">Google-Konto (nötig)</h4><p>Ihr Schlüssel zum <b>Play Store</b> (Apps herunterladen), zu Gmail, Google Fotos, Google Maps und zur Sicherung Ihrer Kontakte. Ohne Google-Konto können Sie keine Apps installieren.</p></div>
+    <div class="card"><h4 data-icon="user">Samsung-Konto (empfohlen)</h4><p>Ermöglicht <b>„Verlorene Geräte finden“</b> (Telefon orten, sperren, klingeln lassen), die Samsung-Cloud-Sicherung von Einstellungen, Galaxy AI-Funktionen und den Galaxy Store.</p></div>
+  </div>
+  <div class="callout danger" data-t="Passwörter aufschreiben!">
+    <p>Notieren Sie E-Mail-Adresse und Passwort beider Konten auf Papier und bewahren Sie es sicher zu Hause auf. Nach einem Zurücksetzen fragt das Telefon nach dem Google-Konto (<button class="term" data-term="frp">Diebstahlschutz</button>). Ohne Passwort ist es dann gesperrt, auch für Sie.</p>
+  </div>
+
+  <h3 id="smartswitch">Daten vom alten Handy übertragen (Smart Switch)</h3>
+  <p><b>Smart Switch</b> ist Samsungs Umzugsprogramm. Es überträgt Kontakte, Fotos, Nachrichten, Anrufliste, Apps, WhatsApp-Chats (bei Android) und sogar Einstellungen. Es funktioniert von Android und von iPhone.</p>
+  <div class="stepper" data-stepper="switch"></div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Kabel oder WLAN: was ist besser?</summary><div class="inner">
+    <p>Per <b>Kabel</b> ist die Übertragung meist schneller und stabiler, gerade bei vielen Fotos und Videos. Sie brauchen ein Kabel, das in beide Telefone passt (bei älteren iPhones Lightning auf USB-C). Per <b>WLAN</b> verbinden sich die beiden Telefone direkt miteinander (Wi-Fi Direct), Ihr Heimnetz wird dabei nicht gebraucht.</p>
+    <p>Rechnen Sie bei 20 GB Daten mit etwa 15 bis 40 Minuten. Lassen Sie beide Telefone währenddessen am Strom und nah beieinander liegen.</p>
+  </div></details>
+  <div class="callout info" data-t="Umstieg vom iPhone: WhatsApp">
+    <p>WhatsApp-Chats lassen sich vom iPhone übertragen, wenn Smart Switch das bei der Einrichtung anbietet (Übertragung per Kabel, QR-Code im iPhone scannen). Wichtig: Schalten Sie vorher <b>iMessage</b> auf dem iPhone aus (Einstellungen › Apps › Nachrichten), sonst kommen SMS von iPhone-Nutzern eventuell nicht an.</p>
+  </div>
+</section>
+
+<!-- ===================== 3 GRUNDBEDIENUNG ===================== -->
+<section class="chapter" id="bedienung" data-ch="3" data-title="Grundbedienung" data-time="30" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num">3</div><div><h2>Grundbedienung</h2><p>Tasten, Gesten, Startbildschirm, Benachrichtigungen und Tastatur.</p></div></div>
+
+  <h3 id="tasten">Tasten und Tastenkombinationen</h3>
+  <p>Das S24 FE hat nur drei Tasten, alle rechts. Durch <b>Kombinationen</b> lösen sie viele Funktionen aus. Wählen Sie eine Aktion, um zu sehen, welche Tasten Sie drücken.</p>
+  <div class="combo" id="combo">
+    <div class="side" id="combo-svg"></div>
+    <div>
+      <div class="combo-picks" id="combo-picks"></div>
+      <div class="combo-out" id="combo-out" aria-live="polite"></div>
+    </div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Warum schaltet langes Drücken der Seitentaste nicht aus?</summary><div class="inner">
+    <p>Samsung belegt langes Drücken der Seitentaste ab Werk mit dem <b>digitalen Assistenten</b> (Bixby oder, je nach Einstellung, Google Gemini). Das verwirrt viele Umsteiger. So ändern Sie es:</p>
+    <div class="path" data-path="Einstellungen|Erweiterte Funktionen|Seitentaste|Gedrückt halten: Ausschaltmenü"></div>
+    <p>Ab dann öffnet langes Drücken das Menü mit „Ausschalten“, „Neu starten“ und „Notfallmodus“.</p>
+  </div></details>
+
+  <h3 id="gesten">Gesten oder Tasten unten am Bildschirm</h3>
+  <p>Unten am Bildschirm steuern Sie das Telefon. Es gibt zwei Varianten: <b>Wischgesten</b> (Standard, ein schmaler Strich unten) oder drei <b>Navigationstasten</b>. Für Einsteiger sind Tasten oft leichter.</p>
+  <div class="gestures" id="gestures"></div>
+  <div class="path" data-path="Einstellungen|Anzeige|Navigationsleiste|Tasten oder Wischgesten"></div>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="grid">Tasten-Navigation</h4><ul><li><b>|||</b> Zuletzt verwendete Apps</li><li><b>▢</b> Startbildschirm</li><li><b>‹</b> Zurück</li></ul><p class="caption" style="text-align:left">Sie können die Reihenfolge unter „Tastenreihenfolge“ tauschen, z. B. „Zurück“ nach rechts für Einhandbedienung.</p></div>
+    <div class="card"><h4 data-icon="swipe">Wischgesten</h4><ul><li>Von unten nach oben wischen: Startbildschirm</li><li>Von unten wischen und halten: Zuletzt verwendete Apps</li><li>Vom linken oder rechten Rand nach innen: Zurück</li></ul></div>
+  </div>
+
+  <h3 id="startbildschirm">Startbildschirm und Apps-Bildschirm</h3>
+  <div class="grid-2">
+    <figure class="card fig" style="margin:0" data-mock="home-labeled"><figcaption><b>1</b> Widget · <b>2</b> Apps · <b>3</b> Suchleiste · <b>4</b> Dock · <b>5</b> Gestenstrich</figcaption></figure>
+    <div>
+      <p><b>Startbildschirm:</b> Hier liegen Ihre Lieblings-Apps und <button class="term" data-term="widget">Widgets</button>. Sie können mehrere Seiten anlegen und seitlich wischen.</p>
+      <p><b>Apps-Bildschirm:</b> Wischen Sie auf dem Startbildschirm <b>nach oben</b>. Dort sind <i>alle</i> installierten Apps alphabetisch oder nach Ihrer Reihenfolge.</p>
+      <p><b>Dock:</b> Die untere Reihe bleibt auf jeder Seite gleich, ideal für Telefon, Nachrichten, Kamera und Browser.</p>
+      <div class="callout tip" data-t="App auf den Startbildschirm holen"><p>Im Apps-Bildschirm eine App <b>gedrückt halten</b> und auf <b>„Zu Startbildschirm hinzufügen“</b> tippen. Oder gedrückt halten und an die gewünschte Stelle ziehen.</p></div>
+    </div>
+  </div>
+  <h4>Ordnen und aufräumen</h4>
+  <ul>
+    <li><b>Ordner anlegen:</b> Ziehen Sie eine App auf eine andere. Es entsteht ein Ordner, den Sie benennen können.</li>
+    <li><b>Startbildschirm bearbeiten:</b> Auf eine freie Stelle lange tippen (oder zwei Finger zusammenziehen). Unten erscheinen Hintergründe, Themes, Widgets und Einstellungen.</li>
+    <li><b>Raster ändern:</b> Im Bearbeiten-Modus › Einstellungen › „Raster für Startbildschirm“. 4×5 bedeutet größere Symbole, 5×6 mehr Platz.</li>
+  </ul>
+
+  <h3 id="benachrichtigungen">Benachrichtigungen und Schnelleinstellungen</h3>
+  <p>Wischen Sie vom <b>oberen Bildschirmrand nach unten</b>. Seit One UI 7 ist das zweigeteilt: Von der <b>linken Hälfte</b> wischen öffnet Benachrichtigungen, von der <b>rechten Hälfte</b> die Schnelleinstellungen.</p>
+  <div class="grid-2">
+    <figure class="card fig" style="margin:0" data-mock="quick"><figcaption>Schnelleinstellungen: Ein Tipp schaltet ein/aus, langes Drücken öffnet die Einstellung dahinter</figcaption></figure>
+    <div>
+      <h4 style="margin-top:0">Die wichtigsten Kacheln</h4>
+      <ul>
+        <li><b>WLAN</b> und <b>Bluetooth</b>: An/Aus; gedrückt halten zeigt verfügbare Netze und Geräte</li>
+        <li><b>Taschenlampe</b>: Die LED neben der Kamera leuchtet</li>
+        <li><b>Nicht stören</b>: Keine Töne und Pop-ups, z. B. nachts</li>
+        <li><b>Flugmodus</b>: Schaltet alle Funkverbindungen ab</li>
+        <li><b>Auto-Drehen</b>: Bildschirm dreht sich mit, wenn Sie das Telefon quer halten</li>
+        <li><b>Helligkeit</b>: Der Schieberegler oben</li>
+      </ul>
+      <div class="callout tip" data-t="Kacheln anpassen"><p>Tippen Sie oben auf den <b>Stift</b> (Bearbeiten). Dann ziehen Sie Kacheln hinein, heraus oder an einen anderen Platz.</p></div>
+    </div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Zu viele Benachrichtigungen? So bekommen Sie Ruhe</summary><div class="inner">
+    <p>Halten Sie eine Benachrichtigung gedrückt (oder ziehen Sie sie leicht zur Seite und tippen auf das Zahnrad). Dann können Sie für diese App einstellen: <b>Benachrichtigungen aus</b>, nur <b>lautlos</b> oder nur bestimmte Kategorien (z. B. bei Shopping-Apps nur „Lieferstatus“, keine Werbung).</p>
+    <div class="path" data-path="Einstellungen|Benachrichtigungen|App-Benachrichtigungen"></div>
+  </div></details>
+
+  <h3 id="sperrbildschirm">Sperrbildschirm und Always On Display</h3>
+  <p>Der <b>Sperrbildschirm</b> erscheint, wenn Sie das Telefon aufwecken. Er schützt vor fremdem Zugriff und zeigt Uhrzeit und Benachrichtigungen. Mit dem <button class="term" data-term="aod">Always On Display</button> bleiben Uhrzeit und Symbole auch bei „ausgeschaltetem“ Bildschirm sichtbar.</p>
+  <ul>
+    <li><b>Aufwecken:</b> Seitentaste kurz drücken oder zweimal auf den Bildschirm tippen.</li>
+    <li><b>Sperren:</b> Seitentaste kurz drücken.</li>
+    <li><b>Kamera direkt starten:</b> Seitentaste <b>zweimal schnell</b> drücken, auch aus dem Sperrbildschirm.</li>
+  </ul>
+  <div class="path" data-path="Einstellungen|Sperrbildschirm und AOD|Always On Display"></div>
+
+  <h3 id="tastatur">Die Samsung-Tastatur</h3>
+  <div class="grid-2">
+    <figure class="card fig" style="margin:0" data-mock="keyboard"><figcaption>Samsung-Tastatur mit Werkzeugleiste oben</figcaption></figure>
+    <div>
+      <ul>
+        <li><b>Großbuchstaben:</b> Einmal ⇧ tippen für einen Großbuchstaben, zweimal für Feststelltaste.</li>
+        <li><b>Zahlen und Zeichen:</b> Taste <b>!#1</b> unten links.</li>
+        <li><b>Umlaute und ß:</b> Buchstabe gedrückt halten (a → ä, s → ß).</li>
+        <li><b>Diktieren:</b> Mikrofon in der Leiste antippen und sprechen. Satzzeichen sagen Sie einfach mit („Komma“, „Punkt“).</li>
+        <li><b>Cursor bewegen:</b> Mit dem Finger auf der Leertaste hin- und herwischen.</li>
+        <li><b>Kopieren:</b> Wort lang drücken, Markierung mit den Anfassern erweitern, „Kopieren“ wählen.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="multitasking">Mehrere Apps gleichzeitig</h3>
+  <p>Öffnen Sie die <b>zuletzt verwendeten Apps</b> (Taste |||). Tippen Sie auf das App-Symbol über einer Vorschau und wählen Sie <b>„In geteilter Bildschirmansicht öffnen“</b>. Dann wählen Sie die zweite App. So schauen Sie z. B. oben ein Video und schreiben unten eine Nachricht. Mit „In Pop-up-Ansicht öffnen“ schwebt eine App als kleines Fenster über der anderen.</p>
+</section>
+
+<!-- ===================== 4 SICHERHEIT ===================== -->
+<section class="chapter" id="sicherheit" data-ch="4" data-title="Sicherheit & Datenschutz" data-time="20" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num">4</div><div><h2>Sicherheit &amp; Datenschutz</h2><p>Displaysperre, Fingerabdruck, Ortung bei Verlust, Notruf und Updates.</p></div></div>
+
+  <h3 id="sperre">Welche Displaysperre ist die richtige?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Art</th><th>Sicherheit</th><th>Für wen?</th></tr></thead>
+    <tbody>
+      <tr><td><b>Streichen</b></td><td class="n">keine</td><td>Nicht empfohlen. Jeder Finder hat Zugriff auf Fotos, Mails, Banking.</td></tr>
+      <tr><td><b>Muster</b></td><td class="n">gering</td><td>Schnell, aber Fingerspuren auf dem Glas verraten es oft.</td></tr>
+      <tr><td><b>PIN</b> (mind. 4, besser 6 Ziffern)</td><td class="n">gut</td><td>Empfehlung für die meisten. Leicht zu merken, schwer zu erraten.</td></tr>
+      <tr><td><b>Passwort</b></td><td class="n">sehr gut</td><td>Für besonders schützenswerte Daten.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Fingerabdruck und Gesicht sind <b>Zusätze</b> zur PIN: Im Alltag entsperren Sie bequem per Finger, die PIN ist die Rückfalloption (z. B. nach einem Neustart, dann ist sie immer nötig).</p>
+
+  <h3 id="fingerabdruck">Fingerabdruck einrichten</h3>
+  <div class="stepper" data-stepper="finger"></div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Wie funktioniert der Sensor im Display?</summary><div class="inner">
+    <p>Das S24 FE nutzt einen <b>optischen</b> Fingerabdrucksensor unter dem Glas. Beim Auflegen leuchtet das Display an dieser Stelle hell auf, eine winzige Kamera fotografiert die Rillen Ihrer Haut. Deshalb gilt: Finger <b>flach</b> und <b>ruhig</b> auflegen. Nasse oder sehr trockene Finger werden schlechter erkannt.</p>
+    <p>Eine <b>Displayschutzfolie</b> kann die Erkennung verschlechtern. Kaufen Sie nur Folien, die ausdrücklich „S24 FE“ und „Fingerabdrucksensor kompatibel“ angeben, und registrieren Sie den Finger nach dem Aufkleben neu.</p>
+    <p>Ihr Fingerabdruck wird verschlüsselt im Sicherheitschip des Telefons (<button class="term" data-term="knox">Samsung Knox</button>) gespeichert und verlässt das Gerät nie.</p>
+  </div></details>
+  <div class="callout info" data-t="Gesichtserkennung">
+    <p>Unter <b>Sicherheit und Datenschutz › Biometrische Daten › Gesichtserkennung</b> können Sie zusätzlich Ihr Gesicht speichern. Die Gesichtserkennung des S24 FE arbeitet nur mit der Frontkamera (2D). Sie ist bequem, aber weniger sicher als der Fingerabdruck und für Banking-Apps meist nicht zugelassen.</p>
+  </div>
+
+  <h3 id="finden">Verlorenes Telefon finden</h3>
+  <p>Mit <b>„Verlorene Geräte finden“</b> (früher „Find My Mobile“, heute in der App <b>SmartThings Find</b>) orten Sie Ihr Telefon auf einer Karte, lassen es laut klingeln (auch im Lautlos-Modus), sperren es oder löschen es aus der Ferne.</p>
+  <div class="path" data-path="Einstellungen|Sicherheit und Datenschutz|Verlorene Geräte finden"></div>
+  <ol class="steps">
+    <li>Schalten Sie <b>„Verlorene Geräte finden“</b> ein (Sie brauchen dafür das Samsung-Konto).</li>
+    <li>Aktivieren Sie <b>„Offline-Suche“</b>. Dann helfen andere Galaxy-Geräte in der Nähe anonym, Ihr Telefon zu finden, selbst ohne Internet.</li>
+    <li>Im Ernstfall gehen Sie am Computer auf <b>smartthingsfind.samsung.com</b> und melden sich mit Ihrem Samsung-Konto an. Alternativ: <b>google.com/android/find</b> mit dem Google-Konto.</li>
+  </ol>
+
+  <h3 id="sos">Notruf-SOS</h3>
+  <p>Drücken Sie die Seitentaste <b>fünfmal schnell hintereinander</b>. Das Telefon ruft dann die Notrufnummer 112 an (nach einem kurzen Countdown, den Sie abbrechen können). Zusätzlich lassen sich Notfallkontakte hinterlegen, die eine SMS mit Ihrem Standort erhalten.</p>
+  <div class="path" data-path="Einstellungen|Sicherheit und Notfall|Notruf-SOS"></div>
+  <div class="callout tip" data-t="Medizinische Infos hinterlegen"><p>Unter <b>Sicherheit und Notfall › Medizinische Informationen</b> können Sie Blutgruppe, Allergien und Medikamente eintragen. Rettungskräfte sehen diese Infos auf dem Sperrbildschirm unter „Notruf“, ohne Ihre PIN zu kennen.</p></div>
+
+  <h3 id="sicherer-ordner">Sicherer Ordner</h3>
+  <p>Ein separater, verschlüsselter Bereich mit eigener PIN. Fotos, Dokumente oder sogar eine zweite WhatsApp-Kopie darin sind unsichtbar, selbst wenn jemand Ihr Telefon entsperrt in der Hand hat.</p>
+  <div class="path" data-path="Einstellungen|Sicherheit und Datenschutz|Weitere Sicherheitseinstellungen|Sicherer Ordner"></div>
+
+  <h3 id="updates">Software-Updates</h3>
+  <p>Updates schließen Sicherheitslücken und bringen neue Funktionen. Das S24 FE bekommt sie bis etwa 2031.</p>
+  <div class="path" data-path="Einstellungen|Software-Update|Herunterladen und installieren"></div>
+  <ul>
+    <li>Schalten Sie <b>„Automatisch über WLAN herunterladen“</b> ein.</li>
+    <li>Installieren Sie Updates, wenn der Akku über 20 % hat, am besten abends am Ladekabel.</li>
+    <li>Ein großes Update kann 15 bis 30 Minuten dauern. Das Telefon startet dabei mehrmals neu: Das ist normal, nicht unterbrechen.</li>
+  </ul>
+  <div class="callout warn" data-t="Vorsicht vor falschen Warnungen">
+    <p>Weder Samsung noch Google rufen Sie an oder schicken SMS mit Links, weil Ihr Telefon „infiziert“ sei. Solche Nachrichten sind Betrug (<button class="term" data-term="phishing">Phishing</button>). Updates kommen ausschließlich über das Menü „Software-Update“ und den Play Store.</p>
+  </div>
+</section>
+
+<!-- ===================== 5 KAMERA ===================== -->
+<section class="chapter" id="kamera" data-ch="5" data-title="Kamera & Galerie" data-time="30" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num">5</div><div><h2>Kamera &amp; Galerie</h2><p>Drei Objektive, die wichtigsten Modi und wie Sie Fotos nachträglich verbessern.</p></div></div>
+
+  <h3 id="kamera-app">Die Kamera-App im Überblick</h3>
+  <p>Fahren Sie über die Bereiche des Kamerabildschirms. Jeder Punkt erklärt ein Bedienelement.</p>
+  <div class="explorer" id="cam-explorer">
+    <div class="stage"><div id="cam-svg"></div></div>
+    <div><ul class="hs-list" id="cam-list"></ul><div class="hs-info" id="cam-info" aria-live="polite"></div></div>
+  </div>
+
+  <h3 id="objektive">Drei Objektive, drei Blickwinkel</h3>
+  <div class="grid-3">
+    <div class="card"><h4 data-icon="lens">0,6× Ultraweitwinkel</h4><p class="n">12 MP · 123°</p><p>Für Landschaften, Gebäude, enge Räume und große Gruppen. Alles passt drauf. Am Rand wirken Gesichter leicht verzerrt, deshalb nicht für Porträts.</p></div>
+    <div class="card"><h4 data-icon="lens">1× Hauptkamera</h4><p class="n">50 MP · f/1.8 · OIS</p><p>Die beste Kamera, besonders bei wenig Licht. Nutzen Sie sie, wann immer es geht. Die Stufe <b>2×</b> ist ein verlustarmer Ausschnitt dieses 50-MP-Sensors.</p></div>
+    <div class="card"><h4 data-icon="lens">3× Tele</h4><p class="n">8 MP · optischer Zoom · OIS</p><p>Holt entfernte Motive heran und ist ideal für Porträts: Gesichter wirken natürlicher, der Hintergrund ruhiger. Bis 30× ist digitaler Zoom möglich, ab etwa 10× wird das Bild deutlich weicher.</p></div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Was bedeuten Megapixel, Blende und OIS?</summary><div class="inner">
+    <p><b>Megapixel (MP):</b> Die Zahl der Bildpunkte in Millionen. Mehr Megapixel bedeuten nicht automatisch bessere Fotos. Die Hauptkamera fasst standardmäßig je vier Pixel zu einem zusammen (<button class="term" data-term="binning">Pixel-Binning</button>) und speichert 12-MP-Fotos, die bei wenig Licht klarer sind.</p>
+    <p><b>Blende (f/1.8):</b> Die Öffnung, durch die Licht fällt. Kleinere Zahl = größere Öffnung = mehr Licht. Darum ist die Hauptkamera (f/1.8) nachts am besten.</p>
+    <p><b>OIS:</b> Optische Bildstabilisierung. Kleine Motoren gleichen das Zittern Ihrer Hand aus. Haupt- und Telekamera haben OIS.</p>
+  </div></details>
+
+  <h3 id="modi">Kameramodi</h3>
+  <p>Wischen Sie in der Kamera seitlich über den Bildschirm oder tippen Sie auf die Modus-Namen. Unter <b>„Mehr“</b> finden Sie weitere Modi.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Modus</th><th>Wofür?</th><th>Tipp</th></tr></thead>
+    <tbody>
+      <tr><td><b>Foto</b></td><td>Alltag, die Automatik macht fast alles richtig</td><td>Auf das Motiv tippen, um scharf zu stellen</td></tr>
+      <tr><td><b>Porträt</b></td><td>Person scharf, Hintergrund weich</td><td>Abstand 1 bis 2 m halten; Unschärfe ist später in der Galerie änderbar</td></tr>
+      <tr><td><b>Video</b></td><td>Filme bis 4K (60 Bilder/s) oder 8K (30 Bilder/s)</td><td>Für den Alltag „FHD 30“ oder „UHD 30“ wählen, 8K belegt viel Speicher</td></tr>
+      <tr><td><b>Nacht</b></td><td>Dunkle Szenen</td><td>Startet bei Dunkelheit oft automatisch; Telefon 2 bis 3 Sekunden ruhig halten</td></tr>
+      <tr><td><b>Pro</b></td><td>Manuelle Kontrolle (ISO, Belichtungszeit, Fokus)</td><td>Für Fortgeschrittene; erst die Automatik beherrschen</td></tr>
+      <tr><td><b>Panorama</b></td><td>Breite Landschaften</td><td>Langsam und gleichmäßig schwenken, der Pfeil hilft</td></tr>
+      <tr><td><b>Zeitlupe / Hyperlapse</b></td><td>Langsame bzw. Zeitraffer-Videos</td><td>Hyperlapse für Autofahrten oder Sonnenuntergänge</td></tr>
+      <tr><td><b>Food</b></td><td>Essen mit kräftigen Farben</td><td>Von schräg oben fotografieren</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="foto-tipps">Sieben Tipps für bessere Fotos</h3>
+  <ol class="steps">
+    <li><b>Linsen putzen.</b> Fingerabdrücke auf der Kamera sind der häufigste Grund für milchige Fotos. Kurz mit einem weichen Tuch abwischen.</li>
+    <li><b>Auf das Motiv tippen.</b> Dann sitzen Schärfe und Helligkeit dort, wo Sie es möchten. Gedrückt halten sperrt Fokus und Belichtung.</li>
+    <li><b>Helligkeit anpassen.</b> Nach dem Tippen erscheint ein Sonnen-Regler. Nach links = dunkler, nach rechts = heller.</li>
+    <li><b>Raster einschalten.</b> Kamera-Einstellungen (Zahnrad) › „Gitterlinien“. Motiv auf eine Linie oder einen Schnittpunkt setzen, nicht in die Mitte (<button class="term" data-term="drittel">Drittel-Regel</button>).</li>
+    <li><b>Zoomstufen nutzen statt Fingerzoom.</b> Die Tasten 0,6 / 1 / 3 schalten auf echte Objektive um, das ist schärfer als frei zu zoomen.</li>
+    <li><b>Licht von hinten vermeiden.</b> Die Sonne sollte hinter Ihnen oder seitlich sein, nicht hinter der Person.</li>
+    <li><b>Lautstärketaste als Auslöser.</b> Drücken Sie eine Lautstärketaste statt auf den Bildschirm zu tippen, das verwackelt weniger.</li>
+  </ol>
+
+  <h3 id="galerie">Galerie: ansehen, bearbeiten, retten</h3>
+  <div class="stepper" data-stepper="edit"></div>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="trash">Papierkorb</h4><p>Gelöschte Fotos bleiben <b>30 Tage</b> im Papierkorb. Galerie › Menü (≡) › Papierkorb. Dort können Sie sie wiederherstellen.</p></div>
+    <div class="card"><h4 data-icon="cloud">Sicherung</h4><p>Damit Fotos nicht verloren gehen, wenn das Telefon kaputtgeht: In <b>Google Fotos</b> die Sicherung einschalten oder in der Galerie unter Einstellungen die Synchronisierung mit OneDrive aktivieren.</p></div>
+  </div>
+</section>
+
+<!-- ===================== 6 GALAXY AI ===================== -->
+<section class="chapter" id="ai" data-ch="6" data-title="Galaxy AI" data-time="20" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num">6</div><div><h2>Galaxy AI</h2><p>Künstliche Intelligenz im Alltag: Suchen, Übersetzen, Zusammenfassen, Fotos verbessern.</p></div></div>
+  <p>Galaxy AI ist eine Sammlung von Funktionen, die mit <button class="term" data-term="ki">künstlicher Intelligenz</button> arbeiten. Manche laufen direkt auf dem Telefon, andere über Server im Internet. Sie brauchen dafür ein Samsung-Konto.</p>
+  <div class="path" data-path="Einstellungen|Galaxy AI"></div>
+
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="search">Circle to Search</h4><p>Halten Sie die <b>Home-Taste</b> (bzw. den Gestenstrich unten) gedrückt. Dann kreisen Sie mit dem Finger irgendetwas auf dem Bildschirm ein: eine Pflanze, eine Jacke, ein Wort. Google sucht sofort danach, ohne dass Sie die App wechseln.</p></div>
+    <div class="card"><h4 data-icon="phone">Live Translate (Anrufe)</h4><p>Übersetzt Telefonate in Echtzeit. Sie sprechen Deutsch, Ihr Gegenüber hört z. B. Spanisch und umgekehrt. In der Telefon-App über <b>„Anrufassistent“</b> einschalten. Funktioniert auch ohne Internet, wenn das Sprachpaket geladen ist.</p></div>
+    <div class="card"><h4 data-icon="chat">Dolmetscher</h4><p>Für Gespräche von Angesicht zu Angesicht: Der Bildschirm wird geteilt, jede Person sieht die Übersetzung in ihrer Sprache. In den Schnelleinstellungen die Kachel <b>„Dolmetscher“</b> hinzufügen.</p></div>
+    <div class="card"><h4 data-icon="pen">Schreibassistent</h4><p>In der Samsung-Tastatur auf das <b>Galaxy-AI-Symbol</b> tippen: Text höflicher oder lockerer formulieren, Rechtschreibung prüfen, übersetzen.</p></div>
+    <div class="card"><h4 data-icon="note">Notiz- und Transkript-Assistent</h4><p>In <b>Samsung Notes</b> lange Notizen zusammenfassen und ordnen. In der <b>Sprachrekorder</b>-App werden Aufnahmen automatisch zu Text, mit Sprechern getrennt.</p></div>
+    <div class="card"><h4 data-icon="image">Foto-Assistent</h4><p>In der Galerie: Störende Personen oder Objekte entfernen, das Foto gerade rücken und die Lücken von der KI füllen lassen. Bearbeitete Bilder bekommen ein kleines Wasserzeichen und einen Vermerk in den Bilddetails.</p></div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Was passiert mit meinen Daten?</summary><div class="inner">
+    <p>Unter <b>Einstellungen › Galaxy AI</b> (bzw. „Erweiterte Intelligenz“) gibt es den Schalter <b>„Daten nur auf dem Gerät verarbeiten“</b>. Ist er an, werden Funktionen, die Server brauchen, abgeschaltet. Übersetzen, Diktieren und einige Zusammenfassungen funktionieren dann trotzdem, weil sie lokal laufen.</p>
+    <p>Circle to Search ist eine Google-Funktion: Das eingekreiste Bild wird an Google geschickt, genau wie bei einer normalen Google-Suche.</p>
+  </div></details>
+  <div class="callout info" data-t="Kostet Galaxy AI etwas?"><p>Samsung hat die Galaxy-AI-Funktionen beim Marktstart als kostenlos „bis Ende 2025“ angekündigt. Ob und welche Funktionen später kostenpflichtig werden, legt Samsung fest. Den aktuellen Stand sehen Sie unter <b>Einstellungen › Galaxy AI</b>. Bevor eine Funktion etwas kostet, müssen Sie aktiv zustimmen.</p></div>
+</section>
+
+<!-- ===================== 7 AKKU ===================== -->
+<section class="chapter" id="akku" data-ch="7" data-title="Akku & Laden" data-time="15" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num">7</div><div><h2>Akku &amp; Laden</h2><p>Lange Laufzeit im Alltag und ein Akku, der viele Jahre durchhält.</p></div></div>
+  <p>Der Akku hat <b>4.700 mAh</b>. Bei normaler Nutzung (Messenger, Fotos, etwas Video, Navigation) reicht das gut für einen Tag, bei sparsamer Nutzung auch für anderthalb.</p>
+
+  <h3 id="akkuschutz">Akkuschutz: der wichtigste Schalter für ein langes Akkuleben</h3>
+  <div class="grid-2">
+    <figure class="card fig" style="margin:0" data-mock="battery"><figcaption>Einstellungen › Akku › Akkuschutz</figcaption></figure>
+    <div>
+      <p>Lithium-Ionen-Akkus altern schneller, wenn sie lange bei 100 % stehen und warm werden. Der Akkuschutz verhindert das:</p>
+      <ul>
+        <li><b>Standard:</b> Lädt auf 100 %, lädt danach erst wieder, wenn er unter 95 % fällt.</li>
+        <li><b>Adaptiv:</b> Lernt Ihren Schlafrhythmus, hält nachts bei 80 % und lädt erst kurz vor dem Aufstehen voll. <b>Empfehlung für die meisten.</b></li>
+        <li><b>Maximal:</b> Stoppt bei 80 % (bei neueren Versionen einstellbar). Ideal, wenn Ihnen 80 % für den Tag reichen.</li>
+      </ul>
+      <div class="path" data-path="Einstellungen|Akku|Akkuschutz"></div>
+    </div>
+  </div>
+
+  <h3 id="sparen">Energiesparen ohne Verzicht</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Maßnahme</th><th>Wirkung</th><th>Wo?</th></tr></thead>
+    <tbody>
+      <tr><td><b>Dunkelmodus</b></td><td class="n">mittel</td><td>Anzeige › Dunkel. Schwarze Pixel verbrauchen beim <button class="term" data-term="amoled">AMOLED</button>-Display keinen Strom.</td></tr>
+      <tr><td><b>Energiesparmodus</b></td><td class="n">hoch</td><td>Schnelleinstellungen oder Akku › Energiesparmodus. Begrenzt Hintergrundaktivität und Helligkeit.</td></tr>
+      <tr><td><b>Bewegungsglättung „Standard“</b></td><td class="n">gering</td><td>Anzeige › Bewegungsglättung. 60 Hz statt bis zu 120 Hz.</td></tr>
+      <tr><td><b>Always On Display nur bei Tippen</b></td><td class="n">gering</td><td>Sperrbildschirm und AOD › Always On Display › „Zum Anzeigen tippen“</td></tr>
+      <tr><td><b>Ungenutzte Apps einschläfern</b></td><td class="n">mittel</td><td>Akku › Hintergrundnutzungslimits › „Nicht verwendete Apps in Standby versetzen“</td></tr>
+    </tbody>
+  </table></div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Mythen rund um den Akku</summary><div class="inner">
+    <ul>
+      <li><b>„Man muss den Akku ganz leer machen.“</b> Falsch. Das war bei alten Nickel-Akkus so. Heutige Akkus mögen den Bereich 20 bis 80 % am liebsten.</li>
+      <li><b>„Über Nacht laden macht den Akku kaputt.“</b> Nicht mit Akkuschutz. Das Telefon steuert den Ladevorgang selbst.</li>
+      <li><b>„Apps im Hintergrund wischen spart Strom.“</b> Meistens nicht. Das System verwaltet Hintergrund-Apps selbst; ständiges Neustarten kostet sogar mehr Energie.</li>
+      <li><b>„Schnellladen schadet.“</b> Kaum. Das S24 FE regelt die Leistung ab etwa 50 % herunter. Hitze ist der eigentliche Feind: nicht in der prallen Sonne oder unter dem Kopfkissen laden.</li>
+    </ul>
+  </div></details>
+
+  <h3 id="powershare">Andere Geräte aufladen (Wireless PowerShare)</h3>
+  <p>Das S24 FE kann kabellos <b>andere Geräte laden</b>, z. B. Galaxy Buds oder eine Smartwatch. Schalten Sie in den Schnelleinstellungen <b>„Wireless PowerShare“</b> ein und legen Sie das Gerät mittig auf die Rückseite. Die Leistung ist gering (etwa 4,5 W), gedacht für den Notfall.</p>
+</section>
+
+<!-- ===================== 8 ANPASSEN ===================== -->
+<section class="chapter" id="anpassen" data-ch="8" data-title="Anpassen & Barrierefreiheit" data-time="20" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num">8</div><div><h2>Anpassen &amp; Barrierefreiheit</h2><p>Größere Schrift, Dunkelmodus, eigener Hintergrund, Modi und Routinen.</p></div></div>
+
+  <h3 id="anzeige">Anzeige: Schrift, Helligkeit, Dunkelmodus</h3>
+  <div class="stepper" data-stepper="font"></div>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="moon">Dunkelmodus</h4><p>Weiße Flächen werden dunkel. Schont die Augen am Abend und spart Akku. Unter <b>Anzeige › Dunkel</b> oder über die Kachel in den Schnelleinstellungen. Mit „Zeitplan“ automatisch ab Sonnenuntergang.</p></div>
+    <div class="card"><h4 data-icon="eye">Augenschonfilter</h4><p>Reduziert blaues Licht, der Bildschirm wird wärmer (gelblicher). Abends hilfreich. <b>Anzeige › Augenschonfilter</b>.</p></div>
+    <div class="card"><h4 data-icon="sun">Adaptive Helligkeit</h4><p>Passt die Helligkeit an das Umgebungslicht an und lernt Ihre Vorlieben. Bei Sonne kann das Display bis zu 1.900 <button class="term" data-term="nits">Nits</button> hell werden.</p></div>
+    <div class="card"><h4 data-icon="timer">Bildschirm-Timeout</h4><p>Wann sich das Display von selbst ausschaltet. 30 Sekunden bis 1 Minute ist ein guter Kompromiss. <b>Anzeige › Bildschirm-Timeout</b>.</p></div>
+  </div>
+
+  <h3 id="einfach">Einfacher Modus</h3>
+  <p>Der <b>Einfache Modus</b> macht Symbole und Schrift groß, vereinfacht den Startbildschirm und verlängert die Zeit für „Gedrückt halten“. Er ist ideal für Menschen mit Sehschwäche oder ohne Smartphone-Erfahrung.</p>
+  <div class="path" data-path="Einstellungen|Anzeige|Einfacher Modus"></div>
+
+  <h3 id="hintergrund">Hintergrundbild und Farben</h3>
+  <ol class="steps">
+    <li>Lange auf eine freie Stelle des Startbildschirms tippen.</li>
+    <li><b>„Hintergrund und Stil“</b> wählen.</li>
+    <li>Unter „Hintergrundbild ändern“ eines der Samsung-Bilder oder ein eigenes Foto aus der Galerie aussuchen.</li>
+    <li>Wählen, ob es für Sperrbildschirm, Startbildschirm oder beide gelten soll.</li>
+    <li>Unter <b>„Farbpalette“</b> passt das Telefon Menüs und Symbole farblich an Ihr Foto an.</li>
+  </ol>
+
+  <h3 id="routinen">Modi und Routinen</h3>
+  <p>Mit <b>Modi und Routinen</b> erledigt das Telefon Dinge automatisch nach dem Prinzip <b>„Wenn …, dann …“</b>.</p>
+  <div class="grid-3">
+    <div class="card"><h4 data-icon="moon">Schlafen</h4><p><b>Wenn</b> 22:30 Uhr, <b>dann</b> Nicht stören an, Dunkelmodus an, Helligkeit runter.</p></div>
+    <div class="card"><h4 data-icon="car">Fahren</h4><p><b>Wenn</b> mit dem Auto-Bluetooth verbunden, <b>dann</b> Maps öffnen und Musik starten.</p></div>
+    <div class="card"><h4 data-icon="home">Zuhause</h4><p><b>Wenn</b> im Heim-WLAN, <b>dann</b> mobile Daten aus, Klingelton laut.</p></div>
+  </div>
+  <div class="path" data-path="Einstellungen|Modi und Routinen|Routinen|+"></div>
+
+  <h3 id="barrierefreiheit">Barrierefreiheit</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Funktion</th><th>Hilft bei</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vergrößerung</b></td><td>Schlechtem Sehen: dreimal auf den Bildschirm tippen zoomt hinein</td></tr>
+      <tr><td><b>Voice Assistant</b> / <b>TalkBack</b></td><td>Blindheit: Das Telefon liest alles vor</td></tr>
+      <tr><td><b>Hörhilfen</b> &amp; Untertitel</td><td>Schwerhörigkeit: Live-Untertitel für Videos und Anrufe, Hörgeräte-Unterstützung</td></tr>
+      <tr><td><b>Interaktion und Geschicklichkeit</b></td><td>Zittern oder eingeschränkter Motorik: längere Tippzeiten, Assistenzmenü</td></tr>
+    </tbody>
+  </table></div>
+  <div class="path" data-path="Einstellungen|Barrierefreiheit"></div>
+</section>
+
+<!-- ===================== 9 VERBINDUNGEN ===================== -->
+<section class="chapter" id="verbindungen" data-ch="9" data-title="Verbindungen" data-time="20" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num">9</div><div><h2>Verbindungen</h2><p>WLAN, mobile Daten, Bluetooth, Hotspot, Bezahlen und Dateien teilen.</p></div></div>
+
+  <h3 id="wlan">Mit dem WLAN verbinden</h3>
+  <div class="stepper" data-stepper="wifi"></div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>2,4 GHz, 5 GHz, 6 GHz: was ist der Unterschied?</summary><div class="inner">
+    <p>Das S24 FE unterstützt <button class="term" data-term="wifi6e">Wi-Fi 6E</button>. WLAN funkt auf drei Frequenzen: <b>2,4 GHz</b> reicht weit und durch Wände, ist aber langsamer. <b>5 GHz</b> ist schneller, reicht weniger weit. <b>6 GHz</b> ist am schnellsten, braucht aber einen neuen Router und funktioniert am besten im selben Raum. Das Telefon wählt automatisch das Beste, Sie müssen nichts tun.</p>
+  </div></details>
+
+  <h3 id="daten">Mobile Daten und Datenvolumen</h3>
+  <p>Unterwegs ohne WLAN nutzt das Telefon das Mobilfunknetz (5G oder 4G/LTE). Was Sie verbrauchen, geht von Ihrem Tarif-Datenvolumen ab.</p>
+  <ul>
+    <li><b>Mobile Daten an/aus:</b> Kachel „Mobile Daten“ in den Schnelleinstellungen.</li>
+    <li><b>Verbrauch prüfen:</b> <b>Einstellungen › Verbindungen › Datennutzung</b>. Dort sehen Sie, welche App wie viel verbraucht.</li>
+    <li><b>Datensparmodus:</b> Verhindert, dass Apps im Hintergrund Daten laden.</li>
+  </ul>
+  <div class="callout warn" data-t="Im Ausland"><p>Innerhalb der EU surfen Sie meist zu Hause-Preisen. Außerhalb der EU (z. B. Schweiz, Türkei, Kreuzfahrtschiffe) können hohe Kosten entstehen. Schalten Sie dort <b>„Daten-Roaming“</b> unter Verbindungen › Mobile Netzwerke aus.</p></div>
+
+  <h3 id="bluetooth">Bluetooth-Kopfhörer und Auto koppeln</h3>
+  <ol class="steps">
+    <li>Kopfhörer in den <b>Kopplungsmodus</b> versetzen (meist Taste lang drücken, bis ein Licht blinkt; siehe Anleitung des Geräts).</li>
+    <li>Am Telefon <b>Bluetooth</b> in den Schnelleinstellungen gedrückt halten.</li>
+    <li>Unter „Verfügbare Geräte“ den Namen des Kopfhörers antippen und „Koppeln“ bestätigen.</li>
+  </ol>
+  <p>Galaxy Buds erkennt das Telefon sogar von selbst: Einfach das Ladecase in der Nähe öffnen, dann erscheint ein Fenster.</p>
+
+  <h3 id="hotspot">Mobiler Hotspot: Internet für Laptop oder Tablet</h3>
+  <p>Ihr Telefon wird zum WLAN-Router für andere Geräte. Die Daten gehen von Ihrem Tarif ab.</p>
+  <div class="path" data-path="Einstellungen|Verbindungen|Mobile Hotspot und Tethering|Mobile Hotspot"></div>
+  <p>Dort sehen Sie Netzwerkname und Passwort. Auf dem Laptop wählen Sie dieses Netz wie jedes andere WLAN. Andere Galaxy-Geräte mit demselben Samsung-Konto verbinden sich per „Auto-Hotspot“ sogar ohne Passwort.</p>
+
+  <h3 id="nfc">Kontaktlos bezahlen</h3>
+  <p>Das S24 FE hat <button class="term" data-term="nfc">NFC</button>. Damit bezahlen Sie an der Kasse, indem Sie das entsperrte Telefon an das Kartenterminal halten.</p>
+  <ol class="steps">
+    <li><b>NFC einschalten:</b> Einstellungen › Verbindungen › NFC und kontaktlose Zahlungen.</li>
+    <li>Eine Bezahl-App einrichten: <b>Google Wallet</b>, <b>Samsung Wallet</b> oder die App Ihrer Bank (bei Sparkassen und Volksbanken z. B. „Mobiles Bezahlen“).</li>
+    <li>Unter „Kontaktlose Zahlungen“ die Standard-App wählen.</li>
+  </ol>
+
+  <h3 id="quickshare">Quick Share: Fotos und Dateien teilen</h3>
+  <p>Mit Quick Share schicken Sie Fotos, Videos und Dateien kabellos an Telefone, Tablets und Windows-PCs in der Nähe, ohne Qualitätsverlust und ohne Datenvolumen. Foto öffnen › <b>Teilen</b> › <b>Quick Share</b> › Gerät wählen. Der Empfänger muss Quick Share auf „Jeder“ oder „Nur Kontakte“ gestellt haben.</p>
+
+  <h3 id="dex">Samsung DeX: das Telefon als Computer</h3>
+  <p>Schließen Sie das S24 FE per USB-C-auf-HDMI-Adapter an einen Fernseher oder Monitor an. Es erscheint eine Desktop-Oberfläche mit Fenstern, Taskleiste und Maus-Unterstützung (Bluetooth-Maus und -Tastatur). Praktisch für Präsentationen oder um Fotos auf dem Fernseher zu zeigen.</p>
+</section>
+
+<!-- ===================== 10 APPS & SPEICHER ===================== -->
+<section class="chapter" id="apps" data-ch="10" data-title="Apps & Speicher" data-time="15" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num">10</div><div><h2>Apps &amp; Speicher</h2><p>Apps installieren und entfernen, Berechtigungen verstehen, Speicher aufräumen, sichern.</p></div></div>
+
+  <h3 id="playstore">Apps aus dem Play Store installieren</h3>
+  <div class="stepper" data-stepper="install"></div>
+  <div class="callout warn" data-t="Woran Sie vertrauenswürdige Apps erkennen">
+    <ul>
+      <li>Der <b>Entwickler</b> unter dem App-Namen stimmt (z. B. „WhatsApp LLC“, nicht „Whats Chat Tools“).</li>
+      <li>Viele Downloads (Millionen) und Bewertungen über 4 Sterne.</li>
+      <li>Die Berechtigungen passen zur App: Eine Taschenlampe braucht keinen Zugriff auf Ihre Kontakte.</li>
+      <li>Installieren Sie keine Apps aus Links in SMS oder E-Mails.</li>
+    </ul>
+  </div>
+  <p>Samsung hat einen zweiten App-Shop, den <b>Galaxy Store</b>. Dort gibt es vor allem Samsung-eigene Erweiterungen (z. B. Good Lock, Kamera-Assistent, Designs). Für alle anderen Apps ist der Play Store die erste Wahl.</p>
+
+  <h3 id="deinstallieren">Apps entfernen</h3>
+  <p>App-Symbol <b>gedrückt halten</b> › <b>„Deinstallieren“</b> › bestätigen. Bei vorinstallierten Apps, die sich nicht entfernen lassen, erscheint stattdessen <b>„Deaktivieren“</b>: Die App verschwindet dann und läuft nicht mehr.</p>
+
+  <h3 id="berechtigungen">Berechtigungen verstehen</h3>
+  <p>Wenn eine App zum ersten Mal Kamera, Mikrofon, Standort oder Kontakte nutzen will, fragt das Telefon nach.</p>
+  <div class="grid-2">
+    <figure class="card fig" style="margin:0" data-mock="permission"><figcaption>Berechtigungsabfrage für den Standort</figcaption></figure>
+    <div>
+      <ul>
+        <li><b>Nur während der App-Nutzung:</b> Die beste Wahl für fast alles.</li>
+        <li><b>Nur dieses Mal:</b> Wenn Sie die App selten brauchen.</li>
+        <li><b>Nicht zulassen:</b> Wenn die Berechtigung keinen Sinn ergibt.</li>
+      </ul>
+      <p>Für den Standort gibt es zusätzlich den Schalter <b>„Genauen Standort verwenden“</b>. Eine Wetter-App braucht nur den ungefähren Standort.</p>
+      <div class="path" data-path="Einstellungen|Sicherheit und Datenschutz|Berechtigungsmanager"></div>
+    </div>
+  </div>
+
+  <h3 id="speicher">Speicher aufräumen</h3>
+  <p>Fotos, Videos und Messenger-Medien füllen den Speicher am schnellsten. Ab etwa 90 % Belegung wird das Telefon spürbar langsamer.</p>
+  <div class="path" data-path="Einstellungen|Gerätewartung|Speicher"></div>
+  <ol class="steps">
+    <li>Dort sehen Sie, was wie viel Platz belegt, und können <b>„Duplikate“</b>, <b>„Große Dateien“</b> und <b>„Nicht verwendete Apps“</b> direkt prüfen.</li>
+    <li>In <b>WhatsApp</b>: Einstellungen › Speicher und Daten › Speicher verwalten. Große Videos aus Gruppenchats löschen.</li>
+    <li>In <b>Google Fotos</b>: „Speicherplatz freigeben“ entfernt Fotos vom Telefon, die bereits sicher in der Cloud liegen.</li>
+  </ol>
+
+  <h3 id="backup">Sichern: falls das Telefon verloren geht</h3>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="cloud">Google-Sicherung</h4><p>Kontakte, Kalender, App-Daten, SMS und Einstellungen. <b>Einstellungen › Konten und Sicherung › Sichern (Google Drive)</b>. Einschalten und vergessen.</p></div>
+    <div class="card"><h4 data-icon="cloud">Samsung Cloud</h4><p>Samsung-spezifische Einstellungen, Startbildschirm-Layout und Samsung-Apps. <b>Konten und Sicherung › Daten sichern</b> (Samsung Cloud).</p></div>
+  </div>
+  <div class="callout tip" data-t="WhatsApp separat sichern"><p>WhatsApp sichert sich nicht über die Telefon-Sicherung. In WhatsApp: <b>Einstellungen › Chats › Chat-Backup</b> › Google-Konto wählen und „Täglich“ einstellen.</p></div>
+</section>
+
+<!-- ===================== 11 HILFE ===================== -->
+<section class="chapter" id="hilfe" data-ch="11" data-title="Problemlösung" data-time="10" data-lvl="3">
+  <div class="chapter-head"><div class="chapter-num">11</div><div><h2>Problemlösung</h2><p>Der Hilfe-Assistent führt Sie Schritt für Schritt zur Lösung.</p></div></div>
+  <div class="ts" id="ts" aria-live="polite"></div>
+
+  <h3 id="neustart">Die drei Stufen der Problemlösung</h3>
+  <div class="grid-3">
+    <div class="card"><h4 data-icon="refresh">1. Neustart</h4><p>Löst die meisten Probleme. Ausschaltmenü › <b>Neu starten</b>. Reagiert nichts mehr: <kbd>Seitentaste</kbd> + <kbd>Leiser</kbd> etwa 7 Sekunden halten (erzwungener Neustart). Keine Daten gehen verloren.</p></div>
+    <div class="card"><h4 data-icon="shield">2. Abgesicherter Modus</h4><p>Startet nur mit vorinstallierten Apps. Ist das Problem dort weg, ist eine selbst installierte App schuld. Ausschaltmenü › <b>„Ausschalten“ gedrückt halten</b> › Abgesicherter Modus. Normal neu starten beendet ihn.</p></div>
+    <div class="card"><h4 data-icon="reset">3. Werkseinstellungen</h4><p>Löscht <b>alles</b>. Nur als letzter Ausweg oder vor dem Verkauf. Vorher sichern! <b>Allgemeine Verwaltung › Zurücksetzen › Auf Werkseinstellungen zurücksetzen</b>.</p></div>
+  </div>
+  <div class="callout info" data-t="Telefon zur Reparatur? Wartungsmodus nutzen">
+    <p>Unter <b>Einstellungen › Gerätewartung › Wartungsmodus</b> startet das Telefon in ein leeres Benutzerprofil. Der Techniker kann alles prüfen, sieht aber keine Fotos, Nachrichten oder Konten. Nach der Reparatur beenden Sie den Modus mit Ihrer PIN.</p>
+  </div>
+  <div class="callout danger" data-t="Vor dem Verkauf oder Verschenken">
+    <ol>
+      <li>Sicherung machen (Kapitel 10) und prüfen, dass Fotos in der Cloud sind.</li>
+      <li>Google- und Samsung-Konto <b>abmelden</b>: Einstellungen › Konten und Sicherung › Konten verwalten.</li>
+      <li>Auf Werkseinstellungen zurücksetzen.</li>
+      <li>SIM-Karte entnehmen.</li>
+    </ol>
+    <p>Ohne Schritt 2 kann der neue Besitzer das Telefon nicht einrichten.</p>
+  </div>
+</section>
+
+<!-- ===================== 12 WISSEN ===================== -->
+<section class="chapter" id="wissen" data-ch="12" data-title="Wissenstest, FAQ & Glossar" data-time="10" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num">12</div><div><h2>Wissenstest, FAQ &amp; Glossar</h2><p>Prüfen Sie Ihr Wissen und schlagen Sie Begriffe nach.</p></div></div>
+
+  <h3 id="quiz-h">Wissenstest</h3>
+  <p>Zwölf Fragen quer durch das Handbuch. Nach jeder Antwort sehen Sie die Erklärung und wo Sie es nachlesen können.</p>
+  <div class="quiz" id="quiz"></div>
+
+  <h3 id="faq">Häufige Fragen</h3>
+  <div class="faq" id="faq-list"></div>
+
+  <h3 id="glossar">Glossar</h3>
+  <div class="gloss-filter"><label class="visually-hidden" for="gloss-q">Glossar durchsuchen</label><input id="gloss-q" type="search" placeholder="Begriff suchen, z. B. NFC"></div>
+  <div class="gloss" id="gloss"></div>
+
+  <footer class="foot">
+    <p><b>Hinweis:</b> Dies ist ein unabhängiges, inoffizielles Handbuch. Es steht in keiner Verbindung zu Samsung. „Samsung“, „Galaxy“ und „One UI“ sind Marken der Samsung Electronics Co., Ltd. Bildschirmdarstellungen sind vereinfachte Illustrationen. Menünamen können sich durch Software-Updates ändern. Stand: November 2026.</p>
+  </footer>
+</section>
