@@ -85,6 +85,7 @@
   <h3 id="specs">Technische Daten verständlich erklärt</h3>
   <p>Tippen Sie auf eine Zeile, um zu sehen, was der Wert im Alltag bedeutet.</p>
   <div class="table-wrap"><table id="spec-table"><thead><tr><th>Merkmal</th><th>Wert</th><th></th></tr></thead><tbody></tbody></table></div>
+  <p><a class="btn" href="#datenblatt">Zum vollständigen Datenblatt</a></p>
   <div class="callout tip" data-t="Tipp: Welches Modell habe ich?">
     <p>Unter <b>Einstellungen › Telefoninfo</b> sehen Sie Modellnummer (beim S24 FE <b>SM-S721B</b> in Europa), Speichergröße, Telefonnummer und die Seriennummer. Die Seriennummer und IMEI brauchen Sie bei Reparatur, Versicherung oder Diebstahlanzeige. Machen Sie davon am besten gleich ein Foto und bewahren Sie es außerhalb des Telefons auf.</p>
   </div>
@@ -319,7 +320,7 @@
   <p>Probieren Sie es im Anruf-Simulator aus:</p>
   <div class="card" id="call-sim"></div>
   <details class="bg"><summary><span class="tag">Hintergrund</span>Warum wird der Bildschirm beim Telefonieren schwarz?</summary><div class="inner">
-    <p>Neben der Frontkamera sitzt ein <b>Näherungssensor</b>. Sobald das Telefon am Ohr liegt, schaltet er den Bildschirm ab, damit Ihre Wange nichts antippt. Nehmen Sie das Telefon vom Ohr, geht der Bildschirm wieder an. Eine dicke Displayfolie über dem Sensor kann das stören.</p>
+    <p>Das S24 FE hat einen <b>virtuellen Näherungssensor</b>: Statt eines eigenen Bauteils erkennt es aus Touchscreen- und Bewegungsdaten, dass es am Ohr liegt, und schaltet den Bildschirm ab, damit Ihre Wange nichts antippt. Nehmen Sie das Telefon vom Ohr, geht der Bildschirm wieder an. Dicke Schutzfolien oder ungewöhnliche Haltungen können die Erkennung stören.</p>
   </div></details>
 
   <h3 id="kontakte">Kontakte anlegen</h3>
@@ -438,6 +439,101 @@
   <div class="quiz mini" data-mini-quiz="sicherheit"></div>
 </section>
 
+<!-- ===================== KNOX ===================== -->
+<section class="chapter" id="knox" data-ch="1" data-title="Samsung Knox" data-time="25" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Samsung Knox</h2><p>Die Sicherheitsplattform in Ihrem Telefon: wie sie aufgebaut ist, was sie schützt und welche Knox-Funktionen Sie selbst nutzen.</p></div></div>
+
+  <h3 id="knox-was">Was ist Samsung Knox?</h3>
+  <p><b>Knox ist keine App</b>, sondern eine Sicherheitsplattform aus Hardware und Software, die in jedes Galaxy-Gerät eingebaut ist. Sie sehen den Namen kurz beim Einschalten („Secured by Knox“). Samsung hat Knox 2013 vorgestellt, zunächst für Unternehmen und Behörden, die besonders strenge Sicherheitsanforderungen haben. Heute schützt dieselbe Technik jedes private Galaxy-Telefon.</p>
+  <p>Das Grundprinzip heißt <b>„Defense in Depth“</b> (gestaffelte Verteidigung): Mehrere unabhängige Schutzschichten liegen übereinander. Überwindet ein Angreifer eine Schicht, hält ihn die nächste auf. Jede Schicht prüft zudem die über ihr liegende.</p>
+
+  <h3 id="knox-schichten">Die Schutzschichten: von der Hardware bis zur Cloud</h3>
+  <p>Tippen Sie auf eine Schicht. Unten liegt die Hardware als Fundament, oben Ihre Konten und der Geräteverbund.</p>
+  <div class="card" id="knox-layers"></div>
+
+  <h3 id="knox-vault">Knox Vault: der Tresor im Chip</h3>
+  <p>Ihre wertvollsten Daten (PIN, Passwörter, Fingerabdruck-Daten, kryptografische Schlüssel, Bezahl- und Ausweisdaten) werden nicht im normalen Speicher abgelegt, sondern in einem besonders geschützten Bereich. Bei Geräten mit <b>Knox Vault</b> ist das ein eigener Sicherheitsprozessor mit eigenem Speicher, der vom Hauptprozessor getrennt arbeitet. Selbst wenn Android komplett kompromittiert wäre, kämen Angreifer nicht an diese Daten.</p>
+  <div class="callout info" data-t="Knox Vault beim S24 FE"><p>Samsung nennt Knox Vault für die Galaxy-S24-Serie und ausgewählte neuere Modelle. Ob im S24 FE ein eigener Vault-Chip steckt, hat Samsung nicht eindeutig bestätigt. Unabhängig davon schützt das S24 FE diese Daten mindestens in der <b>TrustZone</b> des Exynos-Prozessors, einem hardwareseitig abgeschotteten Bereich.</p></div>
+
+  <h3 id="knox-bit">Das Knox-Warranty-Bit</h3>
+  <p>Im Chip gibt es eine Art <b>Einweg-Sicherung</b> (e-Fuse). Sie wird ausgelöst, wenn auf dem Telefon Software läuft, die nicht von Samsung signiert ist, zum Beispiel nach dem Entsperren des Bootloaders, Rooten oder dem Aufspielen einer fremden Android-Version (Custom ROM).</p>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="warn">Was dann passiert</h4><ul><li>Der Status springt von 0x0 auf 0x1, <b>unwiderruflich</b>, auch wenn Sie später wieder die Original-Software aufspielen.</li><li>Knox-abhängige Funktionen werden dauerhaft gesperrt, etwa <b>Sicherer Ordner</b> und Teile von <b>Samsung Wallet</b>.</li><li>Banking- und Bezahl-Apps verweigern oft den Dienst.</li><li>Samsung kann Garantie-Reparaturen für Schäden ablehnen, die auf veränderte Software zurückgehen.</li></ul></div>
+    <div class="card"><h4 data-icon="shield">Was das für Sie bedeutet</h4><p>Bei normaler Nutzung wird das Bit nie ausgelöst: nicht durch Apps, Updates, Zurücksetzen oder Reparaturen beim Samsung-Service. Halten Sie sich an eine Regel: <b>Keine Anleitungen zum „Rooten“ oder „Flashen“ befolgen</b> und keine Fremd-Firmware installieren. Die Option „OEM-Entsperrung“ in den Entwickleroptionen sollte ausgeschaltet bleiben.</p></div>
+  </div>
+  <details class="bg"><summary><span class="tag">Hintergrund</span>Warum ist das Bit nicht rückgängig zu machen?</summary><div class="inner"><p>Eine e-Fuse ist eine mikroskopisch kleine Leiterbahn, die beim Auslösen physisch durchbrennt. Das ist Absicht: Sicherheitsfunktionen und Dienste wie Bezahl-Apps müssen sich darauf verlassen können, dass ein Gerät nie mit manipulierter Software gelaufen ist. Eine Prüfung, die sich zurücksetzen ließe, wäre wertlos.</p></div></details>
+
+  <h3 id="knox-alltag">Knox-Funktionen, die Sie selbst nutzen</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Funktion</th><th>Was sie tut</th><th>Wo</th></tr></thead>
+    <tbody>
+      <tr><td><b>Sicherer Ordner</b></td><td>Verschlüsselter Privatbereich mit eigener PIN für Fotos, Dokumente und Apps (auch eine zweite WhatsApp)</td><td>Sicherheit und Datenschutz › Weitere Sicherheitseinstellungen</td></tr>
+      <tr><td><b>Auto Blocker</b></td><td>Blockiert Apps aus unbekannten Quellen, Befehle per USB, scannt Apps; optional „Maximale Einschränkungen“</td><td>Sicherheit und Datenschutz › Auto Blocker</td></tr>
+      <tr><td><b>Sicherheits- und Datenschutz-Dashboard</b></td><td>Ampel-Übersicht über Sicherheitsstatus, Updates, Kontoschutz und Berechtigungen</td><td>Einstellungen › Sicherheit und Datenschutz (oben)</td></tr>
+      <tr><td><b>Message Guard</b></td><td>Öffnet Bildanhänge in Nachrichten-Apps in einer abgeschotteten Umgebung (Schutz vor „Zero-Click“-Angriffen)</td><td>arbeitet automatisch</td></tr>
+      <tr><td><b>Wartungsmodus</b></td><td>Leeres Profil für die Reparatur; Ihre Daten bleiben unsichtbar</td><td>Gerätewartung › Wartungsmodus</td></tr>
+      <tr><td><b>Passkeys &amp; Passwörter</b></td><td>Anmeldedaten im geschützten Bereich, Synchronisation Ende-zu-Ende-verschlüsselt (Knox Matrix)</td><td>Allgemeine Verwaltung › Passwörter, Passkeys und Autofill</td></tr>
+      <tr><td><b>Erweiterter Datenschutz</b></td><td>Ende-zu-Ende-Verschlüsselung für Samsung-Cloud-Sicherungen</td><td>Samsung Account › Samsung Cloud › Einstellungen (je nach Version)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4 id="sicherer-ordner-anleitung">Sicheren Ordner einrichten und nutzen</h4>
+  <ol class="steps">
+    <li><b>Einstellungen › Sicherheit und Datenschutz › Weitere Sicherheitseinstellungen › Sicherer Ordner</b> öffnen und den Bedingungen zustimmen.</li>
+    <li>Mit dem Samsung-Konto anmelden. Der Ordner wird erstellt, das dauert einige Sekunden.</li>
+    <li>Einen Sperrtyp wählen. Nehmen Sie eine <b>andere PIN</b> als für das Telefon, sonst bringt der zusätzliche Schutz wenig.</li>
+    <li>Optional „Mit Samsung Account zurücksetzen“ aktivieren, damit Sie bei vergessener PIN nicht alles verlieren.</li>
+    <li><b>Dateien hineinbewegen:</b> in der Galerie oder in „Eigene Dateien“ Elemente auswählen › ⋮ bzw. „Mehr“ › <b>In Sicheren Ordner verschieben</b>.</li>
+    <li><b>Apps hinzufügen:</b> im Sicheren Ordner auf <b>+</b> tippen. So können Sie z. B. eine zweite WhatsApp mit einer anderen Nummer betreiben.</li>
+    <li><b>Unsichtbar machen:</b> In den Einstellungen des Sicheren Ordners „Symbol auf Apps-Bildschirm hinzufügen“ ausschalten; geöffnet wird er dann über eine Kachel in den Schnelleinstellungen.</li>
+  </ol>
+  <div class="callout warn" data-t="Wichtig beim Gerätewechsel"><p>Inhalte des Sicheren Ordners werden <b>nicht</b> automatisch mit Smart Switch übertragen. Sichern Sie sie vorher über die Sicherungsfunktion im Sicheren Ordner (Samsung Cloud) oder verschieben Sie sie zurück.</p></div>
+
+  <h3 id="knox-firma">Knox für Unternehmen</h3>
+  <p>Für Firmen gibt es die <b>Galaxy S24 FE Enterprise Edition</b> mit Knox-Suite-Lizenz. Damit verwalten IT-Abteilungen viele Geräte zentral:</p>
+  <ul>
+    <li><b>Knox Mobile Enrollment:</b> Neue Geräte richten sich beim ersten Einschalten automatisch als Firmengerät ein.</li>
+    <li><b>Knox Manage / MDM:</b> Apps verteilen, Richtlinien setzen, verlorene Geräte sperren.</li>
+    <li><b>Arbeitsprofil:</b> trennt Firmen- und Privatdaten. Die Firma verwaltet nur das Arbeitsprofil und sieht Ihre privaten Fotos und Nachrichten nicht.</li>
+    <li><b>E-FOTA:</b> Die Firma bestimmt, wann welches Update installiert wird.</li>
+    <li><b>Knox Guard:</b> Händler und Leasinggeber können Geräte sperren, wenn Raten nicht bezahlt werden. Sehen Sie eine Knox-Guard-Sperre auf einem gebrauchten Telefon, kaufen Sie es nicht.</li>
+  </ul>
+  <details class="bg"><summary><span class="tag">Genau erklärt</span>Kann Samsung in meinen Sicheren Ordner schauen?</summary><div class="inner"><p>Nein. Der Sichere Ordner wird mit einem Schlüssel verschlüsselt, der aus Ihrer Ordner-PIN und einem Hardware-Schlüssel des Telefons entsteht. Samsung besitzt diesen Schlüssel nicht. Die Option „Mit Samsung Account zurücksetzen“ erlaubt nur, eine <b>neue</b> PIN festzulegen, nachdem Sie sich mit Ihrem Konto ausgewiesen haben; sie funktioniert auf Ihrem Gerät, nicht aus der Ferne.</p></div></details>
+
+  <h3 id="quiz-knox">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="knox"></div>
+</section>
+
+<!-- ===================== SCHUTZPLAN ===================== -->
+<section class="chapter" id="schutzplan" data-ch="1" data-title="Optimal einrichten & schützen" data-time="45" data-lvl="2">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Optimal einrichten &amp; schützen</h2><p>Der vollständige Plan: jede Maßnahme mit genauem Pfad, Anleitung und Begründung. Haken Sie ab, was erledigt ist.</p></div></div>
+
+  <h3 id="schutz-prinzip">So ist der Plan aufgebaut</h3>
+  <ul>
+    <li><span class="chip lvl-3">Unverzichtbar</span> Diese Maßnahmen sollte jeder umsetzen. Sie schützen vor den häufigsten Schäden: Verlust, Diebstahl, Kontenübernahme und Datenverlust.</li>
+    <li><span class="chip lvl-2">Empfohlen</span> Deutlicher Zusatznutzen bei wenig Aufwand.</li>
+    <li><span class="chip lvl-1">Für Fortgeschrittene</span> Sinnvoll, wenn Sie mehr Kontrolle möchten. Lesen Sie die Begründung, bevor Sie es einschalten.</li>
+  </ul>
+  <p>Tippen Sie auf eine Zeile, um Pfad, Anleitung und Hintergrund zu sehen. Der Kreis zeigt Ihren Schutzstand: Unverzichtbare Punkte zählen dreifach, empfohlene doppelt.</p>
+  <div id="protect-plan"></div>
+
+  <h3 id="schutz-reihenfolge">Die richtige Reihenfolge am ersten Tag</h3>
+  <ol class="steps">
+    <li><b>Software-Update</b> installieren (erst danach sind alle Sicherheitsfunktionen aktuell).</li>
+    <li><b>PIN und Fingerabdrücke</b> einrichten.</li>
+    <li><b>Google-Konto mit zwei Schritten</b> absichern, danach das Samsung-Konto.</li>
+    <li><b>Verlorene Geräte finden</b> und <b>Diebstahlschutz</b> einschalten.</li>
+    <li><b>Sicherungen</b> (Google, Fotos, WhatsApp) einschalten und einmal manuell starten.</li>
+    <li><b>Auto Blocker</b> und <b>Play Protect</b> prüfen.</li>
+    <li><b>Berechtigungen</b> der installierten Apps durchgehen.</li>
+    <li>Zum Schluss: Komfort-Einstellungen wie Schrift, Navigation und Akkuschutz.</li>
+  </ol>
+  <div class="callout warn" data-t="Der häufigste Fehler"><p>Das Telefon ist perfekt geschützt, aber <b>das Passwort des Google-Kontos ist vergessen</b>. Nach einem Verlust oder Zurücksetzen kommt man dann nicht mehr an Fotos und Kontakte, und das Telefon lässt sich nicht neu einrichten. Schreiben Sie die Zugangsdaten und die Ersatzcodes auf Papier und bewahren Sie es sicher auf.</p></div>
+
+  <h3 id="quiz-schutz">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="schutzplan"></div>
+</section>
+
 <!-- ===================== 5 KAMERA ===================== -->
 <section class="chapter" id="kamera" data-ch="5" data-title="Kamera & Galerie" data-time="30" data-lvl="2">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Kamera &amp; Galerie</h2><p>Drei Objektive, die wichtigsten Modi und wie Sie Fotos nachträglich verbessern.</p></div></div>
@@ -480,6 +576,14 @@
   <h3 id="kamera-berater">Kamera-Berater: Was ist die beste Einstellung?</h3>
   <div class="card" id="cam-advisor"></div>
 
+  <h3 id="modi-detail">Alle Kameramodi im Detail</h3>
+  <p>Unter <b>Mehr</b> finden Sie alle Modi. Mit dem Stift-Symbol dort ziehen Sie häufig genutzte Modi direkt in die Modus-Leiste. Je nach Softwarestand können einzelne Modi fehlen oder hinzukommen.</p>
+  <div id="cam-modes"></div>
+
+  <h3 id="kamera-labor">Kamera-Labor: Einstellungen live ausprobieren</h3>
+  <p>Sehen Sie direkt, was Seitenverhältnis, Zoom, Weißabgleich und Porträt-Unschärfe mit einem Foto machen.</p>
+  <div class="card" id="cam-lab"></div>
+
   <h3 id="foto-tipps">Sieben Tipps für bessere Fotos</h3>
   <ol class="steps">
     <li><b>Linsen putzen.</b> Fingerabdrücke auf der Kamera sind der häufigste Grund für milchige Fotos. Kurz mit einem weichen Tuch abwischen.</li>
@@ -507,6 +611,11 @@
   <p><b>Ausprobieren:</b> Im Simulator läuft eine Person durchs Bild. Finden Sie Einstellungen, bei denen das Bild hell genug ist, die Person scharf bleibt und kaum Rauschen entsteht. Wechseln Sie dann auf „Wohnzimmer abends“: Sie merken, warum Fotos bei wenig Licht schwierig sind.</p>
   <div class="card" id="expo-sim"></div>
 
+  <h3 id="kamera-einstellungen">Sämtliche Kamera-Einstellungen erklärt</h3>
+  <p>Die Einstellungen öffnen Sie in der Kamera über das <b>Zahnrad</b> (oben links in der Sucher-Leiste; bei manchen Versionen erst nach Tippen auf den kleinen Pfeil). Jede Einstellung hier mit Optionen, Empfehlung und einem Beispiel aus dem Alltag. Die Bezeichnungen können je nach One-UI-Version leicht abweichen.</p>
+  <div class="card" id="cam-settings"></div>
+  <div class="callout tip" data-t="Alles verstellt?"><p>Ganz unten in den Kamera-Einstellungen setzt <b>„Einstellungen zurücksetzen“</b> alles auf Werkseinstellung zurück. Ihre Fotos bleiben dabei erhalten.</p></div>
+
   <h3 id="video">Videos filmen</h3>
   <ol class="steps">
     <li>Modus <b>Video</b> wählen. Oben (bzw. seitlich) tippen Sie auf die Angabe wie <b>FHD 30</b> oder <b>UHD 30</b>, um Auflösung und Bildrate zu ändern.</li>
@@ -515,6 +624,20 @@
     <li>Beim Gehen hilft die Stabilisierung <b>„Super Steady“</b> (Hand-Symbol, falls angezeigt). Sie schneidet das Bild etwas zu und gleicht Wackeln stärker aus.</li>
     <li>Während der Aufnahme können Sie mit dem weißen Auslöser zusätzlich <b>Fotos</b> machen.</li>
   </ol>
+  <h3 id="kamera-ai">Galaxy-AI-Funktionen für Fotos und Videos</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Funktion</th><th>So starten Sie sie</th><th>Beispiel</th></tr></thead>
+    <tbody>
+      <tr><td><b>Foto-Assistent</b> (generative Bearbeitung)</td><td>Galerie › Foto › Stift › Galaxy-AI-Symbol (✦)</td><td>Fremde Person aus dem Urlaubsfoto entfernen, schiefes Foto gerade rücken und Ränder auffüllen lassen</td></tr>
+      <tr><td><b>Bearbeitungsvorschläge</b></td><td>Galerie › Foto › Info- bzw. ✦-Symbol</td><td>Spiegelungen auf einer Glasscheibe oder Schatten entfernen</td></tr>
+      <tr><td><b>Porträtstudio</b></td><td>Galerie › Porträt-/Selfiefoto › ✦ › Porträtstudio</td><td>Selfie als Comic, Aquarell, Skizze oder 3D-Figur</td></tr>
+      <tr><td><b>Sofort-Zeitlupe</b></td><td>Galerie › beliebiges Video öffnen › Bild <b>gedrückt halten</b></td><td>Den Moment, in dem das Kind ins Wasser springt, nachträglich in Zeitlupe ansehen</td></tr>
+      <tr><td><b>Zeichenassistent</b> (Skizze zu Bild)</td><td>Galerie-Bearbeitung oder Samsung Notes, Stift-Werkzeug</td><td>Grob einen Hut auf ein Foto malen, die KI macht daraus einen echten Hut</td></tr>
+      <tr><td><b>Audio-Radierer</b> (ab One UI 7)</td><td>Galerie › Video › Bearbeiten › Audio</td><td>Windgeräusche oder Verkehrslärm aus einem Video herausfiltern</td></tr>
+    </tbody>
+  </table></div>
+  <p>Generativ bearbeitete Bilder erhalten ein kleines Galaxy-AI-Wasserzeichen und einen Hinweis in den Bilddetails. Für diese Funktionen brauchen Sie ein Samsung-Konto und meist eine Internetverbindung.</p>
+
   <h3 id="galerie">Galerie: ansehen, bearbeiten, retten</h3>
   <div class="stepper" data-stepper="edit"></div>
   <div class="grid-2">
@@ -799,6 +922,14 @@
   <div class="quiz mini" data-mini-quiz="hilfe"></div>
 </section>
 
+<!-- ===================== DATENBLATT ===================== -->
+<section class="chapter" id="datenblatt" data-ch="1" data-title="Datenblatt" data-time="10" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Datenblatt</h2><p>Alle technischen Daten des Galaxy S24 FE an einem Ort, durchsuchbar und mit Erklärungen.</p></div></div>
+  <p>Wählen Sie eine Kategorie oder suchen Sie nach einem Begriff. Bei Einträgen mit <b>„Was heißt das?“</b> gibt es eine Erklärung. Angaben stammen aus Samsung-Unterlagen und unabhängigen Testberichten; Abweichungen zwischen Quellen sind vermerkt (siehe <code>PRUEFBERICHT.md</code>).</p>
+  <div class="card" id="datasheet"></div>
+  <div class="callout tip" data-t="Ihre persönlichen Gerätedaten"><p>Modellnummer, Speichergröße, Softwareversion, IMEI und Seriennummer Ihres eigenen Geräts finden Sie unter <b>Einstellungen › Telefoninfo</b>. Den genauen Softwarestand unter <b>Telefoninfo › Softwareinformationen</b> (One-UI-Version, Android-Version, Sicherheitspatch-Stand).</p></div>
+</section>
+
 <!-- ===================== 12 WISSEN ===================== -->
 <section class="chapter" id="wissen" data-ch="12" data-title="Wissenstest, FAQ & Glossar" data-time="10" data-lvl="1">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Wissenstest, FAQ &amp; Glossar</h2><p>Prüfen Sie Ihr Wissen und schlagen Sie Begriffe nach.</p></div></div>
@@ -815,7 +946,7 @@
   <div class="gloss" id="gloss"></div>
 
   <h3 id="weitergeben">Dieses Handbuch weitergeben</h3>
-  <p>Das gesamte Handbuch steckt in <b>einer einzigen Datei</b> (<code>S24-FE-Handbuch.html</code>, etwa 0,4 MB). Alle Bilder, Schriften und Funktionen sind darin enthalten. Es braucht keine App, kein Konto und nach dem Öffnen kein Internet.</p>
+  <p>Das gesamte Handbuch steckt in <b>einer einzigen Datei</b> (<code>S24-FE-Handbuch.html</code>, etwa 0,5 MB). Alle Bilder, Schriften und Funktionen sind darin enthalten. Es braucht keine App, kein Konto und nach dem Öffnen kein Internet.</p>
   <div class="cta-row" style="margin:0 0 8px"><button class="btn primary" type="button" id="share-btn" data-icon="chat">Link teilen</button></div>
   <div class="grid-2">
     <div class="card"><h4 data-icon="chat">1. Datei verschicken</h4>

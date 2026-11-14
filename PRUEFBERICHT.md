@@ -47,6 +47,39 @@ Die neuen Inhalte beruhen auf allgemein dokumentiertem Android- und One-UI-Verha
 - **Notruf ohne SIM:** In Deutschland seit 2009 nicht möglich (Angabe aus der Bundesnetzagentur-Regelung, allgemein bekannt).
 - **Übungs-Handys:** Die nachgebauten Menüs sind vereinfacht. Echte Menüs enthalten mehr Einträge.
 
+## Nachtrag 2: Datenblatt, Knox, Schutzplan, Kamera
+
+### Dabei korrigierte Fehler im bisherigen Handbuch
+
+| Thema | Vorher | Jetzt | Quelle |
+|---|---|---|---|
+| Bildwiederholrate | „1–120 Hz“ | **60 oder 120 Hz, kein LTPO** | [GSMArena Test](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755p3.php), [TechARP](https://www.techarp.com/mobile/samsung-galaxy-s24-fe-review/3/) |
+| Näherungssensor | „Sensor neben der Frontkamera“ | **virtueller Näherungssensor** (kein eigenes Bauteil) | [Samsung IE Produktseite](https://www.samsung.com/ie/smartphones/galaxy-s/galaxy-s24-fe-blue-128gb-sm-s721blbdeub), [GSMArena](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755p3.php) |
+| Seitenverhältnis 9:16 | „schneidet oben und unten ab“ | im Hochformat **links und rechts** | Geometrie 3:4 → 9:16 |
+
+### Neue Angaben im Datenblatt (mit Quellen)
+
+| Angabe | Quelle |
+|---|---|
+| UVP 749 € (128 GB) / 809 € (256 GB), Marktstart 4.10.2024, Farben Blau/Graphit/Mint/Gelb, keine 512-GB-Version in DE | [Samsung Newsroom AT](https://news.samsung.com/at/samsung-lanciert-das-galaxy-s24-fe), [teltarif](https://www.teltarif.de/smartphone/samsung/galaxy-s24-fe/), [handyhase](https://www.handyhase.de/magazin/galaxy-s24-fe-test/) |
+| Speicher UFS 3.1 (128 GB) / UFS 4.0 (ab 256 GB) | widersprüchlich: [Kimovil](https://www.kimovil.com/en/where-to-buy-samsung-galaxy-s24fe), [Cybershack](https://cybershack.com.au/reviews/samsung-galaxy-s24-fe-the-value-s24-smartphone-review), [91mobiles](https://www.91mobiles.com/samsung-galaxy-s24-fe-256gb-price-in-india?ty=specs); im Datenblatt als „laut Datenblättern“ markiert |
+| Sensoren (Beschleunigung, Barometer, Gyro, Kompass, Hall, Licht, virtuelle Näherung) | [Samsung IE](https://www.samsung.com/ie/smartphones/galaxy-s/galaxy-s24-fe-blue-128gb-sm-s721blbdeub), [GSMArena](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755p3.php) |
+| Ortung GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC | [Samsung IE](https://www.samsung.com/ie/smartphones/galaxy-s/galaxy-s24-fe-blue-128gb-sm-s721blbdeub) |
+| Stereo (Hörmuschel als 2. Kanal), Dolby Atmos | [PhoneMore](https://www.phonemore.com/specs/samsung/galaxy-s24-fe/sm-s721w-128gb/), [GSMArena](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755p3.php) |
+| Hauptkamera 24 mm, 1/1,57″; Ultraweit 13 mm, ca. 1/3″; Tele 75 mm, 1/4,4″, 8 MP; Front 1/3″, ca. 25 mm | [PhoneArena](https://www.phonearena.com/phones/Samsung-Galaxy-S24-FE_id12417), [Kimovil](https://www.kimovil.com/en/where-to-buy-samsung-galaxy-s24fe), [GSMArena Kamera](https://m.gsmarena.com/samsung_galaxy_s24_fe-review-2755p5.php), [Tilifony](https://tilifony.com/cameras/mobiles/samsung/galaxy-s24-fe) (Tele: PhoneArena nennt 10 MP, Samsung und andere 8 MP) |
+
+### Knox
+- Aufbau (Root of Trust, TrustZone, Secure/Trusted Boot, RKP, DM-Verity, SELinux, Knox Matrix, Auto Blocker, Message Guard): allgemeine Samsung-Knox-Dokumentation, z. B. [Samsung Newsroom](https://samsungmobilepress.com/press-releases/samsung-introduces-future-ready-mobile-security-for-personalized-ai-experiences), [One UI 7 Sicherheit](https://www.samsungmobilepress.com/press-releases/samsung-one-ui-7-enhances-security-and-privacy-in-the-age-of-ai-giving-users-greater-transparency-and-choice).
+- **Knox Vault beim S24 FE: nicht offiziell bestätigt.** Samsung nennt die „S24-Serie und ausgewählte neuere Modelle“ ([Knox Vault Artikel](https://news.samsung.com/ca/your-privacy-secured-how-knox-vault-protects-you-in-the-era-of-ai)); im Handbuch entsprechend gekennzeichnet.
+
+### Kamera-Einstellungen
+- Namen und Funktionen nach Samsung-Support ([Kamera-Modi und -Einstellungen](https://www.samsung.com/us/support/answer/ANS10001353), [Pro-Modus](https://www.samsung.com/ae/support/mobile-devices/how-to-use-the-cameras-pro-mode-on-samsung-galaxy-phones)). Deutsche Bezeichnungen können je nach One-UI-Version abweichen.
+- **Pro-Modus-Spannen** (ISO, Belichtungszeit, Kelvin): von Samsung nicht veröffentlicht; im Handbuch nur als Beispielwerte genannt.
+- Kamera-Labor: vereinfachte Lehr-Darstellung, keine Simulation der echten Bildverarbeitung.
+
+### Schutzplan
+Menüpfade nach One UI 7/8; wo der Pfad je nach Version abweichen kann, nennt das Handbuch zusätzlich den Suchbegriff. Ausstattung wie Diebstahlschutz (Identitätsprüfung) setzt One UI 7 oder neuer voraus.
+
 ## Bleibt zu beachten
 
 - **SIM-Fach:** Die Lage „links oben“ stammt aus US-Netzbetreiber-Anleitungen (SM-S721U). Für das EU-Modell ist sie sehr wahrscheinlich gleich, aber nicht aus einer Samsung-EU-Quelle belegt. Einmal am echten Gerät prüfen.

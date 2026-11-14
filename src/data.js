@@ -88,7 +88,7 @@ const STEPPERS = {
 
 /* ============ Specs ============ */
 const SPECS = [
-  ['Display', '6,7″ Dynamic AMOLED 2X, 2340 × 1080, 1–120 Hz', 'Der Bildschirm misst diagonal etwa 17 cm. „AMOLED“ heißt: Jeder Bildpunkt leuchtet selbst, Schwarz ist echt schwarz. 120 Hz bedeutet, dass das Bild bis zu 120-mal pro Sekunde erneuert wird, Scrollen wirkt dadurch flüssig. „Vision Booster“ hält Farben auch in der Sonne kräftig.'],
+  ['Display', '6,7″ Dynamic AMOLED 2X, 2340 × 1080, 60/120 Hz', 'Der Bildschirm misst diagonal etwa 17 cm. „AMOLED“ heißt: Jeder Bildpunkt leuchtet selbst, Schwarz ist echt schwarz. 120 Hz bedeutet, dass das Bild bis zu 120-mal pro Sekunde erneuert wird, Scrollen wirkt dadurch flüssig. Das Display wechselt automatisch zwischen 60 und 120 Hz. „Vision Booster“ hält Farben auch in der Sonne kräftig.'],
   ['Prozessor', 'Samsung Exynos 2400e (10 Kerne)', 'Das „Gehirn“ des Telefons. Schnell genug für alles im Alltag, auch für aufwendige Spiele und die KI-Funktionen.'],
   ['Arbeitsspeicher', '8 GB RAM', 'Kurzzeitgedächtnis: Wie viele Apps gleichzeitig offen bleiben können, ohne neu zu laden. 8 GB reichen gut.'],
   ['Speicher', '128 / 256 / 512 GB, keine microSD', 'Hier liegen Fotos, Videos und Apps. Eine Speicherkarte lässt sich nicht nachrüsten. Faustregel: 128 GB reicht für etwa 25.000 Fotos, wenn Sie wenig filmen.'],

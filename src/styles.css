@@ -636,3 +636,45 @@ input[type="range"] { width: 100%; accent-color: var(--accent); height: 30px; }
 .quiz.mini .mq-head b { font-family: var(--font-display); flex: 1; }
 .mq-q { padding: 10px 0; border-top: 1px solid var(--line); }
 .mq-q:first-of-type { border-top: 0; }
+
+/* ================= Datenblatt, Knox, Schutzplan, Kamera-Einstellungen, Labor ================= */
+.ds-h { margin: 18px 0 8px; font-size: 1rem; color: var(--accent-strong); }
+.ds-table { margin: 0 0 6px; }
+.ds-table th { width: 38%; text-transform: none; letter-spacing: 0; font-size: .86rem; color: var(--fg); background: var(--surface-2); font-weight: 600; }
+.ds-more { margin-top: 6px; font-size: .86rem; color: var(--muted); }
+.ds-more summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+@media (max-width: 520px) { .ds-table tr { display: grid; } .ds-table th { width: auto; border-bottom: 0; padding-bottom: 2px; } .ds-table td { padding-top: 2px; } }
+
+.knox { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 720px) { .knox { grid-template-columns: minmax(0, 1fr); } }
+.knox-stack { display: flex; flex-direction: column; gap: 6px; }
+.knox-stack button { text-align: left; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; cursor: pointer; background: color-mix(in srgb, var(--accent) calc(var(--i) * 9%), var(--surface)); color: var(--fg); margin: 0 calc((5 - var(--i)) * 6px); }
+.knox-stack button b { display: block; font-family: var(--font-display); font-size: .95rem; }
+.knox-stack button span { font-size: .78rem; color: var(--muted); }
+.knox-stack button[aria-pressed="true"] { outline: 3px solid var(--warn); outline-offset: 1px; }
+.knox-detail h4 { margin: 4px 0 8px; font-size: 1.15em; }
+
+.pp-score { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 18px; align-items: center; margin-bottom: 12px; }
+@media (max-width: 520px) { .pp-score { grid-template-columns: minmax(0, 1fr); justify-items: start; } }
+.pp-ring { position: relative; width: 110px; height: 110px; }
+.pp-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.pp-bg { fill: none; stroke: var(--surface-2); stroke-width: 12; }
+.pp-fg { fill: none; stroke: var(--accent); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 314.16; stroke-dashoffset: 314.16; transition: stroke-dashoffset .5s; }
+.pp-ring b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.pp-item, .cs-item { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); margin: 6px 0; }
+.pp-item.done { background: var(--good-soft); border-color: transparent; }
+.pp-item summary, .cs-item summary { display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; list-style: none; flex-wrap: wrap; }
+.pp-item summary::-webkit-details-marker, .cs-item summary::-webkit-details-marker { display: none; }
+.pp-item summary input { width: 22px; height: 22px; accent-color: var(--accent); flex: none; }
+.pp-t { flex: 1; min-width: 160px; font-weight: 600; }
+.cs-item summary b { flex: 1; min-width: 150px; }
+.pp-body { padding: 0 14px 14px; font-size: .94rem; }
+.pp-body .path { margin-top: 0; }
+.pp-body .why, .cs-ex { padding: 10px 12px; border-left: 3px solid var(--info); background: var(--info-soft); border-radius: 0 10px 10px 0; }
+.cs-ex { border-left-color: var(--good); background: var(--good-soft); }
+.cs-opt { color: var(--muted); }
+
+.lab { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 14px; }
+@media (max-width: 640px) { .lab { grid-template-columns: minmax(0, 1fr); } .lab-view { max-width: 240px; margin: 0 auto; } }
+.lab-view svg { width: 100%; height: auto; border-radius: 12px; display: block; background: #000; }
+.lab-ctl { display: flex; flex-direction: column; gap: 8px; }
