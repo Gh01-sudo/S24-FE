@@ -86,7 +86,7 @@
     sicherheit: ['shield', 'Sicherheit'], knox: ['lock', 'Sicherheit'], schutzplan: ['check', 'Sicherheit'],
     kamera: ['lens', 'Kamera & KI'], ai: ['search', 'Kamera & KI'],
     akku: ['battery', 'Alltag'], anpassen: ['contrast', 'Alltag'], verbindungen: ['wifi', 'Alltag'], apps: ['app', 'Alltag'],
-    hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
+    alltag: ['grid', 'Alltag'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
   };
   const metaOf = sec => CH_META[sec.id] || ['book', 'Weitere'];
   chapters.forEach(sec => {

@@ -872,6 +872,7 @@ footer.foot { border-top-color: var(--line); }
 @media (max-width: 520px) { .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .hero .cta-row .btn { flex: 0 0 auto; }
 @media (max-width: 760px) { .hero-art svg { max-width: 140px; } .hero { gap: 14px; } .hero .eyebrow { font-size: .66rem; } }
+@media (max-width: 640px) { .chapter-head { align-items: start; } }
 
 </style>
 </head>
@@ -910,7 +911,7 @@ footer.foot { border-top-color: var(--line); }
 <section id="start" class="intro" data-ch="0" data-title="Willkommen">
   <div class="hero">
     <div>
-      <div class="eyebrow">Inoffizielles Einsteiger-Handbuch · One UI 7 / 8</div>
+      <div class="eyebrow">Inoffizielles Einsteiger-Handbuch · One UI 7 bis 8.5</div>
       <h1>Ihr Galaxy S24 FE, Schritt für Schritt erklärt</h1>
       <p class="lead">Von der ersten SIM-Karte bis zum Nachtfoto: Jedes Kapitel zeigt Ihnen, <b>wo</b> Sie tippen, <b>was</b> dabei passiert und <b>warum</b> es so funktioniert. Sie brauchen kein Vorwissen.</p>
       <div class="cta-row">
@@ -942,7 +943,7 @@ footer.foot { border-top-color: var(--line); }
   <ul class="path-list" id="path-out" aria-live="polite"></ul>
 
   <div class="callout info" data-t="Gut zu wissen: Software-Versionen">
-    <p>Das S24 FE kam im Oktober 2024 mit Android 14 und One UI 6.1 auf den Markt. Samsung liefert <b>7 Jahre</b> Android- und Sicherheits-Updates. Dieses Handbuch beschreibt die Menüs von One UI 7 und 8. Heißt ein Menüpunkt bei Ihnen etwas anders, tippen Sie in den Einstellungen oben auf die <b>Lupe</b> und suchen nach dem Begriff. So finden Sie jede Einstellung, egal wo Samsung sie gerade einsortiert hat.</p>
+    <p>Das S24 FE kam im Oktober 2024 mit Android 14 und One UI 6.1 auf den Markt. Samsung liefert <b>7 Jahre</b> Android- und Sicherheits-Updates. Seit Mai 2026 ist <b>One UI 8.5</b> (Android 16) für das S24 FE verfügbar. Dieses Handbuch beschreibt die Menüs von One UI 7 bis 8.5. Heißt ein Menüpunkt bei Ihnen etwas anders, tippen Sie in den Einstellungen oben auf die <b>Lupe</b> und suchen nach dem Begriff. So finden Sie jede Einstellung, egal wo Samsung sie gerade einsortiert hat.</p>
   </div>
 </section>
 
@@ -1275,7 +1276,7 @@ footer.foot { border-top-color: var(--line); }
   <ul>
     <li><b>112</b> (Feuerwehr, Rettungsdienst) und <b>110</b> (Polizei) sind kostenlos.</li>
     <li>Auch bei gesperrtem Telefon: Auf dem PIN-Bildschirm unten auf <b>„Notruf“</b> tippen.</li>
-    <li>In Deutschland ist ein Notruf <b>nur mit eingelegter SIM-Karte</b> möglich.</li>
+    <li>In Deutschland ist ein Notruf <b>nur mit eingelegter, aktiver SIM-Karte</b> möglich (seit 2009). Die Karte muss dafür aber weder per PIN entsperrt sein noch Guthaben haben, und der Notruf funktioniert auch über das Netz eines anderen Anbieters.</li>
     <li>Notruf-SOS (Seitentaste 5×) und medizinische Informationen: siehe <a href="#sos">Notruf-SOS</a>.</li>
   </ul>
 
@@ -1312,10 +1313,12 @@ footer.foot { border-top-color: var(--line); }
 
   <h3 id="finden">Verlorenes Telefon finden</h3>
   <p>Mit <b>„Verlorene Geräte finden“</b> (früher „Find My Mobile“, heute in der App <b>SmartThings Find</b>) orten Sie Ihr Telefon auf einer Karte, lassen es laut klingeln (auch im Lautlos-Modus), sperren es oder löschen es aus der Ferne.</p>
-  <div class="path" data-path="Einstellungen|Sicherheit und Datenschutz|Verlorene Geräte finden"></div>
+  <div class="path" data-path="Einstellungen|Sicherheit und Datenschutz|Schutz bei Geräteverlust|Verlorene Geräte finden"></div>
+  <p class="caption" style="text-align:left">Ab One UI 7 liegt „Verlorene Geräte finden“ im Menü <b>Schutz bei Geräteverlust</b> (je nach Version auch „Schutz für verlorene Geräte“). Bei älteren Versionen direkt unter „Sicherheit und Datenschutz“.</p>
   <ol class="steps">
     <li>Schalten Sie <b>„Verlorene Geräte finden“</b> ein (Sie brauchen dafür das Samsung-Konto).</li>
     <li>Aktivieren Sie <b>„Offline-Suche“</b>. Dann helfen andere Galaxy-Geräte in der Nähe anonym, Ihr Telefon zu finden, selbst ohne Internet.</li>
+    <li>Im selben Menü unter <b>Diebstahlschutz</b> die Diebstahlerkennungssperre, Offline-Gerätesperre und Identitätsprüfung einschalten (ab One UI 7, Samsung-Konto erforderlich). Die Identitätsprüfung verlangt außerhalb von „sicheren Orten“ Ihren Fingerabdruck für wichtige Änderungen; das Abschalten wird zusätzlich um eine Stunde verzögert, damit ein Dieb es nicht sofort kann.</li>
     <li>Im Ernstfall gehen Sie am Computer auf <b>smartthingsfind.samsung.com</b> und melden sich mit Ihrem Samsung-Konto an. Alternativ: <b>google.com/android/find</b> mit dem Google-Konto.</li>
   </ol>
 
@@ -1382,7 +1385,7 @@ footer.foot { border-top-color: var(--line); }
       <tr><td><b>Sicherer Ordner</b></td><td>Verschlüsselter Privatbereich mit eigener PIN für Fotos, Dokumente und Apps (auch eine zweite WhatsApp)</td><td>Sicherheit und Datenschutz › Weitere Sicherheitseinstellungen</td></tr>
       <tr><td><b>Auto Blocker</b></td><td>Blockiert Apps aus unbekannten Quellen, Befehle per USB, scannt Apps; optional „Maximale Einschränkungen“</td><td>Sicherheit und Datenschutz › Auto Blocker</td></tr>
       <tr><td><b>Sicherheits- und Datenschutz-Dashboard</b></td><td>Ampel-Übersicht über Sicherheitsstatus, Updates, Kontoschutz und Berechtigungen</td><td>Einstellungen › Sicherheit und Datenschutz (oben)</td></tr>
-      <tr><td><b>Message Guard</b></td><td>Öffnet Bildanhänge in Nachrichten-Apps in einer abgeschotteten Umgebung (Schutz vor „Zero-Click“-Angriffen)</td><td>arbeitet automatisch</td></tr>
+      <tr><td><b>Message Guard</b></td><td>Öffnet Bildanhänge in Nachrichten-Apps in einer abgeschotteten Umgebung (Schutz vor „Zero-Click“-Angriffen). Für Samsung Nachrichten und Google Messages immer aktiv, für WhatsApp, Telegram u. a. als Teil von Auto Blocker</td><td>automatisch (seit One UI 6)</td></tr>
       <tr><td><b>Wartungsmodus</b></td><td>Leeres Profil für die Reparatur; Ihre Daten bleiben unsichtbar</td><td>Gerätewartung › Wartungsmodus</td></tr>
       <tr><td><b>Passkeys &amp; Passwörter</b></td><td>Anmeldedaten im geschützten Bereich, Synchronisation Ende-zu-Ende-verschlüsselt (Knox Matrix)</td><td>Allgemeine Verwaltung › Passwörter, Passkeys und Autofill</td></tr>
       <tr><td><b>Erweiterter Datenschutz</b></td><td>Ende-zu-Ende-Verschlüsselung für Samsung-Cloud-Sicherungen</td><td>Samsung Account › Samsung Cloud › Einstellungen (je nach Version)</td></tr>
@@ -1806,6 +1809,97 @@ footer.foot { border-top-color: var(--line); }
   <div class="quiz mini" data-mini-quiz="apps"></div>
 </section>
 
+<!-- ===================== ALLTAGS-APPS ===================== -->
+<section class="chapter" id="alltag" data-ch="1" data-title="Alltags-Apps & Funktionen" data-time="30" data-lvl="1">
+  <div class="chapter-head"><div class="chapter-num"></div><div><h2>Alltags-Apps &amp; Funktionen</h2><p>Wecker, Kalender, Internet, E-Mail, Navigation, Bildschirmaufnahme, Bildschirmzeit und Kindersicherung.</p></div></div>
+
+  <h3 id="wecker">Wecker, Timer und Stoppuhr</h3>
+  <ol class="steps">
+    <li>App <b>Uhr</b> öffnen und unten <b>Wecker</b> wählen.</li>
+    <li>Auf <b>+</b> tippen und die Uhrzeit einstellen.</li>
+    <li>Wochentage antippen, an denen der Wecker klingeln soll (z. B. Mo–Fr). Ohne Auswahl klingelt er nur einmal.</li>
+    <li>Darunter: <b>Weckton</b>, <b>Vibration</b> und <b>Schlummern</b> (z. B. alle 5 Minuten, 3-mal). Dann <b>Speichern</b>.</li>
+    <li>Klingelt der Wecker: <b>X</b> wegwischen beendet ihn, <b>Schlummern</b> verschiebt ihn.</li>
+  </ol>
+  <div class="callout info" data-t="Klingelt der Wecker auch im Lautlos-Modus?"><p>Ja. Wecker haben eine eigene Lautstärke und klingeln auch bei „Lautlos“ und „Nicht stören“. Prüfen Sie die Weckerlautstärke einmal in den Wecker-Einstellungen. Ist das Telefon <b>ausgeschaltet</b>, klingelt er nicht.</p></div>
+  <p>Im selben App-Bereich finden Sie <b>Weltuhr</b>, <b>Stoppuhr</b> und <b>Timer</b> (z. B. für das Frühstücksei). Schneller geht es per Sprache: Seitentaste gedrückt halten und „Stelle einen Wecker auf 6:30 Uhr“ sagen.</p>
+
+  <h3 id="kalender">Kalender und Termine</h3>
+  <ol class="steps">
+    <li>App <b>Kalender</b> öffnen (Samsung Kalender; alternativ Google Kalender).</li>
+    <li>Auf <b>+</b> tippen, Titel, Datum und Uhrzeit eingeben.</li>
+    <li>Unter <b>Erinnerung</b> festlegen, wann das Telefon Sie warnen soll (z. B. 1 Stunde vorher).</li>
+    <li>Wiederkehrende Termine (Geburtstage, Sport) über <b>Wiederholen</b> anlegen.</li>
+  </ol>
+  <p>Wählen Sie als Kalender Ihr <b>Google-Konto</b>: Dann sind Termine gesichert und auch am Computer unter calendar.google.com sichtbar.</p>
+
+  <h3 id="bildschirmaufnahme">Bildschirm als Video aufnehmen</h3>
+  <ol class="steps">
+    <li>Schnelleinstellungen öffnen und die Kachel <b>Bildschirmrekorder</b> antippen. Fehlt sie: oben auf den Stift (Bearbeiten) tippen und die Kachel hinzufügen.</li>
+    <li>Ton wählen: <b>Kein Ton</b>, <b>Medientöne</b> (Ton der Apps) oder <b>Medientöne und Mikrofon</b> (zusätzlich Ihre Stimme).</li>
+    <li><b>Aufnahme starten</b>. Nach einem kurzen Countdown läuft die Aufnahme; oben rechts erscheint eine kleine Leiste.</li>
+    <li>Zum Beenden in der Leiste auf <b>Stopp</b> (Quadrat) tippen. Das Video liegt in der <b>Galerie</b>.</li>
+  </ol>
+  <div class="callout tip" data-t="Ideal zum Erklären"><p>Zeigen Sie Verwandten so, wie etwas am Telefon geht, oder halten Sie einen Fehler fest, um ihn dem Service zu zeigen. Achtung: Benachrichtigungen, die während der Aufnahme erscheinen, sind im Video sichtbar.</p></div>
+
+  <h3 id="internet">Im Internet surfen</h3>
+  <p>Vorinstalliert sind <b>Samsung Internet</b> und <b>Chrome</b>. Beide funktionieren ähnlich; wählen Sie einen und bleiben Sie dabei.</p>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="search">Grundlagen</h4><ul><li>Oben bzw. unten in die <b>Adressleiste</b> tippen und eine Adresse oder einen Suchbegriff eingeben.</li><li><b>Tabs:</b> Mehrere Seiten gleichzeitig offen halten; das Kästchen-Symbol mit Zahl zeigt sie an.</li><li><b>Lesezeichen:</b> Stern-Symbol bzw. Menü › „Lesezeichen hinzufügen“.</li><li><b>Text größer:</b> mit zwei Fingern zoomen oder in den Browser-Einstellungen die Textgröße erhöhen.</li></ul></div>
+    <div class="card"><h4 data-icon="shield">Sicher surfen</h4><ul><li><b>Geheimmodus</b> (Samsung Internet) bzw. <b>Inkognito</b> (Chrome): Verlauf und Cookies werden nach dem Schließen gelöscht. Unsichtbar sind Sie dadurch nicht.</li><li>Auf das <b>Schloss-Symbol</b> vor der Adresse achten, bevor Sie Passwörter eingeben.</li><li>Pop-ups „Ihr Handy ist infiziert“ sind Werbung oder Betrug: Tab schließen, nichts installieren.</li><li>Samsung Internet bietet unter Menü › <b>Werbeblocker</b> Erweiterungen gegen Werbung.</li></ul></div>
+  </div>
+
+  <h3 id="email">E-Mail einrichten</h3>
+  <p>Vorinstalliert ist <b>Gmail</b>. Ihr Google-Postfach ist nach der Einrichtung schon da. Weitere Postfächer (GMX, WEB.DE, T-Online, Outlook) fügen Sie so hinzu:</p>
+  <ol class="steps">
+    <li>Gmail öffnen › oben rechts auf Ihr <b>Profilbild</b> › <b>Weiteres Konto hinzufügen</b>.</li>
+    <li>Anbieter wählen (z. B. „Outlook, Hotmail und Live“) oder <b>Andere</b> für GMX, WEB.DE und T-Online.</li>
+    <li>E-Mail-Adresse und Passwort eingeben. Bei GMX und WEB.DE müssen Sie im Webmail (am Computer) einmalig den Zugriff erlauben: Einstellungen › <b>POP3/IMAP Abruf</b> › Haken bei „POP3 und IMAP Zugriff erlauben“. Bei langer Nichtnutzung kann der Anbieter das wieder abschalten.</li>
+    <li>Über das Profilbild wechseln Sie zwischen den Postfächern.</li>
+  </ol>
+  <p>Einfacher: Die eigenen Apps der Anbieter (GMX Mail, WEB.DE Mail, Outlook) aus dem Play Store brauchen diese Freischaltung nicht.</p>
+
+  <h3 id="navigation">Navigation mit Google Maps</h3>
+  <ol class="steps">
+    <li><b>Maps</b> öffnen und oben das Ziel eingeben, z. B. „Hauptbahnhof Köln“.</li>
+    <li><b>Route</b> antippen und das Verkehrsmittel wählen: Auto, öffentliche Verkehrsmittel, zu Fuß, Fahrrad.</li>
+    <li><b>Starten</b>: Die Sprachnavigation führt Sie Schritt für Schritt.</li>
+  </ol>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="cloud">Offline-Karten</h4><p>Für Urlaub oder Funklöcher: Profilbild › <b>Offlinekarten</b> › „Eigene Karte auswählen“ und den Bereich herunterladen. Navigation per Auto funktioniert dann ohne Datenverbindung.</p></div>
+    <div class="card"><h4 data-icon="user">Standort teilen</h4><p>Profilbild › <b>Standortfreigabe</b>: Familie sieht für eine festgelegte Zeit, wo Sie sind. Praktisch auf dem Heimweg. Jederzeit wieder beendbar.</p></div>
+  </div>
+
+  <h3 id="wohlbefinden">Bildschirmzeit und Kindersicherung</h3>
+  <p>Unter <b>Einstellungen › Digitales Wohlbefinden und Kindersicherung</b> sehen Sie, wie lange Sie heute welche App genutzt haben.</p>
+  <ul>
+    <li><b>App-Timer:</b> Tageslimit für einzelne Apps; danach wird die App für den Rest des Tages ausgegraut.</li>
+    <li><b>Bildschirmzeit-Ziel:</b> ein Tagesziel, das Telefon erinnert Sie beim Erreichen.</li>
+    <li><b>Schlafenszeit</b> (über Modi und Routinen, Modus „Schlafen“): Bildschirm wird grau, Benachrichtigungen stumm.</li>
+    <li><b>Kindersicherung:</b> richtet Google <b>Family Link</b> ein. Damit legen Eltern für das Telefon des Kindes Bildschirmzeiten fest, genehmigen App-Downloads und sehen den Standort. Dafür brauchen Eltern und Kind ein Google-Konto.</li>
+  </ul>
+
+  <h3 id="edge">Edge-Panels: Seitenleiste mit Lieblings-Apps</h3>
+  <p>Ein kleiner Griff am Bildschirmrand öffnet beim Wischen zur Mitte eine Leiste mit Apps, Kontakten oder Werkzeugen. Einschalten und anpassen: <b>Einstellungen › Anzeige › Edge-Panels</b>. Dort wählen Sie Panels aus und unter <b>Griff</b> Position, Größe und Transparenz. Stört der Griff, schalten Sie die Funktion einfach aus.</p>
+
+  <h3 id="weitere-apps">Weitere nützliche Samsung-Apps</h3>
+  <div class="grid-3">
+    <div class="card"><h4 data-icon="note">Samsung Notes</h4><p>Notizen, Checklisten, Sprachaufnahmen und PDF-Anmerkungen. Mit Galaxy AI lassen sich lange Notizen zusammenfassen und ordnen.</p></div>
+    <div class="card"><h4 data-icon="flame">Samsung Health</h4><p>Zählt Schritte über die Bewegungssensoren des Telefons, auch ohne Uhr. Mit einer Galaxy Watch zusätzlich Puls, Schlaf und Training.</p></div>
+    <div class="card"><h4 data-icon="app">Samsung Wallet</h4><p>Bank- und Kundenkarten, Bordkarten und Tickets an einem Ort. Kontaktloses Bezahlen siehe <a href="#nfc">Kontaktlos bezahlen</a>.</p></div>
+  </div>
+
+  <h3 id="sprache-zeit">Sprache, Datum und Uhrzeit</h3>
+  <ul>
+    <li><b>Sprache:</b> Einstellungen › Allgemeine Verwaltung › <b>Sprache</b>. Sie können auch für einzelne Apps eine andere Sprache wählen („App-Sprachen“).</li>
+    <li><b>Datum und Uhrzeit:</b> Allgemeine Verwaltung › Datum und Uhrzeit › <b>Automatisches Datum und automatische Uhrzeit</b> eingeschaltet lassen. Sommer- und Winterzeit stellt das Telefon dann selbst um.</li>
+    <li><b>Tastatursprachen:</b> Allgemeine Verwaltung › Samsung-Tastatur-Einstellungen › Sprachen und Typen. Mit mehreren Sprachen wechseln Sie per Wisch über die Leertaste.</li>
+  </ul>
+
+  <h3 id="quiz-alltag">Kurz geprüft</h3>
+  <div class="quiz mini" data-mini-quiz="alltag"></div>
+</section>
+
 <!-- ===================== 11 HILFE ===================== -->
 <section class="chapter" id="hilfe" data-ch="11" data-title="Problemlösung" data-time="10" data-lvl="3">
   <div class="chapter-head"><div class="chapter-num"></div><div><h2>Problemlösung</h2><p>Der Hilfe-Assistent führt Sie Schritt für Schritt zur Lösung.</p></div></div>
@@ -1829,6 +1923,18 @@ footer.foot { border-top-color: var(--line); }
     </ol>
     <p>Ohne Schritt 2 kann der neue Besitzer das Telefon nicht einrichten.</p>
   </div>
+
+  <h3 id="garantie">Garantie, Gewährleistung und Reparatur</h3>
+  <div class="grid-2">
+    <div class="card"><h4 data-icon="shield">Gesetzliche Gewährleistung</h4><p><b>2 Jahre</b> gegenüber dem <b>Händler</b>, bei dem Sie gekauft haben. Im <b>ersten Jahr</b> muss der Händler beweisen, dass ein Mangel nicht schon beim Kauf bestand (Beweislastumkehr). Danach müssen Sie es nachweisen.</p></div>
+    <div class="card"><h4 data-icon="check">Samsung-Herstellergarantie</h4><p>Zusätzlich und freiwillig: <b>24 Monate</b> auf Material- und Verarbeitungsfehler, direkt über Samsung. Für den Akku nennt Samsung in einigen Ländern kürzere Fristen (häufig 12 Monate). Stürze, Wasserschäden und Displaybruch sind nicht abgedeckt.</p></div>
+  </div>
+  <ol class="steps">
+    <li><b>Vorher prüfen:</b> App <b>Samsung Members</b> › Support › Telefondiagnose. Viele „Defekte“ sind Einstellungssachen.</li>
+    <li><b>Kaufbeleg</b> bereithalten (Rechnung mit Datum und IMEI bzw. Seriennummer).</li>
+    <li><b>Sichern</b> und den <b>Wartungsmodus</b> einschalten (Gerätewartung › Wartungsmodus).</li>
+    <li>Reparatur über den <b>Händler</b>, den <b>Samsung-Service</b> (samsung.com/de › Support › Reparatur) oder einen autorisierten Service-Partner. Freie Werkstätten sind oft günstiger, können aber Garantieansprüche gefährden.</li>
+  </ol>
 
   <h3 id="quiz-hilfe">Kurz geprüft</h3>
   <div class="quiz mini" data-mini-quiz="hilfe"></div>
@@ -2417,7 +2523,7 @@ const STEPPERS = {
   sim: {
     title: 'SIM-Karte einlegen', icon: 'box', steps: [
       { m: () => sidePower(), h: 'Telefon ausgeschaltet lassen', p: 'Legen Sie die SIM-Karte am besten ein, <b>bevor</b> Sie das Telefon zum ersten Mal einschalten. Ist es schon an, halten Sie <kbd>Seitentaste</kbd> + <kbd>Leiser</kbd> gedrückt und wählen „Ausschalten“.', why: 'Das Telefon verträgt das Einlegen auch im eingeschalteten Zustand, erkennt die Karte aber erst nach einem Neustart sicher.' },
-      { m: () => leftView({ hot: true }), h: 'Das SIM-Fach finden', p: 'Das SIM-Fach sitzt an der <b>linken Seite, im oberen Bereich</b>. Sie erkennen es an der schmalen <b>Fuge mit einem winzigen Loch</b>.', why: 'Achtung: Ein kleines Loch <b>ohne</b> Fuge ist ein <b>Mikrofon</b> (z. B. an der Unter- oder Oberkante). Stecken Sie dort nichts hinein. Im Zweifel ist das SIM-Loch das größere der beiden.' },
+      { m: () => leftView({ hot: true }), h: 'Das SIM-Fach finden', p: 'Das SIM-Fach sitzt laut den Geräteanleitungen der Netzbetreiber an der <b>linken Seite, im oberen Bereich</b>. Sie erkennen es an der schmalen <b>Fuge mit einem winzigen Loch</b>. Sitzt es bei Ihrem Gerät woanders, suchen Sie genau diese Fuge am Rahmen.', why: 'Achtung: Ein kleines Loch <b>ohne</b> Fuge ist ein <b>Mikrofon</b> (z. B. an der Unter- oder Oberkante). Stecken Sie dort nichts hinein. Im Zweifel ist das SIM-Loch das größere der beiden.' },
       { m: () => leftView({ hot: true, tool: true }), h: 'Mit dem Werkzeug öffnen', p: 'Drücken Sie das mitgelieferte Metallstiftchen <b>gerade</b> und mit leichtem Druck in das Loch. Der Schlitten springt ein paar Millimeter heraus. Ziehen Sie ihn mit den Fingern vollständig heraus.', why: 'Kein Werkzeug zur Hand? Eine aufgebogene Büroklammer funktioniert genauso. Keine Nadel und keinen Zahnstocher nehmen: Die können abbrechen.' },
       { m: () => simTray(), h: 'Karte richtig einlegen', p: 'Legen Sie die <b>Nano-SIM</b> so in die Mulde, dass die <b>abgeschrägte Ecke</b> der Karte genau in die abgeschrägte Ecke der Mulde passt. Dann liegt sie flach, wackelt nicht und steht nicht über. Liegt sie schief, ist sie verkehrt herum. Beim europäischen Modell gibt es zwei Mulden: Die Hauptkarte gehört in den Platz „SIM 1“.', why: 'Ihre SIM ist größer? Bei vielen Karten lässt sich die kleinste Größe (Nano) aus der Plastikkarte herausdrücken. Sonst bekommen Sie beim Anbieter kostenlos eine passende Karte.' },
       { m: () => lockScreen({ pin: true }), h: 'Zurückschieben, einschalten, SIM-PIN eingeben', p: 'Schieben Sie den Schlitten in derselben Richtung zurück, bis er bündig abschließt. Schalten Sie das Telefon ein. Es fragt nach der <b>SIM-PIN</b> (4 Ziffern aus dem Brief Ihres Anbieters).', why: 'Die SIM-PIN schützt Ihre Karte, nicht das Telefon. Nach dreimal falscher Eingabe brauchen Sie die <b>PUK</b> aus demselben Brief. Gut aufbewahren!' }
@@ -2962,6 +3068,7 @@ const DATASHEET = [
   ]],
   ['Software', [
     ['Bei Marktstart', 'Android 14 mit One UI 6.1'],
+    ['Aktueller Stand', 'One UI 8.5 auf Basis von Android 16 (Verteilung ab Mai 2026)', 'Ihren genauen Stand sehen Sie unter Einstellungen › Telefoninfo › Softwareinformationen.'],
     ['Update-Versprechen', '7 Jahre Android-Versionen und Sicherheitsupdates (bis ca. 2031)'],
     ['KI', 'Galaxy AI (Grundfunktionen kostenlos)'],
     ['Ökosystem', 'Samsung DeX, Quick Share, Smart Switch, SmartThings']
@@ -2969,13 +3076,17 @@ const DATASHEET = [
   ['Lieferumfang', [
     ['In der Schachtel', 'Telefon, USB-C-Kabel (C auf C), SIM-Werkzeug, Kurzanleitung'],
     ['Nicht enthalten', 'Netzteil, Kopfhörer, Hülle']
+  ]],
+  ['Garantie', [
+    ['Gesetzliche Gewährleistung', '2 Jahre gegenüber dem Händler (EU)', 'Im ersten Jahr wird vermutet, dass ein Mangel schon beim Kauf vorhanden war (Beweislastumkehr).'],
+    ['Samsung-Herstellergarantie', '24 Monate auf Material- und Verarbeitungsfehler', 'Für den Akku gelten laut Samsung-Angaben in einigen Ländern kürzere Fristen (häufig 12 Monate). Aktuelle Bedingungen: samsung.com/de › Support › Garantie.']
   ]]
 ];
 
 /* ================= Knox Schichten ================= */
 const KNOX_LAYERS = [
   { id: 'cloud', t: 'Konto & Geräteverbund', s: 'Knox Matrix · Erweiterter Datenschutz', d: '<p><b>Knox Matrix</b> verbindet Ihre Galaxy-Geräte, die mit demselben Samsung-Konto angemeldet sind, zu einer Vertrauenskette. Die Geräte prüfen sich gegenseitig auf ihren Sicherheitszustand. Im Dashboard sehen Sie, ob ein Gerät ein Risiko hat.</p><p><b>Passkeys</b> (Anmelden ohne Passwort, per Fingerabdruck) synchronisiert Samsung Ende-zu-Ende-verschlüsselt zwischen Ihren Geräten.</p><p>Mit <b>„Erweiterter Datenschutz“</b> (seit One UI 6.1) für die Samsung Cloud werden Sicherungen Ende-zu-Ende verschlüsselt: Nur Ihre Geräte haben den Schlüssel, Samsung selbst kann die Daten nicht lesen. Kehrseite: Verlieren Sie alle Geräte, sind auch diese Sicherungen nicht wiederherstellbar.</p>' },
-  { id: 'apps', t: 'Apps & Daten', s: 'Verschlüsselung · Sicherer Ordner · Auto Blocker', d: '<p>Alle Daten im Telefonspeicher sind <b>dateibasiert verschlüsselt</b>. Der Schlüssel wird aus Ihrer PIN und einem Hardware-Schlüssel abgeleitet. Darum ist ein ausgeschaltetes, gesperrtes Telefon auch für Fachleute mit Werkzeug kaum auslesbar.</p><p>Der <b>Sichere Ordner</b> ist ein eigener, zusätzlich verschlüsselter Bereich mit eigener PIN, technisch ein getrenntes Benutzerprofil.</p><p><b>Auto Blocker</b> blockiert App-Installationen aus unbekannten Quellen, Befehle über das USB-Kabel und scannt Apps. Mit „Maximale Einschränkungen“ werden zusätzlich riskante Funktionen wie 2G-Netze abgeschaltet.</p><p><b>Message Guard</b> öffnet Bildanhänge in Nachrichten-Apps in einer abgeschotteten Umgebung, damit präparierte Bilder („Zero-Click-Angriffe“) nicht ins System durchbrechen.</p>' },
+  { id: 'apps', t: 'Apps & Daten', s: 'Verschlüsselung · Sicherer Ordner · Auto Blocker', d: '<p>Alle Daten im Telefonspeicher sind <b>dateibasiert verschlüsselt</b>. Der Schlüssel wird aus Ihrer PIN und einem Hardware-Schlüssel abgeleitet. Darum ist ein ausgeschaltetes, gesperrtes Telefon auch für Fachleute mit Werkzeug kaum auslesbar.</p><p>Der <b>Sichere Ordner</b> ist ein eigener, zusätzlich verschlüsselter Bereich mit eigener PIN, technisch ein getrenntes Benutzerprofil.</p><p><b>Auto Blocker</b> blockiert App-Installationen aus unbekannten Quellen, Befehle über das USB-Kabel und scannt Apps. Mit „Maximale Einschränkungen“ werden zusätzlich riskante Funktionen wie 2G-Netze abgeschaltet.</p><p><b>Message Guard</b> öffnet Bildanhänge in Nachrichten-Apps in einer abgeschotteten Umgebung, damit präparierte Bilder („Zero-Click-Angriffe“) nicht ins System durchbrechen. Für Samsung Nachrichten und Google Messages ist das immer aktiv, für WhatsApp, Telegram und weitere Messenger als Teil von Auto Blocker.</p>' },
   { id: 'system', t: 'Betriebssystem', s: 'SELinux · App-Sandbox · Updates', d: '<p>Jede App läuft in ihrer eigenen <b>Sandbox</b>: Sie darf nicht in die Daten anderer Apps schauen. <b>SELinux</b> (Security-Enhanced Linux) legt zusätzlich fest, welcher Systemprozess was darf. Selbst ein gehackter Prozess bleibt so eingesperrt.</p><p>Monatliche bzw. vierteljährliche <b>Sicherheitsupdates</b> schließen bekannt gewordene Lücken. Ein Telefon ohne Updates verliert diesen Schutz nach und nach.</p>' },
   { id: 'kernel', t: 'Kernel-Schutz', s: 'RKP · DM-Verity', d: '<p>Der Kernel ist der Kern des Betriebssystems mit allen Rechten. Samsungs <b>Real-time Kernel Protection (RKP)</b> überwacht ihn aus einer geschützten Umgebung heraus: Versucht Schadsoftware, Kernel-Code oder wichtige Kernel-Daten zu verändern, wird das blockiert.</p><p><b>DM-Verity</b> prüft beim Lesen, ob die Systempartition unverändert ist. Manipulierte Systemdateien fallen sofort auf.</p>' },
   { id: 'boot', t: 'Startvorgang', s: 'Secure Boot · Trusted Boot', d: '<p>Beim Einschalten prüft jede Startstufe die nächste, bevor sie sie ausführt: Bootloader, dann Kernel, dann System. Nur Software mit gültiger <b>Samsung-Signatur</b> darf starten (<b>Secure Boot</b>).</p><p><b>Trusted Boot</b> protokolliert zusätzlich Messwerte des Startvorgangs. Sicherheitsfunktionen können damit nachweisen, dass das Gerät sauber gestartet ist.</p><p>Wird inoffizielle Software geflasht, löst das den <b>Knox-Warranty-Bit</b> aus (siehe unten).</p>' },
@@ -2993,8 +3104,8 @@ const PROTECT = [
     { id: 'autoreset', lvl: 1, t: 'Automatisch zurücksetzen nach vielen Fehlversuchen', path: 'Einstellungen › Sicherheit und Datenschutz › Weitere Sicherheitseinstellungen (oder Suche: „Zurücksetzen“)', how: 'Nach 20 falschen Versuchen werden alle Daten gelöscht.', why: 'Schutz gegen systematisches Durchprobieren. Nur mit funktionierender Sicherung empfehlenswert, sonst können auch Kinder beim Spielen alles löschen.' }
   ] },
   { g: 'Diebstahl & Verlust', items: [
-    { id: 'findmy', lvl: 3, t: '„Verlorene Geräte finden“ mit Offline-Suche', path: 'Einstellungen › Sicherheit und Datenschutz › Verlorene Geräte finden', how: 'Alle drei Schalter an: Verlorene Geräte finden, Offline-Suche, Letzten Standort senden.', why: 'Ohne diese Funktion lässt sich das Telefon weder orten noch aus der Ferne sperren oder löschen. Die Offline-Suche nutzt andere Galaxy-Geräte in der Nähe, anonym und verschlüsselt.' },
-    { id: 'theft', lvl: 3, t: 'Diebstahlschutz einschalten', path: 'Einstellungen › Sicherheit und Datenschutz › Diebstahlschutz (oder Suche: „Diebstahl“)', how: 'Diebstahlerkennungssperre, Offline-Gerätesperre und Identitätsprüfung aktivieren.', why: 'Erkennt das Telefon eine typische „Wegreißen und Wegrennen“-Bewegung, sperrt es sich sofort. Die Identitätsprüfung verlangt außerhalb vertrauter Orte den Fingerabdruck für wichtige Einstellungen, etwa um „Verlorene Geräte finden“ abzuschalten.' },
+    { id: 'findmy', lvl: 3, t: '„Verlorene Geräte finden“ mit Offline-Suche', path: 'Einstellungen › Sicherheit und Datenschutz › Schutz bei Geräteverlust › Verlorene Geräte finden', how: 'Alle drei Schalter an: Verlorene Geräte finden, Offline-Suche, Letzten Standort senden.', why: 'Ohne diese Funktion lässt sich das Telefon weder orten noch aus der Ferne sperren oder löschen. Die Offline-Suche nutzt andere Galaxy-Geräte in der Nähe, anonym und verschlüsselt.' },
+    { id: 'theft', lvl: 3, t: 'Diebstahlschutz einschalten', path: 'Einstellungen › Sicherheit und Datenschutz › Schutz bei Geräteverlust › Diebstahlschutz (oder Suche: „Diebstahl“)', how: 'Diebstahlerkennungssperre, Offline-Gerätesperre und Identitätsprüfung aktivieren.', why: 'Erkennt das Telefon eine typische „Wegreißen und Wegrennen“-Bewegung, sperrt es sich sofort. Die Identitätsprüfung verlangt außerhalb vertrauter Orte den Fingerabdruck für wichtige Einstellungen, etwa um „Verlorene Geräte finden“ abzuschalten.' },
     { id: 'imei', lvl: 2, t: 'IMEI und Seriennummer notieren', path: 'Einstellungen › Telefoninfo (oder *#06# im Tastenfeld)', how: 'Auf Papier oder in einem anderen Gerät speichern, nicht nur auf dem Telefon.', why: 'Polizei, Versicherung und Anbieter brauchen die IMEI, um das Gerät zu sperren oder zu identifizieren.' },
     { id: 'medical', lvl: 2, t: 'Notfallkontakte und medizinische Informationen', path: 'Einstellungen › Sicherheit und Notfall', how: 'Notruf-SOS einschalten, 1–3 Notfallkontakte, Blutgruppe, Allergien, Medikamente.', why: 'Rettungskräfte sehen diese Infos auf dem Sperrbildschirm über „Notruf“, ohne Ihre PIN.' }
   ] },
@@ -3114,6 +3225,14 @@ MINI_QUIZ.schutzplan = [
   { q: 'Was sollte am ersten Tag zuerst passieren?', o: ['Hintergrundbild ändern', 'Software-Update installieren', 'Spiele laden'], a: 1, e: 'Erst mit aktueller Software sind alle Sicherheitslücken geschlossen.' }
 ];
 
+MINI_QUIZ.alltag = [
+  { q: 'Klingelt der Wecker, wenn das Telefon auf „Lautlos“ steht?', o: ['Nein', 'Ja, Wecker haben eine eigene Lautstärke', 'Nur mit WLAN'], a: 1, e: 'Nur wenn das Telefon ganz ausgeschaltet ist, klingelt er nicht.' },
+  { q: 'Wie nehmen Sie den Bildschirm als Video auf?', o: ['Seitentaste 3× drücken', 'Kachel „Bildschirmrekorder“ in den Schnelleinstellungen', 'Kamera auf den Bildschirm richten'], a: 1, e: 'Fehlt die Kachel, fügen Sie sie über den Stift (Bearbeiten) hinzu.' },
+  { q: 'Wie navigieren Sie im Ausland ohne mobile Daten?', o: ['Gar nicht', 'Vorher Offline-Karten in Google Maps herunterladen', 'Mit Bluetooth'], a: 1, e: 'Profilbild › Offlinekarten › Eigene Karte auswählen.' }
+];
+GLOSS.gewaehrleistung = ['Gewährleistung', 'Gesetzlicher Anspruch gegenüber dem Händler: 2 Jahre bei Mängeln, die beim Kauf schon vorhanden waren. Nicht zu verwechseln mit der freiwilligen Herstellergarantie.'];
+GLOSS.familylink = ['Family Link', 'Kostenlose Google-App, mit der Eltern Bildschirmzeit, App-Downloads und Standort auf dem Telefon ihres Kindes verwalten.'];
+
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -3202,7 +3321,7 @@ MINI_QUIZ.schutzplan = [
     sicherheit: ['shield', 'Sicherheit'], knox: ['lock', 'Sicherheit'], schutzplan: ['check', 'Sicherheit'],
     kamera: ['lens', 'Kamera & KI'], ai: ['search', 'Kamera & KI'],
     akku: ['battery', 'Alltag'], anpassen: ['contrast', 'Alltag'], verbindungen: ['wifi', 'Alltag'], apps: ['app', 'Alltag'],
-    hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
+    alltag: ['grid', 'Alltag'], hilfe: ['wrench', 'Hilfe & Nachschlagen'], datenblatt: ['note', 'Hilfe & Nachschlagen'], wissen: ['book', 'Hilfe & Nachschlagen']
   };
   const metaOf = sec => CH_META[sec.id] || ['book', 'Weitere'];
   chapters.forEach(sec => {

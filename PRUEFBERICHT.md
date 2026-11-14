@@ -80,6 +80,37 @@ Die neuen Inhalte beruhen auf allgemein dokumentiertem Android- und One-UI-Verha
 ### Schutzplan
 Menüpfade nach One UI 7/8; wo der Pfad je nach Version abweichen kann, nennt das Handbuch zusätzlich den Suchbegriff. Ausstattung wie Diebstahlschutz (Identitätsprüfung) setzt One UI 7 oder neuer voraus.
 
+## Nachtrag 3: Lückenanalyse und zweite Gegenprüfung (Red Team)
+
+### Ergänzte, bisher fehlende Themen
+Neues Kapitel **„Alltags-Apps & Funktionen“**: Wecker/Timer, Kalender, Bildschirmaufnahme, Internet surfen, E-Mail (inkl. GMX/WEB.DE), Navigation mit Google Maps (Offline-Karten, Standortfreigabe), Digitales Wohlbefinden und Kindersicherung (Family Link), Edge-Panels, Samsung Notes/Health/Wallet, Sprache, Datum und Uhrzeit. Neuer Abschnitt **„Garantie, Gewährleistung und Reparatur“** im Kapitel Problemlösung.
+
+### Korrigiert bzw. präzisiert
+
+| Thema | Vorher | Jetzt | Quelle |
+|---|---|---|---|
+| Software-Stand | „One UI 7 und 8“ | One UI 8.5 (Android 16) seit Mai 2026 verfügbar; Handbuch beschreibt 7 bis 8.5 | [SamMobile](https://www.sammobile.com/news/stable-one-ui-8-5-update-galaxy-s24-fe-out/), [Sammy Fans](https://www.sammyfans.com/2026/05/18/samsung-starts-wider-one-ui-8-5-rollout-for-galaxy-s24-fe-users/), [GSMArena One UI 8](https://m.gsmarena.com/samsung_galaxy_s24_fe_android_16_one_ui_8_stable_update-news-69671.php) |
+| Menüpfad „Verlorene Geräte finden“ / Diebstahlschutz | direkt unter „Sicherheit und Datenschutz“ | ab One UI 7 unter **Schutz bei Geräteverlust** (auch „Schutz für verlorene Geräte“); Identitätsprüfung mit 1 Stunde Verzögerung | [Samsung UK Support](https://www.samsung.com/uk/support/mobile-devices/how-to-use-security-settings/), [Samsung Newsroom CH](https://news.samsung.com/ch/neue-features-fur-diebstahlschutz-aktivieren), [Samsung Community](https://eu.community.samsung.com/t5/mobile-apps-services/diebstahlschutz-f%C3%BCr-sein-smartphone-aktivieren-oneui-7-0/m-p/11828022/highlight/true) |
+| Notruf ohne SIM | „nur mit SIM“ | ergänzt: SIM muss weder entsperrt sein noch Guthaben haben; fremdes Netz möglich | [test.de](https://www.test.de/Handy-Notruf-112-kuenftig-nur-noch-mit-Sim-Karte-1762892-0/), [teltarif](https://www.teltarif.de/notruf-mit-handy), [Bundesnetzagentur](https://bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Unternehmenspflichten/Notruf/GesetzlGrundlagen/start.html) |
+| Message Guard | allgemein | Teil von Auto Blocker; Samsung/Google Messages immer geschützt; S24 FE unterstützt | [Samsung Knox Doku](https://docs.samsungknox.com/admin/fundamentals/whitepaper/samsung-knox-mobile-security/application-security/samsung-message-guard/), [Sammy Fans](https://sammyfans.com/2024/06/22/protect-all-your-messaging-apps-in-one-ui-6-1-heres-how) |
+| SIM-Fach | „links oben“ | Hinweis ergänzt, dass die Angabe aus Netzbetreiber-Anleitungen (US-Modell) stammt | [AT&T](https://www.att.com/device-support/article-modal/wireless/000106174/Samsung/SamsungSMS721U) |
+
+### Zweitprüfung bestätigt
+
+| Angabe | Quelle |
+|---|---|
+| Vorstellung 26.09.2024; Verkaufsstart Europa 04.10.2024 | [TechRadar](https://www.techradar.com/phones/samsung-galaxy-phones/samsung-galaxy-s24-fe), [Android Central](https://www.androidcentral.com/phones/samsung-galaxy-s24-fe-launch) |
+| Audio-Radierer für S24 FE mit One UI 7 | [Android Authority](https://www.androidauthority.com/samsung-one-ui-7-ai-features-supported-devices-3535929), [SamMobile](https://www.sammobile.com/news/one-ui-7-camera-features-coming-older-phones-compatible-list/) |
+| Notruf-SOS: Seitentaste 5× (One UI 5+), mit Countdown, muss eingeschaltet sein | [Samsung DE](https://ushl.samsung.com/de/support/mobile-devices/wie-funktioniert-die-notfall-sms), [Samsung UK](https://www.samsung.com/uk/support/mobile-devices/how-to-turn-off-emergency-sos-function) |
+| Samsung-Herstellergarantie 24 Monate; Akku teils 12 Monate | [Vodafone](https://www.vodafone.de/featured/smartphones-tablets/samsung/samsung-garantie-smartphones-garantiepruefung/), [Samsung CH](https://www.samsung.com/ch/support/warranty/) |
+| Bildschirmrekorder, Digitales Wohlbefinden und Kindersicherung | [Samsung CH](https://www.samsung.com/ch/support/mobile-devices/how-to-record-your-screen-on-your-samsung-galaxy-device/), [Samsung DE](https://www.samsung.com/de/support/mobile-devices/digitales-wohlbefinden-einrichten) |
+| GMX/WEB.DE: POP3/IMAP-Freischaltung nötig für fremde Apps | [GMX Support](https://support.gmx.com/pop-imap/toggle.html), [GIGA](https://www.giga.de/tipp/gmx-imap-pop3-aktivieren-einrichten-e-mail-client/) |
+
+### Weiterhin nicht bestätigt
+- **Super Steady** auf dem S24 FE: keine Quelle gefunden; im Handbuch steht „falls angezeigt“.
+- **Knox Vault** beim S24 FE: weiterhin nicht offiziell bestätigt.
+- **SIM-Fach EU-Modell**: keine Samsung-EU-Quelle.
+
 ## Bleibt zu beachten
 
 - **SIM-Fach:** Die Lage „links oben“ stammt aus US-Netzbetreiber-Anleitungen (SM-S721U). Für das EU-Modell ist sie sehr wahrscheinlich gleich, aber nicht aus einer Samsung-EU-Quelle belegt. Einmal am echten Gerät prüfen.

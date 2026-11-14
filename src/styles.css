@@ -858,3 +858,4 @@ footer.foot { border-top-color: var(--line); }
 @media (max-width: 520px) { .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .hero .cta-row .btn { flex: 0 0 auto; }
 @media (max-width: 760px) { .hero-art svg { max-width: 140px; } .hero { gap: 14px; } .hero .eyebrow { font-size: .66rem; } }
+@media (max-width: 640px) { .chapter-head { align-items: start; } }

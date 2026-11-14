@@ -10,9 +10,9 @@ Einfach per WhatsApp (als Dokument), E-Mail oder Quick Share verschicken. Auf de
 antippen und mit Samsung Internet oder Chrome öffnen.
 
 ## Inhalt
-16 Kapitel: Gerät kennenlernen, Einrichtung, Grundbedienung, Telefonieren & Nachrichten, Sicherheit, Samsung Knox,
+17 Kapitel: Gerät kennenlernen, Einrichtung, Grundbedienung, Telefonieren & Nachrichten, Sicherheit, Samsung Knox,
 Optimal einrichten & schützen (Schutzplan), Kamera (alle Einstellungen, Kamera-Labor), Galaxy AI,
-Akku, Anpassen & Barrierefreiheit, Verbindungen, Apps & Speicher, Problemlösung, Datenblatt, Wissenstest/FAQ/Glossar.
+Akku, Anpassen & Barrierefreiheit, Verbindungen, Apps & Speicher, Alltags-Apps & Funktionen, Problemlösung (inkl. Garantie), Datenblatt, Wissenstest/FAQ/Glossar.
 
 Interaktiv: Einstellungs-Trainer (Übungs-Handy), Tasten- und Gesten-Trainer, Anruf-Simulator,
 Belichtungs-Simulator, Kamera-Berater, Lade- und Speicher-Rechner, Kurzquiz pro Kapitel,
